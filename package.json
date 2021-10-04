@@ -1,0 +1,13 @@
+{
+  "name": "livebook_website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.6.0"
+  }
+}
