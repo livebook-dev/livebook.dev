@@ -1,6 +1,58 @@
-import './style.css'
+// Mobile menu
+const menu = document.querySelector("[data-menu-container]");
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+menu.addEventListener("click", (event) => {
+  const toggleButton = event.target.closest("[data-menu-toggle]");
+
+  if (toggleButton) {
+    menu.toggleAttribute("data-menu-open");
+    return;
+  }
+
+  const anchor = event.target.closest("a");
+
+  if (anchor && anchor.href && anchor.getAttribute("href").startsWith("#")) {
+    menu.removeAttribute("data-menu-open");
+  }
+});
+
+// Register clipboard copy handlers
+if ("clipboard" in navigator) {
+  const clipCopyButtons = document.querySelectorAll("[data-clip-copy-target]");
+
+  for (const button of clipCopyButtons) {
+    const targetSelector = button.getAttribute("data-clip-copy-target");
+    const target = document.querySelector(targetSelector);
+
+    if (target) {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const text = target.innerText;
+        navigator.clipboard.writeText(text);
+      });
+    }
+  }
+}
+
+// Tabs
+const tabsContainers = document.querySelectorAll("[data-tabs]");
+
+for (const tabsContainer of tabsContainers) {
+  const tabs = tabsContainer.querySelectorAll("[data-target]");
+
+  tabsContainer.addEventListener("click", (event) => {
+    event.preventDefault();
+    const clickedTab = event.target.closest("[data-target]");
+    if (clickedTab) {
+      const clickedTargetSelector = clickedTab.getAttribute("data-target");
+
+      for (const tab of tabs) {
+        const targetSelector = tab.getAttribute("data-target");
+        const target = document.querySelector(targetSelector);
+        const isClicked = targetSelector === clickedTargetSelector;
+        tab.classList.toggle("active", isClicked);
+        target.toggleAttribute("data-tab-active", isClicked);
+      }
+    }
+  });
+}
