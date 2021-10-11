@@ -1,0 +1,16 @@
+<div
+  class="p-4 flex justify-between items-center space-x-4 rounded-lg bg-gray-900"
+>
+  <!-- prettier-ignore -->
+  <span class="whitespace-pre-wrap font-mono text-gray-300 text-sm overflow-x-auto tiny-scrollbar"
+    >{{#if isShell}}<span class="select-none">$ </span>{{/if}}<span id="{{ id }}">{{ code }}</span></span>
+  <span
+    class="self-end tooltip left"
+    aria-label="Copy to clipboard"
+    data-clip-copy-target="#{{ id }}"
+  >
+    <button class="text-gray-500 hover:text-gray-300">
+      <i class="ri-file-copy-line text-lg"></i>
+    </button>
+  </span>
+</div>

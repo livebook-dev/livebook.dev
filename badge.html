@@ -1,0 +1,170 @@
+{{#> layout}} {{#*inline "content"}}
+<div class="bg-gray-900">
+  <div
+    class="
+      w-full
+      px-4
+      py-12
+      md:py-28
+      flex flex-col
+      items-center
+      space-y-16
+      md:space-y-24
+    "
+  >
+    <!-- Heading -->
+    <div class="flex flex-col items-center">
+      <h2 class="text-gray-100 font-semibold text-center text-xl md:text-3xl">
+        Create Livebook badge for your notebooks
+      </h2>
+      <span class="mt-3 max-w-md md:max-w-lg text-gray-400 text-center">
+        Enter your notebook URL in the input below and customize your own “Run
+        in Livebook” badge to share with others.
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="relative mx-auto w-full max-w-3xl">
+  <div class="px-4 w-full absolute top-0 left-0 -translate-y-1/2">
+    <input
+      data-badge-notebook-url
+      autofocus
+      class="
+        w-full
+        bg-white
+        border border-gray-300
+        rounded-xl
+        py-3
+        px-4
+        text-sm
+        md:text-base
+        text-gray-900
+        placeholder-gray-600
+        font-medium
+        placeholder-font-light
+        focus:outline-none
+      "
+      placeholder="Your notebook URL"
+      spellcheck="false"
+      autocomplete="off"
+    />
+  </div>
+</div>
+
+<div class="flex-grow bg-white">
+  <div class="mx-auto max-w-3xl px-4 py-12 md:py-20 flex flex-col items-center">
+    <div data-on-badge="hide" class="text-gray-700 text-center max-w-2xl">
+      Enter the URL to your notebook above and customize the Livebook badge to
+      your liking.
+    </div>
+    <div data-on-badge="show" class="text-gray-700 text-center max-w-2xl">
+      <span class="text-blue-600 font-semibold">Awesome!</span> Your Livebook
+      badge is ready to use! You can copy the code to your desired location or
+      <span class="text-gray-600 font-semibold italic">customize</span> it to
+      your liking.
+    </div>
+    <img class="my-4" src="images/arrow.svg" alt="" width="31" height="85" />
+    <div
+      data-badge-buttons-container
+      class="
+        w-full
+        flex flex-col
+        md:flex-row
+        items-center
+        md:justify-between
+        space-y-8
+        md:space-y-0
+      "
+    >
+      <button
+        data-badge-button
+        data-badge-type="blue"
+        class="
+          p-1.5
+          rounded-xl
+          border-[3px] border-blue-600
+          hover:border-blue-600
+          transition-colors
+        "
+      >
+        <img
+          src="images/badge/blue.svg"
+          alt="Run in Livebook"
+          width="160"
+          height="39"
+        />
+      </button>
+      <button
+        data-badge-button
+        data-badge-type="black"
+        class="
+          p-1.5
+          rounded-xl
+          border-[3px] border-gray-900
+          hover:border-gray-900
+          transition-colors
+        "
+      >
+        <img
+          src="images/badge/black.svg"
+          alt="Run in Livebook"
+          width="160"
+          height="39"
+        />
+      </button>
+      <button
+        data-badge-button
+        data-badge-type="gray"
+        class="
+          p-1.5
+          rounded-xl
+          border-[3px] border-gray-100
+          hover:border-gray-100
+          transition-colors
+        "
+      >
+        <img
+          src="images/badge/gray.svg"
+          alt="Run in Livebook"
+          width="160"
+          height="39"
+        />
+      </button>
+      <button
+        data-badge-button
+        data-badge-type="pink"
+        class="
+          p-1.5
+          rounded-xl
+          border-[3px] border-[#ffe8ee]
+          hover:border-[#ffe8ee]
+          transition-colors
+        "
+      >
+        <img
+          src="images/badge/pink.svg"
+          alt="Run in Livebook"
+          width="160"
+          height="39"
+        />
+      </button>
+    </div>
+    <div class="mt-3 text-gray-500 text-sm font-medium italic">
+      choose a badge theme
+    </div>
+    <div data-on-badge="show" class="mt-12 w-full flex flex-col space-y-6">
+      <div class="flex-grow">
+        <div class="mb-1 text-gray-900 text-sm font-semibold">Markdown</div>
+        <!-- prettier-ignore -->
+        {{> code id="badge-source-markdown" code=""}}
+      </div>
+      <div class="flex-grow">
+        <div class="mb-1 text-gray-900 text-sm font-semibold">HTML</div>
+        <!-- prettier-ignore -->
+        {{> code id="badge-source-html" code=""}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/inline}} {{/layout}}

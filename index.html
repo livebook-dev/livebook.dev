@@ -1,547 +1,439 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {{> head_content}}
-  </head>
-  <body>
-    {{> navbar}}
-
-    <!-- Intro -->
-    <section id="intro" class="bg-white">
-      <div
+{{#> layout}} {{#*inline "content"}}
+<!-- Intro -->
+<section id="intro" class="bg-white">
+  <div
+    class="
+      m-auto
+      max-w-7xl
+      px-4
+      py-10
+      md:py-24
+      flex flex-col
+      space-y-10
+      md:space-y-24
+    "
+  >
+    <div class="flex flex-col items-center space-y-10">
+      <h2
         class="
-          m-auto
-          max-w-7xl
-          px-4
-          py-10
-          md:py-24
-          flex flex-col
-          space-y-10
-          md:space-y-24
+          max-w-md
+          md:max-w-2xl
+          text-center text-xl
+          md:text-4xl
+          font-light
+          text-gray-900
         "
       >
-        <div class="flex flex-col items-center space-y-10">
-          <h2
-            class="
-              max-w-md
-              md:max-w-2xl
-              text-center text-xl
-              md:text-4xl
-              font-light
-              text-gray-900
-            "
-          >
-            Write
-            <span class="font-bold text-[#e44c75]">
-              interactive & collaborative
-            </span>
-            code notebooks in Elixir
-          </h2>
-          <nav
-            class="
-              flex flex-col
-              space-y-4
-              md:flex-row
-              md:space-y-0
-              md:space-x-6
-              md:items-center
-              md:justify-center
-            "
-          >
-            <a
-              class="
-                px-8
-                py-3
-                flex
-                items-center
-                space-x-4
-                rounded-xl
-                bg-gray-900
-                text-gray-50
-              "
-              href="#install"
-            >
-              <i class="ri-rocket-line text-3xl text-gray-300"></i>
-              <div class="flex flex-col">
-                <span class="font-bold">Run Livebook</span>
-                <span class="text-sm">Locally or in the cloud</span>
-              </div>
-            </a>
-            <a
-              class="
-                flex
-                space-x-4
-                items-center
-                px-8
-                py-3
-                rounded-xl
-                text-gray-700
-                border-2 border-gray-300
-              "
-              href="https://github.com/livebook-dev/livebook"
-            >
-              <i class="ri-github-line text-3xl text-gray-400"></i>
-              <div class="flex flex-col">
-                <span class="font-bold">See source</span>
-                <span class="text-sm">Visit our GitHub</span>
-              </div>
-            </a>
-          </nav>
-        </div>
-        <img
-          class="rounded-md md:rounded-2xl custom-shadow-1"
-          src="images/welcome_to_livebook_screenshot.png"
-          alt=""
-          width="1248"
-          height="701"
-        />
-      </div>
-    </section>
-
-    <!-- Install instructions -->
-    <section id="install" class="bg-gray-100">
-      <div
-        class="m-auto max-w-7xl px-4 py-10 md:py-20 flex flex-col items-center"
-      >
-        <h2
-          class="text-gray-900 text-2xl md:text-3xl font-semibold text-center"
-        >
-          Get Livebook up and running in minutes
-        </h2>
-        <span class="mt-3 md:max-w-lg text-gray-700 font-medium text-center">
-          It’s easy to get started with Livebook, weather it be in the cloud or
-          your local machine.
+        Write
+        <span class="font-bold text-[#e44c75]">
+          interactive & collaborative
         </span>
-        <div
-          class="mt-8 md:mt-14 w-full max-w-[600px] flex flex-col items-center"
-        >
-          <div class="tabs w-full justify-between" data-tabs>
-            <a class="tab active" href="#" data-target="#install-flyio">
-              Using Fly.io
-            </a>
-            <a class="tab" href="#" data-target="#install-docker">
-              Using Docker
-            </a>
-            <a class="tab" href="#" data-target="#install-elixir">
-              Using Elixir
-            </a>
-          </div>
-          <div class="mt-8 w-full p-4 rounded-2xl bg-white">
-            <img src="images/window_buttons.png" alt="" width="36" height="8" />
-            <!-- Tab contents -->
-
-            <!-- * Fly.io instructions -->
-            <div
-              id="install-flyio"
-              data-tab-content
-              data-tab-active
-              class="my-12 flex justify-center"
-            >
-              <a href="https://fly.io/launch/livebook">
-                <img
-                  src="images/flyio_logo.svg"
-                  alt="launch on fly"
-                  height="60"
-                  width="60"
-                />
-              </a>
-            </div>
-
-            <!-- * Docker instructions -->
-            <div
-              id="install-docker"
-              data-tab-content
-              class="mt-12 flex flex-col space-y-5"
-            >
-              <!-- Step -->
-              <div class="flex flex-col items-start space-y-1">
-                <div class="text-gray-900 text-sm font-semibold">Step 1</div>
-                <div>
-                  <a
-                    class="
-                      px-7
-                      py-2
-                      flex
-                      space-x-1
-                      items-center
-                      rounded-lg
-                      text-gray-600
-                      border-2 border-gray-400
-                    "
-                    href="https://docs.docker.com/get-docker/"
-                  >
-                    <img
-                      src="images/docker.svg"
-                      alt=""
-                      width="20"
-                      height="15"
-                    />
-                    <span class="text-sm font-medium">Install Docker</span>
-                  </a>
-                </div>
-              </div>
-              <!-- Step -->
-              <div class="flex flex-col space-y-1">
-                <div class="text-gray-900 text-sm font-semibold">Step 2</div>
-                <div
-                  class="
-                    p-4
-                    flex
-                    justify-between
-                    items-center
-                    space-x-4
-                    rounded-lg
-                    bg-gray-900
-                  "
-                >
-                  <!-- prettier-ignore -->
-                  <span
-                  class="whitespace-pre-wrap font-mono text-gray-300 text-sm"
-                  ><span class="select-none">$ </span
-                  ><span id="docker-run-livebook"
-                    >docker run -p 8080:8080 --pull always livebook/livebook</span
-                  ></span
-                >
-                  <span
-                    class="tooltip right distant"
-                    aria-label="Copy to clipboard"
-                    data-clip-copy-target="#docker-run-livebook"
-                  >
-                    <button class="text-gray-500 hover:text-gray-300">
-                      <i class="ri-file-copy-line text-lg"></i>
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- * Elixir instructions -->
-            <div
-              id="install-elixir"
-              data-tab-content
-              class="mt-12 flex flex-col space-y-5"
-            >
-              <!-- Step -->
-              <div class="flex flex-col items-start space-y-1">
-                <div class="text-gray-900 text-sm font-semibold">Step 1</div>
-                <div>
-                  <a
-                    class="
-                      px-7
-                      py-2
-                      flex
-                      space-x-2
-                      items-center
-                      rounded-lg
-                      text-gray-600
-                      border-2 border-gray-400
-                    "
-                    href="https://elixir-lang.org/install.html"
-                  >
-                    <img src="images/elixir.svg" alt="18" width="10" />
-                    <span class="text-sm font-medium">Install Elixir</span>
-                  </a>
-                </div>
-              </div>
-              <!-- Step -->
-              <div class="flex flex-col space-y-1">
-                <div class="text-gray-900 text-sm font-semibold">Step 2</div>
-                <div
-                  class="
-                    p-4
-                    flex
-                    justify-between
-                    items-center
-                    space-x-4
-                    rounded-lg
-                    bg-gray-900
-                  "
-                >
-                  <!-- prettier-ignore -->
-                  <span
-                  class="whitespace-pre-wrap font-mono text-gray-300 text-sm"
-                  ><span class="select-none">$ </span
-                  ><span id="elixir-install-livebook"
-                    >mix escript.install hex livebook</span
-                  ></span
-                >
-                  <span
-                    class="tooltip right distant"
-                    aria-label="Copy to clipboard"
-                    data-clip-copy-target="#elixir-install-livebook"
-                  >
-                    <button class="text-gray-500 hover:text-gray-300">
-                      <i class="ri-file-copy-line text-lg"></i>
-                    </button>
-                  </span>
-                </div>
-                <div
-                  class="
-                    p-4
-                    flex
-                    justify-between
-                    items-center
-                    space-x-4
-                    rounded-lg
-                    bg-gray-900
-                  "
-                >
-                  <!-- prettier-ignore -->
-                  <span
-                  class="whitespace-pre-wrap font-mono text-gray-300 text-sm"
-                  ><span class="select-none">$ </span
-                  ><span id="elixir-run-livebook">livebook server</span></span
-                >
-                  <span
-                    class="tooltip right distant"
-                    aria-label="Copy to clipboard"
-                    data-clip-copy-target="#elixir-run-livebook"
-                  >
-                    <button class="text-gray-500 hover:text-gray-300">
-                      <i class="ri-file-copy-line text-lg"></i>
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="bg-gray-900">
-      <div
+        code notebooks in Elixir
+      </h2>
+      <nav
         class="
-          w-full
-          px-4
-          py-12
-          md:py-28
           flex flex-col
-          items-center
-          space-y-16
-          md:space-y-24
+          space-y-4
+          md:flex-row
+          md:space-y-0
+          md:space-x-6
+          md:items-center
+          md:justify-center
         "
       >
-        <!-- Heading -->
-        <div class="flex flex-col items-center">
-          <h2
-            class="text-gray-100 font-semibold text-center text-2xl md:text-4xl"
-          >
-            Do more with Livebook
-          </h2>
-          <span
-            class="
-              mt-3
-              max-w-md
-              md:max-w-xl
-              text-gray-300
-              font-medium
-              text-center
-            "
-          >
-            There’s so much to do with Livebook with its awesome collaborative
-            features. Learn about some of our key features.
-          </span>
-        </div>
-        <!-- Data -->
-        <div
+        <a
           class="
-            flex flex-col
-            md:flex-row
+            px-8
+            py-3
+            flex
             items-center
-            space-y-8
-            md:space-y-0 md:space-x-8
-            lg:space-x-28
+            space-x-4
+            rounded-xl
+            bg-gray-900
+            text-gray-50
           "
+          href="#install"
         >
-          <img src="images/plot.svg" alt="" width="448" height="162" />
+          <i class="ri-rocket-line text-3xl text-gray-300"></i>
           <div class="flex flex-col">
-            <h3 class="text-xl text-gray-50 font-semibold">Interactive data</h3>
-            <span class="mt-3 md:max-w-md text-gray-300">
-              Build charts, tables, and more to explore your data. Or use
-              reactive inputs to allow readers to directly interact with your
-              notebook.
-            </span>
+            <span class="font-bold">Run Livebook</span>
+            <span class="text-sm">Locally or in the cloud</span>
           </div>
-        </div>
-        <!-- Screenshot area -->
-        <div class="lg:py-16 max-w-7xl">
-          <div class="relative flex flex-col space-y-8">
-            <!-- Feature descriptions -->
-            <div class="lg:ml-[56px] flex flex-col rounded-xl">
-              <h3 class="text-xl text-gray-50 font-semibold">
-                Collaborate as a team
-              </h3>
-              <span class="mt-3 lg:max-w-md text-gray-300">
-                Multiple users can work on the same notebook at once. It works
-                out-of-the-box either in single-node or multi-node deployments
-                without additional tools.
-              </span>
-            </div>
-            <!-- Screenshot with border -->
-            <div
-              class="
-                flex flex-col
-                lg:flex-row
-                space-y-8
-                lg:space-y-0 lg:space-x-8 lg:items-center
-              "
-            >
-              <div class="relative p-[2px]">
-                <!-- Add an overlapping border. If we put the border on the image there's a tiny gap -->
-                <div
-                  class="
-                    rounded-md
-                    md:rounded-2xl
-                    absolute
-                    top-0
-                    bottom-0
-                    left-0
-                    right-0
-                    pointer-events-none
-                    border-4 border-gray-100
-                  "
-                ></div>
-                <img
-                  class="rounded-md md:rounded-2xl"
-                  src="images/features_screenshot.png"
-                  alt=""
-                  width="850"
-                  height="400"
-                />
-              </div>
-
-              <div class="flex flex-col rounded-xl">
-                <h3 class="text-xl text-gray-50 font-semibold">
-                  Reproducible workflows
-                </h3>
-                <span class="mt-3 lg:max-w-md text-gray-300">
-                  Livebook ensures your code runs in a predictable order, all
-                  the way down to package management. It also tracks your
-                  notebook state, annotating which parts are stale.
-                </span>
-              </div>
-            </div>
-
-            <div class="lg:ml-[218px] flex flex-col rounded-xl">
-              <h3 class="text-xl text-gray-50 font-semibold">
-                Productivity at your fingertips
-              </h3>
-              <span class="mt-3 lg:max-w-md text-gray-300">
-                Livebook's code editor supports autocompletion, inline
-                documentation, code formatting, and more. Plus keyboard
-                shortcuts throughout the notebook.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Diff -->
-        <div
+        </a>
+        <a
           class="
-            flex flex-col
-            md:flex-row
+            flex
+            space-x-4
             items-center
-            space-y-8
-            md:space-y-0 md:space-x-8
-            lg:space-x-28
+            px-8
+            py-3
+            rounded-xl
+            text-gray-700
+            border-2 border-gray-300
           "
+          href="https://github.com/livebook-dev/livebook"
         >
-          <img
-            class="custom-drop-shadow-1"
-            src="images/diff.svg"
-            alt=""
-            width="448"
-            height="162"
-          />
+          <i class="ri-github-line text-3xl text-gray-400"></i>
           <div class="flex flex-col">
-            <h3 class="text-xl text-gray-50 font-semibold">
-              Share it! Version it!
-            </h3>
-            <span class="mt-3 md:max-w-md text-gray-300">
-              Notebooks are .livemd files, a subset of Markdown with support for
-              equations and annotations. They can be easily shared and play well
-              with version control.
-            </span>
+            <span class="font-bold">See source</span>
+            <span class="text-sm">Visit our GitHub</span>
           </div>
-        </div>
+        </a>
+      </nav>
+    </div>
+    <img
+      class="rounded-md md:rounded-2xl custom-shadow-1"
+      src="images/welcome_to_livebook_screenshot.png"
+      alt=""
+      width="1248"
+      height="701"
+    />
+  </div>
+</section>
+
+<!-- Install instructions -->
+<section id="install" class="bg-gray-100">
+  <div class="m-auto max-w-7xl px-4 py-10 md:py-20 flex flex-col items-center">
+    <h2 class="text-gray-900 text-2xl md:text-3xl font-semibold text-center">
+      Get Livebook up and running in minutes
+    </h2>
+    <span class="mt-3 md:max-w-lg text-gray-700 font-medium text-center">
+      It’s easy to get started with Livebook, weather it be in the cloud or your
+      local machine.
+    </span>
+    <div class="mt-8 md:mt-14 w-full max-w-[600px] flex flex-col items-center">
+      <div class="tabs w-full justify-between" data-tabs>
+        <a class="tab active" href="#" data-target="#install-flyio">
+          Using Fly.io
+        </a>
+        <a class="tab" href="#" data-target="#install-docker"> Using Docker </a>
+        <a class="tab" href="#" data-target="#install-elixir"> Using Elixir </a>
       </div>
-    </section>
+      <div class="mt-8 w-full p-4 rounded-2xl bg-white">
+        <img src="images/window_buttons.png" alt="" width="36" height="8" />
+        <!-- Tab contents -->
 
-    <!-- Explore -->
-    <section id="explore" class="bg-gray-100">
-      <div class="m-auto max-w-7xl px-4 py-12 md:py-28 flex flex-col">
-        <div class="flex flex-col items-start">
-          <h2 class="text-gray-900 font-light text-2xl md:text-4xl">
-            Not familiar with Elixir?
-          </h2>
-          <span class="mt-3 md:max-w-lg text-gray-700 font-medium">
-            Once Livebook is up and running, check out the Explore section to
-            learn more about the language, the platform, and Livebook itself.
-          </span>
-          <a
-            class="
-              mt-8
-              px-5
-              py-2
-              rounded-lg
-              font-medium
-              text-sm
-              bg-blue-600
-              border border-transparent
-              text-white
-              hover:bg-blue-700
-              focus:bg-blue-700
-            "
-            href="#install"
-          >
-            Go to install
+        <!-- * Fly.io instructions -->
+        <div
+          id="install-flyio"
+          data-tab-content
+          data-tab-active
+          class="my-12 flex justify-center"
+        >
+          <a href="https://fly.io/launch/livebook">
+            <img
+              src="images/flyio_logo.svg"
+              alt="launch on fly"
+              height="60"
+              width="60"
+            />
           </a>
         </div>
-      </div>
-    </section>
 
-    <!-- Explore image -->
-    <div class="bg-white">
-      <div
-        class="
-          m-auto
-          max-w-7xl
-          px-4
-          flex
-          justify-center
-          xl:justify-end
-          relative
-        "
-      >
-        <!-- Additional background area matching the box above on mobile -->
+        <!-- * Docker instructions -->
         <div
-          class="md:hidden absolute left-0 right-0 top-0 h-1/3 bg-gray-100"
-        ></div>
-        <img
+          id="install-docker"
+          data-tab-content
+          class="mt-12 flex flex-col space-y-5"
+        >
+          <!-- Step -->
+          <div class="flex flex-col items-start space-y-1">
+            <div class="text-gray-900 text-sm font-semibold">Step 1</div>
+            <div>
+              <a
+                class="
+                  px-7
+                  py-2
+                  flex
+                  space-x-1
+                  items-center
+                  rounded-lg
+                  text-gray-600
+                  border-2 border-gray-400
+                "
+                href="https://docs.docker.com/get-docker/"
+              >
+                <img src="images/docker.svg" alt="" width="20" height="15" />
+                <span class="text-sm font-medium">Install Docker</span>
+              </a>
+            </div>
+          </div>
+          <!-- Step -->
+          <div class="flex flex-col space-y-1">
+            <div class="text-gray-900 text-sm font-semibold">Step 2</div>
+            <!-- prettier-ignore -->
+            {{> code
+                  id="docker-run-livebook"
+                  code="docker run -p 8080:8080 --pull always livebook/livebook"
+                  isShell=true
+                }}
+          </div>
+        </div>
+
+        <!-- * Elixir instructions -->
+        <div
+          id="install-elixir"
+          data-tab-content
+          class="mt-12 flex flex-col space-y-5"
+        >
+          <!-- Step -->
+          <div class="flex flex-col items-start space-y-1">
+            <div class="text-gray-900 text-sm font-semibold">Step 1</div>
+            <div>
+              <a
+                class="
+                  px-7
+                  py-2
+                  flex
+                  space-x-2
+                  items-center
+                  rounded-lg
+                  text-gray-600
+                  border-2 border-gray-400
+                "
+                href="https://elixir-lang.org/install.html"
+              >
+                <img src="images/elixir.svg" alt="18" width="10" />
+                <span class="text-sm font-medium">Install Elixir</span>
+              </a>
+            </div>
+          </div>
+          <!-- Step -->
+          <div class="flex flex-col space-y-1">
+            <div class="text-gray-900 text-sm font-semibold">Step 2</div>
+            <!-- prettier-ignore -->
+            {{> code
+                  id="elixir-install-livebook"
+                  code="mix escript.install hex livebook"
+                  isShell=true
+                }}
+                {{> code
+                  id="elixir-run-livebook"
+                  code="livebook server"
+                  isShell=true
+                }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="bg-gray-900">
+  <div
+    class="
+      w-full
+      px-4
+      py-12
+      md:py-28
+      flex flex-col
+      items-center
+      space-y-16
+      md:space-y-24
+    "
+  >
+    <!-- Heading -->
+    <div class="flex flex-col items-center">
+      <h2 class="text-gray-100 font-semibold text-center text-2xl md:text-4xl">
+        Do more with Livebook
+      </h2>
+      <span
+        class="mt-3 max-w-md md:max-w-xl text-gray-300 font-medium text-center"
+      >
+        There’s so much to do with Livebook with its awesome collaborative
+        features. Learn about some of our key features.
+      </span>
+    </div>
+    <!-- Data -->
+    <div
+      class="
+        flex flex-col
+        md:flex-row
+        items-center
+        space-y-8
+        md:space-y-0 md:space-x-8
+        lg:space-x-28
+      "
+    >
+      <img src="images/plot.svg" alt="" width="448" height="162" />
+      <div class="flex flex-col">
+        <h3 class="text-xl text-gray-50 font-semibold">Interactive data</h3>
+        <span class="mt-3 md:max-w-md text-gray-300">
+          Build charts, tables, and more to explore your data. Or use reactive
+          inputs to allow readers to directly interact with your notebook.
+        </span>
+      </div>
+    </div>
+    <!-- Screenshot area -->
+    <div class="lg:py-16 max-w-7xl">
+      <div class="relative flex flex-col space-y-8">
+        <!-- Feature descriptions -->
+        <div class="lg:ml-[56px] flex flex-col rounded-xl">
+          <h3 class="text-xl text-gray-50 font-semibold">
+            Collaborate as a team
+          </h3>
+          <span class="mt-3 lg:max-w-md text-gray-300">
+            Multiple users can work on the same notebook at once. It works
+            out-of-the-box either in single-node or multi-node deployments
+            without additional tools.
+          </span>
+        </div>
+        <!-- Screenshot with border -->
+        <div
           class="
-            relative
-            -top-4
-            -mb-4
-            md:-top-20 md:-mb-20
-            xl:-top-36 xl:-mb-36
-            rounded-md
-            md:rounded-2xl
-            custom-shadow-1
+            flex flex-col
+            lg:flex-row
+            space-y-8
+            lg:space-y-0 lg:space-x-8 lg:items-center
           "
-          src="images/explore_screenshot.png"
-          alt=""
-          width="900"
-          height="506"
-        />
+        >
+          <div class="relative p-[2px]">
+            <!-- Add an overlapping border. If we put the border on the image there's a tiny gap -->
+            <div
+              class="
+                rounded-md
+                md:rounded-2xl
+                absolute
+                top-0
+                bottom-0
+                left-0
+                right-0
+                pointer-events-none
+                border-4 border-gray-100
+              "
+            ></div>
+            <img
+              class="rounded-md md:rounded-2xl"
+              src="images/features_screenshot.png"
+              alt=""
+              width="850"
+              height="400"
+            />
+          </div>
+
+          <div class="flex flex-col rounded-xl">
+            <h3 class="text-xl text-gray-50 font-semibold">
+              Reproducible workflows
+            </h3>
+            <span class="mt-3 lg:max-w-md text-gray-300">
+              Livebook ensures your code runs in a predictable order, all the
+              way down to package management. It also tracks your notebook
+              state, annotating which parts are stale.
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:ml-[218px] flex flex-col rounded-xl">
+          <h3 class="text-xl text-gray-50 font-semibold">
+            Productivity at your fingertips
+          </h3>
+          <span class="mt-3 lg:max-w-md text-gray-300">
+            Livebook's code editor supports autocompletion, inline
+            documentation, code formatting, and more. Plus keyboard shortcuts
+            throughout the notebook.
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="bg-white h-8 md:h-20"></div>
+    <!-- Diff -->
+    <div
+      class="
+        flex flex-col
+        md:flex-row
+        items-center
+        space-y-8
+        md:space-y-0 md:space-x-8
+        lg:space-x-28
+      "
+    >
+      <img
+        class="custom-drop-shadow-1"
+        src="images/diff.svg"
+        alt=""
+        width="448"
+        height="162"
+      />
+      <div class="flex flex-col">
+        <h3 class="text-xl text-gray-50 font-semibold">
+          Share it! Version it!
+        </h3>
+        <span class="mt-3 md:max-w-md text-gray-300">
+          Notebooks are .livemd files, a subset of Markdown with support for
+          equations and annotations. They can be easily shared and play well
+          with version control.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Community -->
-    <!-- <section id="community" class="bg-white">
+<!-- Explore -->
+<section id="explore" class="bg-gray-100">
+  <div class="m-auto max-w-7xl px-4 py-12 md:py-28 flex flex-col">
+    <div class="flex flex-col items-start">
+      <h2 class="text-gray-900 font-light text-2xl md:text-4xl">
+        Not familiar with Elixir?
+      </h2>
+      <span class="mt-3 md:max-w-lg text-gray-700 font-medium">
+        Once Livebook is up and running, check out the Explore section to learn
+        more about the language, the platform, and Livebook itself.
+      </span>
+      <a
+        class="
+          mt-8
+          px-5
+          py-2
+          rounded-lg
+          font-medium
+          text-sm
+          bg-blue-600
+          border border-transparent
+          text-white
+          hover:bg-blue-700
+          focus:bg-blue-700
+        "
+        href="#install"
+      >
+        Go to install
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Explore image -->
+<div class="bg-white">
+  <div
+    class="m-auto max-w-7xl px-4 flex justify-center xl:justify-end relative"
+  >
+    <!-- Additional background area matching the box above on mobile -->
+    <div
+      class="md:hidden absolute left-0 right-0 top-0 h-1/3 bg-gray-100"
+    ></div>
+    <img
+      class="
+        relative
+        -top-4
+        -mb-4
+        md:-top-20 md:-mb-20
+        xl:-top-36 xl:-mb-36
+        rounded-md
+        md:rounded-2xl
+        custom-shadow-1
+      "
+      src="images/explore_screenshot.png"
+      alt=""
+      width="900"
+      height="506"
+    />
+  </div>
+</div>
+
+<div class="bg-white h-8 md:h-20"></div>
+
+<!-- Community -->
+<!-- <section id="community" class="bg-white">
       <div class="m-auto max-w-7xl px-4 py-12 md:py-28 flex flex-col">
         <div class="flex flex-col items-start">
           <h2 class="text-gray-900 font-bold text-2xl md:text-4xl">
@@ -556,210 +448,201 @@
       </div>
     </section> -->
 
-    <!-- News -->
-    <section id="news" class="bg-gray-900">
-      <div
-        class="m-auto max-w-7xl px-4 py-12 md:py-28 flex flex-col items-center"
-      >
-        <h2 class="text-gray-100 font-bold text-2xl md:text-4xl">
-          Latest news and screencasts
-        </h2>
-        <div
-          class="
-            mt-7
-            md:mt-14
-            w-full
-            h-full
-            grid grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-4
-            gap-5
-          "
-        >
-          <a
-            class="
-              lg:col-span-2 lg:row-span-2
-              h-56
-              lg:h-auto
-              p-4
-              lg:p-6
-              rounded-lg
-              flex
-              items-end
-              relative
-            "
-            style="
-              background: linear-gradient(
-                  to bottom,
-                  rgba(13, 24, 41, 0.3),
-                  rgba(13, 24, 41, 0.98)
-                ),
-                url('https://i.ytimg.com/vi/RKvqc-UEe34/maxresdefault.jpg');
-              background-size: cover;
-              background-position: center;
-            "
-            href="https://www.youtube.com/watch?v=RKvqc-UEe34"
-          >
-            <i
-              class="
-                hidden
-                lg:block
-                ri-play-circle-line
-                text-gray-100 text-6xl
-                absolute
-                top-1/2
-                left-1/2
-                transform
-                -translate-x-1/2 -translate-y-1/2
-              "
-            ></i>
-            <div class="flex flex-col">
-              <h3 class="text-gray-100 font-bold text-lg md:text-2xl">
-                Announcing Livebook
-              </h3>
-              <span class="mt-1 lg:mt-3 text-sm text-gray-200">
-                Check out the first screencast where José introduces Livebook
-                and shows it in action by building a neural network using Nx and
-                Axon.
-              </span>
-            </div>
-          </a>
-          <a
-            class="h-56 lg:h-48 p-4 rounded-lg flex items-end relative"
-            href="https://www.youtube.com/watch?v=MOTEgF-wIEI"
-            style="
-              background: linear-gradient(
-                  to bottom,
-                  rgba(13, 24, 41, 0.3),
-                  rgba(13, 24, 41, 0.98)
-                ),
-                url('https://i.ytimg.com/vi/MOTEgF-wIEI/maxresdefault.jpg');
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <i
-              class="
-                hidden
-                lg:block
-                ri-play-circle-line
-                text-gray-100 text-4xl
-                absolute
-                top-1/2
-                left-1/2
-                transform
-                -translate-x-1/2 -translate-y-1/2
-              "
-            ></i>
-            <div class="flex flex-col">
-              <span class="text-gray-100 text-xs">Jun 2021</span>
-              <h3 class="mt-1 text-gray-100 font-bold text">
-                New in Livebook v0.2: inputs, graphs, and more
-              </h3>
-            </div>
-          </a>
-          <div class="h-0 lg:h-48"></div>
-          <div class="h-0 lg:h-48"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pro -->
-    <section id="pro" class="bg-gray-100">
-      <div
+<!-- News -->
+<section id="news" class="bg-gray-900">
+  <div class="m-auto max-w-7xl px-4 py-12 md:py-28 flex flex-col items-center">
+    <h2 class="text-gray-100 font-bold text-2xl md:text-4xl">
+      Latest news and screencasts
+    </h2>
+    <div
+      class="
+        mt-7
+        md:mt-14
+        w-full
+        h-full
+        grid grid-cols-1
+        sm:grid-cols-2
+        lg:grid-cols-4
+        gap-5
+      "
+    >
+      <a
         class="
-          m-auto
-          max-w-7xl
-          px-4
-          py-12
-          md:py-15
-          flex flex-col
-          md:flex-row
-          space-y-12
-          md:space-y-0 md:space-x-8
-          justify-between
-          items-center
+          lg:col-span-2 lg:row-span-2
+          h-56
+          lg:h-auto
+          p-4
+          lg:p-6
+          rounded-lg
+          flex
+          items-end
+          relative
+        "
+        style="
+          background: linear-gradient(
+              to bottom,
+              rgba(13, 24, 41, 0.3),
+              rgba(13, 24, 41, 0.98)
+            ),
+            url('https://i.ytimg.com/vi/RKvqc-UEe34/maxresdefault.jpg');
+          background-size: cover;
+          background-position: center;
+        "
+        href="https://www.youtube.com/watch?v=RKvqc-UEe34"
+      >
+        <i
+          class="
+            hidden
+            lg:block
+            ri-play-circle-line
+            text-gray-100 text-6xl
+            absolute
+            top-1/2
+            left-1/2
+            transform
+            -translate-x-1/2 -translate-y-1/2
+          "
+        ></i>
+        <div class="flex flex-col">
+          <h3 class="text-gray-100 font-bold text-lg md:text-2xl">
+            Announcing Livebook
+          </h3>
+          <span class="mt-1 lg:mt-3 text-sm text-gray-200">
+            Check out the first screencast where José introduces Livebook and
+            shows it in action by building a neural network using Nx and Axon.
+          </span>
+        </div>
+      </a>
+      <a
+        class="h-56 lg:h-48 p-4 rounded-lg flex items-end relative"
+        href="https://www.youtube.com/watch?v=MOTEgF-wIEI"
+        style="
+          background: linear-gradient(
+              to bottom,
+              rgba(13, 24, 41, 0.3),
+              rgba(13, 24, 41, 0.98)
+            ),
+            url('https://i.ytimg.com/vi/MOTEgF-wIEI/maxresdefault.jpg');
+          background-size: cover;
+          background-position: center;
         "
       >
-        <img
-          class="max-w-[50%]"
-          src="images/pro.svg"
-          alt="fly.io"
-          width="500"
-          height="278"
-        />
-        <div class="flex flex-col items-start">
-          <h2 class="text-gray-800 font-bold text-2xl md:text-4xl">
-            Interested in Livebook PRO?
-          </h2>
-          <span class="mt-3 md:max-w-lg text-gray-700 font-medium">
-            We do not have a PRO Version of Livebook. However, we’d love to to
-            hear what you’re looking for - we’re open to any ideas or
-            suggestions. Fill in the form below and we’ll get back to you.
-          </span>
-          <a
-            class="
-              mt-8
-              px-5
-              py-2
-              rounded-lg
-              font-medium
-              text-sm
-              bg-blue-600
-              border border-transparent
-              text-white
-              hover:bg-blue-700
-              focus:bg-blue-700
-              flex
-              items-center
-              space-x-1.5
-            "
-            href="#TODO"
-          >
-            <i class="ri-chat-smile-2-line"></i>
-            <span>Tell us</span>
+        <i
+          class="
+            hidden
+            lg:block
+            ri-play-circle-line
+            text-gray-100 text-4xl
+            absolute
+            top-1/2
+            left-1/2
+            transform
+            -translate-x-1/2 -translate-y-1/2
+          "
+        ></i>
+        <div class="flex flex-col">
+          <span class="text-gray-100 text-xs">Jun 2021</span>
+          <h3 class="mt-1 text-gray-100 font-bold text">
+            New in Livebook v0.2: inputs, graphs, and more
+          </h3>
+        </div>
+      </a>
+      <div class="h-0 lg:h-48"></div>
+      <div class="h-0 lg:h-48"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pro -->
+<section id="pro" class="bg-gray-100">
+  <div
+    class="
+      m-auto
+      max-w-7xl
+      px-4
+      py-12
+      md:py-15
+      flex flex-col
+      md:flex-row
+      space-y-12
+      md:space-y-0 md:space-x-8
+      justify-between
+      items-center
+    "
+  >
+    <img
+      class="max-w-[50%]"
+      src="images/pro.svg"
+      alt="fly.io"
+      width="500"
+      height="278"
+    />
+    <div class="flex flex-col items-start">
+      <h2 class="text-gray-800 font-bold text-2xl md:text-4xl">
+        Interested in Livebook PRO?
+      </h2>
+      <span class="mt-3 md:max-w-lg text-gray-700 font-medium">
+        We do not have a PRO Version of Livebook. However, we’d love to to hear
+        what you’re looking for - we’re open to any ideas or suggestions. Fill
+        in the form below and we’ll get back to you.
+      </span>
+      <a
+        class="
+          mt-8
+          px-5
+          py-2
+          rounded-lg
+          font-medium
+          text-sm
+          bg-blue-600
+          border border-transparent
+          text-white
+          hover:bg-blue-700
+          focus:bg-blue-700
+          flex
+          items-center
+          space-x-1.5
+        "
+        href="#TODO"
+      >
+        <i class="ri-chat-smile-2-line"></i>
+        <span>Tell us</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors -->
+<section id="sponsors" class="bg-[#24175b]">
+  <div class="m-auto max-w-7xl px-4 py-12 md:py-15 flex justify-center">
+    <div class="flex flex-col items-center md:items-start">
+      <img
+        src="images/flyio_logo_with_text.svg"
+        alt="fly.io"
+        width="160"
+        height="45"
+      />
+      <span
+        class="
+          mt-5
+          text-2xl
+          md:text-3xl
+          font-semibold
+          text-gray-100 text-center
+          md:text-left
+        "
+      >
+        Livebook is now sponsored by
+        <span class="inline-flex">
+          <a class="border-b-4 border-gray-100" href="https://fly.io/">
+            fly.io
           </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sponsors -->
-    <section id="sponsors" class="bg-[#24175b]">
-      <div class="m-auto max-w-7xl px-4 py-12 md:py-15 flex justify-center">
-        <div class="flex flex-col items-center md:items-start">
-          <img
-            src="images/flyio_logo_with_text.svg"
-            alt="fly.io"
-            width="160"
-            height="45"
-          />
-          <span
-            class="
-              mt-5
-              text-2xl
-              md:text-3xl
-              font-semibold
-              text-gray-100 text-center
-              md:text-left
-            "
-          >
-            Livebook is now sponsored by
-            <span class="inline-flex">
-              <a class="border-b-4 border-gray-100" href="https://fly.io/">
-                fly.io
-              </a>
-              <i
-                class="ri-external-link-line text-base font-normal leading-none"
-              ></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </section>
-
-    {{> footer}}
-
-    <!-- Scripts -->
-    <script src="main.js"></script>
-  </body>
-</html>
+          <i
+            class="ri-external-link-line text-base font-normal leading-none"
+          ></i>
+        </span>
+      </span>
+    </div>
+  </div>
+</section>
+{{/inline}} {{/layout}}

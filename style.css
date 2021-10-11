@@ -14,18 +14,53 @@ html {
   filter: drop-shadow(10px 10px 60px rgba(0, 0, 0, 0.6));
 }
 
+@layer utilities {
+  .placeholder-font-light::placeholder {
+    @apply font-light;
+  }
+}
+
 /* Menu */
 
 [data-menu-container][data-menu-open] {
   @apply fixed z-50 top-0 bottom-0 left-0 right-0;
 }
 
-[data-menu-container][data-menu-open] [data-menu-hide] {
+[data-menu-container][data-menu-open] [data-on-menu="hide"] {
   @apply hidden;
 }
 
-[data-menu-container]:not([data-menu-open]) [data-menu-show] {
+[data-menu-container]:not([data-menu-open]) [data-on-menu="show"] {
   @apply hidden;
+}
+
+/* Badges */
+[data-badge-button]:not([data-badge-button-active]) {
+  @apply border-transparent;
+}
+
+body:not([data-badge-ready]) [data-on-badge="show"] {
+  @apply hidden;
+}
+
+body[data-badge-ready] [data-on-badge="hide"] {
+  @apply hidden;
+}
+
+/* Custom scrollbars */
+
+.tiny-scrollbar::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+.tiny-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+  @apply bg-gray-600;
+}
+
+.tiny-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-800;
 }
 
 /* Tabs */

@@ -56,3 +56,62 @@ for (const tabsContainer of tabsContainers) {
     }
   });
 }
+
+// Badges
+
+const badgeInput = document.querySelector("[data-badge-notebook-url]");
+const badgeButtonsContainer = document.querySelector(
+  "[data-badge-buttons-container]"
+);
+
+// TODO point to github
+const badgeUrlByType = {
+  blue: "raw.github.TODO.blue",
+  black: "raw.github.TODO.black",
+  gray: "raw.github.TODO.gray",
+  pink: "raw.github.TODO.pink",
+};
+
+if (badgeInput && badgeButtonsContainer) {
+  const markdownSourceEl = document.querySelector("#badge-source-markdown");
+  const htmlSourceEl = document.querySelector("#badge-source-html");
+
+  function onBadge() {
+    const activeButton = document.querySelector(
+      "[data-badge-button][data-badge-button-active]"
+    );
+
+    const badgeReady = !!badgeInput.value && !!activeButton;
+
+    if (badgeReady) {
+      const userUrl = badgeInput.value;
+      const badgeType = activeButton.getAttribute("data-badge-type");
+      const badgeUrl = badgeUrlByType[badgeType];
+      const runUrl = `${window.location.origin}/run?url=${encodeURIComponent(
+        userUrl
+      )}`;
+      markdownSourceEl.textContent = `[![Run in Livebook](${badgeUrl})](${runUrl})`;
+      htmlSourceEl.textContent = `<a href="${runUrl}">\n  <img src="${badgeUrl}" alt="Run in Livebook" />\n</a>`;
+    }
+
+    document.body.toggleAttribute("data-badge-ready", badgeReady);
+  }
+
+  badgeInput.addEventListener("input", (event) => onBadge());
+
+  badgeButtonsContainer.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-badge-button]");
+
+    if (button) {
+      const activeButton = document.querySelector("[data-badge-button-active]");
+
+      if (activeButton) {
+        activeButton.removeAttribute("data-badge-button-active");
+      }
+
+      button.setAttribute("data-badge-button-active", "");
+
+      onBadge();
+    }
+  });
+}

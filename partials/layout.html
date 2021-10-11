@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livebook</title>
+    <!-- Load assets -->
+    <link href="/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load icons in deferred way, as they are not critical -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+    </noscript>
+  </head>
+  <body>
+    <!-- Navbar desktop -->
+    <header
+      class="m-auto w-full max-w-7xl px-4 py-6 hidden lg:flex items-center"
+    >
+      <div class="w-48">
+        <a href="/">
+          <img
+            src="/images/logo_with_text.png"
+            alt="livebook"
+            height="32"
+            width="160"
+          />
+        </a>
+      </div>
+      <div class="flex-grow flex items-center justify-center">
+        <nav class="flex space-x-12 text-gray-600">
+          <a href="/#install">Install</a>
+          <a href="/#features">Features</a>
+          <a href="/#explore">Explore</a>
+          <!-- <a href="/#community">Community</a> -->
+          <a href="/#news">News</a>
+        </nav>
+      </div>
+      <div class="w-48">
+        <nav class="flex space-x-3 items-center">
+          <a
+            class="
+              px-3
+              py-2
+              rounded-lg
+              font-semibold
+              text-sm
+              bg-blue-600
+              border border-transparent
+              text-white
+              hover:bg-blue-700
+              focus:bg-blue-700
+              flex
+              items-end
+              space-x-1.5
+            "
+            href="/badge.html"
+          >
+            <img src="images/badge_logo.svg" alt="livebook" width="16.5" />
+            <span class="mb-[-1px] font-semibold">Create badge</span>
+          </a>
+          <a
+            class="
+              p-2
+              flex
+              items-center
+              justify-center
+              rounded-lg
+              bg-white
+              border border-gray-300
+              text-gray-500
+              hover:bg-gray-100
+              focus:bg-gray-100
+              text-xl
+              leading-none
+            "
+            href="#TODO"
+          >
+            <i class="ri-settings-3-line"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Navbar mobile -->
+    <header
+      data-menu-container
+      class="lg:hidden px-4 py-6 bg-white flex flex-col"
+      aria-hidden="true"
+    >
+      <div class="flex items-start justify-between">
+        <img
+          src="/images/logo_with_text.png"
+          alt="livebook"
+          height="32"
+          width="160"
+        />
+        <button
+          data-menu-toggle
+          class="
+            p-2
+            flex
+            items-center
+            justify-center
+            rounded-lg
+            bg-gray-100
+            text-gray-500
+            hover:bg-gray-100
+            focus:bg-gray-100
+            text-xl
+            leading-none
+          "
+        >
+          <i data-on-menu="hide" class="ri-menu-4-line"></i>
+          <i data-on-menu="show" class="ri-close-line"></i>
+        </button>
+      </div>
+      <div
+        data-on-menu="show"
+        class="h-full mt-12 flex flex-col items-center space-y-12"
+      >
+        <nav
+          class="flex flex-col items-center space-y-10 text-xl text-gray-700"
+        >
+          <a href="/#install">Install</a>
+          <a href="/#features">Features</a>
+          <a href="/#explore">Explore</a>
+          <!-- <a href="/#community">Community</a> -->
+          <a href="/#news">News</a>
+        </nav>
+        <div class="w-full border-t border-gray-200"></div>
+        <nav class="flex flex-col space-y-5">
+          <a
+            class="
+              px-3
+              py-2
+              rounded-lg
+              bg-blue-600
+              border border-transparent
+              text-white
+              hover:bg-blue-700
+              focus:bg-blue-700
+              flex
+              items-end
+              space-x-1.5
+            "
+            href="/badge.html"
+          >
+            <img src="images/badge_logo.svg" alt="livebook" width="16.5" />
+            <span class="mb-[-1px] font-semibold text-sm">Create badge</span>
+          </a>
+          <a
+            class="
+              p-2
+              rounded-lg
+              bg-gray-100
+              border border-transparent
+              text-gray-600
+              hover:bg-gray-50
+              focus:bg-gray-50
+              flex
+              items-center
+              justify-center
+              space-x-1.5
+            "
+            href="#TODO"
+          >
+            <i class="ri-settings-3-line"></i>
+            <span class="font-semibold text-sm">Settings</span>
+          </a>
+        </nav>
+        <div class="flex-grow"></div>
+        <div class="text-gray-700 text-sm">
+          Copyright 2021. All rights reserved.
+          <a class="border-b border-gray-700" href="https://dashbit.co/"
+            >Dashbit</a
+          >
+        </div>
+      </div>
+    </header>
+
+    {{> content}}
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+      <div
+        class="
+          m-auto
+          max-w-7xl
+          w-full
+          px-4
+          py-10
+          md:py-12
+          flex flex-col
+          text-sm
+          space-y-5
+          md:flex-row md:space-y-0 md:items-end md:justify-between
+        "
+      >
+        <div class="flex flex-col">
+          <img src="images/logo.png" alt="livebook" width="60" height="60" />
+          <span class="mt-2 text-gray-50 text-xl font-semibold">Livebook</span>
+          <span class="mt-1 text-gray-300"
+            >Write interactive & collaborative code notebooks in Elixir</span
+          >
+        </div>
+        <div class="md:hidden w-full border-t border-gray-700"></div>
+        <div class="text-gray-200">
+          Copyright 2021. All rights reserved.
+          <a class="border-b-2 border-gray-200" href="https://dashbit.co/"
+            >Dashbit</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
