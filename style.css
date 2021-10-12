@@ -63,6 +63,12 @@ body[data-badge-ready] [data-on-badge="hide"] {
   @apply bg-gray-800;
 }
 
+/* Inputs */
+
+.input {
+  @apply w-full bg-white border border-gray-300 rounded-xl py-3 px-4 text-sm md:text-base text-gray-900 placeholder-gray-600 font-medium placeholder-font-light focus:outline-none;
+}
+
 /* Tabs */
 
 .tabs {

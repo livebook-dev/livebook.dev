@@ -115,3 +115,44 @@ if (badgeInput && badgeButtonsContainer) {
     }
   });
 }
+
+// Settings
+
+const SETTINGS_KEY = "livebook:settings";
+
+function getSettings() {
+  try {
+    const json = localStorage.getItem(SETTINGS_KEY);
+
+    if (json) {
+      return JSON.parse(json);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+
+  return {
+    livebookUrl: "",
+  };
+}
+
+function setSettings(settings) {
+  try {
+    const json = JSON.stringify(settings);
+    localStorage.setItem(SETTINGS_KEY, json);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+const livebookUrlInput = document.querySelector("[data-settings-livebook-url");
+
+if (livebookUrlInput) {
+  const settings = getSettings();
+  livebookUrlInput.value = settings.livebookUrl;
+
+  livebookUrlInput.addEventListener("input", (event) => {
+    const livebookUrl = event.target.value;
+    setSettings({ livebookUrl });
+  });
+}
