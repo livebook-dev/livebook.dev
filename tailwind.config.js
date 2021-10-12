@@ -1,6 +1,7 @@
 module.exports = {
   mode: "jit",
-  purge: ["./**/*.html", "./**/*.css"],
+  // Note: listing ./**/*.js doesn't work
+  purge: ["./**/*.html", "./**/*.css", "./main.js"],
   darkMode: false,
   theme: {
     fontFamily: {

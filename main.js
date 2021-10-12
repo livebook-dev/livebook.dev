@@ -119,40 +119,167 @@ if (badgeInput && badgeButtonsContainer) {
 // Settings
 
 const SETTINGS_KEY = "livebook:settings";
+const DEFAULT_SETTINGS = { livebookUrl: "" };
 
-function getSettings() {
-  try {
-    const json = localStorage.getItem(SETTINGS_KEY);
+class SettingsStore {
+  constructor() {
+    this._subscribers = [];
+    this._settings = DEFAULT_SETTINGS;
 
-    if (json) {
-      return JSON.parse(json);
+    this._loadSettings();
+  }
+
+  get() {
+    return this._settings;
+  }
+
+  update(newSettings) {
+    const prevSettings = this._settings;
+    this._settings = { ...this._settings, ...newSettings };
+    this._subscribers.forEach((callback) =>
+      callback(this._settings, prevSettings)
+    );
+    this._storeSettings();
+  }
+
+  getAndSubscribe(callback) {
+    this._subscribers.push(callback);
+    callback(this._settings);
+  }
+
+  _loadSettings() {
+    try {
+      const json = localStorage.getItem(SETTINGS_KEY);
+
+      if (json) {
+        const settings = JSON.parse(json);
+        this._settings = { ...this._settings, ...settings };
+      }
+    } catch (error) {
+      console.error(error);
     }
-  } catch (error) {
-    console.error(error);
   }
 
-  return {
-    livebookUrl: "",
-  };
-}
-
-function setSettings(settings) {
-  try {
-    const json = JSON.stringify(settings);
-    localStorage.setItem(SETTINGS_KEY, json);
-  } catch (error) {
-    console.error(error);
+  _storeSettings() {
+    try {
+      const json = JSON.stringify(this._settings);
+      localStorage.setItem(SETTINGS_KEY, json);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
+
+const settingsStore = new SettingsStore();
 
 const livebookUrlInput = document.querySelector("[data-settings-livebook-url");
 
 if (livebookUrlInput) {
-  const settings = getSettings();
-  livebookUrlInput.value = settings.livebookUrl;
+  livebookUrlInput.value = settingsStore.get().livebookUrl;
 
   livebookUrlInput.addEventListener("input", (event) => {
     const livebookUrl = event.target.value;
-    setSettings({ livebookUrl });
+    settingsStore.update({ livebookUrl });
   });
+}
+
+// Run
+
+// See https://github.com/livebook-dev/livebook/blob/main/lib/livebook/content_loader.ex
+function rewriteUrl(urlString) {
+  // TODO this throws on invalid url
+  const url = new URL(urlString);
+
+  if (url.host === "github.com") {
+    const [_empty, owner, repo, _blob, hash, ...fileSegments] =
+      url.pathname.split("/");
+    const path = ["", owner, repo, hash, ...fileSegments].join("/");
+    url.hostname = "raw.githubusercontent.com";
+    url.pathname = path;
+  } else if (url.host === "gist.github.com") {
+    const [_empty, owner, hash] = url.pathname.split("/");
+    const path = ["", owner, hash, "raw"].join("/");
+    url.hostname = "gist.githubusercontent.com";
+    url.pathname = path;
+  }
+
+  return url.toString();
+}
+
+const runNotebookLink = document.querySelector("[data-run-notebook-link]");
+const notebookPreviewContainer = document.querySelector(
+  "[data-notebook-preview-container]"
+);
+const notebookSourceLink = document.querySelector(
+  "[data-notebook-source-link]"
+);
+const livebookUrlEl = document.querySelector("[data-livebook-url]");
+
+if (runNotebookLink) {
+  const params = new URLSearchParams(window.location.search);
+  const notebookUrl = params.get("url");
+
+  // If notebook url is missing, we just redirect to the homepage
+  if (!notebookUrl) {
+    window.location.href = "/";
+  }
+
+  settingsStore.getAndSubscribe(({ livebookUrl }) => {
+    const livebookImportUrl = `${livebookUrl}?import_url${encodeURIComponent(
+      notebookUrl
+    )}`;
+    runNotebookLink.setAttribute("href", livebookImportUrl);
+    livebookUrlEl.textContent = livebookUrl;
+    document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
+  });
+
+  if (notebookUrl) {
+    notebookSourceLink.setAttribute("href", notebookUrl);
+
+    // TODO handle rewrites similarly to livebook
+    fetch(rewriteUrl(notebookUrl))
+      .then((response) => {
+        const contentTypeHeader = response.headers.get("content-type");
+        if (contentTypeHeader) {
+          const contentType = contentTypeHeader.split(";")[0];
+          if (!["text/plain", "text/markdown"].includes(contentType)) {
+            return Promise.reject(
+              new Error(
+                `Expected Content-Type to be either text/plain or text/markdown, got: ${contentType}`
+              )
+            );
+          }
+        }
+        return response;
+      })
+      .then((response) => response.text())
+      .then((livemd) => {
+        notebookPreviewContainer.textContent = livemd;
+        notebookPreviewContainer.classList.add("whitespace-pre-wrap");
+      })
+      .catch((error) => {
+        notebookPreviewContainer.innerHTML = `
+          <div class="max-w-2xl w-full flex-1 space-y-3 max-h-full overflow-y-hidden">
+            <div class="bg-gray-700 h-3 rounded-md w-1/4"></div>
+            <div class="bg-transparent h-3 rounded-md"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
+            <div class="bg-transparent h-3 rounded-md"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
+            <div class="bg-transparent h-3 rounded-md"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
+            <div class="bg-transparent h-3 rounded-md"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
+            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
+          </div>
+        `;
+        console.error(`Failed to fetch notebook from ${notebookUrl}, ${error}`);
+      });
+  }
 }

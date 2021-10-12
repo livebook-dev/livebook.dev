@@ -1,0 +1,208 @@
+{{#> layout}} {{#*inline "content"}}
+<section class="bg-white">
+  <div
+    class="
+      m-auto
+      max-w-7xl
+      px-4
+      py-12
+      flex flex-col
+      items-center
+      space-y-16
+      md:space-y-24
+    "
+  >
+    <div class="flex flex-col items-center w-full max-w-3xl">
+      <h2 class="text-gray-900 font-semibold text-center text-xl md:text-3xl">
+        Run this notebook
+      </h2>
+      <span class="mt-3 max-w-md md:max-w-lg text-gray-700 text-center">
+        <span data-on-run-ready="hide">
+          You can run this notebook on your local machine or in the cloud! Click
+          on the button below to configure the desired location.
+        </span>
+        <span data-on-run-ready="show">
+          Click below to open this notebook in your configured Livebook instance
+          at
+          <span data-livebook-url class="text-gray-600 font-semibold"></span>
+        </span>
+      </span>
+      <div class="mt-8">
+        <div data-on-run-ready="show" class="flex flex-col items-center">
+          <a
+            data-run-notebook-link
+            class="
+              px-5
+              py-2
+              rounded-lg
+              font-medium
+              text-sm
+              bg-blue-600
+              border border-transparent
+              text-white
+              hover:bg-blue-700
+              focus:bg-blue-700
+            "
+            href="#"
+          >
+            Run notebook
+          </a>
+          <a
+            class="mt-3 text-sm text-blue-600 font-semibold"
+            href="#livebook-settings"
+          >
+            Change Livebook location?
+          </a>
+        </div>
+        <a
+          data-on-run-ready="hide"
+          class="
+            px-5
+            py-2
+            rounded-lg
+            bg-gray-100
+            border border-transparent
+            text-gray-600
+            hover:bg-gray-50
+            focus:bg-gray-50
+            flex
+            items-center
+            justify-center
+            space-x-1.5
+          "
+          href="#livebook-settings"
+        >
+          <i class="ri-arrow-down-line leading-none"></i>
+          <span class="font-semibold text-sm">Configure Livebook</span>
+        </a>
+      </div>
+
+      <div class="mt-8 w-full">
+        <div
+          class="
+            p-6
+            pr-2
+            w-full
+            custom-shadow-2
+            flex
+            justify-between
+            items-center
+            space-x-4
+            rounded-3xl
+            bg-gray-900
+          "
+        >
+          <div
+            data-notebook-preview-container
+            class="
+              w-full
+              pr-4
+              h-[200px]
+              md:h-[380px]
+              font-mono font-medium
+              text-gray-100 text-xs
+              overflow-x-auto
+              tiny-scrollbar
+            "
+          >
+            <div class="w-full h-full flex items-center justify-center">
+              <svg
+                class="animate-spin h-8 w-8 text-gray-600"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <a
+          data-notebook-source-link
+          href="#"
+          class="
+            mt-4
+            text-gray-600
+            class
+            flex
+            justify-center
+            items-center
+            space-x-1
+          "
+        >
+          <i class="mr-1 ri-eye-2-line text-gray-800"></i>
+          <span class="text-sm font-medium">See source</span>
+          <i class="ri-external-link-line text-sm font-medium"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TODO move to partial -->
+<section id="livebook-settings" class="bg-gray-100">
+  <div
+    class="
+      m-auto
+      max-w-7xl
+      px-4
+      py-12
+      md:py-20
+      flex flex-col
+      items-center
+      space-y-16
+      md:space-y-24
+    "
+  >
+    <div class="flex flex-col items-center w-full max-w-3xl">
+      <h2 class="text-gray-900 font-light text-center text-xl md:text-3xl">
+        Do you already have Livebook running?
+      </h2>
+      <span
+        class="mt-3 max-w-md md:max-w-xl text-gray-700 font-medium text-center"
+      >
+        If you already have Livebook running, you can paste its URL in the box
+        below to quickly get started!
+      </span>
+      <div class="mt-8 w-full">
+        <input
+          data-settings-livebook-url
+          class="input"
+          placeholder="Your Livebook URL"
+          spellcheck="false"
+          autocomplete="off"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bg-gray-100 px-4 w-full">
+  <div class="m-auto w-full max-w-7xl h-[1px] bg-gray-300"></div>
+</div>
+
+<section class="bg-gray-100">
+  <div class="m-auto max-w-7xl px-4 py-10 md:py-20 flex flex-col items-center">
+    <h2 class="text-gray-900 text-2xl md:text-3xl font-semibold text-center">
+      Not yet? Get Livebook up and running in minutes
+    </h2>
+    <span class="mt-3 md:max-w-lg text-gray-700 font-medium text-center">
+      It’s easy to get started with Livebook, weather it be in the cloud or your
+      local machine.
+    </span>
+    {{> install_instructions }}
+  </div>
+</section>
+{{/inline}} {{/layout}}
