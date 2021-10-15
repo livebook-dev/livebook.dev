@@ -1,25 +1,25 @@
 <div class="mt-8 md:mt-14 w-full max-w-[600px] flex flex-col items-center">
-  <div class="tabs w-full justify-between" data-tabs>
-    <a class="tab active" href="#" data-target="#install-flyio">
+  <div class="tabs w-full justify-between" data-el="tabs">
+    <a class="tab active" href="#" data-tab-target="#install-flyio">
       Using Fly.io
     </a>
-    <a class="tab" href="#" data-target="#install-docker"> Using Docker </a>
-    <a class="tab" href="#" data-target="#install-elixir"> Using Elixir </a>
+    <a class="tab" href="#" data-tab-target="#install-docker"> Using Docker </a>
+    <a class="tab" href="#" data-tab-target="#install-elixir"> Using Elixir </a>
   </div>
   <div class="mt-8 w-full p-4 rounded-2xl bg-white">
-    <img src="images/window_buttons.png" alt="" width="36" height="8" />
+    <img src="/images/window_buttons.png" alt="" width="36" height="8" />
     <!-- Tab contents -->
 
     <!-- * Fly.io instructions -->
     <div
       id="install-flyio"
-      data-tab-content
+      data-el="tab-content"
       data-tab-active
       class="my-12 flex justify-center"
     >
       <a href="https://fly.io/launch/livebook">
         <img
-          src="images/flyio_logo.svg"
+          src="/images/flyio_logo.svg"
           alt="launch on fly"
           height="60"
           width="60"
@@ -30,7 +30,7 @@
     <!-- * Docker instructions -->
     <div
       id="install-docker"
-      data-tab-content
+      data-el="tab-content"
       class="mt-12 flex flex-col space-y-5"
     >
       <!-- Step -->
@@ -50,7 +50,7 @@
             "
             href="https://docs.docker.com/get-docker/"
           >
-            <img src="images/docker.svg" alt="" width="20" height="15" />
+            <img src="/images/docker.svg" alt="" width="20" height="15" />
             <span class="text-sm font-medium">Install Docker</span>
           </a>
         </div>
@@ -70,7 +70,7 @@
     <!-- * Elixir instructions -->
     <div
       id="install-elixir"
-      data-tab-content
+      data-el="tab-content"
       class="mt-12 flex flex-col space-y-5"
     >
       <!-- Step -->
@@ -90,7 +90,7 @@
             "
             href="https://elixir-lang.org/install.html"
           >
-            <img src="images/elixir.svg" alt="18" width="10" />
+            <img src="/images/elixir.svg" alt="18" width="10" />
             <span class="text-sm font-medium">Install Elixir</span>
           </a>
         </div>

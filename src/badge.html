@@ -1,4 +1,4 @@
-{{#> layout}} {{#*inline "content"}}
+{{#> layout page="badge"}}
 <div class="bg-gray-900">
   <div
     class="
@@ -28,7 +28,7 @@
 <div class="relative mx-auto w-full max-w-3xl">
   <div class="px-4 w-full absolute top-0 left-0 -translate-y-1/2">
     <input
-      data-badge-notebook-url
+      data-el="badge-notebook-url-input"
       autofocus
       class="input"
       placeholder="Your notebook URL"
@@ -50,9 +50,9 @@
       <span class="text-gray-600 font-semibold italic">customize</span> it to
       your liking.
     </div>
-    <img class="my-4" src="images/arrow.svg" alt="" width="31" height="85" />
+    <img class="my-4" src="/images/arrow.svg" alt="" width="31" height="85" />
     <div
-      data-badge-buttons-container
+      data-el="badge-buttons-container"
       class="
         w-full
         flex flex-col
@@ -64,7 +64,7 @@
       "
     >
       <button
-        data-badge-button
+        data-el="badge-button"
         data-badge-type="blue"
         class="
           p-1.5
@@ -75,14 +75,14 @@
         "
       >
         <img
-          src="images/badge/blue.svg"
+          src="/badge/v1/blue.svg"
           alt="Run in Livebook"
           width="160"
           height="39"
         />
       </button>
       <button
-        data-badge-button
+        data-el="badge-button"
         data-badge-type="black"
         class="
           p-1.5
@@ -93,14 +93,14 @@
         "
       >
         <img
-          src="images/badge/black.svg"
+          src="/badge/v1/black.svg"
           alt="Run in Livebook"
           width="160"
           height="39"
         />
       </button>
       <button
-        data-badge-button
+        data-el="badge-button"
         data-badge-type="gray"
         class="
           p-1.5
@@ -111,14 +111,14 @@
         "
       >
         <img
-          src="images/badge/gray.svg"
+          src="/badge/v1/gray.svg"
           alt="Run in Livebook"
           width="160"
           height="39"
         />
       </button>
       <button
-        data-badge-button
+        data-el="badge-button"
         data-badge-type="pink"
         class="
           p-1.5
@@ -129,7 +129,7 @@
         "
       >
         <img
-          src="images/badge/pink.svg"
+          src="/badge/v1/pink.svg"
           alt="Run in Livebook"
           width="160"
           height="39"
@@ -153,4 +153,4 @@
     </div>
   </div>
 </div>
-{{/inline}} {{/layout}}
+{{/layout}}

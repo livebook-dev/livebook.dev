@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./utilities.css";
+@import "./components.css";
+@import "./js_interop.css";
+@import "./tooltips.css";
+
+html {
+  scroll-behavior: smooth;
+}

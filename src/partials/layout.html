@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Livebook</title>
     <!-- Load assets -->
-    <link href="/style.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,7 @@
       />
     </noscript>
   </head>
-  <body>
+  <body data-page="{{ page }}">
     <!-- Navbar desktop -->
     <header
       class="m-auto w-full max-w-7xl px-4 py-6 hidden lg:flex items-center"
@@ -76,7 +76,7 @@
             href="/badge.html"
           >
             <img
-              src="images/badge_logo.svg"
+              src="/images/badge_logo.svg"
               alt="livebook"
               width="17"
               height="19"
@@ -108,7 +108,7 @@
 
     <!-- Navbar mobile -->
     <header
-      data-menu-container
+      data-el="menu-container"
       class="lg:hidden px-4 py-6 bg-white flex flex-col"
       aria-hidden="true"
     >
@@ -120,7 +120,7 @@
           width="180"
         />
         <button
-          data-menu-toggle
+          data-el="menu-toggle"
           class="
             p-2
             flex
@@ -172,7 +172,7 @@
             href="/badge.html"
           >
             <img
-              src="images/badge_logo.svg"
+              src="/images/badge_logo.svg"
               alt="livebook"
               width="17"
               height="19"
@@ -209,7 +209,7 @@
       </div>
     </header>
 
-    {{> content}}
+    {{> @partial-block}}
 
     <!-- Footer -->
     <footer class="bg-gray-900">
@@ -228,7 +228,7 @@
         "
       >
         <div class="flex flex-col">
-          <img src="images/logo.svg" alt="livebook" width="60" height="60" />
+          <img src="/images/logo.svg" alt="livebook" width="60" height="60" />
           <span class="mt-2 text-gray-50 text-xl font-semibold">Livebook</span>
           <span class="mt-1 text-gray-300"
             >Write interactive & collaborative code notebooks in Elixir</span
@@ -245,6 +245,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

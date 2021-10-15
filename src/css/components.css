@@ -1,0 +1,55 @@
+@layer components {
+  /* Buttons */
+
+  .button {
+    @apply px-5 py-2 rounded-lg font-medium text-sm border border-transparent flex items-center space-x-1.5;
+  }
+
+  .button-blue {
+    @apply text-white bg-blue-600 hover:bg-blue-700 focus:bg-blue-700;
+  }
+
+  .button-gray {
+    @apply text-gray-600 bg-gray-100 hover:bg-gray-50 focus:bg-gray-50;
+  }
+
+  /* Custom scrollbars */
+
+  .tiny-scrollbar::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+  .tiny-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+    @apply bg-gray-600;
+  }
+
+  .tiny-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  .tiny-scrollbar::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
+
+  /* Inputs */
+
+  .input {
+    @apply w-full bg-white border border-gray-300 rounded-xl py-3 px-4 text-sm md:text-base text-gray-900 placeholder-gray-600 font-medium placeholder-font-light focus:outline-none;
+  }
+
+  /* Tabs */
+
+  .tabs {
+    @apply flex items-center;
+  }
+
+  .tabs .tab {
+    @apply flex px-4 py-1 text-sm text-gray-600 font-medium border-b-2 border-transparent;
+  }
+
+  .tabs .tab.active {
+    @apply text-blue-600 font-semibold border-blue-600;
+  }
+}
