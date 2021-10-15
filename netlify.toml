@@ -1,0 +1,13 @@
+[build]
+  publish = "dist/"
+  command = "npm run build"
+
+[build.processing.html]
+  pretty_urls = true
+
+[[headers]]
+  # Enable CORS for badge images
+  for = "/badge/*"
+
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

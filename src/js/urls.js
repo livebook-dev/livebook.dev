@@ -11,9 +11,7 @@ export function getRunUrl(notebookUrl) {
  * Livebook endpoint importing the given notebook.
  */
 export function getLivebookImportUrl(livebookUrl, notebookUrl) {
-  return `${livebookUrl}/live-api/import-url/${encodeURIComponent(
-    notebookUrl
-  )}`;
+  return `${livebookUrl}/p/import?url=${encodeURIComponent(notebookUrl)}`;
 }
 
 export function getBadgeUrl(badgeType) {

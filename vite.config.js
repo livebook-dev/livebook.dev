@@ -12,6 +12,7 @@ export default {
     }),
   ],
   build: {
+    outDir: resolve(__dirname, "dist"),
     rollupOptions: {
       // Generate an input entry for every page
       input: Object.fromEntries(
