@@ -24,11 +24,7 @@
   @apply border-transparent;
 }
 
-body:not([data-badge-ready]) [data-on-badge="show"] {
-  @apply hidden;
-}
-
-body[data-badge-ready] [data-on-badge="hide"] {
+body:not([data-badge-ready]) [data-el="badge-result"] {
   @apply hidden;
 }
 

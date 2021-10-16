@@ -90,6 +90,7 @@ if (document.body.dataset.page === "badge") {
         `[data-el="badge-button"][data-badge-button-active]`
       );
 
+      const wasBadgeReady = document.body.hasAttribute("data-badge-ready");
       const isBadgeReady = !!badgeUrlInputEl.value && !!activeButtonEl;
 
       document.body.toggleAttribute("data-badge-ready", isBadgeReady);
@@ -101,6 +102,11 @@ if (document.body.dataset.page === "badge") {
         const runUrl = getRunUrl(notebookUrl);
         markdownSourceEl.textContent = `[![Run in Livebook](${badgeUrl})](${runUrl})`;
         htmlSourceEl.textContent = `<a href="${runUrl}">\n  <img src="${badgeUrl}" alt="Run in Livebook" />\n</a>`;
+
+        if (!wasBadgeReady) {
+          const badgeResult = document.querySelector(`[data-el="badge-result"]`);
+          badgeResult.scrollIntoView({ behavior: "smooth", block: "end" })
+        }
       }
     }
 
