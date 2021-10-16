@@ -104,8 +104,10 @@ if (document.body.dataset.page === "badge") {
         htmlSourceEl.textContent = `<a href="${runUrl}">\n  <img src="${badgeUrl}" alt="Run in Livebook" />\n</a>`;
 
         if (!wasBadgeReady) {
-          const badgeResult = document.querySelector(`[data-el="badge-result"]`);
-          badgeResult.scrollIntoView({ behavior: "smooth", block: "end" })
+          const badgeResult = document.querySelector(
+            `[data-el="badge-result"]`
+          );
+          badgeResult.scrollIntoView({ behavior: "smooth", block: "end" });
         }
       }
     }
