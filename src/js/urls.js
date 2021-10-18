@@ -14,6 +14,16 @@ export function getLivebookImportUrl(livebookUrl, notebookUrl) {
   return `${livebookUrl}/import?url=${encodeURIComponent(notebookUrl)}`;
 }
 
+/**
+ * Livebook endpoint importing the given notebook.
+ */
+export function getLivebookHealthUrl(livebookUrl) {
+  return `${livebookUrl}/health`;
+}
+
+/**
+ * Badge image URL.
+ */
 export function getBadgeUrl(badgeType) {
   return `${WEBSITE_ROOT}/badge/v1/${badgeType}.svg`;
 }

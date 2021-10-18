@@ -30,6 +30,47 @@
           spellcheck="false"
           autocomplete="off"
         />
+        <div data-el="livebook-status" class="mt-1">
+          <span
+            data-show-on-status="up"
+            class="
+              flex
+              items-center
+              space-x-1.5
+              text-sm text-green-500
+              font-medium
+            "
+          >
+            <i class="ri-check-line text-base"></i>
+            <span>Livebook up</span>
+          </span>
+          <span
+            data-show-on-status="checking"
+            class="
+              flex
+              items-center
+              space-x-1.5
+              text-sm text-gray-400
+              font-medium
+            "
+          >
+            <i class="ri-loader-4-line animate-spin"></i>
+            <span>Checking status</span>
+          </span>
+          <span
+            data-show-on-status="down"
+            class="
+              flex
+              items-center
+              space-x-1.5
+              text-sm text-red-400
+              font-medium
+            "
+          >
+            <i class="ri-close-line"></i>
+            <span>Livebook down</span>
+          </span>
+        </div>
       </div>
     </div>
   </div>

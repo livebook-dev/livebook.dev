@@ -37,3 +37,19 @@ body:not([data-run-ready]) [data-on-run-ready="show"] {
 body[data-run-ready] [data-on-run-ready="hide"] {
   @apply hidden;
 }
+
+/* === Settings === */
+
+[data-el="livebook-status"]:not([data-status="up"]) [data-show-on-status="up"] {
+  @apply hidden;
+}
+
+[data-el="livebook-status"]:not([data-status="checking"])
+  [data-show-on-status="checking"] {
+  @apply hidden;
+}
+
+[data-el="livebook-status"]:not([data-status="down"])
+  [data-show-on-status="down"] {
+  @apply hidden;
+}

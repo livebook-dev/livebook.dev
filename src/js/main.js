@@ -1,6 +1,12 @@
 import { getNotebookContent } from "./requests";
 import { settingsStore } from "./settings_store";
-import { getRunUrl, getLivebookImportUrl, getBadgeUrl } from "./urls";
+import {
+  getRunUrl,
+  getLivebookImportUrl,
+  getBadgeUrl,
+  getLivebookHealthUrl,
+} from "./urls";
+import { debounce } from "./utils";
 
 // === Mobile menu ===
 
@@ -143,13 +149,47 @@ if (
   const livebookUrlInputEl = document.querySelector(
     `[data-el="livebook-url-input"]`
   );
+  const livebookStatusEl = document.querySelector(
+    `[data-el="livebook-status"]`
+  );
+
+  function setLivebookStatus(status) {
+    livebookStatusEl.setAttribute("data-status", status);
+  }
+
+  function checkLivebookStatus(livebookUrl) {
+    if (livebookUrl === "") {
+      setLivebookStatus(null);
+      return;
+    }
+
+    setLivebookStatus("checking");
+
+    fetch(getLivebookHealthUrl(livebookUrl))
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.application === null) {
+          return Promise.reject(
+            new Error("application running, but it's not Livebook")
+          );
+        }
+      })
+      .then(() => setLivebookStatus("up"))
+      .catch(() => setLivebookStatus("down"));
+  }
+
+  const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);
 
   if (livebookUrlInputEl) {
-    livebookUrlInputEl.value = settingsStore.get().livebookUrl;
+    const livebookUrl = settingsStore.get().livebookUrl;
+    livebookUrlInputEl.value = livebookUrl;
+    checkLivebookStatus(livebookUrl);
 
     livebookUrlInputEl.addEventListener("input", (event) => {
       const livebookUrl = event.target.value;
       settingsStore.update({ livebookUrl });
+      setLivebookStatus("checking");
+      debouncedCheckLivebookStatus(livebookUrl);
     });
   }
 }
