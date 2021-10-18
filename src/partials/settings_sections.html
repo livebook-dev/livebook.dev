@@ -22,7 +22,7 @@
         If you already have Livebook running, you can configure the default
         Livebook location where you want to open notebooks.
       </span>
-      <div class="mt-8 w-full">
+      <div class="mt-8 w-full flex flex-col">
         <input
           data-el="livebook-url-input"
           class="input"
@@ -71,6 +71,15 @@
             <span>Livebook down</span>
           </span>
         </div>
+        <!-- Additional action shown on the run page -->
+        <a
+          data-on-run-ready="show"
+          data-el="run-notebook-link"
+          class="mt-8 self-center button button-blue"
+          href="#"
+        >
+          Run notebook
+        </a>
       </div>
     </div>
   </div>

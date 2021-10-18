@@ -197,7 +197,7 @@ if (
 // === Run page ===
 
 if (document.body.dataset.page === "run") {
-  const runNotebookLinkEl = document.querySelector(
+  const runNotebookLinkEls = document.querySelectorAll(
     `[data-el="run-notebook-link"]`
   );
   const notebookPreviewEl = document.querySelector(
@@ -218,7 +218,9 @@ if (document.body.dataset.page === "run") {
 
   settingsStore.getAndSubscribe(({ livebookUrl }) => {
     const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
-    runNotebookLinkEl.setAttribute("href", livebookImportUrl);
+    for (const runNotebookLinkEl of runNotebookLinkEls) {
+      runNotebookLinkEl.setAttribute("href", livebookImportUrl);
+    }
     livebookUrlEl.textContent = livebookUrl;
     document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
   });
