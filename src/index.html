@@ -98,10 +98,38 @@
       Get Livebook up and running in minutes
     </h2>
     <span class="mt-3 md:max-w-lg text-gray-700 font-medium text-center">
-      It’s easy to get started with Livebook, weather it be in the cloud or your
-      local machine.
+      It’s easy to get started with Livebook, in the cloud or your local
+      machine.
     </span>
-    {{> install_instructions }}
+    <div class="flex flex-col w-full max-w-[600px]">
+      {{> install_instructions }}
+
+      <div class="mt-8">
+        <div class="flex flex-col">
+          <h2 class="text-gray-700 font-bold text-sm">
+            Interested in Livebook PRO?
+          </h2>
+          <div class="flex space-x-12 items-end justify-between">
+            <span class="mt-2 text-sm text-gray-500 font-medium">
+              We are working on it and we would love to hear what you are
+              looking for.
+            </span>
+            <a
+              class="
+                whitespace-nowrap
+                button button-blue
+                border-gray-300 border-2
+                bg-transparent
+                text-gray-700
+              "
+              href="#TODO"
+            >
+              Livebook PRO survey
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -127,8 +155,8 @@
       <span
         class="mt-3 max-w-md md:max-w-xl text-gray-300 font-medium text-center"
       >
-        There’s so much to do with Livebook with its awesome collaborative
-        features. Learn about some of our key features.
+        There’s much to do with Livebook and its awesome collaborative features.
+        Here is a sneak peak:
       </span>
     </div>
     <!-- Data -->
@@ -174,7 +202,7 @@
             lg:space-y-0 lg:space-x-8 lg:items-center
           "
         >
-          <div class="relative p-[2px]">
+          <div class="relative p-[2px] flex-shrink">
             <!-- Add an absolute overlapping border. If we put the
                  border on the image there's a tiny gap -->
             <div
@@ -273,9 +301,7 @@
 
 <!-- Explore image -->
 <div class="bg-white">
-  <div
-    class="m-auto max-w-7xl px-4 flex justify-center xl:justify-end relative"
-  >
+  <div class="m-auto max-w-7xl px-4 flex justify-start lg:justify-end relative">
     <!-- Additional background area matching the box above on mobile -->
     <div
       class="md:hidden absolute left-0 right-0 top-0 h-1/3 bg-gray-100"
@@ -285,16 +311,18 @@
         relative
         -top-4
         -mb-4
+        lg:max-w-3xl
+        xl:max-w-none
         md:-top-20 md:-mb-20
-        xl:-top-36 xl:-mb-36
+        lg:-top-36 lg:-mb-36
         rounded-md
         md:rounded-2xl
         custom-shadow-1
       "
       src="/images/explore_screenshot.png"
       alt=""
-      width="900"
-      height="506"
+      width="850"
+      height="531"
     />
   </div>
 </div>
@@ -331,7 +359,7 @@
         h-full
         grid grid-cols-1
         sm:grid-cols-2
-        lg:grid-cols-4
+        lg:grid-cols-3
         gap-5
       "
     >
@@ -353,11 +381,11 @@
               rgba(13, 24, 41, 0.3),
               rgba(13, 24, 41, 0.98)
             ),
-            url('https://i.ytimg.com/vi/RKvqc-UEe34/maxresdefault.jpg');
+            url('https://i.ytimg.com/vi/MOTEgF-wIEI/maxresdefault.jpg');
           background-size: cover;
           background-position: center;
         "
-        href="https://www.youtube.com/watch?v=RKvqc-UEe34"
+        href="https://www.youtube.com/watch?v=MOTEgF-wIEI"
       >
         <i
           class="
@@ -373,25 +401,22 @@
           "
         ></i>
         <div class="flex flex-col">
-          <h3 class="text-gray-100 font-bold text-lg md:text-2xl">
-            Announcing Livebook
+          <span class="text-gray-100 text-xs">Jun 2021</span>
+          <h3 class="mt-1 text-gray-100 font-bold text-lg md:text-2xl">
+            New in Livebook v0.2: inputs, graphs, and more
           </h3>
-          <span class="mt-1 lg:mt-3 text-sm text-gray-200">
-            Check out the first screencast where José introduces Livebook and
-            shows it in action by building a neural network using Nx and Axon.
-          </span>
         </div>
       </a>
       <a
         class="h-56 lg:h-48 p-4 rounded-lg flex items-end relative"
-        href="https://www.youtube.com/watch?v=MOTEgF-wIEI"
+        href="https://www.youtube.com/watch?v=RKvqc-UEe34"
         style="
           background: linear-gradient(
               to bottom,
               rgba(13, 24, 41, 0.3),
               rgba(13, 24, 41, 0.98)
             ),
-            url('https://i.ytimg.com/vi/MOTEgF-wIEI/maxresdefault.jpg');
+            url('https://i.ytimg.com/vi/RKvqc-UEe34/maxresdefault.jpg');
           background-size: cover;
           background-position: center;
         "
@@ -410,62 +435,18 @@
           "
         ></i>
         <div class="flex flex-col">
-          <span class="text-gray-100 text-xs">Jun 2021</span>
-          <h3 class="mt-1 text-gray-100 font-bold text">
-            New in Livebook v0.2: inputs, graphs, and more
-          </h3>
+          <span class="text-gray-100 text-xs">April 2021</span>
+          <h3 class="mt-1 text-gray-100 font-bold">Announcing Livebook</h3>
         </div>
       </a>
       <div class="h-0 lg:h-48"></div>
-      <div class="h-0 lg:h-48"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Pro -->
-<section id="pro" class="bg-gray-100">
-  <div
-    class="
-      m-auto
-      max-w-7xl
-      px-4
-      py-12
-      md:py-15
-      flex flex-col
-      md:flex-row
-      space-y-12
-      md:space-y-0 md:space-x-8
-      justify-between
-      items-center
-    "
-  >
-    <img
-      class="max-w-[50%]"
-      src="/images/pro.svg"
-      alt="fly.io"
-      width="500"
-      height="278"
-    />
-    <div class="flex flex-col items-start">
-      <h2 class="text-gray-800 font-bold text-2xl md:text-4xl">
-        Interested in Livebook PRO?
-      </h2>
-      <span class="mt-3 md:max-w-lg text-gray-700 font-medium">
-        We do not have a PRO Version of Livebook. However, we’d love to to hear
-        what you’re looking for - we’re open to any ideas or suggestions. Fill
-        in the form below and we’ll get back to you.
-      </span>
-      <a class="mt-8 button button-blue" href="#TODO">
-        <i class="ri-chat-smile-2-line"></i>
-        <span>Tell us</span>
-      </a>
     </div>
   </div>
 </section>
 
 <!-- Sponsors -->
 <section id="sponsors" class="bg-[#24175b]">
-  <div class="m-auto max-w-7xl px-4 py-12 md:py-15 flex justify-center">
+  <div class="m-auto max-w-7xl px-4 py-12 flex justify-center">
     <div class="flex flex-col items-center md:items-start">
       <img
         src="/images/flyio_logo_with_text.svg"
@@ -483,7 +464,7 @@
           md:text-left
         "
       >
-        Livebook is now sponsored by
+        Livebook is sponsored by
         <span class="inline-flex">
           <a class="border-b-4 border-gray-100" href="https://fly.io/">
             fly.io

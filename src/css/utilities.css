@@ -8,7 +8,7 @@
   }
 
   .custom-drop-shadow-1 {
-    filter: drop-shadow(10px 10px 60px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(10px 10px 60px rgba(0, 0, 0, 0.5));
   }
 
   .placeholder-font-light::placeholder {
