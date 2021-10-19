@@ -237,7 +237,7 @@ if (document.body.dataset.page === "run") {
       const div = document.createElement("div");
       div.classList.add("max-w-md");
       div.textContent = `
-        Failed to load notebook preview from ${notebookUrl}, but you can still run it!
+        Oops! We could not load notebook preview from ${notebookUrl}, but you can still run it!
       `;
       notebookPreviewEl.innerHTML = "";
       notebookPreviewEl.appendChild(div);
