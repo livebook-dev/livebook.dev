@@ -26,7 +26,7 @@ import { debounce } from "./utils";
     if (
       anchorEl &&
       anchorEl.href &&
-      anchorEl.getAttribute("href").startsWith("#")
+      anchorEl.getAttribute("href").startsWith("/#")
     ) {
       menuContainerEl.removeAttribute("data-menu-open");
     }
