@@ -234,27 +234,12 @@ if (document.body.dataset.page === "run") {
     })
     .catch((error) => {
       console.error(`Failed to fetch notebook from ${notebookUrl}, ${error}`);
-      // Show content placeholder instead
-      notebookPreviewEl.innerHTML = `
-          <div class="max-w-2xl w-full flex-1 space-y-3 max-h-full overflow-y-hidden">
-            <div class="bg-gray-700 h-3 rounded-md w-1/4"></div>
-            <div class="bg-transparent h-3 rounded-md"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
-            <div class="bg-transparent h-3 rounded-md"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
-            <div class="bg-transparent h-3 rounded-md"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
-            <div class="bg-transparent h-3 rounded-md"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-3/4"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-11/12"></div>
-            <div class="bg-gray-700 h-3 rounded-md w-5/6"></div>
-          </div>
-        `;
+      const div = document.createElement("div");
+      div.classList.add("max-w-md");
+      div.textContent = `
+        Failed to load notebook preview from ${notebookUrl}, but you can still run it!
+      `;
+      notebookPreviewEl.innerHTML = "";
+      notebookPreviewEl.appendChild(div);
     });
 }
