@@ -6,9 +6,16 @@
   pretty_urls = true
 
 [[headers]]
-  # Enable CORS for badge images
   for = "/badge/*"
 
   [headers.values]
+    # Enable CORS for badge images
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/*"
+
+  [headers.values]
+    # Assets include checksum in the name, so we cache them for long
+    Cache-Control = "public, max-age=31536000"
