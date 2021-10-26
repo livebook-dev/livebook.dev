@@ -1,10 +1,34 @@
 <div class="mt-8 md:mt-14 w-full max-w-[600px] flex flex-col items-center">
-  <div class="tabs w-full justify-between" data-el="tabs">
-    <a class="tab active" href="#" data-tab-target="#install-flyio">
+  <div role="tablist" class="tabs w-full justify-between" data-el="tabs">
+    <a
+      id="link-install-flyio"
+      class="tab active"
+      href="#"
+      role="tab"
+      aria-controls="install-flyio"
+      aria-selected="true"
+      data-tab-target="#install-flyio"
+    >
       Using Fly.io
     </a>
-    <a class="tab" href="#" data-tab-target="#install-docker">Using Docker</a>
-    <a class="tab" href="#" data-tab-target="#install-elixir">Using Elixir</a>
+    <a
+      id="link-install-docker"
+      class="tab"
+      href="#"
+      role="tab"
+      aria-controls="install-docker"
+      data-tab-target="#install-docker"
+      >Using Docker</a
+    >
+    <a
+      id="link-install-elixir"
+      class="tab"
+      href="#"
+      role="tab"
+      aria-controls="install-elixir"
+      data-tab-target="#install-elixir"
+      >Using Elixir</a
+    >
   </div>
   <div class="mt-4 w-full p-4 rounded-2xl bg-white">
     <img src="/images/window_buttons.png" alt="" width="36" height="8" />
@@ -13,6 +37,8 @@
     <!-- * Fly.io instructions -->
     <div
       id="install-flyio"
+      role="tabpanel"
+      aria-labelledby="link-install-flyio"
       data-el="tab-content"
       data-tab-active
       class="my-12 flex flex-col items-center justify-center"
@@ -39,6 +65,8 @@
     <!-- * Docker instructions -->
     <div
       id="install-docker"
+      role="tabpanel"
+      aria-labelledby="link-install-docker"
       data-el="tab-content"
       class="mt-6 flex flex-col space-y-6"
     >
@@ -70,6 +98,8 @@
     <!-- * Elixir instructions -->
     <div
       id="install-elixir"
+      role="tabpanel"
+      aria-labelledby="link-install-elixir"
       data-el="tab-content"
       class="mt-6 flex flex-col space-y-6"
     >

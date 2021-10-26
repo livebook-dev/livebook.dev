@@ -71,6 +71,7 @@ for (const tabsEl of document.querySelectorAll(`[data-el="tabs"]`)) {
         const targetEl = document.querySelector(targetSelector);
         const isClicked = targetSelector === clickedTargetSelector;
         tabLinkEl.classList.toggle("active", isClicked);
+        tabLinkEl.setAttribute("aria-selected", isClicked ? "true" : "false");
         targetEl.toggleAttribute("data-tab-active", isClicked);
       }
     }
@@ -130,9 +131,11 @@ if (document.body.dataset.page === "badge") {
 
         if (activeButtonEl) {
           activeButtonEl.removeAttribute("data-badge-button-active");
+          activeButtonEl.removeAttribute("aria-selected");
         }
 
         buttonEl.setAttribute("data-badge-button-active", "");
+        buttonEl.setAttribute("aria-selected", "true");
 
         updateBadgeSnippets();
       }
