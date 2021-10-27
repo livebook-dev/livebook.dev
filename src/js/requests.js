@@ -14,11 +14,11 @@ export function getNotebookContent(url) {
 
       if (
         contentType &&
-        !["text/plain", "text/markdown"].includes(contentType)
+        !["text/plain", "text/markdown", "application/octet-stream"].includes(contentType)
       ) {
         return Promise.reject(
           new Error(
-            `Expected Content-Type to be either text/plain or text/markdown, got: ${contentType}`
+            `Expected Content-Type to be either text/plain, text/markdown or application/octet-stream, got: ${contentType}`
           )
         );
       }
@@ -80,7 +80,7 @@ export function ensureHttpScheme(url) {
       } else {
         return `https://${url}`
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   return url;
