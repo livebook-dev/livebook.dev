@@ -1,4 +1,4 @@
-import { getNotebookContent } from "./requests";
+import { ensureHttpScheme, getNotebookContent } from "./requests";
 import { settingsStore } from "./settings_store";
 import {
   getRunUrl,
@@ -161,11 +161,6 @@ if (
   }
 
   function checkLivebookStatus(livebookUrl) {
-    if (livebookUrl === "") {
-      setLivebookStatus(null);
-      return;
-    }
-
     setLivebookStatus("checking");
 
     fetch(getLivebookHealthUrl(livebookUrl))
@@ -186,13 +181,28 @@ if (
   if (livebookUrlInputEl) {
     const livebookUrl = settingsStore.get().livebookUrl;
     livebookUrlInputEl.value = livebookUrl;
-    checkLivebookStatus(livebookUrl);
+
+    if (livebookUrl) {
+      checkLivebookStatus(livebookUrl);
+    }
 
     livebookUrlInputEl.addEventListener("input", (event) => {
-      const livebookUrl = event.target.value;
+      const value = event.target.value;
+      // Normalize the URL
+      const livebookUrl = value && ensureHttpScheme(value);
       settingsStore.update({ livebookUrl });
-      setLivebookStatus("checking");
-      debouncedCheckLivebookStatus(livebookUrl);
+
+      if (livebookUrl) {
+        setLivebookStatus("checking");
+        debouncedCheckLivebookStatus(livebookUrl);
+      } else {
+        setLivebookStatus(null);
+      }
+    });
+
+    livebookUrlInputEl.addEventListener("blur", (event) => {
+      // Reflect the normalized URL in the input
+      event.target.value = settingsStore.get().livebookUrl;
     });
   }
 }

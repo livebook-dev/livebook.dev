@@ -67,3 +67,21 @@ function contentTypeFromHeaders(headers) {
 
   return contentTypeHeader.split(";")[0];
 }
+
+/**
+ * Adds http(s) scheme to the given url if missing.
+ */
+export function ensureHttpScheme(url) {
+  if (!url.includes("://")) {
+    try {
+      const parsed = new URL(`http://${url}`);
+      if (parsed.hostname === "localhost") {
+        return `http://${url}`;
+      } else {
+        return `https://${url}`
+      }
+    } catch (error) {}
+  }
+
+  return url;
+}
