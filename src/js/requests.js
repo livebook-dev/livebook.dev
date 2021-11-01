@@ -14,7 +14,9 @@ export function getNotebookContent(url) {
 
       if (
         contentType &&
-        !["text/plain", "text/markdown", "application/octet-stream"].includes(contentType)
+        !["text/plain", "text/markdown", "application/octet-stream"].includes(
+          contentType
+        )
       ) {
         return Promise.reject(
           new Error(
@@ -78,9 +80,9 @@ export function ensureHttpScheme(url) {
       if (parsed.hostname === "localhost") {
         return `http://${url}`;
       } else {
-        return `https://${url}`
+        return `https://${url}`;
       }
-    } catch (error) { }
+    } catch (error) {}
   }
 
   return url;
