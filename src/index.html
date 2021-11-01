@@ -13,7 +13,7 @@
       md:space-y-24
     "
   >
-    <div class="flex flex-col items-center space-y-10">
+    <div class="flex flex-col items-center">
       <h2
         class="
           max-w-md
@@ -32,6 +32,8 @@
       </h2>
       <nav
         class="
+          mt-10
+          mb-5
           flex flex-col
           space-y-4
           md:flex-row
@@ -43,10 +45,10 @@
       >
         <a
           class="
-            px-8
+            pl-2
+            pr-8
             py-3
             flex
-            space-x-4
             items-center
             rounded-xl
             bg-gray-900
@@ -54,7 +56,7 @@
           "
           href="#install"
         >
-          <i class="ri-rocket-line text-3xl text-gray-300"></i>
+          <i class="ri-rocket-line px-4 text-3xl text-gray-300"></i>
           <div class="flex flex-col">
             <span class="font-bold">Run Livebook</span>
             <span class="text-sm">Locally or in the cloud</span>
@@ -62,10 +64,10 @@
         </a>
         <a
           class="
-            px-8
+            pl-2
+            pr-8
             py-3
             flex
-            space-x-4
             items-center
             rounded-xl
             text-gray-700
@@ -73,13 +75,16 @@
           "
           href="https://github.com/livebook-dev/livebook"
         >
-          <i class="ri-github-line text-3xl text-gray-400"></i>
+          <i class="ri-github-line px-4 text-3xl text-gray-400"></i>
           <div class="flex flex-col">
             <span class="font-bold">See source</span>
             <span class="text-sm">Visit our GitHub</span>
           </div>
         </a>
       </nav>
+      <div class="mb-5 text-gray-700">
+        <b>News:</b> Livebook v0.3 is out. <a href="https://www.youtube.com/watch?v=4lNkiACemM0" _target="_blank" class="border-b border-gray-700">Watch the video</a>.
+      </div>
     </div>
     <img
       class="rounded-md md:rounded-2xl custom-shadow-1"
