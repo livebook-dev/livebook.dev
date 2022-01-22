@@ -1,6 +1,5 @@
 module.exports = {
   content: ["./src/**/*.html", "./src/**/*.css", "./src/**/*.js"],
-  darkMode: "media",
   theme: {
     fontFamily: {
       sans: ["Inter, sans-serif"],
