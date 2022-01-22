@@ -1,7 +1,6 @@
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.html", "./src/**/*.css", "./src/**/*.js"],
-  darkMode: false,
+  content: ["./src/**/*.html", "./src/**/*.css", "./src/**/*.js"],
+  darkMode: "media",
   theme: {
     fontFamily: {
       sans: ["Inter, sans-serif"],
