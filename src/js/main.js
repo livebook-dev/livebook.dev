@@ -213,6 +213,10 @@ if (document.body.dataset.page === "run") {
   const runNotebookLinkEls = document.querySelectorAll(
     `[data-el="run-notebook-link"]`
   );
+  const runNotebookViaDesktopLinkEls = document.querySelectorAll(
+    `[data-el="run-notebook-via-desktop"]`
+  );
+
   const notebookPreviewEl = document.querySelector(
     `[data-el="notebook-preview"]`
   );
@@ -239,6 +243,10 @@ if (document.body.dataset.page === "run") {
   });
 
   notebookSourceLinkEl.setAttribute("href", notebookUrl);
+
+  for (const runNotebookViaDesktopLinkEl of runNotebookViaDesktopLinkEls) {
+    runNotebookViaDesktopLinkEl.setAttribute("href", `livebook://${notebookUrl}`);
+  }
 
   getNotebookContent(notebookUrl)
     .then((livemd) => {
