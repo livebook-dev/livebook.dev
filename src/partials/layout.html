@@ -60,7 +60,7 @@
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
           <!-- <a href="/#community">Community</a> -->
-          <a href="/#news">News</a>
+          <a class="announcekit-widget" href="#">What’s new?&nbsp</a>
         </nav>
       </div>
       <div class="w-56 flex justify-end">
@@ -157,7 +157,7 @@
           <a href="/#features">Features</a>
           <a href="/#explore">Explore</a>
           <!-- <a href="/#community">Community</a> -->
-          <a href="/#news">News</a>
+          <a class="announcekit-widget-mobile" href="#">What’s new?&nbsp</a>
         </nav>
         <div class="w-full border-t border-gray-200"></div>
         <nav class="flex flex-col space-y-5">
@@ -270,5 +270,22 @@
 
     <!-- Scripts -->
     <script type="module" src="/js/main.js"></script>
+    <script>
+      window.announcekit = (window.announcekit || { queue: [], on: function(n, x) { 
+        window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); } 
+      });
+      
+      window.announcekit.push({
+        "widget": "https://news.livebook.dev/widgets/v2/2mz4c0",
+        "selector": ".announcekit-widget"
+      });
+
+      window.announcekit.push({
+        "widget": "https://news.livebook.dev/widgets/v2/2mz4c0",
+        "selector": ".announcekit-widget-mobile"
+      });
+      
+    </script>
+    <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
   </body>
 </html>
