@@ -19,10 +19,7 @@ export function getLivebookImportUrl(livebookUrl, notebookUrl) {
  */
 export function getLivebookHealthUrls(livebookUrl) {
   // TODO: /health became a legacy endpoint, swap the order in a few versions
-  return [
-    `${livebookUrl}/health`,
-    `${livebookUrl}/public/health`,
-  ];
+  return [`${livebookUrl}/health`, `${livebookUrl}/public/health`];
 }
 
 /**

@@ -177,7 +177,7 @@ if (
             new Error("application running, but it's not Livebook")
           );
         }
-      })
+      });
   }
 
   const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);

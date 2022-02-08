@@ -30,9 +30,10 @@ export function debounce(fn, milliseconds) {
  * @param {Function} toPromise
  */
 export function firstSuccess(list, toPromise) {
-  return list.reduce(
-    (promise, item) => promise.catch(() => toPromise(item)),
-    Promise.reject(null)
-  )
+  return list
+    .reduce(
+      (promise, item) => promise.catch(() => toPromise(item)),
+      Promise.reject(null)
+    )
     .catch(() => Promise.reject(new Error("No success")));
 }
