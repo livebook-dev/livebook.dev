@@ -79,7 +79,7 @@
         <!-- prettier-ignore -->
         {{> code
               id="docker-run-livebook"
-              code="docker run -p 8080:8080 --pull always livebook/livebook"
+              code="docker run -p 8080:8080 -p 8081:8081 --pull always livebook/livebook"
               isShell=true
             }}
       </div>
