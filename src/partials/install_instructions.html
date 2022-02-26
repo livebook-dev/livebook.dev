@@ -111,6 +111,11 @@
         <div class="text-gray-900 text-sm font-semibold">Step 2</div>
         <!-- prettier-ignore -->
         {{> code
+              id="elixir-install-local"
+              code="mix do local.rebar --force, local.hex --force"
+              isShell=true
+            }}
+            {{> code
               id="elixir-install-livebook"
               code="mix escript.install hex livebook"
               isShell=true
