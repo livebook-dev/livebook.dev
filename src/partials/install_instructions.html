@@ -112,7 +112,7 @@
         <!-- prettier-ignore -->
         {{> code
               id="elixir-install-local"
-              code="mix do local.rebar --force, local.hex --force"
+              code="mix local.rebar --force && mix local.hex --force"
               isShell=true
             }}
             {{> code
