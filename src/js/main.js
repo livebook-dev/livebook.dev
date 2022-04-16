@@ -195,7 +195,7 @@ if (
       livebookUrlInputEl.disabled = false;
       livebookUrlInputEl.setAttribute("aria-disabled", "false");
       settingsStore.update({ useLivebookDesktop: false });
-      debouncedCheckLivebookStatus();
+      livebookUrlInputEl.dispatchEvent(new Event("input"));
     }
   }
 
