@@ -258,7 +258,7 @@ if (document.body.dataset.page === "run") {
   settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
     if (useLivebookDesktop) {
       for (const runNotebookLinkEl of runNotebookLinkEls) {
-        runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/https?:/i, "livebook:"));
+        runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/^https?:/i, "livebook:"));
       }
       livebookUrlEl.textContent = "Livebook for desktop";
     } else {
