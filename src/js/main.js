@@ -185,6 +185,7 @@ if (
 
   function toggleLivebookDesktop(enabled) {
     if (enabled) {
+      setLivebookStatus("desktop");
       livebookUrlInputEl.disabled = true;
       livebookUrlInputEl.setAttribute("aria-disabled", "true");
       settingsStore.update({ useLivebookDesktop: true });
@@ -259,12 +260,21 @@ if (document.body.dataset.page === "run") {
   }
 
   settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
-    const livebookImportUrl = getLivebookImportUrl((useLivebookDesktop ? "livebook://" : livebookUrl), notebookUrl);
-    for (const runNotebookLinkEl of runNotebookLinkEls) {
-      runNotebookLinkEl.setAttribute("href", livebookImportUrl);
+    if (useLivebookDesktop) {
+      for (const runNotebookLinkEl of runNotebookLinkEls) {
+        runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/https?:/i,"livebook:"));
+      }
+      livebookUrlEl.textContent = "Livebook desktop";
+      document.body.toggleAttribute("data-run-ready", true);
     }
-    livebookUrlEl.textContent = useLivebookDesktop ? "Livebook Desktop" : livebookUrl;
-    document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
+    else {
+      const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
+      for (const runNotebookLinkEl of runNotebookLinkEls) {
+        runNotebookLinkEl.setAttribute("href", livebookImportUrl);
+      }
+      livebookUrlEl.textContent = livebookUrl;
+      document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
+    }
   });
 
   notebookSourceLinkEl.setAttribute("href", notebookUrl);
