@@ -261,16 +261,14 @@ if (document.body.dataset.page === "run") {
         runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/https?:/i, "livebook:"));
       }
       livebookUrlEl.textContent = "Livebook desktop";
-      document.body.toggleAttribute("data-run-ready", true);
-    }
-    else {
+    } else {
       const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
       for (const runNotebookLinkEl of runNotebookLinkEls) {
         runNotebookLinkEl.setAttribute("href", livebookImportUrl);
       }
       livebookUrlEl.textContent = livebookUrl;
-      document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
     }
+    document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
   });
 
   notebookSourceLinkEl.setAttribute("href", notebookUrl);
