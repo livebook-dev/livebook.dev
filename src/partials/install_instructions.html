@@ -44,17 +44,7 @@
       class="my-12 flex flex-col items-center justify-center"
     >
       <a
-        class="
-          px-5
-          py-3
-          flex
-          space-x-3
-          items-center
-          rounded-xl
-          bg-[#8b5cf6]
-          hover:bg-[#7c3aed]
-          text-white
-        "
+        class="px-5 py-3 flex space-x-3 items-center rounded-xl bg-[#8b5cf6] hover:bg-[#7c3aed] text-white"
         href="https://fly.io/launch/livebook"
       >
         <img src="/images/flyio_logo_white.svg" alt="" width="32" height="27" />
@@ -89,7 +79,7 @@
         <!-- prettier-ignore -->
         {{> code
               id="docker-run-livebook"
-              code="docker run -p 8080:8080 --pull always livebook/livebook"
+              code="docker run -p 8080:8080 -p 8081:8081 --pull always livebook/livebook"
               isShell=true
             }}
       </div>
@@ -121,6 +111,11 @@
         <div class="text-gray-900 text-sm font-semibold">Step 2</div>
         <!-- prettier-ignore -->
         {{> code
+              id="elixir-install-local"
+              code="mix local.rebar --force && mix local.hex --force"
+              isShell=true
+            }}
+            {{> code
               id="elixir-install-livebook"
               code="mix escript.install hex livebook"
               isShell=true

@@ -15,10 +15,11 @@ export function getLivebookImportUrl(livebookUrl, notebookUrl) {
 }
 
 /**
- * Livebook endpoint importing the given notebook.
+ * Livebook health endpoints.
  */
-export function getLivebookHealthUrl(livebookUrl) {
-  return `${livebookUrl}/health`;
+export function getLivebookHealthUrls(livebookUrl) {
+  // TODO: /health became a legacy endpoint, swap the order in a few versions
+  return [`${livebookUrl}/health`, `${livebookUrl}/public/health`];
 }
 
 /**

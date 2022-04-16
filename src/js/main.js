@@ -4,9 +4,9 @@ import {
   getRunUrl,
   getLivebookImportUrl,
   getBadgeUrl,
-  getLivebookHealthUrl,
+  getLivebookHealthUrls,
 } from "./urls";
-import { debounce } from "./utils";
+import { debounce, firstSuccess } from "./utils";
 
 // === Mobile menu ===
 
@@ -163,7 +163,13 @@ if (
   function checkLivebookStatus(livebookUrl) {
     setLivebookStatus("checking");
 
-    fetch(getLivebookHealthUrl(livebookUrl))
+    firstSuccess(getLivebookHealthUrls(livebookUrl), checkLivebookHealth)
+      .then(() => setLivebookStatus("up"))
+      .catch(() => setLivebookStatus("down"));
+  }
+
+  function checkLivebookHealth(url) {
+    return fetch(url)
       .then((response) => response.json())
       .then((json) => {
         if (json.application === null) {
@@ -171,9 +177,7 @@ if (
             new Error("application running, but it's not Livebook")
           );
         }
-      })
-      .then(() => setLivebookStatus("up"))
-      .catch(() => setLivebookStatus("down"));
+      });
   }
 
   const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);

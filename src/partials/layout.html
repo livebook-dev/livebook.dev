@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -60,47 +61,22 @@
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
           <!-- <a href="/#community">Community</a> -->
-          <a href="/#news">News</a>
+          <a class="announcekit-widget" href="https://news.livebook.dev/"
+            >What’s new?&nbsp</a
+          >
         </nav>
       </div>
       <div class="w-56 flex justify-end">
         <nav class="flex space-x-3 items-center">
           <a
-            class="
-              px-3
-              py-2
-              rounded-lg
-              font-semibold
-              text-sm
-              bg-blue-600
-              border border-transparent
-              text-white
-              hover:bg-blue-700
-              focus:bg-blue-700
-              flex
-              items-end
-              space-x-1.5
-            "
+            class="px-3 py-2 rounded-lg font-semibold text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
             href="/badge.html"
           >
             <img src="/images/badge_logo.svg" alt="" width="17" height="19" />
             <span class="mb-[-1.5px] font-semibold">Create badge</span>
           </a>
           <a
-            class="
-              p-2
-              flex
-              items-center
-              justify-center
-              rounded-lg
-              bg-white
-              border border-gray-300
-              text-gray-500
-              hover:bg-gray-100
-              focus:bg-gray-100
-              text-xl
-              leading-none
-            "
+            class="p-2 flex items-center justify-center rounded-lg bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
             href="/settings.html"
             aria-label="settings"
           >
@@ -127,19 +103,7 @@
         </a>
         <button
           data-el="menu-toggle"
-          class="
-            p-2
-            flex
-            items-center
-            justify-center
-            rounded-lg
-            bg-gray-100
-            text-gray-500
-            hover:bg-gray-100
-            focus:bg-gray-100
-            text-xl
-            leading-none
-          "
+          class="p-2 flex items-center justify-center rounded-lg bg-gray-100 text-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
           aria-label="toggle menu"
         >
           <i data-on-menu="hide" class="ri-menu-4-line"></i>
@@ -155,46 +119,22 @@
         >
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
-          <a href="/#explore">Explore</a>
           <!-- <a href="/#community">Community</a> -->
-          <a href="/#news">News</a>
+          <a class="announcekit-widget-mobile" href="https://news.livebook.dev/"
+            >What’s new?&nbsp</a
+          >
         </nav>
         <div class="w-full border-t border-gray-200"></div>
         <nav class="flex flex-col space-y-5">
           <a
-            class="
-              px-3
-              py-2
-              rounded-lg
-              text-sm
-              bg-blue-600
-              border border-transparent
-              text-white
-              hover:bg-blue-700
-              focus:bg-blue-700
-              flex
-              items-end
-              space-x-1.5
-            "
+            class="px-3 py-2 rounded-lg text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
             href="/badge.html"
           >
             <img src="/images/badge_logo.svg" alt="" width="17" height="19" />
             <span class="mb-[-1.5px] font-semibold">Create badge</span>
           </a>
           <a
-            class="
-              p-2
-              rounded-lg
-              bg-gray-100
-              border border-transparent
-              text-gray-600
-              hover:bg-gray-50
-              focus:bg-gray-50
-              flex
-              items-center
-              justify-center
-              space-x-1.5
-            "
+            class="p-2 rounded-lg bg-gray-100 border border-transparent text-gray-600 hover:bg-gray-50 focus:bg-gray-50 flex items-center justify-center space-x-1.5"
             href="/settings.html"
           >
             <i class="ri-settings-3-line"></i>
@@ -225,18 +165,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900">
       <div
-        class="
-          m-auto
-          max-w-7xl
-          w-full
-          px-4
-          py-10
-          md:py-12
-          flex flex-col
-          text-sm
-          space-y-5
-          md:flex-row md:space-y-0 md:items-end md:justify-between
-        "
+        class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between"
       >
         <div class="flex flex-col">
           <img src="/images/logo.svg" alt="" width="45" height="45" />
@@ -270,5 +199,27 @@
 
     <!-- Scripts -->
     <script type="module" src="/js/main.js"></script>
+    <script>
+      window.announcekit = window.announcekit || {
+        queue: [],
+        on: function (n, x) {
+          window.announcekit.queue.push([n, x]);
+        },
+        push: function (x) {
+          window.announcekit.queue.push(x);
+        },
+      };
+
+      window.announcekit.push({
+        widget: "https://news.livebook.dev/widgets/v2/2mz4c0",
+        selector: ".announcekit-widget",
+      });
+
+      window.announcekit.push({
+        widget: "https://news.livebook.dev/widgets/v2/2mz4c0",
+        selector: ".announcekit-widget-mobile",
+      });
+    </script>
+    <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
   </body>
 </html>
