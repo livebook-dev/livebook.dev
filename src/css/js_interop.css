@@ -53,3 +53,7 @@ body[data-run-ready] [data-on-run-ready="hide"] {
   [data-show-on-status="down"] {
   @apply hidden;
 }
+
+[data-el="livebook-url-input"][disabled] {
+  @apply bg-gray-200;
+}

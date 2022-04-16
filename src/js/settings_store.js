@@ -1,5 +1,5 @@
 const SETTINGS_KEY = "livebook:settings";
-const DEFAULT_SETTINGS = { livebookUrl: "" };
+const DEFAULT_SETTINGS = { livebookUrl: "", useLivebookDesktop: false };
 
 /**
  * Stores configuration state and persists it across
