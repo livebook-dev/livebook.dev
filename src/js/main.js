@@ -239,10 +239,6 @@ if (document.body.dataset.page === "run") {
   const runNotebookLinkEls = document.querySelectorAll(
     `[data-el="run-notebook-link"]`
   );
-  const runNotebookViaDesktopLinkEls = document.querySelectorAll(
-    `[data-el="run-notebook-via-desktop"]`
-  );
-
   const notebookPreviewEl = document.querySelector(
     `[data-el="notebook-preview"]`
   );
@@ -262,7 +258,7 @@ if (document.body.dataset.page === "run") {
   settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
     if (useLivebookDesktop) {
       for (const runNotebookLinkEl of runNotebookLinkEls) {
-        runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/https?:/i,"livebook:"));
+        runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/https?:/i, "livebook:"));
       }
       livebookUrlEl.textContent = "Livebook desktop";
       document.body.toggleAttribute("data-run-ready", true);
@@ -278,10 +274,6 @@ if (document.body.dataset.page === "run") {
   });
 
   notebookSourceLinkEl.setAttribute("href", notebookUrl);
-
-  for (const runNotebookViaDesktopLinkEl of runNotebookViaDesktopLinkEls) {
-    runNotebookViaDesktopLinkEl.setAttribute("href", `livebook://${notebookUrl}`);
-  }
 
   getNotebookContent(notebookUrl)
     .then((livemd) => {
