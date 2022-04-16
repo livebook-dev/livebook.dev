@@ -183,6 +183,8 @@ if (
       });
   }
 
+  const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);
+
   function toggleLivebookDesktop(enabled) {
     if (enabled) {
       setLivebookStatus("desktop");
@@ -193,10 +195,9 @@ if (
       livebookUrlInputEl.disabled = false;
       livebookUrlInputEl.setAttribute("aria-disabled", "false");
       settingsStore.update({ useLivebookDesktop: false });
+      debouncedCheckLivebookStatus();
     }
   }
-
-  const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);
 
   if (livebookUrlInputEl) {
     const {livebookUrl, useLivebookDesktop} = settingsStore.get();
