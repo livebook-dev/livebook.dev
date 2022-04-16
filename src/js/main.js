@@ -260,7 +260,7 @@ if (document.body.dataset.page === "run") {
       for (const runNotebookLinkEl of runNotebookLinkEls) {
         runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/https?:/i, "livebook:"));
       }
-      livebookUrlEl.textContent = "Livebook desktop";
+      livebookUrlEl.textContent = "Livebook for desktop";
     } else {
       const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
       for (const runNotebookLinkEl of runNotebookLinkEls) {
