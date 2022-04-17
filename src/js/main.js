@@ -256,18 +256,19 @@ if (document.body.dataset.page === "run") {
     window.location.href = "/";
   }
 
+  function updateRunNotebookLinks(url, caption) {
+    for (const runNotebookLinkEl of runNotebookLinkEls) {
+      runNotebookLinkEl.setAttribute("href", url);
+    }
+    livebookUrlEl.textContent = caption;
+  }
+
   settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
     if (useLivebookDesktop) {
-      for (const runNotebookLinkEl of runNotebookLinkEls) {
-        runNotebookLinkEl.setAttribute("href", notebookUrl.replace(/^https?:/i, "livebook:"));
-      }
-      livebookUrlEl.textContent = "Livebook for desktop";
+      updateRunNotebookLinks(notebookUrl.replace(/^https?:/i, "livebook:"), "Livebook for desktop");
     } else {
       const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
-      for (const runNotebookLinkEl of runNotebookLinkEls) {
-        runNotebookLinkEl.setAttribute("href", livebookImportUrl);
-      }
-      livebookUrlEl.textContent = livebookUrl;
+      updateRunNotebookLinks(livebookImportUrl, livebookUrl);
     }
     document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
   });
