@@ -61,65 +61,279 @@
     </span>
     <div class="flex flex-col w-full max-w-[600px]">
       {{> install_instructions }}
-
-      <div class="mt-8">
-        <div class="flex flex-col">
-          <h2 class="text-gray-700 font-bold text">
-            Interested in Livebook Hub?
-          </h2>
-          <div
-            class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-12 items-start md:items-end md:justify-between"
-          >
-            <span class="mt-2 text-sm text-gray-700 font-medium">
-              We are working on it and we would love to hear your thoughts in
-              our survey. It takes 2 minutes.
-            </span>
-            <a
-              class="whitespace-nowrap button border-gray-300 hover:border-gray-500 border-2 bg-transparent text-gray-700 hover:text-gray-800"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
-              target="_blank"
-              rel="noopener"
-            >
-              Answer Livebook Hub survey
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!--Livebook Hub V1.0-->
-<section id="livebook-hub">
-  <div class="ml-5 flex md:justify-end justify-center">
-    <div
-      class="md:mt-24 md:mb-24 px-4 py-12 lg:w-1/2 lg:min-w-[600px] lg:max-w-[700px] flex flex-col"
-    >
-      <p>&#9733;</p>
-      <h2 class="mt-3 text-gray-900 tracking-wide font-semibold">
-        LIVEBOOK HUB
+<!--Livebook Hub V2.0-->
+<section id="livebook-hub-plans">
+  <div
+    class="mt-6 mx-auto max-w-7xl px-5 py-5 md:py-10 flex justify-center xl:justify-start"
+  >
+    <div class="xl:max-w-[527px] max-w-[920px] flex flex-col justify-center">
+      <h2
+        class="text-gray-900 text-2xl md:text-3xl tracking-wide font-semibold"
+      >
+        Get more of your team with
+        <span class="font-bold text-[#e44c75]">Livebook Hub / Enterprise</span>
       </h2>
-      <p class="mt-4 text-gray-700 text-2xl leading-10">
-        Get the best of your team with Livebook Hub!
+      <p class="mt-3 text-gray-700 font-medium leading-8">
+        Write notebooks in Livebook then securely deploy and share them with your team
+        and company with Livebook Hub / Enterprise.
       </p>
-      <ul class="mt-12 text-gray-700 text-xl">
-        <li>-> Single Sign On</li>
-        <li class="mt-7">-> In App Notebook Versioning</li>
-        <li class="mt-7">-> Custom remote runtimes</li>
-        <li class="mt-7">-> Running directly in our infrastructures</li>
-      </ul>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
+      <!-- <a
+        href="..."
         target="_blank"
         rel="noopener"
-        class="mt-14 text-blue-600 hover:font-semibold"
-        >COMPARE ALL FEATURES -></a
-      >
+        class="mt-6 text-blue-600 hover:font-semibold"
+        >Get in touch! -></a
+      > -->
     </div>
-    <div
-      class="md:w-1/2 md:bg-cover"
-      style="background-image: url(/images/livebook_hub_section.png)"
-    ></div>
+  </div>
+  <div class="mx-auto max-w-7xl pb-12 flex flex-wrap justify-center">
+    <!-- Plan Features -->
+    <div class="p-5 hidden xl:inline-block">
+      <ul class="min-w-[250px] pb-10">
+        <li class="mt-20 py-2.5">Deploy notebooks to cloud machines</li>
+        <li class="py-2.5">Authenticate and manage team members</li>
+        <li class="py-2.5">Safely share secrets across notebooks</li>
+        <li class="py-2.5">Run local notebooks on remote machines</li>
+        <li class="py-2.5">Operational support</li>
+      </ul>
+    </div>
+    <!-- Free Plan -->
+    <div class="p-5 hidden xl:inline-block">
+      <ul class="min-w-[300px] pl-11 pb-10">
+        <li class="pt-10 text-l font-bold">LIVEBOOK HUB</li>
+        <li class="mt-4 py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On our cloud
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; Password + 2FA
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />&nbsp; End-to-end encrypted
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On our cloud
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; Community
+        </li>
+        <a
+          class="whitespace-nowrap border-gray-300 hover:border-gray-500 border-2 bg-transparent rounded-md text-gray-700 hover:text-gray-800 px-16 py-[18px] mt-10 inline-block"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeEQBjBKvRFv3hTaSCVqJp9xatyYGhckQAPsNiLYa-MYQlPQQ/viewform?usp=sf_link"
+          target="_blank"
+          rel="noopener"
+        >
+          Keep me updated...
+        </a>
+      </ul>
+    </div>
+    <!-- Enterprise Plan -->
+    <div class="p-5 hidden xl:inline-block">
+      <ul class="bg-gray-800 rounded-2xl text-white min-w-[440px] pl-11 pb-10">
+        <li class="pt-10 text-l font-bold">LIVEBOOK ENTERPRISE</li>
+        <li class="mt-4 py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On your infrastructure
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; SSO via Zero Trust Authentication
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; End-to-end encrypted
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On your infrastructure
+        </li>
+        <li class="py-2.5">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; Dedicated
+        </li>
+        <a
+          class="whitespace-nowrap rounded-md inline-block button-blue px-16 py-[18px] mt-10"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeAABUT042XswwI15RBGiEJ3lSUFF9QSiaRhhzk_j6v-B3quA/viewform?usp=sf_link"
+          target="_blank"
+          rel="noopener"
+        >
+          Get in touch!
+        </a>
+      </ul>
+    </div>
+    <!-- Free Plan Mobile-->
+    <div class="p-5 xl:hidden">
+      <ul class="bg-gray-50 rounded-2xl p-10">
+        <li class="text-2xl">LIVEBOOK HUB</li>
+        <a
+          class="whitespace-nowrap border-gray-300 hover:border-gray-500 border-2 bg-white rounded-md text-gray-700 hover:text-gray-800 w-full text-center py-[18px] mt-6 inline-block"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeEQBjBKvRFv3hTaSCVqJp9xatyYGhckQAPsNiLYa-MYQlPQQ/viewform?usp=sf_link"
+          target="_blank"
+          rel="noopener"
+        >
+          Keep me updated...
+        </a>
+        <li class="text-gray-600 mt-6">Deploy notebooks to cloud machines</li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On our cloud
+        </li>
+        <li class="text-gray-600 mt-6">Authenticate and manage team members</li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; Password + 2FA
+        </li>
+        <li class="text-gray-600 mt-6">
+          Safely share secrets across notebooks
+        </li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; End-to-end encrypted
+        </li>
+        <li class="text-gray-600 mt-6">
+          Run local notebooks on remote machines
+        </li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On our cloud
+        </li>
+        <li class="text-gray-600 mt-6">Operational support</li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; Community
+        </li>
+      </ul>
+    </div>
+    <!-- Enterprise Plan Mobile -->
+    <div class="p-5 xl:hidden">
+      <ul class="bg-gray-800 rounded-2xl text-white p-10">
+        <li class="text-2xl">LIVEBOOK ENTERPRISE</li>
+        <a
+          class="whitespace-nowrap rounded-md button-blue text-center py-[18px] mt-6 w-full inline-block"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeAABUT042XswwI15RBGiEJ3lSUFF9QSiaRhhzk_j6v-B3quA/viewform?usp=sf_link"
+          target="_blank"
+          rel="noopener"
+        >
+          Get in touch!
+        </a>
+        <li class="text-gray-200 mt-7">Deploy notebooks to cloud machines</li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On your infrastructure
+        </li>
+        <li class="text-gray-200 mt-6">Authenticate and manage team members</li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; SSO via Zero Trust Auth
+        </li>
+        <li class="text-gray-200 mt-6">
+          Safely share secrets across notebooks
+        </li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; End-to-end encrypted
+        </li>
+        <li class="text-gray-200 mt-6">
+          Run local notebooks on remote machines
+        </li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; On your infrastructure
+        </li>
+        <li class="text-gray-200 mt-6">Operational support</li>
+        <li class="mt-2">
+          <img
+            class="inline-block"
+            src="images/icon-tick-green.png"
+            alt="green tick for avaliable features"
+          />
+          &nbsp; Dedicated
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -290,299 +504,6 @@
 
 <div class="bg-white h-8 md:h-20"></div>
 <hr />
-
-<!--Livebook Hub V2.0-->
-<section id="livebook-hub-plans">
-  <div
-    class="md:mt-20 mx-auto max-w-7xl px-4 pt-12 flex justify-center xl:justify-start"
-  >
-    <div class="xl:max-w-[527px] max-w-[920px] flex flex-col justify-center">
-      <h2
-        class="md:text-4xl text-2xl text-gray-900 tracking-wide font-semibold"
-      >
-        Get more of your team with Livebook Hub/Enterprise
-      </h2>
-      <p class="mt-6 text-gray-700 text-xl leading-8">
-        Write notebooks in Livebook then deploy and share them with your team
-        and company with Livebook Hub/Enterprise.
-      </p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
-        target="_blank"
-        rel="noopener"
-        class="mt-12 text-blue-600 hover:font-semibold"
-        >Get in touch! -></a
-      >
-    </div>
-  </div>
-  <div class="mx-auto max-w-7xl pb-12 flex flex-wrap justify-center">
-    <!-- Plan Features -->
-    <div class="p-5 hidden xl:inline-block">
-      <ul class="min-w-[250px] pb-10">
-        <li>&nbsp;</li>
-        <li>&nbsp;</li>
-        <li class="pt-24 pb-2.5">Deploy notebooks to cloud machines</li>
-        <li class="py-2.5">Authenticate and manage team members</li>
-        <li class="py-2.5">Safely store and access secrets across notebooks</li>
-        <li class="py-2.5">Run local notebooks on remote machines</li>
-        <li class="py-2.5">Operational support</li>
-      </ul>
-    </div>
-    <!-- Free Plan -->
-    <div class="p-5 hidden xl:inline-block">
-      <ul class="min-w-[300px] pl-11 pb-10">
-        <li class="pt-10">LIVEBOOK FREE</li>
-        <li class="leading-6 text-3xl">free forever</li>
-        <li class="mt-12 py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On our cloud
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Password + 2FA
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />&nbsp; E2E encrypted
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On our cloud
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Community
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Local on Disk
-        </li>
-        <button
-          class="whitespace-nowrap border-gray-300 hover:border-gray-500 border-2 bg-transparent rounded-md text-gray-700 hover:text-gray-800 px-16 py-[18px] mt-12"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Coming Soon...
-        </button>
-      </ul>
-    </div>
-    <!-- Enterprise Plan -->
-    <div class="p-5 hidden xl:inline-block">
-      <ul class="bg-gray-800 rounded-2xl text-white min-w-[440px] pl-11 pb-10">
-        <li class="pt-10">LIVEBOOK HUB</li>
-        <li class="leading-6 text-3xl">contact sales</li>
-        <li class="mt-12 py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On your infrastructure
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; SSO via Zero Trust Auth
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; E2E encrypted
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On your infrastructure
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Dedicated
-        </li>
-        <li class="py-2.5">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Local on Disk
-        </li>
-        <button
-          class="whitespace-nowrap rounded-md button-blue px-16 py-[18px] mt-12"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Get in touch!
-        </button>
-      </ul>
-    </div>
-    <!-- Free Plan Mobile-->
-    <div class="p-5 mt-7 xl:hidden">
-      <ul class="bg-gray-50 rounded-2xl p-10">
-        <li class="mt-6">LIVEBOOK FREE</li>
-        <li class="leading-6 text-3xl">free forever</li>
-        <button
-          class="whitespace-nowrap border-gray-300 hover:border-gray-500 border-2 bg-white rounded-md text-gray-700 hover:text-gray-800 w-full py-[18px] mt-6"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Coming soon...
-        </button>
-        <li class="text-gray-600 mt-6">Deploy notebooks to cloud machines</li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On our cloud
-        </li>
-        <li class="text-gray-600 mt-6">Authenticate and manage team members</li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Password + 2FA
-        </li>
-        <li class="text-gray-600 mt-6">
-          Safely store and access secrets across notebooks
-        </li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; E2E encrypted
-        </li>
-        <li class="text-gray-600 mt-6">
-          Run local notebooks on remote machines
-        </li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On our cloud
-        </li>
-        <li class="text-gray-600 mt-6">Operational support</li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Community
-        </li>
-      </ul>
-    </div>
-    <!-- Enterprise Plan Mobile -->
-    <div class="p-5 lg:mt-7 xl:hidden">
-      <ul class="bg-gray-800 rounded-2xl text-white p-10">
-        <li class="mt-6">LIVEBOOK HUB</li>
-        <li class="leading-6 text-3xl">contact sales</li>
-        <button
-          class="whitespace-nowrap rounded-md button-blue px-16 py-[18px] mt-6 w-full"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDNP2THYowhhQuwyTpsFG2Cn_qGHFttmIDVmS1Fs7cchQ_1g/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Get in touch!
-        </button>
-        <li class="text-gray-200 mt-7">Deploy notebooks to cloud machines</li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On your infrastructure
-        </li>
-        <li class="text-gray-200 mt-6">Authenticate and manage team members</li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; SSO via Zero Trust Auth
-        </li>
-        <li class="text-gray-200 mt-6">
-          Safely store and access secrets across notebooks
-        </li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; E2E encrypted
-        </li>
-        <li class="text-gray-200 mt-6">
-          Run local notebooks on remote machines
-        </li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; On your infrastructure
-        </li>
-        <li class="text-gray-200 mt-6">Operational support</li>
-        <li class="mt-2">
-          <img
-            class="inline-block"
-            src="images/icon-tick-green.png"
-            alt="green tick for avaliable features"
-          />
-          &nbsp; Dedicated
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- Community -->
 <!-- <section id="community" class="bg-white">
