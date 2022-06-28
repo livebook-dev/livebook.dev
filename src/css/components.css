@@ -2,7 +2,7 @@
   /* Buttons */
 
   .button {
-    @apply px-5 py-2 rounded-lg font-medium text-sm border border-transparent flex items-center space-x-1.5;
+    @apply px-5 py-2 rounded-lg font-medium text-sm border border-transparent flex items-center justify-center text-center space-x-1.5 whitespace-nowrap;
   }
 
   .button-blue {
@@ -11,6 +11,10 @@
 
   .button-gray {
     @apply text-gray-600 bg-gray-100 hover:bg-gray-50 focus:bg-gray-50;
+  }
+
+  .button-outlined-gray {
+    @apply border-gray-300 text-gray-600 bg-white hover:bg-gray-100 focus:bg-gray-100;
   }
 
   /* Custom scrollbars */
