@@ -32,15 +32,32 @@ module.exports = {
           900: "#0d1829",
         },
       },
+      gridTemplateColumns: {
+        // Simple 4 column grid
+        4: "repeat(4, minmax(300px, 1fr))",
+      },
     },
     screens: {
       sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      maxsm: { min: "100px", max: "767px" },
+      // => @media (max-width: 767px) { ... }
+
       md: "768px",
-      lg: "1024px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "999px",
+      // => @media (min-width: 1024px) { ... }
+
       xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
       "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
     },
   },
+
   variants: {
     extend: {},
   },

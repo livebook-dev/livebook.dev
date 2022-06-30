@@ -1,131 +1,108 @@
-<div class="mt-8 md:mt-14 w-full max-w-[600px] flex flex-col items-center">
-  <div role="tablist" class="tabs w-full justify-between" data-el="tabs">
-    <a
-      id="link-install-flyio"
-      class="tab active"
-      href="#"
-      role="tab"
-      aria-controls="install-flyio"
-      aria-selected="true"
-      data-tab-target="#install-flyio"
+<!-- <div class="flex flex-wrap md:flex-nowrap"></div> -->
+
+<!-- fly.io -->
+<!-- <div class="md:border-r md:pr-14 max-w-[600px]">
+    <img src="/images/icon_flyio.png" />
+    <h2 class="mt-10 text-gray-600 tracking-wide">LAUNCH ON FLY.IO</h2>
+    <button
+      class="mt-8 button p-10 py-[18px] button-blue"
+      href="https://fly.io/launch/livebook"
+      target="_blank"
+      rel="noopener"
     >
-      Launch on Fly.io
-    </a>
-    <a
-      id="link-install-docker"
-      class="tab"
-      href="#"
-      role="tab"
-      aria-controls="install-docker"
-      data-tab-target="#install-docker"
-      >Launch using Docker</a
+      Launch on fly.io
+    </button>
+  </div> -->
+
+<!-- desktop app -->
+<!-- <div class="maxsm:mt-20 max-w-[600px]">
+    <img src="/images/icon_desktop.png" />
+    <h2 class="mt-10 text-gray-600 tracking-wide">RUN ON YOUR MACHINE</h2>
+    <button
+      class="mt-8 button p-10 py-[18px] button-blue"
+      href=""
+      target="_blank"
+      rel="noopener"
     >
-    <a
-      id="link-install-elixir"
-      class="tab"
-      href="#"
-      role="tab"
-      aria-controls="install-elixir"
-      data-tab-target="#install-elixir"
-      >Launch using Elixir</a
-    >
+      Download the Desktop App
+    </button>
   </div>
-  <div class="mt-4 w-full p-4 rounded-2xl bg-white">
-    <img src="/images/window_buttons.png" alt="" width="36" height="8" />
-    <!-- Tab contents -->
+</div> -->
 
-    <!-- * Fly.io instructions -->
-    <div
-      id="install-flyio"
-      role="tabpanel"
-      aria-labelledby="link-install-flyio"
-      data-el="tab-content"
-      data-tab-active
-      class="my-12 flex flex-col items-center justify-center"
+<div class="grid grid-cols-4 gap-4">
+  <div class="justify-self-start col-span-1">
+    <img class="inline-block" src="/images/icon_flyio.png" />
+    <h2 class="inline-block text-gray-600 tracking-wide">LAUNCH ON FLY.IO</h2>
+  </div>
+  <div class="justify-self-start col-span-3">
+    <img class="inline-block" src="/images/icon_desktop.png" />
+    <h2 class="inline-block text-gray-600 tracking-wide">
+      RUN ON YOUR MACHINE
+    </h2>
+  </div>
+  <div class="col-span-1">3</div>
+  <div class="col-span-3">4</div>
+  <div>
+    <button
+      class="mt-8 button p-10 py-[18px] button-blue"
+      href="https://fly.io/launch/livebook"
+      target="_blank"
+      rel="noopener"
     >
-      <a
-        class="px-5 py-3 flex space-x-3 items-center rounded-xl bg-[#8b5cf6] hover:bg-[#7c3aed] text-white"
-        href="https://fly.io/launch/livebook"
-      >
-        <img src="/images/flyio_logo_white.svg" alt="" width="32" height="27" />
-        <span class="font-semibold -mb-0.5">Launch on Fly</span>
-      </a>
-    </div>
+      <img class="mr-5" width="40px" src="/images/flyio_logo_white.svg" />
+      Launch on fly.io
+    </button>
+  </div>
+  <div>
+    <button
+      class="mt-8 button p-10 py-[18px] button-blue"
+      href=""
+      target="_blank"
+      rel="noopener"
+    >
+      <img class="mr-5" width="30px" src="/images/windows_logo.svg" /> Windows
+    </button>
+  </div>
+  <div>
+    <button
+      class="mt-8 button p-10 py-[18px] button-blue"
+      href=""
+      target="_blank"
+      rel="noopener"
+    >
+      <img class="mr-5" width="40px" src="/images/icon_intel.png" />
+      Mac (Intel)
+    </button>
+  </div>
+  <div>
+    <button
+      class="mt-8 button p-10 py-[18px] button-blue"
+      href=""
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        class="mr-5"
+        width="40px"
+        src="/images/icon_appleSilicon--white.png"
+      />
+      Mac (Apple Silicon)
+    </button>
+  </div>
+</div>
 
-    <!-- * Docker instructions -->
-    <div
-      id="install-docker"
-      role="tabpanel"
-      aria-labelledby="link-install-docker"
-      data-el="tab-content"
-      class="mt-6 flex flex-col space-y-6"
+<!-- docker -->
+<div class="flex flex-wrap md:flex-nowrap">
+  <div class="mt-14 m-auto max-w-7xl">
+    <a
+      href="https://fly.io/launch/livebook"
+      class="flex items-center max-w-[800px] rounded-lg border-gray-300 hover:border-gray-500 border-2 bg-gray-100 text-gray-700 hover:text-gray-800 p-3"
     >
-      <!-- Step -->
-      <div class="flex flex-col items-start space-y-2">
-        <div class="text-gray-900 text-sm font-semibold">Step 1</div>
-        <div>
-          <a
-            class="button button-gray"
-            href="https://docs.docker.com/get-docker/"
-          >
-            <img src="/images/docker.svg" alt="" width="28" height="21" />
-            <span class="text-sm font-medium">Install Docker</span>
-          </a>
-        </div>
-      </div>
-      <!-- Step -->
-      <div class="flex flex-col space-y-2">
-        <div class="text-gray-900 text-sm font-semibold">Step 2</div>
-        <!-- prettier-ignore -->
-        {{> code
-              id="docker-run-livebook"
-              code="docker run -p 8080:8080 -p 8081:8081 --pull always livebook/livebook"
-              isShell=true
-            }}
-      </div>
-    </div>
-
-    <!-- * Elixir instructions -->
-    <div
-      id="install-elixir"
-      role="tabpanel"
-      aria-labelledby="link-install-elixir"
-      data-el="tab-content"
-      class="mt-6 flex flex-col space-y-6"
-    >
-      <!-- Step -->
-      <div class="flex flex-col items-start space-y-2">
-        <div class="text-gray-900 text-sm font-semibold">Step 1</div>
-        <div>
-          <a
-            class="button button-gray"
-            href="https://elixir-lang.org/install.html"
-          >
-            <img src="/images/elixir.svg" alt="" width="12" height="21" />
-            <span class="text-sm font-medium">Install Elixir v1.13+</span>
-          </a>
-        </div>
-      </div>
-      <!-- Step -->
-      <div class="flex flex-col space-y-2">
-        <div class="text-gray-900 text-sm font-semibold">Step 2</div>
-        <!-- prettier-ignore -->
-        {{> code
-              id="elixir-install-local"
-              code="mix local.rebar --force && mix local.hex --force"
-              isShell=true
-            }}
-            {{> code
-              id="elixir-install-livebook"
-              code="mix escript.install hex livebook"
-              isShell=true
-            }}
-            {{> code
-              id="elixir-run-livebook"
-              code="livebook server"
-              isShell=true
-            }}
-      </div>
-    </div>
+      <img class="" src="/images/icon-information.png" />
+      <p class="pl-5 text-lg">
+        To run on Docker, embedded devices, or Elixir’s Mix.
+        <span class="underline">Check Read Me</span>
+      </p>
+    </a>
   </div>
 </div>
