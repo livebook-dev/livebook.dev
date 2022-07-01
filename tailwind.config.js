@@ -33,8 +33,8 @@ module.exports = {
         },
       },
       gridTemplateColumns: {
-        // Simple 4 column grid
-        4: "repeat(4, minmax(300px, 1fr))",
+        // Simple 8 column grid
+        8: "repeat(8, minmax(125px, 1fr))",
       },
     },
     screens: {

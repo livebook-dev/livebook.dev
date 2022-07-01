@@ -1,93 +1,76 @@
-<!-- <div class="flex flex-wrap md:flex-nowrap"></div> -->
+<div
+  class="m-auto max-w-7x p-4 mt-5 md:max-w-[932px] flex flex-col items-center justify-center"
+>
+  <div class="mt-4 w-full p-4 rounded-2xl bg-white">
+    <img src="/images/window_buttons.png" alt="" width="36" height="8" />
+    <!-- fly.io -->
+    <div class="px-1 py-10 flex flex-wrap md:flex-nowrap justify-center">
+      <div class="min-w-[280px] md:border-r md:pr-4">
+        <div class="flex">
+          <img class="self-center" src="/images/icon_flyio.png" />
+          <h2 class="self-center p-5 font-semibold text-gray-600 tracking-wide">
+            LAUNCH ON FLY.IO
+          </h2>
+        </div>
+        <button
+          class="mt-10 px-5 py-2 button button-outlined-gray"
+          href="https://fly.io/launch/livebook"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="/images/cloud-line-gray.svg" />
+          <span>Launch on fly.io</span>
+        </button>
+      </div>
 
-<!-- fly.io -->
-<!-- <div class="md:border-r md:pr-14 max-w-[600px]">
-    <img src="/images/icon_flyio.png" />
-    <h2 class="mt-10 text-gray-600 tracking-wide">LAUNCH ON FLY.IO</h2>
-    <button
-      class="mt-8 button p-10 py-[18px] button-blue"
-      href="https://fly.io/launch/livebook"
-      target="_blank"
-      rel="noopener"
-    >
-      Launch on fly.io
-    </button>
-  </div> -->
-
-<!-- desktop app -->
-<!-- <div class="maxsm:mt-20 max-w-[600px]">
-    <img src="/images/icon_desktop.png" />
-    <h2 class="mt-10 text-gray-600 tracking-wide">RUN ON YOUR MACHINE</h2>
-    <button
-      class="mt-8 button p-10 py-[18px] button-blue"
-      href=""
-      target="_blank"
-      rel="noopener"
-    >
-      Download the Desktop App
-    </button>
-  </div>
-</div> -->
-
-<div class="grid grid-cols-4 gap-4">
-  <div class="justify-self-start col-span-1">
-    <img class="inline-block" src="/images/icon_flyio.png" />
-    <h2 class="inline-block text-gray-600 tracking-wide">LAUNCH ON FLY.IO</h2>
-  </div>
-  <div class="justify-self-start col-span-3">
-    <img class="inline-block" src="/images/icon_desktop.png" />
-    <h2 class="inline-block text-gray-600 tracking-wide">
-      RUN ON YOUR MACHINE
-    </h2>
-  </div>
-  <div class="col-span-1">3</div>
-  <div class="col-span-3">4</div>
-  <div>
-    <button
-      class="mt-8 button p-10 py-[18px] button-blue"
-      href="https://fly.io/launch/livebook"
-      target="_blank"
-      rel="noopener"
-    >
-      <img class="mr-5" width="40px" src="/images/flyio_logo_white.svg" />
-      Launch on fly.io
-    </button>
-  </div>
-  <div>
-    <button
-      class="mt-8 button p-10 py-[18px] button-blue"
-      href=""
-      target="_blank"
-      rel="noopener"
-    >
-      <img class="mr-5" width="30px" src="/images/windows_logo.svg" /> Windows
-    </button>
-  </div>
-  <div>
-    <button
-      class="mt-8 button p-10 py-[18px] button-blue"
-      href=""
-      target="_blank"
-      rel="noopener"
-    >
-      <img class="mr-5" width="40px" src="/images/icon_intel.png" />
-      Mac (Intel)
-    </button>
-  </div>
-  <div>
-    <button
-      class="mt-8 button p-10 py-[18px] button-blue"
-      href=""
-      target="_blank"
-      rel="noopener"
-    >
-      <img
-        class="mr-5"
-        width="40px"
-        src="/images/icon_appleSilicon--white.png"
-      />
-      Mac (Apple Silicon)
-    </button>
+      <!-- desktop app -->
+      <div class="ml-10 maxsm:mt-20">
+        <div class="flex">
+          <img class="self-center" src="/images/icon_desktop.png" />
+          <h2 class="self-center p-5 font-semibold text-gray-600 tracking-wide">
+            RUN ON YOUR MACHINE
+          </h2>
+        </div>
+        <div class="flex space-x-5">
+          <!-- Mac Intel -->
+          <button
+            class="mt-10 px-5 py-2 button button-outlined-gray whitespace-nowrap"
+            href=""
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="relative bottom-[2.8px]"
+              src="/images/apple-line-gray.svg"
+            />
+            <span>Mac Intel</span>
+          </button>
+          <!-- Mac Silicon -->
+          <button
+            class="flex justify-center rounded-md items-center mt-10 px-5 py-2 button button-outlined-gray whitespace-nowrap"
+            href=""
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="relative bottom-[2.8px]"
+              src="/images/apple-line-gray.svg"
+            />
+            <span>Mac Silicon</span>
+          </button>
+          <!-- Windows -->
+          <button
+            class="mt-10 button px-5 py-2 button-outlined-gray whitespace-nowrap"
+            href=""
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/images/windows-line-gray.svg" />
+            <span>Windows</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -106,3 +89,21 @@
     </a>
   </div>
 </div>
+
+<!-- * Fly.io instructions -->
+<!-- <div
+      id="install-flyio"
+      role="tabpanel"
+      aria-labelledby="link-install-flyio"
+      data-el="tab-content"
+      data-tab-active
+      class="my-12 flex flex-col items-center justify-center"
+    >
+      <a
+        class="px-5 py-3 flex space-x-3 items-center rounded-xl bg-[#8b5cf6] hover:bg-[#7c3aed] text-white"
+        href="https://fly.io/launch/livebook"
+      >
+        <img src="/images/flyio_logo_white.svg" alt="" width="32" height="27" />
+        <span class="font-semibold -mb-0.5">Launch on Fly</span>
+      </a>
+    </div> -->
