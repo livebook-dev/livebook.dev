@@ -5,8 +5,8 @@
     <img src="/images/window_buttons.png" alt="" width="36" height="8" />
     <!-- fly.io -->
     <div class="px-1 py-10 flex flex-wrap md:flex-nowrap justify-center">
-      <div class="min-w-[280px] md:border-r md:pr-4">
-        <div class="flex">
+      <div class="flex flex-col md:border-r md:pr-4">
+        <div class="flex min-w-[280px]">
           <img class="self-center" src="/images/icon_flyio.png" />
           <h2 class="self-center p-5 font-semibold text-gray-600 tracking-wide">
             LAUNCH ON FLY.IO
@@ -24,14 +24,14 @@
       </div>
 
       <!-- desktop app -->
-      <div class="ml-10 maxsm:mt-20">
+      <div class="flex flex-col items-center md:ml-10 maxsm:mt-10">
         <div class="flex">
           <img class="self-center" src="/images/icon_desktop.png" />
           <h2 class="self-center p-5 font-semibold text-gray-600 tracking-wide">
             RUN ON YOUR MACHINE
           </h2>
         </div>
-        <div class="flex space-x-5">
+        <div class="flex md:flex-row flex-col space-x-5">
           <!-- Mac Intel -->
           <button
             class="mt-10 px-5 py-2 button button-outlined-gray whitespace-nowrap"
