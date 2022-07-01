@@ -265,7 +265,7 @@ if (document.body.dataset.page === "run") {
 
   settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
     if (useLivebookDesktop) {
-      updateRunNotebookLinks(notebookUrl.replace(/^https?:/i, "livebook:"), "Livebook for desktop");
+      updateRunNotebookLinks(notebookUrl.replace(/^https?:/i, "livebook:"), "Livebook App");
     } else {
       const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
       updateRunNotebookLinks(livebookImportUrl, livebookUrl);
