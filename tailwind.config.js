@@ -32,10 +32,6 @@ module.exports = {
           900: "#0d1829",
         },
       },
-      gridTemplateColumns: {
-        // Simple 8 column grid
-        8: "repeat(8, minmax(125px, 1fr))",
-      },
     },
     screens: {
       sm: "640px",
@@ -47,7 +43,7 @@ module.exports = {
       md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      lg: "999px",
+      lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
       xl: "1280px",
