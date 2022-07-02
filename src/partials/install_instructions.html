@@ -8,11 +8,16 @@
       <div class="flex flex-col md:items-start md:border-r md:pr-4">
         <div class="flex flex-nowrap min-w-[270px]">
           <img class="self-center" src="/images/icon_flyio.svg" />
-          <h2 class="self-center p-5 font-semibold text-gray-600 tracking-wide">
-            LAUNCH ON FLY.IO
-          </h2>
+          <div class="self-center px-5 text-gray-700">
+            <h2 class="font-semibold tracking-wide">
+              Launch on Fly.io
+            </h2>
+            <h3>
+              to run it on the cloud
+            </h3>
+          </div>
         </div>
-        <button
+        <a
           class="mt-10 px-5 py-2 button button-outlined-gray"
           href="https://fly.io/launch/livebook"
           target="_blank"
@@ -20,46 +25,51 @@
         >
           <img src="/images/cloud-line-gray.svg" />
           <span>Launch on fly.io</span>
-        </button>
+        </a>
       </div>
 
       <!-- desktop app -->
       <div class="md:ml-14 maxsm:mt-16">
         <div class="flex flex-nowrap">
           <img class="self-center" src="/images/icon_desktop.svg" />
-          <h2 class="self-center p-5 font-semibold text-gray-600 tracking-wide">
-            RUN ON YOUR MACHINE
-          </h2>
+          <div class="self-center px-5 text-gray-700">
+            <h2 class="font-semibold tracking-wide">
+              Install the Livebook App
+            </h2>
+            <h3>
+              to run it on your machine
+            </h3>
+          </div>
         </div>
         <div class="flex maxsm:flex-col md:flex-nowrap md:space-x-5">
           <!-- Mac Intel -->
-          <button
+          <a
             class="mt-10 px-5 py-2 button button-outlined-gray whitespace-nowrap"
             href=""
             target="_blank"
             rel="noopener"
           >
             <img
-              class="relative bottom-[2.8px]"
+              class="relative bottom-[2px]"
               src="/images/apple-line-gray.svg"
             />
             <span>Mac Intel</span>
-          </button>
+          </a>
           <!-- Mac Silicon -->
-          <button
+          <a
             class="flex justify-center rounded-md items-center mt-10 px-5 py-2 button button-outlined-gray whitespace-nowrap"
             href=""
             target="_blank"
             rel="noopener"
           >
             <img
-              class="relative bottom-[2.8px]"
+              class="relative bottom-[2px]"
               src="/images/apple-line-gray.svg"
             />
             <span>Mac Silicon</span>
-          </button>
+          </a>
           <!-- Windows -->
-          <button
+          <a
             class="mt-10 button px-5 py-2 button-outlined-gray whitespace-nowrap"
             href=""
             target="_blank"
@@ -67,26 +77,26 @@
           >
             <img src="/images/windows-line-gray.svg" />
             <span>Windows</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- docker -->
+<!-- other installs -->
 <div class="m-auto max-w-7x p-4 md:max-w-[932px]">
-  <div class="md:mt-12 mt-10 md:mb-28 mb-12 m-auto max-w-7xl">
+  <div class="md:mt-2 md:mb-28 mb-12 m-auto max-w-7xl">
     <div
-      class="flex items-center max-w-[630px] rounded-lg border-gray-300 border-2 bg-gray-100 text-gray-700 py-4 px-5"
+      class="flex items-center max-w-[580px] rounded-lg border-gray-300 border-2 bg-gray-100 text-gray-700 py-4 px-5"
     >
       <img src="/images/icon-information.svg" />
-      <p class="ml-4 text-base">
+      <p class="ml-3 text-sm">
         To run on Docker, embedded devices, or Elixir’s Mix
         <a
           href="https://github.com/livebook-dev/livebook#installation"
           class="border-b border-gray-700"
-          >check our GitHub</a
+          >check our README</a
         >.
       </p>
     </div>
