@@ -155,6 +155,9 @@ if (
   const livebookStatusEl = document.querySelector(
     `[data-el="livebook-status"]`
   );
+  const livebookDesktopToggleEl = document.querySelector(
+    `[data-el="livebook-desktop-toggle"]`
+  );
 
   function setLivebookStatus(status) {
     livebookStatusEl.setAttribute("data-status", status);
@@ -182,11 +185,27 @@ if (
 
   const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);
 
-  if (livebookUrlInputEl) {
-    const livebookUrl = settingsStore.get().livebookUrl;
-    livebookUrlInputEl.value = livebookUrl;
+  function toggleLivebookDesktop(enabled) {
+    if (enabled) {
+      setLivebookStatus("desktop");
+      livebookUrlInputEl.disabled = true;
+      livebookUrlInputEl.setAttribute("aria-disabled", "true");
+      settingsStore.update({ useLivebookDesktop: true });
+    } else {
+      livebookUrlInputEl.disabled = false;
+      livebookUrlInputEl.setAttribute("aria-disabled", "false");
+      settingsStore.update({ useLivebookDesktop: false });
+      livebookUrlInputEl.dispatchEvent(new Event("input"));
+    }
+  }
 
-    if (livebookUrl) {
+  if (livebookUrlInputEl) {
+    const {livebookUrl, useLivebookDesktop} = settingsStore.get();
+    livebookUrlInputEl.value = livebookUrl;
+    livebookDesktopToggleEl.checked = useLivebookDesktop;
+    toggleLivebookDesktop(useLivebookDesktop)
+
+    if (livebookUrl && !useLivebookDesktop) {
       checkLivebookStatus(livebookUrl);
     }
 
@@ -207,6 +226,10 @@ if (
     livebookUrlInputEl.addEventListener("blur", (event) => {
       // Reflect the normalized URL in the input
       event.target.value = settingsStore.get().livebookUrl;
+    });
+
+    livebookDesktopToggleEl.addEventListener("change", (event) => {
+      toggleLivebookDesktop(event.target.checked);
     });
   }
 }
@@ -233,12 +256,20 @@ if (document.body.dataset.page === "run") {
     window.location.href = "/";
   }
 
-  settingsStore.getAndSubscribe(({ livebookUrl }) => {
-    const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
+  function updateRunNotebookLinks(url, caption) {
     for (const runNotebookLinkEl of runNotebookLinkEls) {
-      runNotebookLinkEl.setAttribute("href", livebookImportUrl);
+      runNotebookLinkEl.setAttribute("href", url);
     }
-    livebookUrlEl.textContent = livebookUrl;
+    livebookUrlEl.textContent = caption;
+  }
+
+  settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
+    if (useLivebookDesktop) {
+      updateRunNotebookLinks(notebookUrl.replace(/^https?:/i, "livebook:"), "Livebook App");
+    } else {
+      const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
+      updateRunNotebookLinks(livebookImportUrl, livebookUrl);
+    }
     document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
   });
 
