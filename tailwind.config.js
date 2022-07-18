@@ -35,12 +35,14 @@ module.exports = {
     },
     screens: {
       sm: "640px",
+      maxsm: { min: "100px", max: "767px" },
       md: "768px",
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
     },
   },
+
   variants: {
     extend: {},
   },

@@ -4,10 +4,19 @@ import handlebars from "vite-plugin-handlebars";
 
 const root = resolve(__dirname, "src");
 
+// TODO: remove once https://github.com/alexlafroscia/vite-plugin-handlebars/issues/192 is resolved
+function handlebarsOverride(options) {
+  const plugin = handlebars(options);
+  // Currently handleHotUpdate skips further processing, which bypasses
+  // postcss and in turn tailwind doesn't pick up file changes
+  delete plugin.handleHotUpdate;
+  return plugin;
+}
+
 export default {
   root,
   plugins: [
-    handlebars({
+    handlebarsOverride({
       partialDirectory: resolve(root, "partials"),
     }),
   ],
