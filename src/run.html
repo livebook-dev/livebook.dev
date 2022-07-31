@@ -7,34 +7,37 @@
       <h2 class="text-gray-900 font-semibold text-center text-xl md:text-3xl">
         Run this notebook
       </h2>
-      <span class="mt-3 text-gray-700 text-center max-w-xl">
-        <span data-on-run-ready="hide">
-          Use Livebook to open this notebook and explore new ideas.<br />
-          It is easy to get started, on your machine or the cloud.
-        </span>
-        <span data-on-run-ready="show">
-          Click below to open and run it
-          <span
-            data-el="livebook-url-intro"
-          ></span>
-          <span
-            data-el="livebook-url"
-            class="text-gray-600 font-semibold"
-          ></span>.
-        </span>
-      </span>
-      <div class="mt-8">
-        <div data-on-run-ready="show" class="flex flex-col items-center">
-          <a data-el="run-notebook-link" class="button button-blue" href="#">
-            Run notebook
-          </a>
-          <a
-            class="mt-3 text-sm text-blue-600 font-semibold"
-            href="#livebook-settings"
-          >
-            Change Livebook location?
-          </a>
+      <div class="mt-3 text-gray-700 text-center max-w-2xl">
+        <div data-on-run-ready="hide">
+          <p>Use Livebook to open this notebook and explore new ideas.</p>
+          <p>It is easy to get started, on your machine or the cloud.</p>
         </div>
+        <div data-on-run-ready="show">
+          <p>
+            Click below to open and run it
+            <span
+              data-el="livebook-url-intro"
+            ></span>
+            <span
+              data-el="livebook-url"
+              class="text-gray-600 font-semibold"
+            ></span>.
+          </p>
+          <p class="text-sm">
+            (or <a
+              class="text-blue-600"
+              href="#livebook-settings"
+            >change your Livebook location</a>)
+          </p>
+        </div>
+      </div>
+      <div class="mt-12">
+        <a
+          data-on-run-ready="show"
+          data-el="run-notebook-link"
+          class="button button-blue" href="#">
+          Run notebook
+        </a>
         <a
           data-on-run-ready="hide"
           class="button button-gray"
@@ -45,7 +48,7 @@
         </a>
       </div>
 
-      <div class="mt-8 py-12 w-full">
+      <div class="mt-5 mb-10 w-full">
         <div
           class="p-6 pr-2 w-full custom-shadow-2 flex justify-between items-center space-x-4 rounded-3xl bg-gray-900"
         >
