@@ -247,6 +247,7 @@ if (document.body.dataset.page === "run") {
     `[data-el="notebook-source-link"]`
   );
   const livebookUrlEl = document.querySelector(`[data-el="livebook-url"]`);
+  const livebookUrlIntroEl = document.querySelector(`[data-el="livebook-url-intro"]`);
 
   const params = new URLSearchParams(window.location.search);
   const notebookUrl = params.get("url");
@@ -256,21 +257,22 @@ if (document.body.dataset.page === "run") {
     window.location.href = "/";
   }
 
-  function updateRunNotebookLinks(url, caption) {
+  function updateRunNotebookLinks(url, intro, caption) {
     for (const runNotebookLinkEl of runNotebookLinkEls) {
       runNotebookLinkEl.setAttribute("href", url);
     }
+    livebookUrlIntroEl.textContent = intro;
     livebookUrlEl.textContent = caption;
   }
 
   settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
     if (useLivebookDesktop) {
-      updateRunNotebookLinks(notebookUrl.replace(/^https?:/i, "livebook:"), "Livebook App");
+      updateRunNotebookLinks(notebookUrl.replace(/^https?:/i, "livebook:"), "", "in your Livebook App");
     } else {
       const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
-      updateRunNotebookLinks(livebookImportUrl, livebookUrl);
+      updateRunNotebookLinks(livebookImportUrl, "in your Livebook at", livebookUrl);
     }
-    document.body.toggleAttribute("data-run-ready", livebookUrl !== "");
+    document.body.toggleAttribute("data-run-ready", livebookUrl !== "" || useLivebookDesktop);
   });
 
   notebookSourceLinkEl.setAttribute("href", notebookUrl);

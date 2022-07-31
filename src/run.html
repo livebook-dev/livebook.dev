@@ -1,22 +1,26 @@
 {{#> layout page="run"}}
 <section class="bg-white">
   <div
-    class="m-auto max-w-7xl px-4 py-12 flex flex-col items-center space-y-16 md:space-y-24"
+    class="m-auto mt-4 max-w-7xl px-4 py-12 flex flex-col items-center space-y-16 md:space-y-24"
   >
     <div class="flex flex-col items-center w-full max-w-3xl">
       <h2 class="text-gray-900 font-semibold text-center text-xl md:text-3xl">
         Run this notebook
       </h2>
-      <span class="mt-3 max-w-md md:max-w-lg text-gray-700 text-center">
+      <span class="mt-3 text-gray-700 text-center max-w-xl">
         <span data-on-run-ready="hide">
-          It’s easy to get started with Livebook, on your machine or the cloud.
+          Use Livebook to open this notebook and explore new ideas.<br />
+          It is easy to get started, on your machine or the cloud.
         </span>
         <span data-on-run-ready="show">
-          Click below to open this notebook in your Livebook at
+          Click below to open and run it
+          <span
+            data-el="livebook-url-intro"
+          ></span>
           <span
             data-el="livebook-url"
             class="text-gray-600 font-semibold"
-          ></span>
+          ></span>.
         </span>
       </span>
       <div class="mt-8">
@@ -41,7 +45,7 @@
         </a>
       </div>
 
-      <div class="mt-8 w-full">
+      <div class="mt-8 py-12 w-full">
         <div
           class="p-6 pr-2 w-full custom-shadow-2 flex justify-between items-center space-x-4 rounded-3xl bg-gray-900"
         >
