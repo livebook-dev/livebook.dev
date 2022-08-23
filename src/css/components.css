@@ -71,10 +71,10 @@
   }
 
   .tabs-cases {
-    @apply text-gray-600 hover:text-blue-600 hover:border-b-4 hover:border-b-blue-600 font-semibold hover:font-bold tracking-wide py-5;
+    @apply text-blue-600 md:text-gray-600 md:hover:text-blue-600 md:hover:border-b-4 md:hover:border-b-blue-600 font-semibold md:hover:font-bold tracking-[0.2em] md:py-5;
   }
 
   .tabs-cases-active {
-    @apply text-blue-600 border-b-4 border-b-blue-600 font-bold tracking-wide py-5;
+    @apply text-white md:text-gray-600 md:hover:text-blue-600 md:hover:border-b-4 md:hover:border-b-blue-600 font-semibold md:hover:font-bold bg-blue-600 md:bg-transparent tracking-[0.2em] py-2.5 px-10 md:py-5 md:px-0 rounded-full md:rounded-none;
   }
 }
