@@ -69,4 +69,12 @@
   .tabs .tab.active {
     @apply text-blue-600 font-semibold border-blue-600;
   }
+
+  .tabs-cases {
+    @apply text-gray-600 hover:text-blue-600 hover:border-b-4 hover:border-b-blue-600 font-semibold hover:font-bold tracking-wide py-5;
+  }
+
+  .tabs-cases-active {
+    @apply text-blue-600 border-b-4 border-b-blue-600 font-bold tracking-wide py-5;
+  }
 }

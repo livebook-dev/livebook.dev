@@ -306,3 +306,42 @@ if (document.body.dataset.page === "run") {
       notebookPreviewEl.appendChild(div);
     });
 }
+
+// === index page ===
+
+if (document.body.dataset.page === "index") {
+  const btnEng = document.getElementById("btnEngineers");
+  btnEng.addEventListener("click", function () {
+    caseSelect(event, "engineers");
+  });
+
+  const btnEdu = document.getElementById("btnEducation");
+  btnEdu.addEventListener("click", function () {
+    caseSelect(event, "education");
+  });
+
+  const btnSci = document.getElementById("btnScientists");
+  btnSci.addEventListener("click", function () {
+    caseSelect(event, "scientists");
+  });
+
+  function caseSelect(event, caseName) {
+    let i, tabcontent, tablinks;
+
+    tabcontent = document.querySelectorAll("[data-case]");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.querySelectorAll("[data-btn-case]");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(
+        "tabs-cases-active",
+        "tabs-cases"
+      );
+    }
+
+    document.getElementById(caseName).style.display = "flex";
+    event.currentTarget.className = "tabs-cases-active";
+  }
+}
