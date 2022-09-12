@@ -22,5 +22,5 @@
 
 [[redirects]]
   from = "/releases/*"
-  to = "https://livebook-releases.nyc3.cdn.digitaloceanspaces.com/:path"
+  to = "https://livebook-releases.nyc3.cdn.digitaloceanspaces.com/:splat"
   status = 302
