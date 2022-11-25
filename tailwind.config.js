@@ -37,12 +37,11 @@ module.exports = {
         'it-2xl-4': 'repeat(4, minmax(310px, 310px))',
         'it-xl-5': 'repeat(5, minmax(256px, 256px))',
         'it-xl-4': 'repeat(4, minmax(256px, 256px))',
-        'it-lg-4': 'repeat(4, minmax(256px, 256px))',
-        'it-lg-3': 'repeat(3, minmax(256px, 256px))',
-        'it-md-4': 'repeat(4, minmax(190px, 190px))',
-        'it-md-3': 'repeat(3, minmax(190px, 190px))',
-        'it-3': 'repeat(3, minmax(112px, 125px))',
-        'it-2': 'repeat(2, minmax(112px, 125px))'
+        'it-lg-5': 'repeat(5, minmax(200px, 200px))',
+        'it-lg-4': 'repeat(4, minmax(200px, 200px))',
+        'it-md-5': 'repeat(5, minmax(150px, 150px))',
+        'it-md-4': 'repeat(4, minmax(150px, 150px))',
+        'it-2': 'repeat(auto-fit, minmax(112px, 1fr))'
       }
     },
     screens: {
