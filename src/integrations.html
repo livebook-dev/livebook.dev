@@ -1,0 +1,205 @@
+{{#> layout page="integrations"}}
+
+<section id="intro">
+  <div class="m-auto max-w-7xl px-4 pt-10">
+    <h2 class="text-gray-900 text-4xl font-normal text-left">
+      Integrations
+    </h2>
+    <div class="mt-3 w-[520px]">
+      <span class=" text-gray-700 font-normal text-left">
+        Livebook comes with built-in integrations for programming in Elixir, SQL querying, connecting to data sources, and data visualization.
+      </span>
+    </div>
+  </div>
+</section>
+
+<section id="integrations">
+  <div class="m-auto max-w-7xl px-4 pt-10 flex gap-16">
+    <div class="flex flex-col gap-1">
+      <span class="bg-gray-200 px-5 py-2 rounded-lg">All</span>
+      <span class="hover:bg-gray-200 px-5 py-2 rounded-lg">Language</span>
+      <span class="hover:bg-gray-200 px-5 py-2 rounded-lg">Database & <br> Data Warehouse</span>
+      <span class="hover:bg-gray-200 px-5 py-2 rounded-lg">Visualization</span>
+      <div class="w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
+        <span class="font-semibold">Don't see an integration you need?</span>
+        <div class="mt-2 text-sm">
+          <span>Livebook is an open-source project, so you can try to find what you need in one of the integrations maintained by our community. Or, you 
+            <a
+            class="underline"
+            href="a@livebook.com">
+            can submit an integration idea to us.
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="grow grid border-t border-l grid-cols-it-3">
+      <!-- Elixir -->
+      <div
+        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/elixir_logo.svg"
+          alt="Elixir Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4"
+          >Elixir</span
+        >
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-widest mt-1"
+          >LANGUAGE</span
+        >
+      </div>
+      <!-- HF -->
+      <div
+        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/hf_logo.png"
+          alt="Hugging Face Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4">Hugging Face</span>
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >MACHINE LEARNING</span
+        >
+      </div>
+      <!-- Slack -->
+      <div
+        class="hidden md:flex md:flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/slack_logo.png"
+          alt="Slack Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4">Slack</span>
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >MESSAGING</span
+        >
+      </div>
+      <!-- PostgreSQL -->
+      <div
+      class="hidden md:flex md:flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+    >
+      <img
+        class="h-[40px] lg:h-[120px]"
+        src="/images/integrations/postgresql_logo.svg"
+        alt="PostgreSQL Logo"
+      />
+      <span class="text-gray-700 font-medium text-xl lg:mt-4"
+        >PostgreSQL</span
+      >
+      <span
+        class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+        >DATABASE</span
+      >
+      </div>
+      <!-- MySQL -->
+      <div
+        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/mysql_logo.png"
+          alt="MySQL Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4">MySQL</span>
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >DATABASE</span
+        >
+      </div>
+      <!-- Google BigQuery -->
+      <div
+        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/google_bigquery_logo.png"
+          alt="Google BigQuery Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4"
+          >Google BigQuery</span
+        >
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >DATA WAREHOUSE</span
+        >
+      </div>
+      <!-- Amazon Athena -->
+      <div
+        class="hidden md:flex md:flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/aws_athena_logo.png"
+          alt="Amazon Athena Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4"
+          >Amazon Athena</span
+        >
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >DATA WAREHOUSE</span
+        >
+      </div>
+      <!-- VegaLite -->
+      <div
+        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="lg:h-[100px]"
+          src="/images/integrations/vega_lite_logo.svg"
+          alt="VegaLite Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4"
+          >Vega-Lite</span
+        >
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >VISUALIZATION</span
+        >
+      </div>
+      <!-- MapLibre -->
+      <div
+        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/maplibre_logo.png"
+          alt="MapLibre Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4"
+          >MapLibre</span
+        >
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >VISUALIZATION</span
+        >
+      </div>
+      <!-- Mermaid -->
+      <div
+        class="hidden md:flex md:flex-col border-r border-b border-gray-300 justify-center items-center h-80"
+      >
+        <img
+          class="h-[40px] lg:h-[120px]"
+          src="/images/integrations/mermaid_logo.jpg"
+          alt="Mermaid Logo"
+        />
+        <span class="text-gray-700 font-medium text-xl lg:mt-4"
+          >Mermaid</span
+        >
+        <span
+          class="text-gray-500 font-medium md:font-semibold text-base tracking-wider sm:tracking-widest mt-1"
+          >VISUALIZATION</span
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/layout}}
