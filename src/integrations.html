@@ -14,12 +14,14 @@
 </section>
 
 <section id="integrations">
-  <div class="m-auto max-w-7xl px-4 pt-10 flex flex-col lg:flex-row gap-5 lg:gap-16">
-    <div class="hidden lg:flex flex-col gap-1">
-      <button class="hover:bg-gray-200 px-5 py-2 rounded-lg">All</button>
-      <button class="hover:bg-gray-200 px-5 py-2 rounded-lg">Language</button>
-      <button class="hover:bg-gray-200 px-5 py-2 rounded-lg">Database & <br> Data Warehouse</button>
-      <button class="hover:bg-gray-200 px-5 py-2 rounded-lg">Visualization</button>
+  <div class="m-auto max-w-7xl px-4 pt-10 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16">
+    <div id="btn-integration" class="hidden lg:flex flex-col gap-1">
+      <button onclick="filterSelection('all')" class=" button-integration button-integration-active">All</button>
+      <button onclick="filterSelection('language')" class="button-integration">Language</button>
+      <button onclick="filterSelection('database')" class="button-integration">Database & <br> Data Warehouse</button>
+      <button onclick="filterSelection('visualization')" class="button-integration">Visualization</button>
+      <button onclick="filterSelection('machine-learning')" class="button-integration">Machine Learning</button>
+      <button onclick="filterSelection('messaging')" class="button-integration">Messaging</button>
       <div class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
         <span class="font-semibold">Don't see an integration you need?</span>
         <div class="mt-2 text-sm">
@@ -33,11 +35,13 @@
         </div>
       </div>
     </div>
-    <select id="integrations" class="lg:hidden block w-full p-2.5 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500">
-      <option class="bg-gray-200 px-5 py-2 rounded-lg">All</option>
-      <option class="hover:bg-gray-200 px-5 py-2 rounded-lg">Language</option>
-      <option class="hover:bg-gray-200 px-5 py-2 rounded-lg">Database & <br> Data Warehouse</option>
-      <option class="hover:bg-gray-200 px-5 py-2 rounded-lg">Visualization</option>
+    <select onchange="filterSelection(value)" class="lg:hidden block w-full p-2.5 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500">
+      <option value="all" class="button-integration button-integration-active">All</option>
+      <option value="language" class="button-integration">Language</option>
+      <option value="database" class="button-integration">Database & <br> Data Warehouse</option>
+      <option value="visualization" class="button-integration">Visualization</option>
+      <option value="machine-learning" class="button-integration">Machine Learning</option>
+      <option value="messaging" class="button-integration">Messaging</option>
       <div class="hidden md:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
         <span class="font-semibold">Don't see an integration you need?</span>
         <div class="mt-2 text-sm">
@@ -51,10 +55,10 @@
         </div>
       </div>
     </select>
-    <div class="grow grid grid-cols-2 xs:grid-cols-3 border-t border-l">
+    <div class="grow grid grid-cols-2 xs:grid-cols-3 gap-0.5">
       <!-- Elixir -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="language filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -71,7 +75,7 @@
       </div>
       <!-- SQL -->
       <div
-      class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+      class="language filterDiv outline outline-gray-100 h-36 md:h-64"
     >
       <img
         class="h-[48px] md:h-[96px]"
@@ -88,7 +92,7 @@
       </div>
       <!-- HF -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="machine-learning filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -103,7 +107,7 @@
       </div>
       <!-- Slack -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="messaging filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -118,7 +122,7 @@
       </div>
       <!-- PostgreSQL -->
       <div
-      class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+      class="database filterDiv outline outline-gray-100 h-36 md:h-64"
     >
       <img
         class="h-[48px] md:h-[96px]"
@@ -135,7 +139,7 @@
       </div>
       <!-- MySQL -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="database filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -150,7 +154,7 @@
       </div>
       <!-- SQLite -->
       <div
-      class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+      class="database filterDiv outline outline-gray-100 h-36 md:h-64"
     >
       <img
         class="h-[48px] md:h-[96px]"
@@ -167,7 +171,7 @@
       </div>
       <!-- Google BigQuery -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="database filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -184,7 +188,7 @@
       </div>
       <!-- Amazon Athena -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="database filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -201,7 +205,7 @@
       </div>
       <!-- VegaLite -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[40px] md:h-[88px]"
@@ -218,7 +222,7 @@
       </div>
       <!-- MapLibre -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"
@@ -235,7 +239,7 @@
       </div>
       <!-- Mermaid -->
       <div
-        class="flex flex-col border-r border-b border-gray-300 justify-center items-center h-36 md:h-64"
+        class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[96px]"

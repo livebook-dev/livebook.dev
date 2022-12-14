@@ -39,8 +39,7 @@ module.exports = {
         'it-lg-4': 'repeat(4, minmax(205px, 205px))',
         'it-md-5': 'repeat(5, minmax(155px, 155px))',
         'it-md-4': 'repeat(4, minmax(155px, 155px))',
-        'it-2': 'repeat(auto-fit, minmax(112px, 1fr))',
-        'it-3': 'repeat(3, minmax(145px, 1fr))'
+        'it-2': 'repeat(auto-fit, minmax(112px, 1fr))'
       }
     },
     screens: {
