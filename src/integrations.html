@@ -17,11 +17,11 @@
   <div class="m-auto max-w-7xl px-4 pt-10 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16">
     <div id="btn-integration" class="hidden lg:flex flex-col gap-1">
       <button onclick="filterSelection('all')" class=" button-integration button-integration-active">All</button>
-      <button onclick="filterSelection('language')" class="button-integration">Language</button>
       <button onclick="filterSelection('database')" class="button-integration">Database & <br> Data Warehouse</button>
-      <button onclick="filterSelection('visualization')" class="button-integration">Visualization</button>
+      <button onclick="filterSelection('language')" class="button-integration">Language</button>
       <button onclick="filterSelection('machine-learning')" class="button-integration">Machine Learning</button>
       <button onclick="filterSelection('messaging')" class="button-integration">Messaging</button>
+      <button onclick="filterSelection('visualization')" class="button-integration">Visualization</button>
       <div class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
         <span class="font-semibold">Don't see an integration you need?</span>
         <div class="mt-2 text-sm">
@@ -37,11 +37,11 @@
     </div>
     <select onchange="filterSelection(value)" class="lg:hidden block w-full p-2.5 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500">
       <option value="all" class="button-integration button-integration-active">All</option>
-      <option value="language" class="button-integration">Language</option>
       <option value="database" class="button-integration">Database & <br> Data Warehouse</option>
-      <option value="visualization" class="button-integration">Visualization</option>
+      <option value="language" class="button-integration">Language</option>
       <option value="machine-learning" class="button-integration">Machine Learning</option>
       <option value="messaging" class="button-integration">Messaging</option>
+      <option value="visualization" class="button-integration">Visualization</option>
       <div class="hidden md:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
         <span class="font-semibold">Don't see an integration you need?</span>
         <div class="mt-2 text-sm">
