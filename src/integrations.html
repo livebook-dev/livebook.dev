@@ -2,19 +2,19 @@
 
 <section id="intro">
   <div class="m-auto max-w-7xl px-4 pt-10">
-    <h2 class="text-gray-900 text-4xl font-normal text-left">
+    <h2 class="text-gray-900 text-3xl font-normal text-left">
       Integrations
     </h2>
     <div class="mt-3 lg:w-[520px]">
       <span class=" text-gray-700 font-normal text-left">
-        Livebook comes with built-in integrations for programming in Elixir, SQL querying, connecting to data sources, and data visualization.
+        Livebook comes with built-in integrations with Elixir, multiple data sources, data visualization libraries, and more!
       </span>
     </div>
   </div>
 </section>
 
 <section id="integrations">
-  <div class="m-auto max-w-7xl px-4 pt-10 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16">
+  <div class="m-auto max-w-7xl px-4 pt-10 lg:mb-20 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16">
     <div id="btn-integration" class="hidden lg:flex flex-col gap-1">
       <button onclick="filterSelection('all')" class=" button-integration button-integration-active">All</button>
       <button onclick="filterSelection('database')" class="button-integration">Database & <br> Data Warehouse</button>
@@ -23,7 +23,7 @@
       <button onclick="filterSelection('messaging')" class="button-integration">Messaging</button>
       <button onclick="filterSelection('visualization')" class="button-integration">Visualization</button>
       <div class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
-        <span class="font-semibold">Don't see an integration you need?</span>
+        <span class="font-semibold">Can't find an integration?</span>
         <div class="mt-2 text-sm">
           <span>Livebook is an open-source project, so you can try to find what you need in one of the integrations maintained by our community. Or, you 
             <a
@@ -43,7 +43,7 @@
       <option value="messaging" class="button-integration">Messaging</option>
       <option value="visualization" class="button-integration">Visualization</option>
       <div class="hidden md:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
-        <span class="font-semibold">Don't see an integration you need?</span>
+        <span class="font-semibold">Can't find an integration?</span>
         <div class="mt-2 text-sm">
           <span>Livebook is an open-source project, so you can try to find what you need in one of the integrations maintained by our community. Or, you 
             <a
@@ -55,13 +55,13 @@
         </div>
       </div>
     </select>
-    <div class="grow grid grid-cols-2 xs:grid-cols-3 gap-0.5">
+    <div class="grow grid grid-cols-2 xs:grid-cols-3 xl:grid-cols-4 gap-0.5">
       <!-- Elixir -->
       <div
         class="language filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/elixir_logo.svg"
           alt="Elixir Logo"
         />
@@ -78,7 +78,7 @@
       class="language filterDiv outline outline-gray-100 h-36 md:h-64"
     >
       <img
-        class="h-[48px] md:h-[96px]"
+        class="h-[48px] md:h-[72px]"
         src="/images/integrations/sql_logo.png"
         alt="SQL Logo"
       />
@@ -95,7 +95,7 @@
         class="machine-learning filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/hf_logo.png"
           alt="Hugging Face Logo"
         />
@@ -110,7 +110,7 @@
         class="messaging filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/slack_logo.png"
           alt="Slack Logo"
         />
@@ -125,7 +125,7 @@
       class="database filterDiv outline outline-gray-100 h-36 md:h-64"
     >
       <img
-        class="h-[48px] md:h-[96px]"
+        class="h-[48px] md:h-[72px]"
         src="/images/integrations/postgresql_logo.svg"
         alt="PostgreSQL Logo"
       />
@@ -142,7 +142,7 @@
         class="database filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/mysql_logo.svg"
           alt="MySQL Logo"
         />
@@ -157,7 +157,7 @@
       class="database filterDiv outline outline-gray-100 h-36 md:h-64"
     >
       <img
-        class="h-[48px] md:h-[96px]"
+        class="h-[48px] md:h-[72px]"
         src="/images/integrations/sqlite_logo.svg"
         alt="SQLite Logo"
       />
@@ -174,7 +174,7 @@
         class="database filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/google_bigquery_logo.png"
           alt="Google BigQuery Logo"
         />
@@ -191,7 +191,7 @@
         class="database filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/aws_athena_logo.png"
           alt="Amazon Athena Logo"
         />
@@ -225,7 +225,7 @@
         class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/maplibre_logo.png"
           alt="MapLibre Logo"
         />
@@ -242,7 +242,7 @@
         class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[48px] md:h-[96px]"
+          class="h-[48px] md:h-[72px]"
           src="/images/integrations/mermaid_logo.jpg"
           alt="Mermaid Logo"
         />
@@ -256,7 +256,7 @@
       </div>
     </div>
     <div class="lg:hidden p-5 bg-blue-50 border rounded-lg border-blue-600">
-      <span class="font-semibold">Don't see an integration you need?</span>
+      <span class="font-semibold">Can't find an integration?</span>
       <div class="mt-2 text-sm">
         <span>Livebook is an open-source project, so you can try to find what you need in one of the integrations maintained by our community. Or, you 
           <a
