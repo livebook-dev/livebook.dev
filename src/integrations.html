@@ -16,12 +16,12 @@
 <section id="integrations">
   <div class="m-auto max-w-7xl px-4 pt-10 lg:mb-20 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16">
     <div id="btn-integration" class="hidden lg:flex flex-col gap-1">
-      <button onclick="filterSelection('all')" class=" button-integration button-integration-active">All</button>
-      <button onclick="filterSelection('database')" class="button-integration">Database & <br> Data Warehouse</button>
-      <button onclick="filterSelection('language')" class="button-integration">Language</button>
-      <button onclick="filterSelection('machine-learning')" class="button-integration">Machine Learning</button>
-      <button onclick="filterSelection('messaging')" class="button-integration">Messaging</button>
-      <button onclick="filterSelection('visualization')" class="button-integration">Visualization</button>
+      <button data-type="all" class=" button-integration button-integration-active">All</button>
+      <button data-type="database" class="button-integration">Database & <br> Data Warehouse</button>
+      <button data-type="language" class="button-integration">Language</button>
+      <button data-type="machine-learning" class="button-integration">Machine Learning</button>
+      <button data-type="messaging" class="button-integration">Messaging</button>
+      <button data-type="visualization" class="button-integration">Visualization</button>
       <div class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
         <span class="font-semibold">Can't find an integration?</span>
         <div class="mt-2 text-sm">
@@ -54,7 +54,8 @@
     <div class="grow grid grid-cols-2 xs:grid-cols-3 xl:grid-cols-4 gap-0.5">
       <!-- Elixir -->
       <div
-        class="language filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="language"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -70,8 +71,9 @@
         >
       </div>
       <!-- SQL -->
-      <div
-      class="language filterDiv outline outline-gray-100 h-36 md:h-64"
+    <div
+      data-type="language"
+      class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
     >
       <img
         class="h-[48px] md:h-[72px]"
@@ -88,7 +90,8 @@
       </div>
       <!-- HF -->
       <div
-        class="machine-learning filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="machine-learning"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -103,7 +106,8 @@
       </div>
       <!-- Slack -->
       <div
-        class="messaging filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="messaging"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -117,8 +121,9 @@
         >
       </div>
       <!-- PostgreSQL -->
-      <div
-      class="database filterDiv outline outline-gray-100 h-36 md:h-64"
+    <div
+      data-type="database"
+      class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
     >
       <img
         class="h-[48px] md:h-[72px]"
@@ -135,7 +140,8 @@
       </div>
       <!-- MySQL -->
       <div
-        class="database filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="database"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -149,8 +155,9 @@
         >
       </div>
       <!-- SQLite -->
-      <div
-      class="database filterDiv outline outline-gray-100 h-36 md:h-64"
+    <div
+      data-type="database"
+      class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
     >
       <img
         class="h-[48px] md:h-[72px]"
@@ -167,7 +174,8 @@
       </div>
       <!-- Google BigQuery -->
       <div
-        class="database filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="database"
+        class="filterDiv language flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -184,7 +192,8 @@
       </div>
       <!-- Amazon Athena -->
       <div
-        class="database filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="database"
+        class="filterDiv database flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -201,10 +210,11 @@
       </div>
       <!-- VegaLite -->
       <div
-        class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="visualization"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
-          class="h-[40px] md:h-[88px]"
+          class="h-[40px] md:h-[64px]"
           src="/images/integrations/vega_lite_logo.svg"
           alt="VegaLite Logo"
         />
@@ -218,7 +228,8 @@
       </div>
       <!-- MapLibre -->
       <div
-        class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="visualization"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"
@@ -235,7 +246,8 @@
       </div>
       <!-- Mermaid -->
       <div
-        class="visualization filterDiv outline outline-gray-100 h-36 md:h-64"
+        data-type="visualization"
+        class="filterDiv flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
         <img
           class="h-[48px] md:h-[72px]"

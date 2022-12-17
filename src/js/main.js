@@ -306,3 +306,56 @@ if (document.body.dataset.page === "run") {
       notebookPreviewEl.appendChild(div);
     });
 }
+
+// === Integrations Page ===
+
+  document.querySelector("#integrations").addEventListener("click", event => {
+    const button = event.target.closest("button[data-type]");
+    if (button) {
+      filterSelection(button.dataset.type)
+    }
+  });
+  
+  function filterSelection(integrationType) {
+    const cards = document.querySelectorAll("div[data-type]");
+      for (const card of cards) {
+        card.classList.toggle("hidden", card.dataset.type !== integrationType && integrationType !== "all");
+    }
+  }
+
+  // // Show filtered elements
+  // function AddClass(element, name) {
+  //   var i, arr1, arr2;
+  //   arr1 = element.className.split(" ");
+  //   arr2 = name.split(" ");
+  //   for (i = 0; i < arr2.length; i++) {
+  //     if (arr1.indexOf(arr2[i]) == -1) {
+  //       element.className += " " + arr2[i];
+  //     }
+  //   }
+  // }
+
+  // // Hide elements that are not selected
+  // function RemoveClass(element, name) {
+  //   var i, arr1, arr2;
+  //   arr1 = element.className.split(" ");
+  //   arr2 = name.split(" ");
+  //   for (i = 0; i < arr2.length; i++) {
+  //     while (arr1.indexOf(arr2[i]) > -1) {
+  //       arr1.splice(arr1.indexOf(arr2[i]), 1);
+  //     }
+  //   }
+  //   element.className = arr1.join(" ");
+  // }
+
+  // Add active class to the current control button (highlight it)
+  var btnContainer = document.getElementById("btn-integration");
+  var btns = btnContainer.getElementsByClassName("button-integration");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName(" button-integration-active");
+      current[0].className = current[0].className.replace(" button-integration-active", "");
+      this.className += " button-integration-active";
+    });
+  } 
+

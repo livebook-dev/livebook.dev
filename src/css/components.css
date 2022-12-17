@@ -82,11 +82,8 @@
 /* Integration Filter */
 
 .filterDiv {
-  visibility: hidden;
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  visibility: visible;
+  display: flex; /* Hidden by default */
 }
 
 /* The "show" class is added to the filtered elements */
