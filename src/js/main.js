@@ -309,11 +309,16 @@ if (document.body.dataset.page === "run") {
 
 // === Integrations Page ===
 
+if (document.body.dataset.page === "run") {
   document.querySelector("#integrations").addEventListener("click", event => {
     const button = event.target.closest("button[data-type]");
     if (button) {
       filterSelection(button.dataset.type)
     }
+  });
+
+  document.querySelector(".integration-select").addEventListener("change", event => {
+    filterSelection(event.target.value);
   });
   
   function filterSelection(integrationType) {
@@ -321,16 +326,9 @@ if (document.body.dataset.page === "run") {
       for (const card of cards) {
         card.classList.toggle("hidden", card.dataset.type !== integrationType && integrationType !== "all");
     }
+    const buttons = document.querySelectorAll("button[data-type]");
+    for (const button of buttons) {
+      button.classList.toggle("button-integration-active", button.dataset.type === integrationType);
+    }
   }
-
-  // Add active class to the current control button (highlight it)
-  var btnContainer = document.getElementById("btn-integration");
-  var btns = btnContainer.getElementsByClassName("button-integration");
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName(" button-integration-active");
-      current[0].className = current[0].className.replace(" button-integration-active", "");
-      this.className += " button-integration-active";
-    });
-  } 
-
+}
