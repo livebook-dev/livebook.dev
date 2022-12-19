@@ -78,16 +78,3 @@
     @apply text-blue-600 font-semibold border-blue-600;
   }
 }
-
-/* Integration Filter */
-
-.filterDiv {
-  visibility: visible;
-  display: flex; /* Hidden by default */
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-  visibility: visible;
-  display: flex;
-}
