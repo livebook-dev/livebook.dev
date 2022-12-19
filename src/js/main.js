@@ -309,7 +309,7 @@ if (document.body.dataset.page === "run") {
 
 // === Integrations Page ===
 
-if (document.body.dataset.page === "run") {
+if (document.body.dataset.page === "integrations") {
   document.querySelector("#integrations").addEventListener("click", event => {
     const button = event.target.closest("button[data-type]");
     if (button) {
