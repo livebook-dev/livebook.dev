@@ -306,3 +306,29 @@ if (document.body.dataset.page === "run") {
       notebookPreviewEl.appendChild(div);
     });
 }
+
+// === Integrations Page ===
+
+if (document.body.dataset.page === "integrations") {
+  document.querySelector("#integrations").addEventListener("click", event => {
+    const button = event.target.closest("button[data-type]");
+    if (button) {
+      filterSelection(button.dataset.type)
+    }
+  });
+
+  document.querySelector(".integration-select").addEventListener("change", event => {
+    filterSelection(event.target.value);
+  });
+  
+  function filterSelection(integrationType) {
+    const cards = document.querySelectorAll("div[data-type]");
+      for (const card of cards) {
+        card.classList.toggle("hidden", card.dataset.type !== integrationType && integrationType !== "all");
+    }
+    const buttons = document.querySelectorAll("button[data-type]");
+    for (const button of buttons) {
+      button.classList.toggle("button-integration-active", button.dataset.type === integrationType);
+    }
+  }
+}
