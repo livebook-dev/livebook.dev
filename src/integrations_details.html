@@ -1,0 +1,85 @@
+{{#> layout page="integrations-details"}}
+
+<!-- Intro -->
+<section id="intro" class="bg-gray-100 overflow-x-hidden">
+  <div
+    class="m-auto max-w-7xl px-4 pt-12 pb-20 flex flex-col xl:flex-row space-y-16 md:space-y-20 xl:space-y-0"
+  >
+    <div
+      class="flex flex-col xl:min-w-[44%] xl:justify-center space-y-8 text-center xl:text-left items-center xl:items-start"
+    >
+      <h2 class="max-w-lg text-3xl font-light xl:text-left text-gray-900">
+        {{Heading}} Título
+      </h2>
+      <span class="text-lg text-gray-700 max-w-xl">
+        {{Description}} Descrição
+      </span>
+      <nav
+        class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
+      >
+        <a
+          class="pl-2 pr-8 py-3 flex items-center rounded-xl bg-gray-900 text-gray-50"
+          href="#install"
+        >
+          <i class="ri-rocket-line px-4 text-3xl text-gray-300"></i>
+          <div class="flex flex-col">
+            <span class="font-bold">Install Livebook</span>
+            <span class="text-sm">Locally or on the cloud</span>
+          </div>
+        </a>
+      </nav>
+    </div>
+    <img
+      class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
+      src="/images/welcome_to_livebook_screenshot.png"
+      alt="Logo"
+    />
+  </div>
+</section>
+
+<!-- Features -->
+<section id="details" class="">
+  <div
+  class="m-auto max-w-4xl px-4 py-12 md:py-20 flex flex-col items-center space-y-16 md:space-y-24">
+    <div class="flex gap-20 items-center">
+      <div class="flex flex-col">
+        <h3 class="text-xl text-gray-800 font-semibold"> {{heading}} Elixir Code Editor </h3>
+        <span class="mt-3 max-w-sm text-gray-800"> {{description}} Livebook's Elixir code editor supports autocompletion, inline documentation, code formatting, and more. </span>
+      </div>
+      <div class="bg-gray-200 w-[500px] h-[500px] flex items-center pl-10">
+        <img 
+        src="/images/welcome_to_livebook_screenshot.png"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors -->
+<section id="sponsors" class="bg-[#24175b] mt-10">
+  <div class="m-auto max-w-7xl px-4 py-16 flex justify-center">
+    <div class="flex flex-col items-center md:items-start">
+      <img
+        src="/images/flyio_logo_with_text.svg"
+        alt=""
+        width="160"
+        height="45"
+      />
+      <span
+        class="mt-5 text-2xl md:text-3xl font-semibold text-gray-100 text-center md:text-left"
+      >
+        Livebook is sponsored by
+        <span class="inline-flex">
+          <a class="border-b-4 border-gray-100" href="https://fly.io/">
+            Fly.io
+          </a>
+          <i
+            class="ri-external-link-line text-base font-normal leading-none"
+          ></i>
+        </span>
+      </span>
+    </div>
+  </div>
+</section>
+
+{{/layout}}
