@@ -1,12 +1,11 @@
-{{#> layout page="integrations_details_intro"}}
+{{#> layout page="integration_details"}}
 
-<!-- prettier-ignore -->
-{{> integrations_details_intro
-
+  {{#>
+    integration_details
       heading="Write and execute SQL queries directly in Livebook"
       description="Use Livebook's SQL Query Smart cell to quickly get data from multiple sources. You can also dynamically inject values into your queries with input from your code or a text field filled in by your notebook user."
       image_src="/images/integrations_details/sql_details.png"
-
-}}
+  }}
+  {{/integration_details}}
 
 {{/layout}}

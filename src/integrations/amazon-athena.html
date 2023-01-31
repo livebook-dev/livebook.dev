@@ -1,12 +1,11 @@
-{{#> layout page="integrations_details_intro"}}
+{{#> layout page="integration_details"}}
 
-<!-- prettier-ignore -->
-{{> integrations_details_intro
-
+  {{#>
+    integration_details
       heading="Connect to Amazon Athena directly from Livebook"
       description="Connect to your AWS Athena using Livebook's Database Connection Smart cell. Use Livebook Secrets to store your AWS access key securely."
       image_src="/images/integrations_details/amazon_athena_details.png"
-
-}}
+  }}
+  {{/integration_details}}
 
 {{/layout}}
