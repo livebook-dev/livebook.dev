@@ -10,3 +10,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+div:has(> img[src=""]) {
+  display: none;
+}
