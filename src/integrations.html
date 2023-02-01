@@ -2,27 +2,44 @@
 
 <section id="intro">
   <div class="m-auto max-w-7xl px-4 pt-10">
-    <h2 class="text-gray-900 text-3xl font-normal text-left">
-      Integrations
-    </h2>
+    <h2 class="text-gray-900 text-3xl font-normal text-left">Integrations</h2>
     <div class="mt-3 lg:w-[520px]">
-      <span class=" text-gray-700 font-normal text-left">
-        Livebook comes with built-in integrations with Elixir, multiple data sources, data visualization libraries, and more!
+      <span class="text-gray-700 font-normal text-left">
+        Livebook comes with built-in integrations with Elixir, multiple data
+        sources, data visualization libraries, and more!
       </span>
     </div>
   </div>
 </section>
 
 <section id="integrations">
-  <div class="m-auto max-w-7xl px-4 pt-10 lg:mb-20 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16">
+  <div
+    class="m-auto max-w-7xl px-4 pt-10 lg:mb-20 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16"
+  >
     <div id="btn-integration" class="hidden lg:flex flex-col gap-1">
-      <button data-type="all" class=" button-integration button-integration-active">All</button>
-      <button data-type="database" class="button-integration">Database & <br> Data Warehouse</button>
+      <button
+        data-type="all"
+        class="button-integration button-integration-active"
+      >
+        All
+      </button>
+      <button data-type="database" class="button-integration">
+        Database & <br />
+        Data Warehouse
+      </button>
       <button data-type="language" class="button-integration">Language</button>
-      <button data-type="machine-learning" class="button-integration">Machine Learning</button>
-      <button data-type="messaging" class="button-integration">Messaging</button>
-      <button data-type="visualization" class="button-integration">Visualization</button>
-      <div class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600">
+      <button data-type="machine-learning" class="button-integration">
+        Machine Learning
+      </button>
+      <button data-type="messaging" class="button-integration">
+        Messaging
+      </button>
+      <button data-type="visualization" class="button-integration">
+        Visualization
+      </button>
+      <div
+        class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600"
+      >
         <span class="font-semibold">Can't find an integration?</span>
         <div class="mt-2 text-sm">
           <span>
@@ -31,25 +48,37 @@
               class="underline"
               href="https://hex.pm/packages?search=kino&sort=recent_downloads"
               target="_blank"
-            >on Hex.pm</a>.
-            Anyone can build and publish new integrations. Use our
+              >on Hex.pm</a
+            >. Anyone can build and publish new integrations. Use our
             <a
               class="underline"
               href="https://github.com/livebook-dev/livebook/discussions/categories/integrations"
               target="_blank"
-            >GitHub Discussions</a>
+              >GitHub Discussions</a
+            >
             to suggest new integrations and discuss with the community.
           </span>
         </div>
       </div>
     </div>
-    <select class="integration-select lg:hidden block w-full p-2.5 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500">
-      <option value="all" class="button-integration button-integration-active">All</option>
-      <option value="database" class="button-integration">Database & <br> Data Warehouse</option>
+    <select
+      class="integration-select lg:hidden block w-full p-2.5 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500"
+    >
+      <option value="all" class="button-integration button-integration-active">
+        All
+      </option>
+      <option value="database" class="button-integration">
+        Database & <br />
+        Data Warehouse
+      </option>
       <option value="language" class="button-integration">Language</option>
-      <option value="machine-learning" class="button-integration">Machine Learning</option>
+      <option value="machine-learning" class="button-integration">
+        Machine Learning
+      </option>
       <option value="messaging" class="button-integration">Messaging</option>
-      <option value="visualization" class="button-integration">Visualization</option>
+      <option value="visualization" class="button-integration">
+        Visualization
+      </option>
     </select>
     <div class="grow grid grid-cols-2 xs:grid-cols-3 xl:grid-cols-4 gap-0.5">
       <!-- Elixir -->
@@ -57,213 +86,275 @@
         data-type="language"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/elixir_logo.svg"
-          alt="Elixir Logo"
-        />
-        <span class= "text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-          >Elixir</span
-        >
-        <span
-          class= "text-gray-500 font-medium md:font-semibold text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >LANGUAGE</span
-        >
+        <a class="flex flex-col" href="/integrations/elixir.html">
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/elixir_logo.svg"
+            alt="Elixir Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Elixir</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibold text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >LANGUAGE</span
+          >
+        </a>
       </div>
       <!-- SQL -->
-    <div
-      data-type="language"
-      class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
-    >
-      <img
-        class="h-[48px] md:h-[72px]"
-        src="/images/integrations/sql_logo.png"
-        alt="SQL Logo"
-      />
-      <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-        >SQL</span
+      <div
+        data-type="language"
+        class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-      <span
-        class="text-gray-500 font-medium md:font-semibold text-center text-xs tracking-wider sm:tracking-widest mt-1"
-        >LANGUAGE</span
-      >
+        <a href="/integrations/sql.html" class="flex flex-col items-center">
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/sql_logo.png"
+            alt="SQL Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >SQL</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibold text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >LANGUAGE</span
+          >
+        </a>
       </div>
       <!-- HF -->
       <div
         data-type="machine-learning"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/hf_logo.png"
-          alt="Hugging Face Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4">Hugging Face</span>
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >MACHINE LEARNING</span
+        <a
+          href="/integrations/hugging-face.html"
+          class="flex flex-col items-center"
         >
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/hf_logo.png"
+            alt="Hugging Face Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Hugging Face</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >MACHINE LEARNING</span
+          >
+        </a>
       </div>
       <!-- Slack -->
       <div
         data-type="messaging"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/slack_logo.png"
-          alt="Slack Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4">Slack</span>
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >MESSAGING</span
-        >
+        <a href="/integrations/slack.html" class="flex flex-col items-center">
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/slack_logo.png"
+            alt="Slack Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Slack</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >MESSAGING</span
+          >
+        </a>
       </div>
       <!-- PostgreSQL -->
-    <div
-      data-type="database"
-      class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
-    >
-      <img
-        class="h-[48px] md:h-[72px]"
-        src="/images/integrations/postgresql_logo.svg"
-        alt="PostgreSQL Logo"
-      />
-      <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-        >PostgreSQL</span
+      <div
+        data-type="database"
+        class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-      <span
-        class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-        >DATABASE</span
-      >
+        <a
+          href="/integrations/postgre-sql.html"
+          class="flex flex-col items-center"
+        >
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/postgresql_logo.svg"
+            alt="PostgreSQL Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >PostgreSQL</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >DATABASE</span
+          >
+        </a>
       </div>
       <!-- MySQL -->
       <div
         data-type="database"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/mysql_logo.svg"
-          alt="MySQL Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4">MySQL</span>
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >DATABASE</span
-        >
+        <a href="/integrations/mysql.html" class="flex flex-col items-center">
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/mysql_logo.svg"
+            alt="MySQL Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >MySQL</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >DATABASE</span
+          >
+        </a>
       </div>
       <!-- SQLite -->
-    <div
-      data-type="database"
-      class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
-    >
-      <img
-        class="h-[48px] md:h-[72px]"
-        src="/images/integrations/sqlite_logo.svg"
-        alt="SQLite Logo"
-      />
-      <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-        >SQLite</span
+      <div
+        data-type="database"
+        class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-      <span
-        class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-        >DATABASE</span
-      >
+        <a href="/integrations/sqlite.html" class="flex flex-col items-center">
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/sqlite_logo.svg"
+            alt="SQLite Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >SQLite</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >DATABASE</span
+          >
+        </a>
       </div>
       <!-- Google BigQuery -->
       <div
         data-type="database"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/google_bigquery_logo.png"
-          alt="Google BigQuery Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-          >Google BigQuery</span
+        <a
+          href="/integrations/google-bigquery.html"
+          class="flex flex-col items-center"
         >
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >DATA WAREHOUSE</span
-        >
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/google_bigquery_logo.png"
+            alt="Google BigQuery Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Google BigQuery</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >DATA WAREHOUSE</span
+          >
+        </a>
       </div>
       <!-- Amazon Athena -->
       <div
         data-type="database"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/aws_athena_logo.png"
-          alt="Amazon Athena Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-          >Amazon Athena</span
+        <a
+          href="/integrations/amazon-athena.html"
+          class="flex flex-col items-center"
         >
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >DATA WAREHOUSE</span
-        >
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/aws_athena_logo.png"
+            alt="Amazon Athena Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Amazon Athena</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >DATA WAREHOUSE</span
+          >
+        </a>
       </div>
       <!-- VegaLite -->
       <div
         data-type="visualization"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[40px] md:h-[64px]"
-          src="/images/integrations/vega_lite_logo.svg"
-          alt="VegaLite Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-          >Vega-Lite</span
+        <a
+          href="/integrations/vega-lite.html"
+          class="flex flex-col items-center"
         >
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >VISUALIZATION</span
-        >
+          <img
+            class="h-[40px] md:h-[64px]"
+            src="/images/integrations/vega_lite_logo.svg"
+            alt="VegaLite Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Vega-Lite</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >VISUALIZATION</span
+          >
+        </a>
       </div>
       <!-- MapLibre -->
       <div
         data-type="visualization"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/maplibre_logo.png"
-          alt="MapLibre Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-          >MapLibre</span
+        <a
+          href="/integrations/maplibre.html"
+          class="flex flex-col items-center"
         >
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >VISUALIZATION</span
-        >
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/maplibre_logo.png"
+            alt="MapLibre Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >MapLibre</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >VISUALIZATION</span
+          >
+        </a>
       </div>
       <!-- Mermaid -->
       <div
         data-type="visualization"
         class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
       >
-        <img
-          class="h-[48px] md:h-[72px]"
-          src="/images/integrations/mermaid_logo.jpg"
-          alt="Mermaid Logo"
-        />
-        <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
-          >Mermaid</span
-        >
-        <span
-          class="text-gray-500 font-medium  md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
-          >VISUALIZATION</span
-        >
+        <a href="/integrations/mermaid.html" class="flex flex-col items-center">
+          <img
+            class="h-[48px] md:h-[72px]"
+            src="/images/integrations/mermaid_logo.jpg"
+            alt="Mermaid Logo"
+          />
+          <span
+            class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4"
+            >Mermaid</span
+          >
+          <span
+            class="text-gray-500 font-medium md:font-semibol text-center text-xs tracking-wider sm:tracking-widest mt-1"
+            >VISUALIZATION</span
+          >
+        </a>
       </div>
     </div>
-    <div class="lg:hidden p-5 bg-blue-50 border rounded-lg border-blue-600">
+    <div
+      class="lg:hidden mb-20 p-5 bg-blue-50 border rounded-lg border-blue-600"
+    >
       <span class="font-semibold">Can't find an integration?</span>
       <div class="mt-2 text-sm">
         <span>
@@ -272,43 +363,17 @@
             class="underline"
             href="https://hex.pm/packages?search=kino&sort=recent_downloads"
             target="_blank"
-          >on Hex.pm</a>.
-          Anyone can build and publish new integrations. Use our
+            >on Hex.pm</a
+          >. Anyone can build and publish new integrations. Use our
           <a
             class="underline"
             href="https://github.com/livebook-dev/livebook/discussions/categories/integrations"
             target="_blank"
-          >GitHub Discussions</a>
+            >GitHub Discussions</a
+          >
           to suggest new integrations and discuss with the community.
         </span>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sponsors -->
-<section id="sponsors" class="bg-[#24175b] mt-10">
-  <div class="m-auto max-w-7xl px-4 py-16 flex justify-center">
-    <div class="flex flex-col items-center md:items-start">
-      <img
-        src="/images/flyio_logo_with_text.svg"
-        alt=""
-        width="160"
-        height="45"
-      />
-      <span
-        class="mt-5 text-2xl md:text-3xl font-semibold text-gray-100 text-center md:text-left"
-      >
-        Livebook is sponsored by
-        <span class="inline-flex">
-          <a class="border-b-4 border-gray-100" href="https://fly.io/">
-            Fly.io
-          </a>
-          <i
-            class="ri-external-link-line text-base font-normal leading-none"
-          ></i>
-        </span>
-      </span>
     </div>
   </div>
 </section>

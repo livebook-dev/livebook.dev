@@ -1,0 +1,36 @@
+<!-- Intro -->
+<section id="intro" class="bg-gray-100 overflow-x-hidden">
+  <div
+    class="m-auto max-w-7xl px-4 pt-12 pb-20 flex flex-col xl:flex-row space-y-16 md:space-y-20 xl:space-y-0"
+  >
+    <div
+      class="flex flex-col xl:min-w-[44%] xl:justify-center space-y-8 text-center xl:text-left items-center xl:items-start"
+    >
+      <h2 class="max-w-lg text-3xl font-light xl:text-left text-gray-900">
+        {{heading}}
+      </h2>
+      <span class="empty:bg-blue-700 text-lg text-gray-700 max-w-xl">
+        {{{description}}}
+      </span>
+      <div
+        class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
+      >
+        <a
+          class="pl-2 pr-8 py-3 flex items-center rounded-xl bg-gray-900 text-gray-50"
+          href="/#install"
+        >
+          <i class="ri-rocket-line px-4 text-3xl text-gray-300"></i>
+          <div class="flex flex-col">
+            <span class="font-bold">Install Livebook</span>
+            <span class="text-sm">Locally or on the cloud</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <img
+      class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
+      src="{{image_src}}"
+      alt="Integration Example"
+    />
+  </div>
+</section>

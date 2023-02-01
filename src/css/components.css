@@ -17,11 +17,11 @@
     @apply border-gray-300 text-gray-600 bg-white hover:bg-gray-100 focus:bg-gray-100;
   }
 
-  .button-integration { 
+  .button-integration {
     @apply hover:bg-gray-200 focus:bg-gray-200 active:bg-gray-300 text-left px-5 py-2 rounded-lg;
   }
 
-  .button-integration-active { 
+  .button-integration-active {
     @apply bg-gray-200;
   }
 
