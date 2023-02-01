@@ -1,23 +1,25 @@
 {{#> layout page="integration_details"}}
 
-  {{#>
-    integration_details
+  {{>
+    integration_intro
       heading="Plot Maps using MapLibre"
       description="Build and visualize charts using Livebook's native integration with <a href='https://maplibre.org/' class='underline'>MapLibre.</a>"
       image_src="/images/integrations_details/maplibre_details.png"
   }}
+
+  {{#> integration_features}}
     {{>
-      integration_details_feature
+      integration_feature
         feature="Map Smart cell"
         description="Livebook's Map Smart cell lets you build maps using a simple UI."
         image_src="/images/integrations_details/maplibre_details_01.png"
     }}
     {{>
-      integration_details_feature
+      integration_feature
         feature="All the power from MapLibre"
         description="Livebook offers a tiny API layer that makes it easier to build all sorts of MapLibre maps."
         image_src="/images/integrations_details/maplibre_details_02.png"
     }}
-  {{/integration_details}}
+  {{/integration_features}}
 
 {{/layout}}

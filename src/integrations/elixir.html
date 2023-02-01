@@ -1,41 +1,43 @@
 {{#> layout page="integration_details"}}
 
-  {{#>
-    integration_details
+  {{>
+    integration_intro
       heading="Use Elixir directly in Livebook"
       description="Livebook has an interactive environment to code in Elixir. You can use it to learn Elixir, explore Elixir packages, prototypes, scripts, and interactive data apps."
       image_src="/images/integrations_details/elixir_details.png"
   }}
+
+  {{#> integration_features}}
     {{>
-      integration_details_feature
+      integration_feature
         feature="Elixir Code Editor"
         description="Livebook's Elixir code editor supports autocompletion, inline documentation, code formatting, and more."
         image_src="/images/integrations_details/elixir_details_01.png"
     }}
     {{>
-      integration_details_feature
+      integration_feature
         feature="Visual Representation of the running system"
         description="Livebook can render visual representations of supervision trees and message-passing between Elixir processes. <a href='https://hexdocs.pm/kino/Kino.Process.html#seq_trace/2' class='underline'>Learn how to do this.</a>"
         image_src="/images/integrations_details/elixir_details_02.png"
     }}
     {{>
-      integration_details_feature
+      integration_feature
         feature="Interactive UI to visualize, debug and edit Elixir pipelines"
         description="Livebook has an interactive widget that lets you see the result of an Elixir pipeline, enable/disable pipeline steps, and re-order them through drag and drop. <a href='https://github.com/livebook-dev/livebook/blob/main/lib/livebook/notebook/learn/intro_to_kino.livemd#dbg' class='underline'>Learn how to do this.</a>"
         image_src="/images/integrations_details/elixir_details_03.png"
     }}
     {{>
-      integration_details_feature
+      integration_feature
         feature="Add Hex packages as dependencies of your notebook"
         description="Livebook makes it easy to use Hex packages inside your notebooks. The integrated package management also makes your notebooks easier to be used and reproduced by others."
         image_src="/images/integrations_details/elixir_details_04.png"
     }}
     {{>
-      integration_details_feature
+      integration_feature
         feature="Connect to a running Elixir system directly in Livebook"
         description="You can easily connect to a running Elixir node. Useful for production environment diagnostics, remote debugging, and automation."
         image_src="/images/integrations_details/elixir_details_05.png"
     }}
-  {{/integration_details}}
+  {{/integration_features}}
 
 {{/layout}}
