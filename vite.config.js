@@ -1,6 +1,6 @@
 import { resolve } from "path";
-import { readdirSync } from "fs";
 import handlebars from "vite-plugin-handlebars";
+import glob from "glob";
 
 const root = resolve(__dirname, "src");
 
@@ -25,7 +25,8 @@ export default {
     rollupOptions: {
       // Generate an input entry for every page
       input: Object.fromEntries(
-        readdirSync(root)
+        glob
+          .sync("**/*.html", { cwd: root, ignore: ["partials/**"] })
           .filter((filename) => filename.endsWith(".html"))
           .map((filename) => {
             const key = filename.replace(/\.html$/, "");
