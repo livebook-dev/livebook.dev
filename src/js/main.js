@@ -317,6 +317,12 @@ if (document.body.dataset.page === "integrations") {
     }
   });
 
+  const params = new URLSearchParams(window.location.search);
+  const integration = filterSelection(params.get("integration"));
+  if (integration) {
+    filterSelection(integration);
+  }
+
   document
     .querySelector(".integration-select")
     .addEventListener("change", (event) => {

@@ -9,7 +9,11 @@
       name="description"
       content="Automate code & data workflows with interactive notebooks"
     />
+    {{#if title}}
+    <title>{{title}}</title>
+    {{else}}
     <title>Livebook.dev</title>
+    {{/if}}
     <!-- Load assets -->
     <link href="/css/main.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
