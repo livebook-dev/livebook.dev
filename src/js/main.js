@@ -317,6 +317,12 @@ if (document.body.dataset.page === "integrations") {
     }
   });
 
+  const params = new URLSearchParams(window.location.search);
+  const integration = params.get("type");
+  if (integration) {
+    filterSelection(integration);
+  }
+
   document
     .querySelector(".integration-select")
     .addEventListener("change", (event) => {
@@ -338,5 +344,13 @@ if (document.body.dataset.page === "integrations") {
         button.dataset.type === integrationType
       );
     }
+    const url = new URL(window.location.href);
+    if (integration === "all") {
+      url.searchParams.delete("Type");
+    } else {
+      url.searchParams.set("type", integrationType);
+    }
+    
+    history.pushState(null, '', url.toString());
   }
 }

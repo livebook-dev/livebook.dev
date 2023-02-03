@@ -1,4 +1,5 @@
-{{#> layout page="index"}}
+{{#> layout page="index"
+            title="Home - Livebook.dev"}}
 <!-- Intro -->
 <section id="intro" class="bg-white overflow-x-hidden">
   <div
@@ -291,50 +292,56 @@
         <div
           class="flex flex-col border-y border-x md:border-l md:border-x-0 border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/elixir_logo.svg"
-            alt="Elixir Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Elixir</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >LANGUAGE</span
-          >
+          <a href="/integrations/elixir.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/elixir_logo.svg"
+              alt="Elixir Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >Elixir</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >LANGUAGE</span
+            >
+          </a>
         </div>
         <!-- HF -->
         <div
           class="flex flex-col border-y md:border-x border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/hf_logo.png"
-            alt="Hugging Face Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Hugging Face</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >MACHINE LEARNING</span
-          >
+          <a href="/integrations/hugging-face.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/hf_logo.png"
+              alt="Hugging Face Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >Hugging Face</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >MACHINE LEARNING</span
+            >
+          </a>
         </div>
         <!-- Slack -->
         <div
           class="hidden md:flex md:flex-col border-y border-r border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/slack_logo.png"
-            alt="Slack Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2">Slack</span>
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >MESSAGING</span
-          >
+          <a href="/integrations/slack.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/slack_logo.png"
+              alt="Slack Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2">Slack</span>
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >MESSAGING</span
+            >
+          </a>
         </div>
         <div class="hidden md:flex border-y border-gray-300"></div>
       </div>
@@ -345,67 +352,75 @@
         <div
           class="hidden md:flex md:flex-col border-x border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/postgresql_logo.svg"
-            alt="PostgreSQL Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >PostgreSQL</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATABASE</span
-          >
+          <a href="/integrations/postgre-sql.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/postgresql_logo.svg"
+              alt="PostgreSQL Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >PostgreSQL</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATABASE</span
+            >
+          </a>
         </div>
         <!-- MySQL -->
         <div
           class="flex flex-col border-x md:border-x-0 border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/mysql_logo.svg"
-            alt="MySQL Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2">MySQL</span>
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATABASE</span
-          >
+          <a href="/integrations/mysql.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/mysql_logo.svg"
+              alt="MySQL Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2">MySQL</span>
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATABASE</span
+            >
+          </a>
         </div>
         <!-- Google BigQuery -->
         <div
           class="flex flex-col md:border-x border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/google_bigquery_logo.png"
-            alt="Google BigQuery Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Google BigQuery</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATA WAREHOUSE</span
-          >
+          <a href="/integrations/google-bigquery.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/google_bigquery_logo.png"
+              alt="Google BigQuery Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >Google BigQuery</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATA WAREHOUSE</span
+            >
+          </a>
         </div>
         <!-- Amazon Athena -->
         <div
           class="hidden md:flex md:flex-col border-r border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/aws_athena_logo.png"
-            alt="Amazon Athena Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Amazon Athena</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATA WAREHOUSE</span
-          >
+          <a href="/integrations/amazon-athena.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/aws_athena_logo.png"
+              alt="Amazon Athena Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >Amazon Athena</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATA WAREHOUSE</span
+            >
+          </a>
         </div>
       </div>
       <div
@@ -416,52 +431,56 @@
         <div
           class="flex flex-col border-y border-x md:border-l md:border-x-0 border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[37px] lg:h-[57px]"
-            src="/images/integrations/vega_lite_logo.svg"
-            alt="VegaLite Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Vega-Lite</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >VISUALIZATION</span
-          >
+          <a href="/integrations/vega-lite.html" class="flex flex-col items-center">
+            <img
+              class="h-[37px] lg:h-[57px]"
+              src="/images/integrations/vega_lite_logo.svg"
+              alt="VegaLite Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >Vega-Lite</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >VISUALIZATION</span
+            >
+          </a>
         </div>
         <!-- MapLibre -->
         <div
           class="flex flex-col border-y md:border-x border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/maplibre_logo.png"
-            alt="MapLibre Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >MapLibre</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >VISUALIZATION</span
-          >
+          <a href="/integrations/maplibre.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/maplibre_logo.png"
+              alt="MapLibre Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >MapLibre</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >VISUALIZATION</span
+            >
+          </a>
         </div>
-        <!-- Mermaid -->
+        <!-- See All -->
         <div
           class="hidden md:flex md:flex-col border-y border-r border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/mermaid_logo.jpg"
-            alt="Mermaid Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Mermaid</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >VISUALIZATION</span
-          >
+          <a
+            class="flex flex-col items-center text-blue-600" 
+            href="/integrations.html">
+            <img
+              class="h-[40px]"
+              src="/images/arrow_right_line.svg"
+              alt="Right Arrow"
+            />
+            <span class="text-blue-600 hover:text-gray-600 text-base lg:mt-3"
+              >See All</span
+            >
+          </a>
         </div>
         <div class="hidden md:flex md:flex-col border-y border-gray-300"></div>
       </div>
@@ -470,31 +489,35 @@
         <div
           class="flex flex-col border-x border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/mysql_logo.svg"
-            alt="MySQL Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2">MySQL</span>
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATABASE</span
-          >
+          <a href="/integrations/mysql.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/mysql_logo.svg"
+              alt="MySQL Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2">MySQL</span>
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATABASE</span
+            >
+          </a>
         </div>
         <!-- PostgreSQL -->
         <div class="flex flex-col justify-center items-center">
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/postgresql_logo.svg"
-            alt="PostgreSQL Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >PostgreSQL</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATABASE</span
-          >
+          <a href="/integrations/postgre-sql.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/postgresql_logo.svg"
+              alt="PostgreSQL Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >PostgreSQL</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATABASE</span
+            >
+          </a>
         </div>
       </div>
       <div class="grid grid-cols-it-2 md:hidden h-32 md:h-36 lg:h-44">
@@ -502,35 +525,37 @@
         <div
           class="flex flex-col border-y border-x border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/aws_athena_logo.png"
-            alt="Amazon Athena Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Amazon Athena</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >DATA WAREHOUSE</span
-          >
+          <a href="/integrations/amazon-athena.html" class="flex flex-col items-center">
+            <img
+              class="h-[40px] lg:h-[60px]"
+              src="/images/integrations/aws_athena_logo.png"
+              alt="Amazon Athena Logo"
+            />
+            <span class="text-gray-700 font-medium text-base lg:mt-2"
+              >Amazon Athena</span
+            >
+            <span
+              class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
+              >DATA WAREHOUSE</span
+            >
+          </a>
         </div>
         <!-- Mermaid -->
         <div
           class="flex flex-col border-y border-gray-300 justify-center items-center"
         >
-          <img
-            class="h-[40px] lg:h-[60px]"
-            src="/images/integrations/mermaid_logo.jpg"
-            alt="Mermaid Logo"
-          />
-          <span class="text-gray-700 font-medium text-base lg:mt-2"
-            >Mermaid</span
-          >
-          <span
-            class="text-gray-500 font-medium md:font-semibold text-xs tracking-wider sm:tracking-widest"
-            >VISUALIZATION</span
-          >
+          <a
+            class="flex flex-col items-center text-blue-600" 
+            href="/integrations.html">
+            <img
+              class="h-[40px]"
+              src="/images/arrow_right_line.svg"
+              alt="Right Arrow"
+            />
+            <span class="text-blue-600 hover:text-gray-600 text-base lg:mt-3"
+              >See All</span
+            >
+          </a>
         </div>
       </div>
     </div>
