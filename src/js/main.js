@@ -318,7 +318,7 @@ if (document.body.dataset.page === "integrations") {
   });
 
   const params = new URLSearchParams(window.location.search);
-  const integration = filterSelection(params.get("integration"));
+  const integration = params.get("integration");
   if (integration) {
     filterSelection(integration);
   }
