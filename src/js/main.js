@@ -323,20 +323,42 @@ if (document.body.dataset.page === "integrations") {
       filterSelection(event.target.value);
     });
 
+  const params = new URLSearchParams(window.location.search);
+  const integrationType = params.get("type");
+
+  if (integrationType) {
+    filterSelection(integrationType);
+  }
+
   function filterSelection(integrationType) {
     const cards = document.querySelectorAll("div[data-type]");
+
     for (const card of cards) {
       card.classList.toggle(
         "hidden",
         card.dataset.type !== integrationType && integrationType !== "all"
       );
     }
+
     const buttons = document.querySelectorAll("button[data-type]");
+
     for (const button of buttons) {
       button.classList.toggle(
         "button-integration-active",
         button.dataset.type === integrationType
       );
     }
+
+    // Update the URL
+
+    const url = new URL(window.location.href);
+
+    if (integrationType === "all") {
+      url.searchParams.delete("type");
+    } else {
+      url.searchParams.set("type", integrationType);
+    }
+
+    history.pushState(null, "", url.toString());
   }
 }
