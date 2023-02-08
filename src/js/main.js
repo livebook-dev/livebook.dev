@@ -362,3 +362,31 @@ if (document.body.dataset.page === "integrations") {
     history.pushState(null, "", url.toString());
   }
 }
+
+// Change Header Style
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 1) {
+    header.classList.remove("header-fixed");
+    header.classList.add("header-scrolled");
+  } else {
+    header.classList.remove("header-scrolled");
+    header.classList.add("header-fixed");
+  }
+});
+
+// Change Header Style on Mobile
+
+const headerMobile = document.querySelector("#header-mobile");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 1) {
+    headerMobile.classList.remove("header-mobile-fixed");
+    headerMobile.classList.add("header-mobile-scrolled");
+  } else {
+    headerMobile.classList.remove("header-mobile-scrolled");
+    headerMobile.classList.add("header-mobile-fixed");
+  }
+});
