@@ -1,19 +1,19 @@
 @layer components {
   /* Headers */
 
-  .header-fixed {
+  .header {
     @apply sticky top-0 z-50 px-4 py-6 hidden lg:flex bg-white;
   }
 
-  .header-scrolled {
+  .header.scrolled {
     @apply sticky top-0 z-50 px-4 py-3 hidden lg:flex bg-white border-b border-gray-200;
   }
 
-  .header-mobile-fixed {
+  .header-mobile {
     @apply sticky top-0 z-50 lg:hidden px-4 py-6 bg-white flex flex-col;
   }
 
-  .header-mobile-scrolled {
+  .header-mobile.scrolled {
     @apply sticky top-0 z-50 lg:hidden px-4 py-3 bg-white flex flex-col border-b border-gray-200;
   }
 

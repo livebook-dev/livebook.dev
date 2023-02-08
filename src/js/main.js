@@ -365,7 +365,7 @@ if (document.body.dataset.page === "integrations") {
 
 // Change header style
 
-const header = document.querySelector("header");
+const header = document.querySelector("#header");
 const headerMobile = document.querySelector("#header-mobile");
 
 window.addEventListener("scroll", () => {
