@@ -362,3 +362,14 @@ if (document.body.dataset.page === "integrations") {
     history.pushState(null, "", url.toString());
   }
 }
+
+// Change header style
+
+const header = document.querySelector("#header");
+const headerMobile = document.querySelector("#header-mobile");
+
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY > 1;
+  header.classList.toggle("scrolled", scrolled);
+  headerMobile.classList.toggle("scrolled", scrolled);
+});
