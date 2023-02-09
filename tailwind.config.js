@@ -4,6 +4,7 @@ module.exports = {
     fontFamily: {
       sans: ["Inter, sans-serif"],
       mono: ["JetBrains Mono"],
+      source: ["Source Sans Pro"],
     },
     extend: {
       colors: {
@@ -33,14 +34,14 @@ module.exports = {
         },
       },
       gridTemplateColumns: {
-        'it-xl-5': 'repeat(5, minmax(256px, 256px))',
-        'it-xl-4': 'repeat(4, minmax(256px, 256px))',
-        'it-lg-5': 'repeat(5, minmax(205px, 205px))',
-        'it-lg-4': 'repeat(4, minmax(205px, 205px))',
-        'it-md-5': 'repeat(5, minmax(155px, 155px))',
-        'it-md-4': 'repeat(4, minmax(155px, 155px))',
-        'it-2': 'repeat(auto-fit, minmax(112px, 1fr))'
-      }
+        "it-xl-5": "repeat(5, minmax(256px, 256px))",
+        "it-xl-4": "repeat(4, minmax(256px, 256px))",
+        "it-lg-5": "repeat(5, minmax(205px, 205px))",
+        "it-lg-4": "repeat(4, minmax(205px, 205px))",
+        "it-md-5": "repeat(5, minmax(155px, 155px))",
+        "it-md-4": "repeat(4, minmax(155px, 155px))",
+        "it-2": "repeat(auto-fit, minmax(112px, 1fr))",
+      },
     },
     screens: {
       xs: "480px",

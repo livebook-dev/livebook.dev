@@ -164,29 +164,43 @@
 
     {{> @partial-block}}
 
-    <!-- Sponsors -->
-    <section id="sponsors" class="bg-[#24175b]">
-      <div class="m-auto max-w-7xl px-4 py-16 flex justify-center">
-        <div class="flex flex-col items-center md:items-start">
-          <img
-            src="/images/flyio_logo_with_text.svg"
-            alt=""
-            width="160"
-            height="45"
-          />
-          <span
-            class="mt-5 text-2xl md:text-3xl font-semibold text-gray-100 text-center md:text-left"
-          >
-            Livebook is sponsored by
-            <span class="inline-flex">
-              <a class="border-b-4 border-gray-100" href="https://fly.io/">
-                Fly.io
-              </a>
-              <i
-                class="ri-external-link-line text-base font-normal leading-none"
-              ></i>
-            </span>
+    <!-- Sponsors & Supporters -->
+
+    <section id="sponsors" class="bg-gray-800">
+      <div
+        class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around"
+      >
+        <!-- Sponsors-->
+        <div class="flex flex-col items-center sm:items-start">
+          <span class="text-lg font-semibold tracking-widest text-white">
+            SPONSORS
           </span>
+          <a class="flex justify-center mt-4" href="https://fly.io/">
+            <img
+              src="/images/flyio_logo_with_text.svg"
+              alt="Flyio Logo"
+              width="250"
+            />
+          </a>
+        </div>
+
+        <!-- Supporters -->
+        <div class="flex flex-col items-center sm:items-start">
+          <span class="text-base tracking-widest text-white"> SUPPORTERS </span>
+
+          <!-- Hugging Face -->
+          <a href="https://huggingface.co/">
+            <div class="flex items-center mt-4">
+              <img
+                src="/images/hugging_face_logo.svg"
+                alt="Hugging Face Logo"
+                width="40"
+              />
+              <span class="font-source font-semibold text-gray-50 text-xl p-3"
+                >Hugging Face</span
+              >
+            </div>
+          </a>
         </div>
       </div>
     </section>
