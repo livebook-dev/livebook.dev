@@ -40,23 +40,35 @@
         </div>
       </div>
 
-      <!-- fly.io -->
+      <!-- Run on the Cloud -->
       <div class="flex flex-col md:items-start md:ml-14 maxsm:mt-16">
         <div class="flex flex-nowrap min-w-[270px]">
-          <img class="self-center" src="/images/flyio_logo_square.svg" />
+          <img class="self-center" src="/images/run_on_cloud.png" />
           <div class="self-center px-5 text-gray-700">
-            <h2 class="font-semibold tracking-wide">Launch on Fly.io</h2>
-            <h3>to run it on the cloud</h3>
+            <h2 class="font-semibold tracking-wide">Run it on the cloud</h2>
+            <h3>Launch it on</h3>
           </div>
         </div>
-        <a
-          class="mt-10 px-5 py-2 button button-outlined-gray"
-          href="https://fly.io/launch/livebook"
-          rel="noopener"
-        >
-          <img src="/images/cloud_line_gray.svg" />
-          <span>Launch on Fly.io</span>
-        </a>
+        <div class="flex maxsm:flex-col md:flex-nowrap md:space-x-5">
+          <!-- fly.io -->
+          <a
+            class="mt-10 px-5 py-2 button button-outlined-gray"
+            href="https://fly.io/launch/livebook"
+            rel="noopener"
+          >
+            <img src="/images/flyio_logo.svg" class="w-[26px]" />
+            <span>Fly.io</span>
+          </a>
+          <!-- hugging face -->
+          <a
+            class="mt-10 px-5 py-2 button button-outlined-gray"
+            href="https://huggingface.co/new-space?template=livebook-dev/livebook"
+            rel="noopener"
+          >
+            <img src="/images/hugging_face_logo.svg" class="w-[26px]" />
+            <span>Hugging Face</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
