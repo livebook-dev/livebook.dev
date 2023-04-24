@@ -272,7 +272,7 @@ if (document.body.dataset.page === "run") {
       updateRunNotebookLinks(
         notebookUrl.replace(/^https?:/i, "livebook:"),
         "",
-        "in your Livebook App"
+        "in your Livebook Desktop"
       );
     } else {
       const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
