@@ -363,6 +363,29 @@ if (document.body.dataset.page === "integrations") {
   }
 }
 
+// Set Menu Item Active
+
+function setActiveMenuItem() {
+  const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+
+  if (!isMobile) {
+    return;
+  }
+
+  const currentUrl = window.location.pathname;
+  const menuItems = document.querySelectorAll("nav a");
+
+  menuItems.forEach((item) => {
+    if (item.getAttribute("href") === currentUrl) {
+      item.classList.add("underline");
+    } else {
+      item.classList.remove("underline");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", setActiveMenuItem);
+
 // Change header style
 
 const header = document.querySelector("#header");
