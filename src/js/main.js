@@ -366,25 +366,26 @@ if (document.body.dataset.page === "integrations") {
 // Add underline class to menu links on Mobile
 
 function setActiveMenuItem() {
-  const isMobile = window.matchMedia("(max-width: 1024px)").matches;
-
-  if (!isMobile) {
-    return;
-  }
-
-  const currentUrl = window.location.pathname;
+  const currentUrl = window.location.href;
   const menuItems = document.querySelectorAll("nav a");
 
   menuItems.forEach((item) => {
-    if (item.getAttribute("href") === currentUrl) {
-      item.classList.add("underline");
-    } else {
-      item.classList.remove("underline");
-    }
+    const itemHref = item.getAttribute("href");
+    const itemUrl = new URL(itemHref, currentUrl);
+
+    const isIntegrationsPage = itemUrl.pathname === "/integrations.html";
+    const isInIntegrationsSection = currentUrl.includes("/integrations/");
+
+    const shouldBeUnderlined =
+      isIntegrationsPage &&
+      (isInIntegrationsSection ||
+        window.location.pathname === "/integrations.html");
+
+    item.classList.toggle("underline", shouldBeUnderlined);
   });
 }
 
-document.addEventListener("DOMContentLoaded", setActiveMenuItem);
+setActiveMenuItem();
 
 // Change header style
 
