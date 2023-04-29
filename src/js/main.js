@@ -363,7 +363,7 @@ if (document.body.dataset.page === "integrations") {
   }
 }
 
-// Set Menu Item Active
+// Add underline class to menu links on Mobile
 
 function setActiveMenuItem() {
   const isMobile = window.matchMedia("(max-width: 1024px)").matches;
