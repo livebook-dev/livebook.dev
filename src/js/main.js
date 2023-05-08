@@ -373,7 +373,7 @@ function setActiveMenuItem() {
     const itemPathname = item.pathname;
     const shouldBeUnderlined = currentPath.startsWith(itemPathname);
 
-    item.classList.toggle("underline", shouldBeUnderlined);
+    item.classList.toggle("border-b-2 border-gray-600", shouldBeUnderlined);
   });
 }
 
