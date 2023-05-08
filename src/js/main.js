@@ -373,7 +373,7 @@ function setActiveMenuItem() {
     const itemHref = item.getAttribute("href");
     const itemUrl = new URL(itemHref, currentUrl);
 
-    const isIntegrationsPage = itemUrl.pathname === "/integrations.html";
+    const isIntegrationsPage = itemUrl.pathname === "/integrations";
     const isInIntegrationsSection = currentUrl.includes("/integrations/");
 
     const shouldBeUnderlined =
