@@ -366,19 +366,12 @@ if (document.body.dataset.page === "integrations") {
 // Add underline class to menu links on Mobile
 
 function setActiveMenuItem() {
-  const currentUrl = window.location.href;
+  const currentPath = window.location.pathname;
   const menuItems = document.querySelectorAll("nav a");
 
   menuItems.forEach((item) => {
-    const itemHref = item.getAttribute("href");
-    const itemUrl = new URL(itemHref, currentUrl);
-
-    const isIntegrationsPage = itemUrl.pathname === "/integrations";
-    const isInIntegrationsSection = currentUrl.includes("/integrations/");
-
-    const shouldBeUnderlined =
-      isIntegrationsPage &&
-      (isInIntegrationsSection || window.location.pathname === "/integrations");
+    const itemPathname = item.pathname;
+    const shouldBeUnderlined = currentPath.startsWith(itemPathname);
 
     item.classList.toggle("underline", shouldBeUnderlined);
   });
