@@ -378,8 +378,7 @@ function setActiveMenuItem() {
 
     const shouldBeUnderlined =
       isIntegrationsPage &&
-      (isInIntegrationsSection ||
-        window.location.pathname === "/integrations.html");
+      (isInIntegrationsSection || window.location.pathname === "/integrations");
 
     item.classList.toggle("underline", shouldBeUnderlined);
   });
