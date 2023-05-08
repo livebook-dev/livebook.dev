@@ -371,7 +371,7 @@ function setActiveMenuItem() {
 
   menuItems.forEach((item) => {
     const itemPathname = item.pathname;
-    const shouldBeUnderlined = currentPath.startsWith(itemPathname);
+    const shouldBeUnderlined = itemPathname !== "/" && currentPath.startsWith(itemPathname);
 
     item.classList.toggle("border-b-2", shouldBeUnderlined);
     item.classList.toggle("border-gray-600", shouldBeUnderlined);
