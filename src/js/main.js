@@ -367,11 +367,12 @@ if (document.body.dataset.page === "integrations") {
 
 function setActiveMenuItem() {
   const currentPath = window.location.pathname;
-  const menuItems = document.querySelectorAll("nav a");
+  const menuItems = document.querySelectorAll("#menu a");
 
   menuItems.forEach((item) => {
     const itemPathname = item.pathname;
-    const shouldBeUnderlined = itemPathname !== "/" && currentPath.startsWith(itemPathname);
+    const shouldBeUnderlined =
+      itemPathname !== "/" && currentPath.startsWith(itemPathname);
 
     item.classList.toggle("border-b-2", shouldBeUnderlined);
     item.classList.toggle("border-gray-600", shouldBeUnderlined);
