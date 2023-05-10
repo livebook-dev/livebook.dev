@@ -363,6 +363,24 @@ if (document.body.dataset.page === "integrations") {
   }
 }
 
+// Add underline class to menu links on Mobile
+
+function setActiveMenuItem() {
+  const currentPath = window.location.pathname;
+  const menuItems = document.querySelectorAll("[data-el-menu] a");
+
+  menuItems.forEach((item) => {
+    const itemPathname = item.pathname;
+    const shouldBeUnderlined =
+      itemPathname !== "/" && currentPath.startsWith(itemPathname);
+
+    item.classList.toggle("border-b-2", shouldBeUnderlined);
+    item.classList.toggle("border-gray-600", shouldBeUnderlined);
+  });
+}
+
+setActiveMenuItem();
+
 // Change header style
 
 const header = document.querySelector("#header");
