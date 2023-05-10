@@ -367,7 +367,7 @@ if (document.body.dataset.page === "integrations") {
 
 function setActiveMenuItem() {
   const currentPath = window.location.pathname;
-  const menuItems = document.querySelectorAll("#menu a");
+  const menuItems = document.querySelectorAll("[data-el-menu] a");
 
   menuItems.forEach((item) => {
     const itemPathname = item.pathname;
