@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+import Tooltip from "./Tooltip.astro";
+
+export interface Props {
+  id: string;
+  code: string;
+  isShell?: boolean;
+}
+
+const { id, code, isShell } = Astro.props;
+---
+
+<div
+  class="p-4 flex justify-between items-center space-x-4 rounded-lg bg-gray-900"
+>
+  <span
+    class="whitespace-pre-wrap font-mono text-gray-300 text-sm overflow-x-auto tiny-scrollbar"
+    >{isShell && <span class="select-none">$ </span>}<span id={id}>{code}</span
+    ></span
+  >
+  <Tooltip text="Copy to clipboard" direction="left">
+    <button
+      class="text-gray-500 hover:text-gray-300"
+      aria-label="Copy to clipboard"
+      data-clip-copy-target={`#${id}`}
+    >
+      <Icon icon="file-copy-line" class="text-lg" />
+    </button>
+  </Tooltip>
+</div>

@@ -1,0 +1,329 @@
+---
+import "../styles/base.css";
+
+import logo from "../images/logo.svg";
+import logoWithText from "../images/logo-with-text.svg";
+import flyioLogoWithText from "../images/flyio-logo-with-text.svg";
+import hfLogoWithText from "../images/hf-logo-with-text.svg";
+import badgeLogo from "../images/badge-logo.svg";
+
+import Icon from "../components/Icon.astro";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+function isPathActive(path) {
+  return Astro.url.pathname.startsWith(path);
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Automate code & data workflows with interactive notebooks"
+    />
+    <title>{title} - Livebook.dev</title>
+    <!-- Load assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load icons in deferred way, as they are not critical -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+    </noscript>
+    <script
+      defer
+      data-domain="livebook.dev"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar desktop -->
+    <header id="header" class="header">
+      <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">
+        <div class="w-56">
+          <a href="/">
+            <img src={logoWithText} alt="" height="45" width="188" />
+          </a>
+        </div>
+        <div class="flex-grow flex items-center justify-center">
+          <nav data-el-menu class="flex space-x-12 text-gray-600">
+            <a href="/#install">Install</a>
+            <a href="/#features">Features</a>
+            <a
+              href="/integrations"
+              class:list={[
+                { "border-b-2 border-gray-600": isPathActive("/integrations") },
+              ]}
+            >
+              Integrations
+            </a>
+            <a class="announcekit-widget" href="https://news.livebook.dev/">
+              What’s new?&nbsp
+            </a>
+          </nav>
+        </div>
+        <div class="w-56 flex justify-end">
+          <nav class="flex space-x-3 items-center">
+            <a
+              class="px-3 py-2 rounded-lg font-semibold text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
+              href="/badge"
+            >
+              <img src={badgeLogo} alt="" width="17" height="19" />
+              <span class="mb-[-1.5px] font-semibold">Create badge</span>
+            </a>
+            <a
+              class="p-2 flex items-center justify-center rounded-lg bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
+              href="/settings"
+              aria-label="settings"
+            >
+              <Icon icon="settings-3-line" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar mobile -->
+    <header
+      id="header-mobile"
+      data-el-menu-container
+      class="header-mobile"
+      aria-hidden="true"
+    >
+      <div class="flex items-center justify-between">
+        <a href="/">
+          <img src={logoWithText} alt="" height="40" width="168" />
+        </a>
+        <button
+          data-el-menu-toggle
+          class="p-2 flex items-center justify-center rounded-lg bg-gray-100 text-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
+          aria-label="toggle menu"
+        >
+          <Icon icon="menu-4-line" data-on-menu="hide" />
+          <Icon icon="close-line" data-on-menu="show" />
+        </button>
+      </div>
+      <div
+        data-on-menu="show"
+        class="h-full mt-12 flex flex-col items-center space-y-12"
+      >
+        <nav
+          data-el-menu
+          class="flex flex-col items-center space-y-10 text-xl text-gray-700"
+        >
+          <a href="/#install">Install</a>
+          <a href="/#features">Features</a>
+          <a
+            href="/integrations"
+            class:list={[
+              { "border-b-2 border-gray-600": isPathActive("/integrations") },
+            ]}
+          >
+            Integrations
+          </a>
+          <a
+            class="announcekit-widget-mobile"
+            href="https://news.livebook.dev/"
+          >
+            What’s new?&nbsp
+          </a>
+        </nav>
+        <div class="w-full border-t border-gray-200"></div>
+        <nav class="flex flex-col space-y-5">
+          <a
+            class="px-3 py-2 rounded-lg text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
+            href="/badge"
+          >
+            <img src={badgeLogo} alt="" width="17" height="19" />
+            <span class="mb-[-1.5px] font-semibold">Create badge</span>
+          </a>
+          <a
+            class="p-2 rounded-lg bg-gray-100 border border-transparent text-gray-600 hover:bg-gray-50 focus:bg-gray-50 flex items-center justify-center space-x-1.5"
+            href="/settings"
+          >
+            <Icon icon="csettings-3-line" />
+            <span class="font-semibold text-sm">Settings</span>
+          </a>
+        </nav>
+        <div class="flex-grow"></div>
+      </div>
+    </header>
+
+    <slot />
+
+    <!-- Sponsors & Supporters -->
+
+    <section id="sponsors" class="bg-gray-800">
+      <div
+        class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around"
+      >
+        <div class="flex flex-col items-center sm:items-start">
+          <span class="text-lg font-semibold tracking-widest text-white">
+            SPONSORS
+          </span>
+          <a class="flex justify-center mt-4" href="https://fly.io/">
+            <img src={flyioLogoWithText} alt="Flyio Logo" width="250" />
+          </a>
+        </div>
+        <div class="flex flex-col items-center sm:items-start">
+          <span class="text-base tracking-widest text-white">SUPPORTERS</span>
+          <a class="flex justify-center mt-4" href="https://huggingface.co/">
+            <img src={hfLogoWithText} alt="Hugging Face Logo" width="180" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+      <div
+        class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between"
+      >
+        <div class="flex flex-col">
+          <img src={logo} alt="" width="45" height="45" />
+          <span class="mt-2 text-gray-50 text-xl font-semibold">Livebook</span>
+          <span class="mt-1 text-gray-300">
+            Copyright 2023. All rights reserved,
+            <a class="border-b-2 border-gray-300" href="https://dashbit.co/"
+              >Dashbit</a
+            >.
+            <a class="border-b-2 border-gray-300" href="/privacy-policy"
+              >Privacy Policy</a
+            >.
+          </span>
+        </div>
+        <div class="md:hidden w-full border-t border-gray-700"></div>
+        <div class="flex flex-col text-gray-200 items-end">
+          <div class="text-3xl">
+            <a
+              href="https://github.com/livebook-dev/livebook_website"
+              aria-label="github source"
+            >
+              <Icon icon="github-fill" />
+            </a>
+            <a href="https://twitter.com/livebookdev" aria-label="twitter link">
+              <Icon icon="twitter-fill" />
+            </a>
+          </div>
+          <span>
+            Marks shown as "Integrations" belong to their respective owners.
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      window.announcekit = window.announcekit || {
+        queue: [],
+        on: function (n, x) {
+          window.announcekit.queue.push([n, x]);
+        },
+        push: function (x) {
+          window.announcekit.queue.push(x);
+        },
+      };
+
+      window.announcekit.push({
+        widget: "https://news.livebook.dev/widgets/v2/2mz4c0",
+        selector: ".announcekit-widget",
+      });
+
+      window.announcekit.push({
+        widget: "https://news.livebook.dev/widgets/v2/2mz4c0",
+        selector: ".announcekit-widget-mobile",
+      });
+    </script>
+    <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
+  </body>
+</html>
+
+<style>
+  [data-el-menu-container][data-menu-open] {
+    @apply fixed z-50 top-0 bottom-0 left-0 right-0;
+  }
+
+  [data-el-menu-container][data-menu-open] [data-on-menu="hide"] {
+    @apply hidden;
+  }
+
+  [data-el-menu-container]:not([data-menu-open]) [data-on-menu="show"] {
+    @apply hidden;
+  }
+
+  .header {
+    @apply sticky top-0 z-50 px-4 py-6 hidden lg:flex bg-white;
+  }
+
+  .header.scrolled {
+    @apply py-3 border-b border-gray-200;
+  }
+
+  .header-mobile {
+    @apply sticky top-0 z-50 lg:hidden px-4 py-6 bg-white flex flex-col;
+  }
+
+  .header-mobile.scrolled {
+    @apply py-3 border-b border-gray-200;
+  }
+</style>
+
+<script>
+  import "../lib/global";
+
+  // Mobile menu
+
+  const menuContainerEl = document.querySelector(`[data-el-menu-container]`);
+
+  menuContainerEl.addEventListener("click", (event) => {
+    const toggleEl = event.target.closest(`[data-el-menu-toggle]`);
+
+    if (toggleEl) {
+      menuContainerEl.toggleAttribute("data-menu-open");
+      return;
+    }
+
+    const anchorEl = event.target.closest("a");
+
+    if (anchorEl && anchorEl.pathname === window.location.pathname) {
+      menuContainerEl.removeAttribute("data-menu-open");
+    }
+  });
+
+  // Updated header on scroll
+
+  const header = document.querySelector("#header");
+  const headerMobile = document.querySelector("#header-mobile");
+
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY > 1;
+    header.classList.toggle("scrolled", scrolled);
+    headerMobile.classList.toggle("scrolled", scrolled);
+  });
+</script>

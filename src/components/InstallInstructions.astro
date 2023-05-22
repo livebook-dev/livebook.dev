@@ -1,0 +1,110 @@
+---
+import windowButtons from "../images/window-buttons.png";
+import flyioLogo from "../images/flyio-logo.svg";
+import huggingFaceLogo from "../images/hf-logo.svg";
+
+import Icon from "./Icon.astro";
+---
+
+<div class="m-auto max-w-4xl p-4 mt-5">
+  <div class="mt-4 w-full p-4 rounded-2xl bg-white">
+    <img src={windowButtons} alt="" width="36" height="8" />
+    <div
+      class="py-10 px-5 md:px-0 lg:px-5 flex flex-col md:flex-row justify-center"
+    >
+      <!-- Desktop app -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-5">
+          <div
+            class="flex items-center justify-center bg-blue-200 w-[60px] h-[60px] rounded-xl"
+          >
+            <Icon icon="download-line" class="text-2xl text-blue-600" />
+          </div>
+          <div class="text-gray-700">
+            <h2 class="font-semibold tracking-wide">Run on your machine</h2>
+            <h3>with Livebook Desktop</h3>
+          </div>
+        </div>
+        <div
+          class="mt-10 flex flex-col sm:flex-row gap-8 sm:gap-5 md:gap-2 lg:gap-5"
+        >
+          <a
+            class="button button-outlined-gray whitespace-nowrap"
+            href="/releases/latest/LivebookInstall-latest-macos-universal.dmg"
+            rel="noopener"
+          >
+            <Icon
+              icon="apple-line"
+              class="text-2xl align-middle leading-none relative bottom-[2px]"
+            />
+            <span>Mac (Universal)</span>
+          </a>
+          <a
+            class="button button-outlined-gray whitespace-nowrap"
+            href="/releases/latest/LivebookInstall-latest-windows-x86_64.exe"
+            rel="noopener"
+          >
+            <Icon
+              icon="windows-line"
+              class="text-2xl align-middle leading-none"
+            />
+            <span>Windows</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden md:flex grow border-r"></div>
+      <div class="hidden md:flex grow"></div>
+
+      <!-- Run on the Cloud -->
+      <div class="flex flex-col mt-16 md:mt-0">
+        <div class="flex items-center gap-5">
+          <div
+            class="flex items-center justify-center bg-blue-200 w-[60px] h-[60px] rounded-xl"
+          >
+            <Icon icon="cloud-line" class="text-2xl text-blue-600" />
+          </div>
+          <div class="text-gray-700">
+            <h2 class="font-semibold tracking-wide">Run in the cloud</h2>
+            <h3>on select platforms</h3>
+          </div>
+        </div>
+        <div
+          class="mt-10 flex flex-col sm:flex-row gap-8 sm:gap-5 md:gap-2 lg:gap-5"
+        >
+          <a
+            class="button button-outlined-gray"
+            href="https://fly.io/launch/livebook"
+            rel="noopener"
+          >
+            <img src={flyioLogo} class="w-[26px]" />
+            <span>Run on Fly.io</span>
+          </a>
+          <a
+            class="button button-outlined-gray"
+            href="https://huggingface.co/new-space?template=livebook-dev/livebook"
+            rel="noopener"
+          >
+            <img src={huggingFaceLogo} class="w-[26px]" />
+            <span>Run on Hugging Face</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="m-auto max-w-4xl p-4 mb-10">
+  <div
+    class="flex items-center max-w-[620px] rounded-lg border-gray-300 border-2 bg-gray-100 text-gray-700 py-4 px-5"
+  >
+    <Icon icon="information-line" class="text-2xl leading-none" />
+    <p class="ml-3 text-sm">
+      To run on Linux, Docker, embedded devices, or Elixir’s Mix,
+      <a
+        href="https://github.com/livebook-dev/livebook#installation"
+        class="border-b border-gray-700">check our README</a
+      >.
+    </p>
+  </div>
+</div>

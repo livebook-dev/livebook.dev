@@ -1,0 +1,195 @@
+---
+import SettingsSection from "../components/SettingsSection.astro";
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<Layout title="Run">
+  <section class="bg-white">
+    <div
+      class="m-auto mt-4 max-w-7xl px-4 py-12 flex flex-col items-center space-y-16 md:space-y-24"
+    >
+      <div class="flex flex-col items-center w-full max-w-3xl">
+        <h2 class="text-gray-900 font-semibold text-center text-xl md:text-3xl">
+          Run this notebook
+        </h2>
+        <div class="mt-3 text-gray-700 text-center max-w-2xl">
+          <div data-on-run-ready="hide">
+            <p>Use Livebook to open this notebook and explore new ideas.</p>
+            <p>It is easy to get started, on your machine or the cloud.</p>
+          </div>
+          <div data-on-run-ready="show">
+            <p>
+              Click below to open and run it
+              <span data-el-livebook-url-intro></span>
+              <span data-el-livebook-url class="text-gray-600 font-semibold"
+              ></span>.
+            </p>
+            <p class="text-sm">
+              (or
+              <a class="text-blue-600" href="#livebook-settings"
+                >change your Livebook location</a
+              >)
+            </p>
+          </div>
+        </div>
+        <div class="mt-12">
+          <a
+            data-on-run-ready="show"
+            data-el-run-notebook-link
+            class="button button-blue"
+            href="#"
+          >
+            Run notebook
+          </a>
+          <a
+            data-on-run-ready="hide"
+            class="button button-gray"
+            href="#livebook-settings"
+          >
+            <Icon icon="arrow-down-line" />
+            <span class="font-semibold">Configure Livebook</span>
+          </a>
+        </div>
+
+        <div class="mt-5 mb-10 w-full">
+          <div
+            class="p-6 pr-2 w-full custom-shadow-2 flex justify-between items-center space-x-4 rounded-3xl bg-gray-900"
+          >
+            <div
+              data-el-notebook-preview
+              class="w-full pr-4 h-[200px] md:h-[380px] font-mono font-medium text-gray-100 text-xs overflow-x-auto tiny-scrollbar"
+            >
+              <div class="w-full h-full flex items-center justify-center">
+                <svg
+                  class="animate-spin h-8 w-8 text-gray-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <a
+            data-el-notebook-source-link
+            href="#"
+            class="mt-4 text-gray-600 class flex justify-center items-center space-x-1"
+          >
+            <i class="mr-1 ri-eye-2-line text-gray-800"></i>
+            <span class="text-sm font-medium">See source</span>
+            <Icon icon="external-link-line text-sm font-medium" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SettingsSection heading="Have you already installed Livebook?">
+    <a
+      data-on-run-ready="show"
+      data-el-run-notebook-link
+      class="mt-8 self-center button button-blue"
+      href="#"
+    >
+      Run notebook
+    </a>
+  </SettingsSection>
+</Layout>
+
+<style>
+  body:not([data-run-ready]) [data-on-run-ready="show"] {
+    @apply hidden;
+  }
+
+  body[data-run-ready] [data-on-run-ready="hide"] {
+    @apply hidden;
+  }
+</style>
+
+<script>
+  import { getNotebookContent } from "../lib/requests";
+  import { settingsStore } from "../lib/settings-store";
+  import { getLivebookImportUrl } from "../lib/urls";
+
+  const runNotebookLinkEls = document.querySelectorAll(
+    `[data-el-run-notebook-link]`
+  );
+  const notebookPreviewEl = document.querySelector(
+    `[data-el-notebook-preview]`
+  );
+  const notebookSourceLinkEl = document.querySelector(
+    `[data-el-notebook-source-link]`
+  );
+  const livebookUrlEl = document.querySelector(`[data-el-livebook-url]`);
+  const livebookUrlIntroEl = document.querySelector(
+    `[data-el-livebook-url-intro]`
+  );
+
+  const params = new URLSearchParams(window.location.search);
+  const notebookUrl = params.get("url");
+
+  // If notebook url is missing, we just redirect to the homepage
+  if (!notebookUrl) {
+    window.location.href = "/";
+  }
+
+  function updateRunNotebookLinks(url, intro, caption) {
+    for (const runNotebookLinkEl of runNotebookLinkEls) {
+      runNotebookLinkEl.setAttribute("href", url);
+    }
+    livebookUrlIntroEl.textContent = intro;
+    livebookUrlEl.textContent = caption;
+  }
+
+  settingsStore.getAndSubscribe(({ livebookUrl, useLivebookDesktop }) => {
+    if (useLivebookDesktop) {
+      updateRunNotebookLinks(
+        notebookUrl.replace(/^https?:/i, "livebook:"),
+        "",
+        "in your Livebook Desktop"
+      );
+    } else {
+      const livebookImportUrl = getLivebookImportUrl(livebookUrl, notebookUrl);
+      updateRunNotebookLinks(
+        livebookImportUrl,
+        "in your Livebook at",
+        livebookUrl
+      );
+    }
+    document.body.toggleAttribute(
+      "data-run-ready",
+      livebookUrl !== "" || useLivebookDesktop
+    );
+  });
+
+  notebookSourceLinkEl.setAttribute("href", notebookUrl);
+
+  getNotebookContent(notebookUrl)
+    .then((livemd) => {
+      notebookPreviewEl.textContent = livemd;
+      notebookPreviewEl.classList.add("whitespace-pre-wrap");
+    })
+    .catch((error) => {
+      console.error(`Failed to fetch notebook from ${notebookUrl}, ${error}`);
+      const div = document.createElement("div");
+      div.classList.add("max-w-md");
+      div.textContent = `
+        Oops! We could not load notebook preview from ${notebookUrl}, but you can still run it!
+      `;
+      notebookPreviewEl.innerHTML = "";
+      notebookPreviewEl.appendChild(div);
+    });
+</script>

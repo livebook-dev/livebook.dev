@@ -1,0 +1,215 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import integrations from "../data/integrations";
+---
+
+<Layout title="Integrations">
+  <section id="intro">
+    <div class="m-auto max-w-7xl px-4 pt-10">
+      <h2 class="text-gray-900 text-3xl font-normal text-left">Integrations</h2>
+      <div class="mt-3 lg:w-[520px]">
+        <span class="text-gray-700 font-normal text-left">
+          Livebook comes with built-in integrations with Elixir, multiple data
+          sources, data visualization libraries, and more!
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section id="integrations">
+    <div
+      class="m-auto max-w-7xl px-4 pt-10 lg:mb-20 flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-16"
+    >
+      <div id="btn-integration" class="hidden lg:flex flex-col gap-1">
+        <button
+          data-type="all"
+          class="button-integration button-integration-active"
+        >
+          All
+        </button>
+        <button data-type="database" class="button-integration">
+          Database & <br />
+          Data Warehouse
+        </button>
+        <button data-type="language" class="button-integration">
+          Language
+        </button>
+        <button data-type="machine-learning" class="button-integration">
+          Machine Learning
+        </button>
+        <button data-type="messaging" class="button-integration">
+          Messaging
+        </button>
+        <button data-type="visualization" class="button-integration">
+          Visualization
+        </button>
+        <div
+          class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600"
+        >
+          <span class="font-semibold">Can't find an integration?</span>
+          <div class="mt-2 text-sm">
+            <span>
+              Integrations are hosted as open-source packages
+              <a
+                class="underline"
+                href="https://hex.pm/packages?search=kino&sort=recent_downloads"
+                target="_blank">on Hex.pm</a
+              >. Anyone can build and publish new integrations. Use our
+              <a
+                class="underline"
+                href="https://github.com/livebook-dev/livebook/discussions/categories/integrations"
+                target="_blank">GitHub Discussions</a
+              >
+              to suggest new integrations and discuss with the community.
+            </span>
+          </div>
+        </div>
+      </div>
+      <select
+        id="integration-select"
+        class="lg:hidden block w-full p-2.5 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500"
+      >
+        <option
+          value="all"
+          class="button-integration button-integration-active"
+        >
+          All
+        </option>
+        <option value="database" class="button-integration">
+          Database & <br />
+          Data Warehouse
+        </option>
+        <option value="language" class="button-integration">Language</option>
+        <option value="machine-learning" class="button-integration">
+          Machine Learning
+        </option>
+        <option value="messaging" class="button-integration">Messaging</option>
+        <option value="visualization" class="button-integration">
+          Visualization
+        </option>
+      </select>
+      <div class="grow grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-0.5">
+        {
+          integrations.map((integration) => (
+            <div
+              data-category={integration.category}
+              class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
+            >
+              <a
+                class="flex flex-col items-center"
+                href={`/integrations/${integration.id}`}
+              >
+                <img
+                  class="h-[48px] md:h-[72px]"
+                  src={integration.logo}
+                  alt={`${integration.name} logo`}
+                />
+                <span class="text-gray-700 text-center font-medium text-base md:text-xl mt-2 md:mt-4">
+                  {integration.name}
+                </span>
+                <span class="text-gray-500 font-medium md:font-semibold text-center text-xs uppercase tracking-wider sm:tracking-widest mt-1">
+                  {integration.category}
+                </span>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+      <div
+        class="lg:hidden mb-20 p-5 bg-blue-50 border rounded-lg border-blue-600"
+      >
+        <span class="font-semibold">Can't find an integration?</span>
+        <div class="mt-2 text-sm">
+          <span>
+            Integrations are hosted as open-source packages
+            <a
+              class="underline"
+              href="https://hex.pm/packages?search=kino&sort=recent_downloads"
+              target="_blank">on Hex.pm</a
+            >. Anyone can build and publish new integrations. Use our
+            <a
+              class="underline"
+              href="https://github.com/livebook-dev/livebook/discussions/categories/integrations"
+              target="_blank">GitHub Discussions</a
+            >
+            to suggest new integrations and discuss with the community.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .button-integration {
+    @apply hover:bg-gray-200 focus:bg-gray-200 active:bg-gray-300 text-left px-5 py-2 rounded-lg;
+  }
+
+  .button-integration-active {
+    @apply bg-gray-200;
+  }
+</style>
+
+<script>
+  const typeToCategories = {
+    database: ["Database", "Data Warehouse"],
+    language: ["Language"],
+    "machine-learning": ["Machine Learning"],
+    messaging: ["Messaging"],
+    visualization: ["Visualization"],
+  };
+
+  function setActiveType(type) {
+    const cards = document.querySelectorAll("div[data-category]");
+
+    for (const card of cards) {
+      const isIncluded =
+        type === "all" ||
+        typeToCategories[type].includes(card.dataset.category);
+      card.classList.toggle("hidden", !isIncluded);
+    }
+
+    const buttons = document.querySelectorAll("button[data-type]");
+
+    for (const button of buttons) {
+      button.classList.toggle(
+        "button-integration-active",
+        button.dataset.type === type
+      );
+    }
+
+    // Update the URL
+
+    const url = new URL(window.location.href);
+
+    if (type === "all") {
+      url.searchParams.delete("type");
+    } else {
+      url.searchParams.set("type", type);
+    }
+
+    history.pushState(null, "", url.toString());
+  }
+
+  document.querySelector("#integrations").addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-type]");
+
+    if (button) {
+      setActiveType(button.dataset.type);
+    }
+  });
+
+  document
+    .querySelector("#integration-select")
+    .addEventListener("change", (event) => {
+      setActiveType(event.target.value);
+    });
+
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+
+  if (type) {
+    setActiveType(type);
+  }
+</script>

@@ -1,0 +1,10 @@
+---
+export interface Props {
+  icon: string;
+  class?: string;
+}
+
+const { icon, class: className, ...rest } = Astro.props;
+---
+
+<i class:list={[`ri-${icon}`, className]} aria-hidden="true" {...rest}></i>

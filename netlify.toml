@@ -2,9 +2,6 @@
   publish = "dist/"
   command = "npm run build"
 
-[build.processing.html]
-  pretty_urls = true
-
 [[headers]]
   for = "/badge/*"
 
@@ -14,7 +11,7 @@
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/assets/*"
+  for = "/_astro/*"
 
   [headers.values]
     # Assets include checksum in the name, so we cache them for long
