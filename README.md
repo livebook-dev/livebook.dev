@@ -16,5 +16,5 @@ npm run dev
 npm run build
 
 # Preview the result
-npm run serve
+npm run preview
 ```

@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+
+import integrations from "../../data/integrations";
+
+export function getStaticPaths() {
+  return integrations.map((integration) => ({
+    params: { id: integration.id },
+  }));
+}
+
+const { id } = Astro.params;
+
+const integration = integrations.find((integration) => integration.id === id);
+---
+
+<Layout title={`${integration.name} integration`}>
+  <section id="intro" class="bg-gray-100 overflow-x-hidden">
+    <div
+      class="m-auto max-w-7xl px-4 pt-12 pb-20 flex flex-col xl:flex-row space-y-16 md:space-y-20 xl:space-y-0"
+    >
+      <div
+        class="flex flex-col xl:min-w-[44%] xl:justify-center space-y-8 text-center xl:text-left items-center xl:items-start"
+      >
+        <h2 class="max-w-lg text-3xl font-light xl:text-left text-gray-900">
+          {integration.headline}
+        </h2>
+        <span
+          class="empty:bg-blue-700 text-lg text-gray-700 max-w-xl"
+          set:html={integration.description}
+        />
+        <div
+          class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
+        >
+          <a
+            class="pl-2 pr-8 py-3 flex items-center rounded-xl bg-gray-900 text-gray-50"
+            href="/#install"
+          >
+            <Icon icon="rocket-line px-4 text-3xl text-gray-300" />
+            <div class="flex flex-col">
+              <span class="font-bold">Install Livebook</span>
+              <span class="text-sm">Locally or on the cloud</span>
+            </div>
+          </a>
+          {
+            integration.cta && (
+              <a
+                class="pl-2 pr-8 py-3 flex items-center rounded-xl text-gray-700 border-2 border-gray-300"
+                href={integration.cta.link}
+                target="_blank"
+              >
+                <Icon
+                  icon="book-read-line"
+                  class="px-4 text-3xl text-gray-400"
+                />
+                <div class="flex flex-col">
+                  <span class="font-bold">{integration.cta.main}</span>
+                  <span class="text-sm">{integration.cta.description}</span>
+                </div>
+              </a>
+            )
+          }
+        </div>
+      </div>
+      <img
+        class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
+        src={integration.image}
+        alt="Integration Example"
+      />
+    </div>
+  </section>
+  {
+    integration.features && (
+      <section id="details">
+        <div class="integrations m-auto max-w-4xl px-4 pt-12 pb-20 flex flex-col gap-12 md:gap-15">
+          {integration.features.map((feature) => (
+            <div class="flex flex-col md:flex-row md:even:flex-row-reverse gap-12 md:gap-15 items-center justify-between">
+              <div class="flex flex-col px-1 md:px-0 max-w-[400px]">
+                <h3 class="text-2xl text-gray-800 font-semibold">
+                  {feature.headline}
+                </h3>
+                <span
+                  class="mt-4 text-lg text-gray-800"
+                  set:html={feature.description}
+                />
+              </div>
+              <img
+                class="max-h-[400px] order-1 md:order-none"
+                src={feature.image}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Layout>
