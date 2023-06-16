@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Icon from "../components/Icon.astro";
+import teamsIntroScreenshot from "../images/teams-intro-screenshot.png";
+
+const { isDarkMode } = Astro.props;
+---
+
+<Layout title="Teams" isDarkMode={true}>
+  <section id="intro" class="bg-gray-900 overflow-x-hidden">
+    <div
+      class="m-auto max-w-7xl px-4 py-12 flex flex-col items-center space-y-16 md:space-y-20 xl:space-y-0"
+    >
+      <div class="flex flex-col space-y-8 text-center items-center">
+        <h2 class="max-w-2xl text-4xl font-light text-center text-gray-200">
+          Livebook Teams amplifies Livebook’s capabilities with features
+          designed for
+          <span class="font-bold italic text-brand-pink"
+            >team-based workflows.</span
+          >
+        </h2>
+        <span class="text-lg text-center font-light text-gray-200 max-w-xl">
+          Join our free beta program to gain early access to Livebook Teams and
+          contribute to the development of the roadmap.
+        </span>
+        <a
+          class="group px-6 py-4 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-brand-pink text-gray-700 hover:text-gray-100 hover: border hover:border-gray-100 transition duration-150 ease-in-out"
+          href="#create-account"
+        >
+          <Icon
+            icon="arrow-right-line text-xl text-gray-700 group-hover:text-gray-100"
+          />
+          <span class="px-2 font-semibold">Create Account</span>
+        </a>
+        <img
+          class="lg:max-w-5xl rounded-md custom-shadow-1"
+          src={teamsIntroScreenshot}
+          alt="Livebook teams screenshot"
+        />
+      </div>
+    </div>
+  </section>
+  <section id="features" class="bg-gray-800">
+    <div
+      class="m-auto max-w-7xl px-4 py-12 flex flex-col items-center space-y-16 md:space-y-20 xl:space-y-0"
+    >
+      <div class="flex flex-col space-y-8 text-center items-center"></div>
+    </div>
+  </section>
+</Layout>

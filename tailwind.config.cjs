@@ -6,6 +6,7 @@ module.exports = {
       sans: ["Inter, sans-serif"],
       mono: ["JetBrains Mono"],
       source: ["Source Sans Pro"],
+      logo: ["Red Hat Text"],
     },
     extend: {
       colors: {
@@ -33,6 +34,7 @@ module.exports = {
           800: "#1c2a3a",
           900: "#0d1829",
         },
+        "brand-pink": "#e44c75",
       },
     },
   },
@@ -40,4 +42,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  darkMode: "class",
 };
