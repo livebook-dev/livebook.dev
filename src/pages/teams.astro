@@ -5,6 +5,7 @@ import Icon from "../components/Icon.astro";
 import teamsIntroScreenshot from "../images/teams/intro-screenshot.png";
 import featureOnPremiseNotebook from "../images/teams/feature-on-premise-notebook.png";
 import featureSharedSecrets from "../images/teams/feature-shared-secrets.png";
+import newsletter from "../images/teams/newsletter.png";
 
 const { isDarkMode } = Astro.props;
 ---
@@ -133,10 +134,12 @@ const { isDarkMode } = Astro.props;
             class="border-r border-b border-l border-gray-500 rounded-b-[40px] pt-10 pb-16"
           >
             <span
-              class="mt-1 text-xs font-medium tracking-[0.2em] text-gray-400"
+              class="mt-1 text-xs font-medium tracking-widest sm:tracking-[0.2em] text-gray-400"
               >SOME OF THE FEATURES WE’RE CONSIDERING</span
             >
-            <div class="m-auto max-w-2xl grid grid-cols-4 mt-5">
+            <div
+              class="m-auto max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-y-5 mt-7 sm:mt-5"
+            >
               <div class="flex flex-col text-gray-400">
                 <Icon icon="user-add-line text-xl text-blue-500" />
                 <span class="mt-1 text-sm text-gray-200">Single Sign On</span>
@@ -160,28 +163,25 @@ const { isDarkMode } = Astro.props;
     </div>
   </section>
   <section id="faq" class="bg-gray-900">
-    <div
-      class="m-auto max-w-7xl px-4 py-16 lg:py-20 flex flex-col items-center"
-    >
-      <h2 class="text-gray-50 text-4xl">Frenquently Asked Questions</h2>
+    <div class="m-auto max-w-7xl px-4 py-16 flex flex-col items-center">
+      <h2 class="text-gray-50 text-2xl md:text-4xl text-center">
+        Frenquently Asked Questions
+      </h2>
 
       <div
-        class="mx-auto w-[45%] mt-10 flex flex-col justify-start space-y-5 sm:space-y-7 md:space-y-10"
+        class="mx-auto md:w-[80%] lg:w-[45%] mt-10 flex flex-col justify-start space-y-6"
       >
         <!--Is Livebook Teams Free to use? -->
         <div class="space-y-2">
-          <a class="flex justify-between">
-            <h3 class="faq-question-btn faq-questions text-gray-200">
-              Is Livebook Teams Free to use?
-            </h3>
+          <a class="faq-question-btn flex justify-between cursor-pointer">
+            <h3 class="text-gray-200">Is Livebook Teams Free to use?</h3>
             <Icon
-              id="faqIconDown"
               icon="arrow-drop-down-line text-xl text-gray-200"
-              class="hidden"
+              class="hidden faqIconDown"
             />
             <Icon
-              id="faqIconUp"
               icon="arrow-drop-up-line text-xl text-gray-200"
+              class="faqIconUp"
             />
           </a>
           <span class="faq-answer space-y-3 text-sm mt-1 text-gray-400"
@@ -191,28 +191,154 @@ const { isDarkMode } = Astro.props;
             collaboration</span
           >
         </div>
-        <!--Is Livebook Teams Free to use? -->
+        <hr class="border-gray-800" />
+        <!--Can I use Livebook Teams for commercial purposes? -->
         <div class="space-y-2">
-          <a class="flex justify-between">
-            <h3 class="faq-question-btn faq-questions text-gray-200">
-              Is Livebook Teams Free to use?
+          <a class="faq-question-btn flex justify-between cursor-pointer">
+            <h3 class="text-gray-200">
+              Can I use Livebook Teams for commercial purposes?
             </h3>
             <Icon
-              id="faqIconDown"
               icon="arrow-drop-down-line text-xl text-gray-200"
-              class="hidden"
+              class="faqIconDown"
             />
             <Icon
-              id="faqIconUp"
               icon="arrow-drop-up-line text-xl text-gray-200"
+              class="hidden faqIconUp"
             />
           </a>
-          <span class="faq-answer space-y-3 text-sm mt-1 text-gray-400"
+          <span class="hidden faq-answer space-y-3 text-sm mt-1 text-gray-400"
             >Livebook Teams is not only free but also open source, providing you
             with a powerful collaborative platform at no cost. We believe in the
             importance of accessible tools for knowledge sharing and
             collaboration</span
           >
+        </div>
+        <hr class="border-gray-800" />
+        <!--Where can I access Livebook Teams? -->
+        <div class="space-y-2">
+          <a class="faq-question-btn flex justify-between cursor-pointer">
+            <h3 class="text-gray-200">Where can I access Livebook Teams?</h3>
+            <Icon
+              icon="arrow-drop-down-line text-xl text-gray-200"
+              class="faqIconDown"
+            />
+            <Icon
+              icon="arrow-drop-up-line text-xl text-gray-200"
+              class="hidden faqIconUp"
+            />
+          </a>
+          <span class="hidden faq-answer space-y-3 text-sm mt-1 text-gray-400"
+            >Livebook Teams is not only free but also open source, providing you
+            with a powerful collaborative platform at no cost. We believe in the
+            importance of accessible tools for knowledge sharing and
+            collaboration</span
+          >
+        </div>
+        <hr class="border-gray-800" />
+        <!--Are there any limitations or hidden costs with Livebook Teams? -->
+        <div class="space-y-2">
+          <a class="faq-question-btn flex justify-between cursor-pointer">
+            <h3 class="text-gray-200">
+              Are there any limitations or hidden costs with Livebook Teams?
+            </h3>
+            <Icon
+              icon="arrow-drop-down-line text-xl text-gray-200"
+              class="faqIconDown"
+            />
+            <Icon
+              icon="arrow-drop-up-line text-xl text-gray-200"
+              class="hidden faqIconUp"
+            />
+          </a>
+          <span class="hidden faq-answer space-y-3 text-sm mt-1 text-gray-400"
+            >Livebook Teams is not only free but also open source, providing you
+            with a powerful collaborative platform at no cost. We believe in the
+            importance of accessible tools for knowledge sharing and
+            collaboration</span
+          >
+        </div>
+        <hr class="border-gray-800" />
+        <!--Can I invite team members to join Livebook Teams? -->
+        <div class="space-y-2">
+          <a class="faq-question-btn flex justify-between cursor-pointer">
+            <h3 class="text-gray-200">
+              Can I invite team members to join Livebook Teams?
+            </h3>
+            <Icon
+              icon="arrow-drop-down-line text-xl text-gray-200"
+              class="faqIconDown"
+            />
+            <Icon
+              icon="arrow-drop-up-line text-xl text-gray-200"
+              class="hidden faqIconUp"
+            />
+          </a>
+          <span class="hidden faq-answer space-y-3 text-sm mt-1 text-gray-400"
+            >Livebook Teams is not only free but also open source, providing you
+            with a powerful collaborative platform at no cost. We believe in the
+            importance of accessible tools for knowledge sharing and
+            collaboration</span
+          >
+        </div>
+        <hr class="border-gray-800" />
+      </div>
+    </div>
+  </section>
+  <section id="newsletter" class="bg-gray-900">
+    <div class="m-auto max-w-6xl px-4 py-6">
+      <div class="flex items-center justify-between gap-10">
+        <img src={newsletter} class="hidden sm:block w-[50%]" />
+        <div class="flex flex-col gap-5">
+          <h2
+            class="text-gray-50 text-2xl sm:text-4xl leading-10 text-center sm:text-left"
+          >
+            Stay Updated on <br class="hidden sm:block" /> Livebook Teams' Progress
+          </h2>
+          <span class="text-gray-200"
+            >Interested in Livebook Teams but not quite ready to create a beta
+            account? No problem! Sign up for our newsletter to receive updates
+            on the latest features, improvements, and news about Livebook Teams.</span
+          >
+
+          <form
+            action="URL"
+            method="post"
+            class="flex flex-col sm:flex-row items-center gap-4"
+          >
+            <input
+              type="email"
+              placeholder="Email Adress"
+              class="block w-full px-3 py-2 bg-gray-900 border border-gray-600 rounded-md text-sm text-gray-200 shadow-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 disabled:bg-slate-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none invalid:border-brand-pink invalid:text-brand-pink focus:invalid:border-brand-pink focus:invalid:ring-brand-pink"
+            />
+            <button type="submit" class="button button-blue">
+              <span>Subscribe</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="get-in-touch" class="bg-gray-900">
+    <div class="px-4 pt-12 pb-20">
+      <div
+        class="m-auto max-w-[1120px] bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]"
+      >
+        <div class="h-full w-full rounded-[32px] bg-gray-900 py-12 lg:py-20">
+          <div class="m-auto max-w-2xl flex flex-col items-center">
+            <Icon icon="question-answer-fill text-3xl text-[#e44c75]" />
+            <h2 class="text-gray-50 text-2xl sm:text-3xl leading-tight mt-2">
+              Have questions about <br class="hidden sm:block" /> Livebook Teams?
+            </h2>
+            <span class="lg:w-[70%] text-gray-200 mt-6 px-2 sm:px-0"
+              >If you have any questions about Livebook Teams, we're here to
+              help. Don't hesitate to contact our team; we'll gladly provide the
+              information you need.</span
+            >
+            <a class="button button-gray mt-8">
+              <span> Send an Email</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -223,10 +349,10 @@ const { isDarkMode } = Astro.props;
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".faq-question-btn").forEach((button) => {
       button.addEventListener("click", () => {
-        const parent = button.parentElement.parentElement;
+        const parent = button.parentElement;
         const answer = parent.querySelector(".faq-answer");
-        const iconDown = parent.querySelector("#faqIconDown");
-        const iconUp = parent.querySelector("#faqIconUp");
+        const iconDown = parent.querySelector(".faqIconDown");
+        const iconUp = parent.querySelector(".faqIconUp");
 
         answer.classList.toggle("hidden");
         iconDown.classList.toggle("hidden");
