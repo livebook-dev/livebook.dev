@@ -87,14 +87,6 @@ function isPathActive(path) {
             <a href="/#install">Install</a>
             <a href="/#features">Features</a>
             <a
-              href="/integrations"
-              class:list={[
-                { "border-b-2 border-gray-600": isPathActive("/integrations") },
-              ]}
-            >
-              Integrations
-            </a>
-            <a
               href="/teams"
               class:list={[
                 {
@@ -104,6 +96,14 @@ function isPathActive(path) {
               ]}
             >
               Teams
+            </a>
+            <a
+              href="/integrations"
+              class:list={[
+                { "border-b-2 border-gray-600": isPathActive("/integrations") },
+              ]}
+            >
+              Integrations
             </a>
             <a class="announcekit-widget" href="https://news.livebook.dev/">
               What’s new?&nbsp
