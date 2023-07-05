@@ -47,7 +47,7 @@ const faqItems = [
   <section id="intro" class="bg-gray-900 overflow-x-hidden">
     <div class="m-auto max-w-7xl px-4 py-12">
       <div class="flex flex-col space-y-10 text-center items-center">
-        <h2 class="max-w-2xl text-4xl font-light text-center text-gray-200">
+        <h2 class="max-w-xl text-2xl md:text-3xl font-light text-center text-gray-200">
           Livebook Teams amplifies Livebook’s capabilities with features
           designed for
           <span class="font-bold italic text-brand-pink"
@@ -74,9 +74,9 @@ const faqItems = [
     </div>
   </section>
   <section id="features" class="bg-gray-800">
-    <div class="m-auto max-w-7xl px-4 py-16 lg:py-20">
+    <div class="m-auto px-4 pt-16 lg:pt-20">
       <div
-        class="flex flex-col space-y-10 sm:space-y-16 text-center items-center"
+        class="flex flex-col space-y-24 text-center items-center"
       >
         <div class="m-auto max-w-2xl flex flex-col items-center">
           <img
@@ -87,7 +87,7 @@ const faqItems = [
             height="216"
           />
           <h2
-            class="text-gray-50 text-2xl sm:text-4xl lg:text-5xl leading-tight mt-8 sm:mt-10"
+            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
           >
             On premise notebook <br class="hidden sm:block" />deployment
           </h2>
@@ -114,7 +114,7 @@ const faqItems = [
             height="247"
           />
           <h2
-            class="text-gray-50 text-2xl sm:text-4xl lg:text-5xl leading-tight mt-8 sm:mt-10"
+            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
           >
             Shared Secrets <br class="hidden sm:block" />Management
           </h2>
@@ -130,22 +130,6 @@ const faqItems = [
             encrypted with your shared team encryption key and keeps them as such.
             Avoid the hassle and vulnerability of sharing secrets through other channels
             and copy-pasting them to Livebook.</span
-          >
-        </div>
-        <div class="m-auto max-w-2xl flex flex-col items-center">
-          <h2
-            class="text-gray-50 text-2xl sm:text-4xl lg:text-5xl leading-tight mt-2"
-          >
-            Fine-Grained Shared <br class="hidden sm:block" /> Secrets Access Controls
-          </h2>
-          <span class="text-gray-200 mt-6 sm:mt-8"
-            >Control access to shared secrets on a per-notebook basis, creating
-            a secure working environment. Livebook Teams automatically
-            replicates these settings across your team, using your shared team
-            encryption key to determine when a notebook is allowed to access
-            specific shared secrets. Empower your team to protect sensitive
-            information without the need to constantly manage permissions
-            manually.</span
           >
         </div>
         <div>
@@ -170,7 +154,7 @@ const faqItems = [
                 your needs and feedback as a beta user.</span
               >
               <a class="button button-blue mt-8">
-                <span> Send Feeback</span>
+                <span>Send Feeback</span>
               </a>
             </div>
           </div>
@@ -209,57 +193,19 @@ const faqItems = [
       </div>
     </div>
   </section>
-  <section id="faq" class="bg-gray-900">
-    <div class="m-auto max-w-7xl px-4 py-16 flex flex-col items-center">
-      <h2 class="text-gray-50 text-2xl md:text-4xl text-center">
-        Frenquently Asked Questions
-      </h2>
-      <div
-        class="mx-auto md:w-[80%] lg:w-[45%] mt-10 flex flex-col justify-start space-y-6"
-      >
-        {
-          faqItems.map((item) => (
-            <>
-              <div class="space-y-2">
-                <a class="faq-question-btn flex justify-between cursor-pointer text-gray-200">
-                  <h3>{item.question}</h3>
-                  <div>
-                    <Icon
-                      icon="arrow-drop-down-line"
-                      class={`text-xl faqIconDown ${item.open ? "hidden" : ""}`}
-                    />
-                    <Icon
-                      icon="arrow-drop-up-line"
-                      class={`text-xl faqIconUp ${item.open ? "" : "hidden"}`}
-                    />
-                  </div>
-                </a>
-                <div class="faq-answer" class:list={[{ hidden: !item.open }]}>
-                  <span class="space-y-3 text-sm mt-1 text-gray-400">
-                    {item.answer}
-                  </span>
-                </div>
-              </div>
-              <hr class="border-gray-800" />
-            </>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-  <section id="newsletter" class="bg-gray-900">
-    <div class="m-auto max-w-6xl px-4 py-6">
+
+  <section id="newsletter" class="bg-gray-800">
+    <div class="m-auto max-w-4xl px-4 py-16 lg:py-20">
       <div class="flex items-center justify-between gap-10">
-        <img src={newsletter} class="hidden sm:block w-[50%]" />
+        <img src={newsletter} class="hidden md:block w-[50%]" />
         <div class="flex flex-col gap-5">
           <h2
-            class="text-gray-50 text-2xl sm:text-4xl leading-10 text-center sm:text-left"
+            class="text-gray-50 text-2xl md:text-3xl text-left"
           >
-            Stay Updated on <br class="hidden sm:block" /> Livebook Teams' Progress
+            Stay updated on Livebook Teams
           </h2>
           <span class="text-gray-200"
-            >Interested in Livebook Teams but not quite ready to create a beta
-            account? No problem! Sign up for our newsletter to receive updates
+            >Sign up for our newsletter to receive updates
             on the latest features, improvements, and news about Livebook Teams.</span
           >
 
@@ -281,34 +227,68 @@ const faqItems = [
       </div>
     </div>
   </section>
-  <section id="get-in-touch" class="bg-gray-900">
-    <div class="px-4 pt-16 pb-20">
+
+  <section id="faq" class="bg-gray-900">
+    <div class="m-auto px-4 py-16 flex flex-col items-center">
+      <h2 class="text-gray-50 text-2xl md:text-3xl text-center">
+        Frequently Asked Questions
+      </h2>
       <div
-        class="m-auto max-w-[1120px] bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]"
+        class="mx-auto max-w-lg mt-10 flex flex-col justify-start space-y-6"
       >
-        <div class="h-full w-full rounded-[32px] bg-gray-900 py-12 lg:py-20">
-          <div class="m-auto max-w-2xl flex flex-col items-center">
+        {
+          faqItems.map((item) => (
+            <>
+              <div class="space-y-2">
+                <a class="faq-question-btn flex justify-between cursor-pointer text-gray-200">
+                  <h3>{item.question}</h3>
+                  <div>
+                    <Icon
+                      icon="arrow-drop-down-line"
+                      class={`text-xl faqIconDown ${item.open ? "hidden" : ""}`}
+                    />
+                    <Icon
+                      icon="arrow-drop-up-line"
+                      class={`text-xl faqIconUp ${item.open ? "" : "hidden"}`}
+                    />
+                  </div>
+                </a>
+                <div class="faq-answer" class:list={[{ hidden: !item.open }]}>
+                  <span class="space-y-3 text-sm mt-1 text-gray-300">
+                    {item.answer}
+                  </span>
+                </div>
+              </div>
+              <hr class="border-gray-800" />
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="get-in-touch" class="bg-gray-900 px-4 pb-16 md:pb-20">
+    <div
+      class="m-auto max-w-lg bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]"
+    >
+      <div class="h-full w-full rounded-[32px] bg-gray-900 pt-6 pb-10">
+        <div class="m-auto max-w-2xl flex flex-col items-center space-y-4">
+          <div
+            class="text-center text-slate-50 font-semibold text-2xl flex flex-col"
+          >
             <Icon
               icon="question-answer-fill"
-              class="text-3xl text-brand-pink"
+              class="text-xl text-brand-pink"
             />
-            <div
-              class="w-[520px] text-center text-slate-50 text-[48px] font-semibold leading-10"
-            >
-              Automate in the cloud with Livebook Teams
-            </div>
-            <h2 class="text-gray-50 text-2xl sm:text-3xl leading-tight mt-2">
-              Have questions about <br class="hidden sm:block" /> Livebook Teams?
-            </h2>
-            <span class="lg:w-[70%] text-gray-200 mt-6 px-2 sm:px-0"
-              >If you have any questions about Livebook Teams, we're here to
-              help. Don't hesitate to contact our team; we'll gladly provide the
-              information you need.</span
-            >
-            <a class="button button-gray mt-8">
-              <span> Send an Email</span>
-            </a>
+            Did we miss something?
           </div>
+          <span class="lg:w-[70%] text-gray-200"
+            >If you have any questions about Livebook Teams, we're here to
+            help.</span
+          >
+          <a class="button button-gray">
+            <span>Send an email</span>
+          </a>
         </div>
       </div>
     </div>
