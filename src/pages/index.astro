@@ -96,66 +96,35 @@ const selectedIntegrations = integrations.filter((integration) =>
     <div class="md:pb-10"><InstallInstructions /></div>
   </section>
 
-  <!-- Plans -->
-  <section id="livebook-plans">
-    <div
-      class="m-auto max-w-4xl px-4 py-12 md:py-28 flex flex-col md:flex-row justify-between items-center md:space-x-8 space-y-10 md:space-y-0"
-    >
+  <!-- Livebook Teams -->
+  <section id="livebook-teams" class="bg-gray-800">
+    <div class="px-4 py-12 md:py-28">
       <div
-        class="flex flex-col items-center max-w-sm md:items-start text-center md:text-left"
+        class="m-auto max-w-[1120px] bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]"
       >
-        <h2 class="text-gray-900 text-2xl md:text-3xl font-semibold">
-          Automate in the cloud
-          <br />
-          with <span class="font-bold text-brand-pink">Livebook Teams</span>
-        </h2>
-        <p class="mt-3 max-w-lg text-gray-700">
-          Livebook Teams runs on your infrastructure, allowing teams to securely
-          share, deploy, and execute notebooks within your company.
-        </p>
-        <a
-          class="hidden md:inline-block button button-blue text-base font-semibold px-12 py-4 mt-8"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Get in touch
-        </a>
-      </div>
-      <div
-        class="p-8 text-gray-50 font-medium bg-gray-800 rounded-2xl max-w-md"
-      >
-        <ul class="space-y-5">
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Deploy notebooks to your private cloud</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Single-sign on (SSO) and access control</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Schedule and audit notebook execution</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Safely share secrets within the team</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Dedicated operational support</span>
-          </li>
-        </ul>
-
-        <a
-          class="md:hidden sm:block button button-blue text-base font-semibold px-12 py-4 mt-8 mx-auto"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Get in touch
-        </a>
+        <div class="h-full w-full rounded-[32px] bg-gray-800 py-12 lg:py-20">
+          <div class="m-auto max-w-2xl flex flex-col items-center">
+            <h2
+              class="max-w-[400px] text-gray-50 font-semibold text-center text-2xl md:text-4xl"
+            >
+              Automate in the cloud with Livebook Teams
+            </h2>
+            <span class="sm:w-[70%] text-gray-200 mt-6 px-2 sm:px-0"
+              >Write notebooks in Livebook then securely deploy and share them
+              with your team and company with Livebook Hub / Enterprise.</span
+            >
+            <a
+              class="px-5 py-3 lg:px-6 lg:py-3 bg-white rounded-lg border border-gray-300 mt-8"
+              href="/teams"
+            >
+              <div
+                class="text-gray-700 text-sm lg:text-base font-medium leading-normal"
+              >
+                Learn More About Teams
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
