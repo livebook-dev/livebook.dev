@@ -12,7 +12,7 @@ import Icon from "../components/Icon.astro";
 export interface Props {
   title: string;
   isDarkMode: boolean;
-  displaySponsors: boolean;
+  displaySponsors?: boolean;
 }
 
 const { title, isDarkMode, displaySponsors = true } = Astro.props;
