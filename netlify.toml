@@ -21,3 +21,13 @@
   from = "/releases/*"
   to = "https://livebook-releases.nyc3.cdn.digitaloceanspaces.com/:splat"
   status = 302
+
+[[redirects]]
+  from = "/pa/js/script.js"
+  to = "https://plausible.io/js/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/pa/api/event"
+  to = "https://plausible.io/api/event"
+  status = 200
