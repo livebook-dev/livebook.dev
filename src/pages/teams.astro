@@ -1,0 +1,307 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Icon from "../components/Icon.astro";
+import Tooltip from "../components/Tooltip.astro";
+
+import teamsIntroScreenshot from "../images/teams/intro-screenshot.png";
+import featureOnPremiseNotebook from "../images/teams/feature-on-premise-notebook.png";
+import featureSharedSecrets from "../images/teams/feature-shared-secrets.png";
+import newsletter from "../images/teams/newsletter.png";
+
+const faqItems = [
+  {
+    question: "Is Livebook Teams Free to use? ",
+    answer:
+      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
+    open: true,
+  },
+  {
+    question: "Can I use Livebook Teams for commercial purposes? ",
+    answer:
+      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
+    open: false,
+  },
+  {
+    question: "Where can I access Livebook Teams?",
+    answer:
+      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
+    open: false,
+  },
+  {
+    question: "Are there any limitations or hidden costs with Livebook Teams?",
+    answer:
+      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
+    open: false,
+  },
+  {
+    question: "Can I invite team members to join Livebook Teams?",
+    answer:
+      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
+    open: false,
+  },
+];
+const future = false;
+---
+
+<Layout title="Teams" isDarkMode={true} displaySponsors={false}>
+  <section id="intro" class="bg-gray-900 overflow-x-hidden">
+    <div class="m-auto max-w-7xl px-4 py-12">
+      <div class="flex flex-col space-y-10 text-center items-center">
+        <h2
+          class="max-w-xl text-2xl md:text-3xl font-light text-center text-gray-200"
+        >
+          Livebook Teams amplifies Livebook
+          <br class="hidden sm:block" />
+          with features designed
+          <br class="hidden sm:block" />
+          <span class="font-bold italic text-brand-pink"
+            >for teams and businesses</span
+          >
+        </h2>
+        <span class="text-lg text-center font-light text-gray-200 max-w-xl">
+          Join our upcoming free beta program to gain early access to Livebook
+          Teams and contribute to the development of the roadmap.
+        </span>
+        <a
+          class="px-6 py-4 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-brand-pink text-gray-700 hover:text-gray-100 hover: border hover:border-gray-100 transition duration-150 ease-in-out"
+          href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+        >
+          <Icon icon="arrow-right-line" class="text-xl" />
+          <span class="px-2 font-semibold">I want free early access</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="features" class="bg-gray-800">
+    <div class="m-auto px-4 pt-16 pb-16 lg:pt-20">
+      <div class="flex flex-col space-y-24 text-center items-center">
+        <div class="m-auto max-w-2xl flex flex-col items-center">
+          <img
+            class="sm:max-w-lg"
+            src={featureOnPremiseNotebook}
+            alt="Feature: On-premise Livebook apps"
+            width="713"
+            height="216"
+          />
+          <h2
+            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
+          >
+            On premise <br class="hidden sm:block" />Livebook apps
+          </h2>
+          <span class="text-gray-200 mt-6 sm:mt-8"
+            >Deploy Livebook
+            <div class="inline-block">
+              <Tooltip
+                text="This is a way to turn a Livebook notebook\ninto an interactive web application."
+                direction="top"
+              >
+                apps*
+              </Tooltip>
+            </div>
+            on one or more machines within your infrastructure. Ideal for internal
+            tools, data apps, data migration workflows, operations diagnostics, and
+            other scenarios where a full custom app is excessive and a scrappy script
+            is insufficient. Save your team's time compared to traditional app development
+            processes.</span
+          >
+        </div>
+        <div class="m-auto max-w-2xl flex flex-col items-center">
+          <img
+            class="sm:max-w-sm"
+            src={featureSharedSecrets}
+            alt="Feature: Shared secrets management"
+            width="571"
+            height="247"
+          />
+          <h2
+            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
+          >
+            Shared secrets <br class="hidden sm:block" />management
+          </h2>
+          <span class="text-gray-200 mt-6 sm:mt-8"
+            >Seamlessly share sensitive
+            <div class="inline-block">
+              <Tooltip text="Like passwords and API tokens." direction="top">
+                information*
+              </Tooltip>
+            </div>
+            among team members, eliminating manual steps while maintaining security.
+            Livebook Teams never gets access to your secrets; it receives them already
+            encrypted with your shared team encryption key and keeps them as such.
+            Avoid the hassle and vulnerability of sharing secrets through other channels
+            and copy-pasting them to Livebook.</span
+          >
+        </div>
+        <div>
+          <div
+            class="max-w-4xl border border-gray-500 rounded-t-3xl text-center px-4 sm:px-12 py-12"
+          >
+            <div class="m-auto max-w-2xl flex flex-col items-center">
+              <div class="flex flex-col text-gray-400">
+                <Icon icon="flag-line" class="text-xl" />
+                <span class="mt-1 text-xs font-medium tracking-[0.2em]"
+                  >ROADMAP</span
+                >
+              </div>
+              <h2 class="text-gray-50 text-2xl leading-tight mt-2">
+                Shape the future <br class="hidden sm:block" /> of Livebook Teams
+              </h2>
+              <span class="lg:w-[90%] text-gray-200 mt-6"
+                >Livebook Teams is still in development. We want to get feedback
+                from beta users and understand their use cases to expand and improve the product.
+              </span>
+              <a class="button button-blue mt-6" href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform">
+                <span>Join the beta program</span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="border-r border-b border-l border-gray-500 rounded-b-3xl pt-10 pb-16"
+          >
+            <span
+              class="mt-1 text-xs font-medium tracking-widest sm:tracking-[0.2em] text-gray-400"
+              >SOME OF THE FEATURES WE’RE CONSIDERING</span
+            >
+            <div
+              class="m-auto max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-y-5 mt-7 sm:mt-5"
+            >
+              <div class="flex flex-col text-gray-400">
+                <Icon icon="user-add-line" class="text-xl text-blue-600" />
+                <span class="mt-1 text-sm text-gray-200">Single Sign On</span>
+              </div>
+              <div class="flex flex-col text-gray-400">
+                <Icon
+                  icon="remote-control-2-line"
+                  class="text-xl text-brand-pink"
+                />
+                <span class="mt-1 text-sm text-gray-200">Access Controls</span>
+              </div>
+              <div class="flex flex-col text-gray-400">
+                <Icon icon="calendar-2-line" class="text-xl text-green-500" />
+                <span class="mt-1 text-sm text-gray-200">Scheduling</span>
+              </div>
+              <div class="flex flex-col text-gray-400">
+                <Icon icon="file-list-2-line" class="text-xl text-red-600" />
+                <span class="mt-1 text-sm text-gray-200">Audit Log</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {
+    future && (
+      <section id="newsletter" class="bg-gray-800 pb-4">
+        <div class="m-auto max-w-3xl px-4 py-16 lg:py-20 flex items-center justify-between gap-10">
+          <img src={newsletter} class="hidden md:block w-[50%]" />
+          <div class="flex flex-col gap-5">
+            <h2 class="text-gray-50 text-2xl text-left">
+              Stay updated on Livebook Teams
+            </h2>
+            <span class="text-gray-200">
+              Sign up for our newsletter to receive updates on the latest
+              features, improvements, and news about Livebook Teams.
+            </span>
+
+            <form
+              action="URL"
+              method="post"
+              class="flex flex-col sm:flex-row items-center gap-4"
+            >
+              <input
+                type="email"
+                placeholder="Email Adress"
+                class="block w-full px-3 py-2 bg-gray-900 border border-gray-600 rounded-md text-sm text-gray-200 shadow-sm placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 disabled:bg-slate-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none invalid:border-brand-pink invalid:text-brand-pink focus:invalid:border-brand-pink focus:invalid:ring-brand-pink"
+              />
+              <button type="submit" class="button button-blue">
+                <span>Subscribe</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    future && (
+      <section id="faq" class="bg-gray-900 py-16 md:py-20">
+        <div class="m-auto px-4 flex flex-col items-center">
+          <h2 class="text-gray-50 text-2xl md:text-3xl text-center">
+            Frequently Asked Questions
+          </h2>
+          <div class="mx-auto max-w-lg mt-10 flex flex-col justify-start space-y-6">
+            {faqItems.map((item) => (
+              <>
+                <div class="space-y-2">
+                  <a class="faq-question-btn flex justify-between cursor-pointer text-gray-200">
+                    <h3>{item.question}</h3>
+                    <div>
+                      <Icon
+                        icon="arrow-drop-down-line"
+                        class={`text-xl faqIconDown ${
+                          item.open ? "hidden" : ""
+                        }`}
+                      />
+                      <Icon
+                        icon="arrow-drop-up-line"
+                        class={`text-xl faqIconUp ${item.open ? "" : "hidden"}`}
+                      />
+                    </div>
+                  </a>
+                  <div class="faq-answer" class:list={[{ hidden: !item.open }]}>
+                    <span class="space-y-3 text-sm mt-1 text-gray-300">
+                      {item.answer}
+                    </span>
+                  </div>
+                </div>
+                <hr class="border-gray-800" />
+              </>
+            ))}
+          </div>
+        </div>
+
+        <div id="get-in-touch" class="px-4 pt-12">
+          <div class="m-auto max-w-lg bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]">
+            <div class="h-full w-full rounded-[32px] bg-gray-900 pt-6 pb-10">
+              <div class="m-auto max-w-2xl flex flex-col items-center space-y-4">
+                <div class="text-center text-slate-50 font-semibold text-2xl flex flex-col">
+                  <Icon
+                    icon="question-answer-fill"
+                    class="text-xl text-brand-pink"
+                  />
+                  Did we miss something?
+                </div>
+                <span class="lg:w-[70%] text-gray-200">
+                  If you have any questions about Livebook Teams, we're here to
+                  help.
+                </span>
+                <a class="button button-gray">
+                  <span>Send an email</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Layout>
+
+<script>
+  document.querySelectorAll(".faq-question-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const parent = button.parentElement;
+      const answer = parent.querySelector(".faq-answer");
+      const iconDown = parent.querySelector(".faqIconDown");
+      const iconUp = parent.querySelector(".faqIconUp");
+
+      answer.classList.toggle("hidden");
+      iconDown.classList.toggle("hidden");
+      iconUp.classList.toggle("hidden");
+    });
+  });
+</script>

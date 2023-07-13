@@ -11,9 +11,11 @@ import Icon from "../components/Icon.astro";
 
 export interface Props {
   title: string;
+  isDarkMode: boolean;
+  displaySponsors?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, isDarkMode, displaySponsors = true } = Astro.props;
 
 function isPathActive(path) {
   return Astro.url.pathname.startsWith(path);
@@ -21,7 +23,7 @@ function isPathActive(path) {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class={isDarkMode ? "dark" : ""}>
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
@@ -41,6 +43,10 @@ function isPathActive(path) {
     />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <!-- Load icons in deferred way, as they are not critical -->
@@ -67,15 +73,32 @@ function isPathActive(path) {
     <!-- Navbar desktop -->
     <header id="header" class="header">
       <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">
-        <div class="w-56">
-          <a href="/">
-            <img src={logoWithText} alt="" height="45" width="188" />
-          </a>
-        </div>
+        <a href="/" class="flex items-center">
+          <img class="w-10" alt="Livebook Logo" src={logo} />
+          <span
+            class="text-gray-900 dark:text-white font-logo text-[34px] leading-9 px-3 pt-1 font-light"
+            >Livebook</span
+          >
+        </a>
+
         <div class="flex-grow flex items-center justify-center">
-          <nav data-el-menu class="flex space-x-12 text-gray-600">
+          <nav
+            data-el-menu
+            class="flex space-x-12 text-gray-600 dark:text-gray-200"
+          >
             <a href="/#install">Install</a>
             <a href="/#features">Features</a>
+            <a
+              href="/teams"
+              class:list={[
+                {
+                  "border-b-2 border-gray-600 dark:border-gray-400":
+                    isPathActive("/teams"),
+                },
+              ]}
+            >
+              Teams
+            </a>
             <a
               href="/integrations"
               class:list={[
@@ -99,7 +122,7 @@ function isPathActive(path) {
               <span class="mb-[-1.5px] font-semibold">Create badge</span>
             </a>
             <a
-              class="p-2 flex items-center justify-center rounded-lg bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
+              class="p-2 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-100 dark:border dark:border-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
               href="/settings"
               aria-label="settings"
             >
@@ -118,12 +141,16 @@ function isPathActive(path) {
       aria-hidden="true"
     >
       <div class="flex items-center justify-between">
-        <a href="/">
-          <img src={logoWithText} alt="" height="40" width="168" />
+        <a href="/" class="flex items-center">
+          <img class="w-9" alt="Livebook Logo" src={logo} />
+          <span
+            class="text-gray-900 dark:text-white font-logo text-3xl px-3 pt-1 font-normal"
+            >Livebook</span
+          >
         </a>
         <button
           data-el-menu-toggle
-          class="p-2 flex items-center justify-center rounded-lg bg-gray-100 text-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
+          class="p-2 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-100 dark:border dark:border-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
           aria-label="toggle menu"
         >
           <Icon icon="menu-4-line" data-on-menu="hide" />
@@ -136,7 +163,7 @@ function isPathActive(path) {
       >
         <nav
           data-el-menu
-          class="flex flex-col items-center space-y-10 text-xl text-gray-700"
+          class="flex flex-col items-center space-y-10 text-xl text-gray-700 dark:text-gray-200"
         >
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
@@ -147,6 +174,17 @@ function isPathActive(path) {
             ]}
           >
             Integrations
+          </a>
+          <a
+            href="/teams"
+            class:list={[
+              {
+                "border-b-2 border-gray-600 dark:border-gray-400":
+                  isPathActive("/teams"),
+              },
+            ]}
+          >
+            Teams
           </a>
           <a
             class="announcekit-widget-mobile"
@@ -180,26 +218,28 @@ function isPathActive(path) {
 
     <!-- Sponsors & Supporters -->
 
-    <section id="sponsors" class="bg-gray-800">
-      <div
-        class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around"
-      >
-        <div class="flex flex-col items-center sm:items-start">
-          <span class="text-lg font-semibold tracking-widest text-white">
-            SPONSORS
-          </span>
-          <a class="flex justify-center mt-4" href="https://fly.io/">
-            <img src={flyioLogoWithText} alt="Flyio Logo" width="250" />
-          </a>
+    {displaySponsors &&
+      <section id="sponsors" class="bg-gray-800">
+        <div
+          class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around"
+        >
+          <div class="flex flex-col items-center sm:items-start">
+            <span class="text-lg font-semibold tracking-widest text-white">
+              SPONSORS
+            </span>
+            <a class="flex justify-center mt-4" href="https://fly.io/">
+              <img src={flyioLogoWithText} alt="Flyio Logo" width="250" />
+            </a>
+          </div>
+          <div class="flex flex-col items-center sm:items-start">
+            <span class="text-base tracking-widest text-white">SUPPORTERS</span>
+            <a class="flex justify-center mt-4" href="https://huggingface.co/">
+              <img src={hfLogoWithText} alt="Hugging Face Logo" width="180" />
+            </a>
+          </div>
         </div>
-        <div class="flex flex-col items-center sm:items-start">
-          <span class="text-base tracking-widest text-white">SUPPORTERS</span>
-          <a class="flex justify-center mt-4" href="https://huggingface.co/">
-            <img src={hfLogoWithText} alt="Hugging Face Logo" width="180" />
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
+    }
 
     <!-- Footer -->
     <footer class="bg-gray-900">
@@ -208,7 +248,9 @@ function isPathActive(path) {
       >
         <div class="flex flex-col">
           <img src={logo} alt="" width="45" height="45" />
-          <span class="mt-2 text-gray-50 text-xl font-semibold">Livebook</span>
+          <span class="mt-2 text-gray-50 text-xl font-logo font-semibold"
+            >Livebook</span
+          >
           <span class="mt-1 text-gray-300">
             Copyright 2023. All rights reserved,
             <a class="border-b-2 border-gray-300" href="https://dashbit.co/"
@@ -279,19 +321,19 @@ function isPathActive(path) {
   }
 
   .header {
-    @apply sticky top-0 z-50 px-4 py-6 hidden lg:flex bg-white;
+    @apply sticky top-0 z-50 px-4 py-6 hidden lg:flex bg-white dark:bg-gray-900;
   }
 
   .header.scrolled {
-    @apply py-3 border-b border-gray-200;
+    @apply py-3 border-b border-gray-200 dark:border-gray-700;
   }
 
   .header-mobile {
-    @apply sticky top-0 z-50 lg:hidden px-4 py-6 bg-white flex flex-col;
+    @apply sticky top-0 z-50 lg:hidden px-4 py-6 bg-white dark:bg-gray-900 flex flex-col;
   }
 
   .header-mobile.scrolled {
-    @apply py-3 border-b border-gray-200;
+    @apply py-3 border-b border-gray-200 dark:border-gray-700;
   }
 </style>
 

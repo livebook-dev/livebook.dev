@@ -37,9 +37,9 @@ const selectedIntegrations = integrations.filter((integration) =>
       >
         <h2 class="max-w-lg text-3xl font-light xl:text-left text-gray-900">
           Automate
-          <span class="font-bold text-[#e44c75]">code</span>
+          <span class="font-bold text-brand-pink">code</span>
           &
-          <span class="font-bold text-[#e44c75]">data</span>
+          <span class="font-bold text-brand-pink">data</span>
           workflows with interactive notebooks
         </h2>
         <span class="text-lg text-gray-700 max-w-xl">
@@ -93,69 +93,38 @@ const selectedIntegrations = integrations.filter((integration) =>
         Livebook is open source, free, and ready to run anywhere.
       </span>
     </div>
-    <div class="md:pb-10"><InstallInstructions /></div>
+    <div class="pb-8 md:pb-16"><InstallInstructions /></div>
   </section>
 
-  <!-- Plans -->
-  <section id="livebook-plans">
-    <div
-      class="m-auto max-w-4xl px-4 py-12 md:py-28 flex flex-col md:flex-row justify-between items-center md:space-x-8 space-y-10 md:space-y-0"
-    >
+  <!-- Livebook Teams -->
+  <section id="livebook-teams" class="bg-gray-800">
+    <div class="px-4 py-12 md:py-20">
       <div
-        class="flex flex-col items-center max-w-sm md:items-start text-center md:text-left"
+        class="m-auto max-w-4xl bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]"
       >
-        <h2 class="text-gray-900 text-2xl md:text-3xl font-semibold">
-          Automate in the cloud
-          <br />
-          with <span class="font-bold text-[#e44c75]">Livebook Teams</span>
-        </h2>
-        <p class="mt-3 max-w-lg text-gray-700">
-          Livebook Teams runs on your infrastructure, allowing teams to securely
-          share, deploy, and execute notebooks within your company.
-        </p>
-        <a
-          class="hidden md:inline-block button button-blue text-base font-semibold px-12 py-4 mt-8"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Get in touch
-        </a>
-      </div>
-      <div
-        class="p-8 text-gray-50 font-medium bg-gray-800 rounded-2xl max-w-md"
-      >
-        <ul class="space-y-5">
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Deploy notebooks to your private cloud</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Single-sign on (SSO) and access control</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Schedule and audit notebook execution</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Safely share secrets within the team</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <Icon icon="check-line text-2xl text-green-600" />
-            <span>Dedicated operational support</span>
-          </li>
-        </ul>
-
-        <a
-          class="md:hidden sm:block button button-blue text-base font-semibold px-12 py-4 mt-8 mx-auto"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform?usp=sf_link"
-          target="_blank"
-          rel="noopener"
-        >
-          Get in touch
-        </a>
+        <div class="h-full w-full rounded-[32px] bg-gray-800 py-12 lg:py-16">
+          <div class="m-auto max-w-xl flex flex-col items-center">
+            <h2
+              class="text-gray-50 max-w-sm lg:max-w-md font-semibold text-center text-2xl md:text-3xl"
+            >
+            Livebook Teams is coming!
+            </h2>
+            <span class="max-w-md text-gray-200 mt-6 px-2 sm:px-0"
+              >Livebook Teams amplifies Livebook’s capabilities with features
+              designed for teams and businesses.</span
+            >
+            <a
+              class="px-5 py-3 lg:px-6 lg:py-3 bg-white rounded-lg border border-gray-300 mt-8"
+              href="/teams"
+            >
+              <div
+                class="text-gray-700 text-sm lg:text-base font-medium leading-normal"
+              >
+                Learn more
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
