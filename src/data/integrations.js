@@ -8,6 +8,9 @@ import elixirHexPackages from "../images/integrations/elixir/features/hex-packag
 import elixirConnectRunningSystem from "../images/integrations/elixir/features/connect-running-system.png";
 import elixirNerves from "../images/integrations/elixir/features/nerves.png";
 
+import erlangLogo from "../images/integrations/erlang/logo.svg";
+import erlangPreview from "../images/integrations/erlang/preview.png";
+
 import sqlLogo from "../images/integrations/sql/logo.png";
 import sqlPreview from "../images/integrations/sql/preview.png";
 
@@ -115,6 +118,16 @@ const integrations = [
         image: elixirNerves,
       },
     ],
+  },
+  {
+    id: "erlang",
+    name: "Erlang",
+    logo: erlangLogo,
+    category: "Language",
+    headline: "Use Erlang directly in Livebook",
+    description:
+      "Livebook has an interactive enviroment to code in Erlang. And you can write Elixir and Erlang in the same notebook, interoperating. If you define a function or a variable inside one language, you can easily use it in the other.",
+    image: erlangPreview,
   },
   {
     id: "sql",
