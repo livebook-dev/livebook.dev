@@ -86,8 +86,31 @@ function isPathActive(path) {
             data-el-menu
             class="flex space-x-12 text-gray-600 dark:text-gray-200"
           >
-            <a href="/#install">Install</a>
-            <a href="/#features">Features</a>
+            <aside class="relative group">
+              <a href="/" class="z-10 py-2"> Home</a>
+              <div
+                class="origin-top-center absolute left-1/2 -translate-x-1/2 mt-1 w-32 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block transform"
+              >
+                <div
+                  class="py-1"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="options-menu"
+                >
+                  <a
+                    href="/#install"
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 text-center"
+                    role="menuitem">Install</a
+                  >
+                  <a
+                    href="/#features"
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 text-center"
+                    role="menuitem">Features</a
+                  >
+                </div>
+              </div>
+            </aside>
+
             <a
               href="/teams"
               class:list={[
@@ -165,6 +188,7 @@ function isPathActive(path) {
           data-el-menu
           class="flex flex-col items-center space-y-10 text-xl text-gray-700 dark:text-gray-200"
         >
+          <a href="/">Home</a>
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
           <a
@@ -218,27 +242,32 @@ function isPathActive(path) {
 
     <!-- Sponsors & Supporters -->
 
-    {displaySponsors &&
-      <section id="sponsors" class="bg-gray-800">
-        <div
-          class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around"
-        >
-          <div class="flex flex-col items-center sm:items-start">
-            <span class="text-lg font-semibold tracking-widest text-white">
-              SPONSORS
-            </span>
-            <a class="flex justify-center mt-4" href="https://fly.io/">
-              <img src={flyioLogoWithText} alt="Flyio Logo" width="250" />
-            </a>
+    {
+      displaySponsors && (
+        <section id="sponsors" class="bg-gray-800">
+          <div class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around">
+            <div class="flex flex-col items-center sm:items-start">
+              <span class="text-lg font-semibold tracking-widest text-white">
+                SPONSORS
+              </span>
+              <a class="flex justify-center mt-4" href="https://fly.io/">
+                <img src={flyioLogoWithText} alt="Flyio Logo" width="250" />
+              </a>
+            </div>
+            <div class="flex flex-col items-center sm:items-start">
+              <span class="text-base tracking-widest text-white">
+                SUPPORTERS
+              </span>
+              <a
+                class="flex justify-center mt-4"
+                href="https://huggingface.co/"
+              >
+                <img src={hfLogoWithText} alt="Hugging Face Logo" width="180" />
+              </a>
+            </div>
           </div>
-          <div class="flex flex-col items-center sm:items-start">
-            <span class="text-base tracking-widest text-white">SUPPORTERS</span>
-            <a class="flex justify-center mt-4" href="https://huggingface.co/">
-              <img src={hfLogoWithText} alt="Hugging Face Logo" width="180" />
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      )
     }
 
     <!-- Footer -->
