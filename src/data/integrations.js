@@ -149,9 +149,9 @@ const integrations = [
       "Use Livebook's Neural Network Smart cell to download and run Machine Learning models from Hugging Face without a single line of code. Customize the generated code to your needs.",
     image: hfPreview,
     cta: {
-      link: "https://news.livebook.dev/announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir-3Op73O",
-      main: "Learn more",
-      description: "ML with Elixir & Livebook",
+      link: "https://www.youtube.com/watch?v=uyVRPEXOqzw",
+      main: "How To",
+      description: "Build an ML app",
     },
     features: [
       {
