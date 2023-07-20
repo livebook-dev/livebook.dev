@@ -150,7 +150,7 @@ const integrations = [
     image: hfPreview,
     cta: {
       link: "https://www.youtube.com/watch?v=uyVRPEXOqzw",
-      main: "How To",
+      main: "How to",
       description: "Build an ML app",
     },
     features: [
