@@ -7,6 +7,7 @@ import Tooltip from "../components/Tooltip.astro";
 import teamsIntroScreenshot from "../images/teams/intro-screenshot.png";
 import featureOnPremiseNotebook from "../images/teams/feature-on-premise-notebook.png";
 import featureSharedSecrets from "../images/teams/feature-shared-secrets.png";
+import featureFilesystem from "../images/teams/feature-filesystem.png";
 import newsletter from "../images/teams/newsletter.png";
 
 const faqItems = [
@@ -133,6 +134,30 @@ const future = false;
             and copy-pasting them to Livebook.</span
           >
         </div>
+        <div class="m-auto max-w-2xl flex flex-col items-center">
+          <img
+            class="sm:max-w-sm"
+            src={featureFilesystem}
+            alt="Feature: Shared secrets management"
+            width="571"
+            height="247"
+          />
+          <h2
+            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
+          >
+            Fine-Grained Shared <br class="hidden sm:block" />Secrets Access
+            Controls
+          </h2>
+          <span class="text-gray-200 mt-6 sm:mt-8"
+            >Control access to shared secrets on a per-notebook basis, creating
+            a secure working environment. Livebook Teams automatically
+            replicates these settings across your team, using your shared team
+            encryption key to determine when a notebook is allowed to access
+            specific shared secrets. Empower your team to protect sensitive
+            information without the need to constantly manage permissions
+            manually.</span
+          >
+        </div>
         <div>
           <div
             class="max-w-4xl border border-gray-500 rounded-t-3xl text-center px-4 sm:px-12 py-12"
@@ -149,9 +174,13 @@ const future = false;
               </h2>
               <span class="lg:w-[90%] text-gray-200 mt-6"
                 >Livebook Teams is still in development. We want to get feedback
-                from beta users and understand their use cases to expand and improve the product.
+                from beta users and understand their use cases to expand and
+                improve the product.
               </span>
-              <a class="button button-blue mt-6 plausible-event-name=teams+join+beta+cta+click" href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform">
+              <a
+                class="button button-blue mt-6 plausible-event-name=teams+join+beta+cta+click"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+              >
                 <span>Join the beta program</span>
               </a>
             </div>
