@@ -36,6 +36,9 @@ import postgresqlPreview from "../images/integrations/postgresql/preview.png";
 import mysqlLogo from "../images/integrations/mysql/logo.svg";
 import mysqlPreview from "../images/integrations/mysql/preview.png";
 
+import sqlserverLogo from "../images/integrations/sqlserver/logo.png";
+import sqlserverPreview from "../images/integrations/sqlserver/preview.png";
+
 import sqliteLogo from "../images/integrations/sqlite/logo.svg";
 import sqlitePreview from "../images/integrations/sqlite/preview.png";
 
@@ -44,6 +47,9 @@ import bigqueryPreview from "../images/integrations/bigquery/preview.png";
 
 import athenaLogo from "../images/integrations/athena/logo.png";
 import athenaPreview from "../images/integrations/athena/preview.png";
+
+import snowflakeLogo from "../images/integrations/snowflake/logo.svg";
+import snowflakePreview from "../images/integrations/snowflake/preview.png";
 
 import vegaLiteLogo from "../images/integrations/vega-lite/logo.svg";
 import vegaLitePreview from "../images/integrations/vega-lite/preview.png";
@@ -244,6 +250,21 @@ const integrations = [
     image: mysqlPreview,
   },
   {
+    id: "sqlserver",
+    name: "Microsoft SQL Server",
+    logo: sqlserverLogo,
+    category: "Database",
+    headline: "Connect to Microsoft SQL Server directly from Livebook",
+    description:
+      "Connect to your Microsoft SQL Server database using Livebook's Database Connection Smart cell. Use Livebook Secrets to store your database password securely. Write and run queries directly from Livebook.",
+    image: sqlserverPreview,
+    cta: {
+      link: "https://www.youtube.com/watch?v=Cl8YhlMgVsk",
+      main: "Watch the tutorial",
+      description: "SQL Server & Livebook"
+    },
+  },
+  {
     id: "sqlite",
     name: "SQLite",
     logo: sqliteLogo,
@@ -281,6 +302,21 @@ const integrations = [
       link: "https://news.livebook.dev/how-to-query-and-visualize-data-from-amazon-athena-using-livebook-4dfQ5y",
       main: "Read the tutorial",
       description: "Athena & Livebook",
+    },
+  },
+  {
+    id: "snowflake",
+    name: "Snowflake",
+    logo: snowflakeLogo,
+    category: "Data Warehouse",
+    headline: "Connect to Snowflake directly from Livebook",
+    description:
+      "Connect to your Snowflake using Livebook's Database Connection Smart cell. Use Livebook Secrets to store your AWS access key securely. Write and run queries directly from Livebook.",
+    image: snowflakePreview,
+    cta: {
+      link: "https://www.youtube.com/watch?v=P00ziSSXnEk",
+      main: "Watch the tutorial",
+      description: "Snowflake & Livebook",
     },
   },
   {
