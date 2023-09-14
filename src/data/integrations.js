@@ -311,7 +311,7 @@ const integrations = [
     category: "Data Warehouse",
     headline: "Connect to Snowflake directly from Livebook",
     description:
-      "Connect to your Snowflake using Livebook's Database Connection Smart cell. Use Livebook Secrets to store your AWS access key securely. Write and run queries directly from Livebook.",
+      "Connect to your Snowflake using Livebook's Database Connection Smart cell. Data exchange happens via the high-performance Apache Arrow format. Write and run queries directly from Livebook.",
     image: snowflakePreview,
     cta: {
       link: "https://www.youtube.com/watch?v=P00ziSSXnEk",
