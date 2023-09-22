@@ -1,8 +1,9 @@
 ---
 import "../styles/base.css";
 
+import { Image } from "astro:assets";
+
 import logo from "../images/logo.svg";
-import logoWithText from "../images/logo-with-text.svg";
 import flyioLogoWithText from "../images/flyio-logo-with-text.svg";
 import hfLogoWithText from "../images/hf-logo-with-text.svg";
 import badgeLogo from "../images/badge-logo.svg";
@@ -74,7 +75,7 @@ function isPathActive(path) {
     <header id="header" class="header">
       <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">
         <a href="/" class="flex items-center">
-          <img class="w-10" alt="Livebook Logo" src={logo} />
+          <Image class="w-10" alt="Livebook Logo" src={logo} />
           <span
             class="text-gray-900 dark:text-white font-logo text-[34px] leading-9 px-3 pt-1 font-light"
             >Livebook</span
@@ -141,7 +142,7 @@ function isPathActive(path) {
               class="px-3 py-2 rounded-lg font-semibold text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
               href="/badge"
             >
-              <img src={badgeLogo} alt="" width="17" height="19" />
+              <Image src={badgeLogo} alt="" width="17" height="19" />
               <span class="mb-[-1.5px] font-semibold">Create badge</span>
             </a>
             <a
@@ -165,7 +166,7 @@ function isPathActive(path) {
     >
       <div class="flex items-center justify-between">
         <a href="/" class="flex items-center">
-          <img class="w-9" alt="Livebook Logo" src={logo} />
+          <Image class="w-9" alt="Livebook Logo" src={logo} />
           <span
             class="text-gray-900 dark:text-white font-logo text-3xl px-3 pt-1 font-normal"
             >Livebook</span
@@ -223,7 +224,7 @@ function isPathActive(path) {
             class="px-3 py-2 rounded-lg text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
             href="/badge"
           >
-            <img src={badgeLogo} alt="" width="17" height="19" />
+            <Image src={badgeLogo} alt="" width="17" height="19" />
             <span class="mb-[-1.5px] font-semibold">Create badge</span>
           </a>
           <a
@@ -251,7 +252,7 @@ function isPathActive(path) {
                 SPONSORS
               </span>
               <a class="flex justify-center mt-4" href="https://fly.io/">
-                <img src={flyioLogoWithText} alt="Flyio Logo" width="250" />
+                <Image src={flyioLogoWithText} alt="Flyio Logo" width="250" />
               </a>
             </div>
             <div class="flex flex-col items-center sm:items-start">
@@ -262,7 +263,11 @@ function isPathActive(path) {
                 class="flex justify-center mt-4"
                 href="https://huggingface.co/"
               >
-                <img src={hfLogoWithText} alt="Hugging Face Logo" width="180" />
+                <Image
+                  src={hfLogoWithText}
+                  alt="Hugging Face Logo"
+                  width="180"
+                />
               </a>
             </div>
           </div>
@@ -276,7 +281,7 @@ function isPathActive(path) {
         class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between"
       >
         <div class="flex flex-col">
-          <img src={logo} alt="" width="45" height="45" />
+          <Image src={logo} alt="" width="45" height="45" />
           <span class="mt-2 text-gray-50 text-xl font-logo font-semibold"
             >Livebook</span
           >
@@ -292,7 +297,7 @@ function isPathActive(path) {
         </div>
         <div class="md:hidden w-full border-t border-gray-700"></div>
         <div class="flex flex-col text-gray-200 items-end">
-          <div class="text-3xl">
+          <div class="flex gap-2 text-3xl">
             <a
               href="https://github.com/livebook-dev/livebook_website"
               aria-label="github source"

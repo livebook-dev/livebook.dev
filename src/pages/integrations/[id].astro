@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../../layouts/Layout.astro";
 import Icon from "../../components/Icon.astro";
 
@@ -63,7 +65,7 @@ const integration = integrations.find((integration) => integration.id === id);
           }
         </div>
       </div>
-      <img
+      <Image
         class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
         src={integration.image}
         alt="Integration Example"
@@ -87,7 +89,8 @@ const integration = integrations.find((integration) => integration.id === id);
               </div>
               <img
                 class="max-h-[400px] order-1 md:order-none"
-                src={feature.image}
+                src={feature.image.src}
+                alt=""
               />
             </div>
           ))}

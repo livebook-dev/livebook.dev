@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Code from "../components/Code.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -98,7 +100,7 @@ import curlyArrow from "../images/curly-arrow.svg";
         data-el-badge-result
         class="flex flex-col items-center max-w-full pb-8 -mb-8"
       >
-        <img class="my-4" src={curlyArrow} alt="" width="31" height="85" />
+        <Image class="my-4" src={curlyArrow} alt="" height="85" />
         <div class="text-gray-700 text-center max-w-xl">
           <span class="text-blue-600 font-semibold">Awesome!</span> Your Livebook
           badge is ready to use! You can copy the code to your desired location.
