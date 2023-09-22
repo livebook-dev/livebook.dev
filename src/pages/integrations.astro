@@ -44,6 +44,9 @@ import integrations from "../data/integrations";
         <button data-type="visualization" class="button-integration">
           Visualization
         </button>
+        <button data-type="authentication" class="button-integration">
+          Authentication
+        </button>
         <div
           class="hidden lg:block w-60 mt-6 p-5 bg-blue-50 border rounded-lg border-blue-600"
         >
@@ -87,6 +90,9 @@ import integrations from "../data/integrations";
         <option value="messaging" class="button-integration">Messaging</option>
         <option value="visualization" class="button-integration">
           Visualization
+        </option>
+        <option value="authentication" class="button-integration">
+          Authentication
         </option>
       </select>
       <div class="grow grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-0.5">
@@ -158,6 +164,7 @@ import integrations from "../data/integrations";
     "machine-learning": ["Machine Learning"],
     messaging: ["Messaging"],
     visualization: ["Visualization"],
+    authentication: ["Authentication"],
   };
 
   function setActiveType(type) {

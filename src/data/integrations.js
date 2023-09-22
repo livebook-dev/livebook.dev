@@ -64,6 +64,13 @@ import maplibreAllPower from "../images/integrations/maplibre/features/all-power
 import mermaidLogo from "../images/integrations/mermaid/logo.jpg";
 import mermaidPreview from "../images/integrations/mermaid/preview.png";
 
+import cloudflareLogo from "../images/integrations/cloudflare/logo.png";
+// import cloudflarePreview from "../images/integrations/mermaid/preview.png";
+import googleIapLogo from "../images/integrations/google-iap/logo.webp";
+// import googleIapPreview from "../images/integrations/google-iap/preview.png";
+import tailscaleLogo from "../images/integrations/tailscale/logo.svg";
+// import tailscalePreview from "../images/integrations/tailscale/preview.png";
+
 const integrations = [
   {
     id: "elixir",
@@ -386,6 +393,51 @@ const integrations = [
     description:
       "Build and visualize diagrams using Livebook's native integration with <a href='https://mermaid.js.org/' class='underline'>Mermaid</a>.",
     image: mermaidPreview,
+  },
+  {
+    id: "cloudflare",
+    name: "Cloudflare Zero Trust",
+    logo: cloudflareLogo,
+    category: "Authentication",
+    headline: "Authenticate with Cloudflare Zero Trust",
+    description:
+      "Use Cloudflare Zero Trust to ensure that only authorized users can access your Livebook instance.",
+    image: "https://placehold.co/874x562/png",
+    cta: {
+      link: "https://hexdocs.pm/livebook/cloudflare.html",
+      main: "How to",
+      description: "Cloudflare & Livebook",
+    },
+  },
+  {
+    id: "google-iap",
+    name: "Google IAP",
+    logo: googleIapLogo,
+    category: "Authentication",
+    headline: "Authenticate with Google Identity-Aware Proxy",
+    description:
+      "Use Google Identity-Aware Proxy (IAP) to ensure that only authorized users can access your Livebook instance.",
+    image: "https://placehold.co/874x562/png",
+    cta: {
+      link: "https://hexdocs.pm/livebook/google_iap.html",
+      main: "How to",
+      description: "Google IAP & Livebook",
+    },
+  },
+  {
+    id: "tailscale",
+    name: "Tailscale",
+    logo: tailscaleLogo,
+    category: "Authentication",
+    headline: "Authenticate with Tailscale",
+    description:
+      "Use Tailscale to ensure that only authorized users can access your Livebook instance.",
+    image: "https://placehold.co/874x562/png",
+    cta: {
+      link: "https://hexdocs.pm/livebook/tailscale.html",
+      main: "How to",
+      description: "Tailscale & Livebook",
+    },
   },
 ];
 
