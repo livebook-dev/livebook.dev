@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
@@ -77,12 +79,10 @@ const future = false;
     <div class="m-auto px-4 pt-16 pb-16 lg:pt-20">
       <div class="flex flex-col space-y-24 text-center items-center">
         <div class="m-auto max-w-2xl flex flex-col items-center">
-          <img
+          <Image
             class="sm:max-w-lg"
             src={featureOnPremiseNotebook}
             alt="Feature: On-premise Livebook apps"
-            width="713"
-            height="216"
           />
           <h2
             class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
@@ -107,12 +107,10 @@ const future = false;
           >
         </div>
         <div class="m-auto max-w-2xl flex flex-col items-center">
-          <img
+          <Image
             class="sm:max-w-sm"
             src={featureSharedSecrets}
             alt="Feature: Shared secrets management"
-            width="571"
-            height="247"
           />
           <h2
             class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
@@ -149,9 +147,13 @@ const future = false;
               </h2>
               <span class="lg:w-[90%] text-gray-200 mt-6"
                 >Livebook Teams is still in development. We want to get feedback
-                from beta users and understand their use cases to expand and improve the product.
+                from beta users and understand their use cases to expand and
+                improve the product.
               </span>
-              <a class="button button-blue mt-6 plausible-event-name=teams+join+beta+cta+click" href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform">
+              <a
+                class="button button-blue mt-6 plausible-event-name=teams+join+beta+cta+click"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+              >
                 <span>Join the beta program</span>
               </a>
             </div>
@@ -196,7 +198,7 @@ const future = false;
     future && (
       <section id="newsletter" class="bg-gray-800 pb-4">
         <div class="m-auto max-w-3xl px-4 py-16 lg:py-20 flex items-center justify-between gap-10">
-          <img src={newsletter} class="hidden md:block w-[50%]" />
+          <Image src={newsletter} alt="" class="hidden md:block w-[50%]" />
           <div class="flex flex-col gap-5">
             <h2 class="text-gray-50 text-2xl text-left">
               Stay updated on Livebook Teams

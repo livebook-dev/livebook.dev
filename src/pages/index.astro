@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import InstallInstructions from "../components/InstallInstructions.astro";
@@ -73,10 +75,11 @@ const selectedIntegrations = integrations.filter((integration) =>
           </a>
         </nav>
       </div>
-      <img
+      <Image
         class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
         src={welcomeToLivebook}
         alt="Logo"
+        loading="eager"
       />
     </div>
   </section>
@@ -107,7 +110,7 @@ const selectedIntegrations = integrations.filter((integration) =>
             <h2
               class="text-gray-50 max-w-sm lg:max-w-md font-semibold text-center text-2xl md:text-3xl"
             >
-            Livebook Teams is coming!
+              Livebook Teams is coming!
             </h2>
             <span class="max-w-md text-gray-200 mt-6 px-2 sm:px-0"
               >Livebook Teams amplifies Livebook’s capabilities with features
@@ -151,7 +154,7 @@ const selectedIntegrations = integrations.filter((integration) =>
         class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 lg:space-x-28"
       >
         <aside>
-          <img src={plot} alt="" width="448" height="162" />
+          <Image src={plot} alt="" width="448" />
         </aside>
         <div class="flex flex-col">
           <h3 class="text-xl text-gray-50 font-semibold">
@@ -167,12 +170,11 @@ const selectedIntegrations = integrations.filter((integration) =>
       <div
         class="flex flex-col md:flex-row-reverse items-center space-y-8 md:space-y-0"
       >
-        <img
+        <Image
           class="custom-drop-shadow-1"
           src={smartCells}
           alt=""
           width="550"
-          height="280"
         />
         <div class="flex flex-col md:mr-8 lg:mr-28">
           <h3 class="text-xl text-gray-50 font-semibold">
@@ -209,12 +211,11 @@ const selectedIntegrations = integrations.filter((integration) =>
                 class="rounded-md md:rounded-2xl absolute top-0 bottom-0 left-0 right-0 pointer-events-none border-4 border-gray-100"
               >
               </div>
-              <img
+              <Image
                 class="rounded-md md:rounded-2xl"
                 src={editorFeatures}
                 alt=""
                 width="850"
-                height="400"
               />
             </div>
             <!-- Feature 2 -->
@@ -246,13 +247,7 @@ const selectedIntegrations = integrations.filter((integration) =>
       <div
         class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 lg:space-x-28"
       >
-        <img
-          class="custom-drop-shadow-1"
-          src={diff}
-          alt=""
-          width="448"
-          height="162"
-        />
+        <Image class="custom-drop-shadow-1" src={diff} alt="" width="448" />
         <div class="flex flex-col">
           <h3 class="text-xl text-gray-50 font-semibold">
             Write once, read anywhere
@@ -274,8 +269,8 @@ const selectedIntegrations = integrations.filter((integration) =>
         Integrations
       </h2>
       <span class="mt-3 max-w-lg text-gray-700 font-medium text-center">
-        Livebook comes with built-in integrations with Elixir, Hugging Face, multiple data
-        sources, data visualization libraries, and more!
+        Livebook comes with built-in integrations with Elixir, Hugging Face,
+        multiple data sources, data visualization libraries, and more!
       </span>
       <a
         class="mt-8 button button-outlined-gray whitespace-nowrap"
@@ -338,7 +333,7 @@ const selectedIntegrations = integrations.filter((integration) =>
                 >
                   <img
                     class="h-[40px] lg:h-[60px]"
-                    src={integration.logo}
+                    src={integration.logo.src}
                     alt={`${integration.name} logo`}
                   />
                   <span class="text-gray-700 font-medium text-base lg:mt-2">
@@ -375,7 +370,7 @@ const selectedIntegrations = integrations.filter((integration) =>
     <div
       class="m-auto max-w-7xl lg:mt-8 px-4 lg:px-16 py-10 md:py-20 flex flex-col md:flex-row items-center gap-8 lg:gap-16"
     >
-      <img
+      <Image
         class="max-w-[80%] md:max-w-[50%]"
         src={learn}
         alt="Livebook's Learning Center Screenshot"
