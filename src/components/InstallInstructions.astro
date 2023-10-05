@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import windowButtons from "../images/window-buttons.png";
 import flyioLogo from "../images/flyio-logo.svg";
 import huggingFaceLogo from "../images/hf-logo.svg";
@@ -8,7 +10,7 @@ import Icon from "./Icon.astro";
 
 <div class="m-auto max-w-4xl p-4 mt-5">
   <div class="mt-4 w-full p-4 rounded-2xl bg-white">
-    <img src={windowButtons} alt="" width="36" height="8" />
+    <img src={windowButtons.src} alt="" width="36" height="8" />
     <div
       class="py-10 px-5 md:px-0 lg:px-5 flex flex-col md:flex-row justify-center"
     >
@@ -77,7 +79,7 @@ import Icon from "./Icon.astro";
             href="https://fly.io/launch/livebook"
             rel="noopener"
           >
-            <img src={flyioLogo} class="w-[26px]" />
+            <Image src={flyioLogo} alt="" class="w-[26px]" />
             <span>Run on Fly.io</span>
           </a>
           <a
@@ -85,7 +87,7 @@ import Icon from "./Icon.astro";
             href="https://huggingface.co/new-space?template=livebook-dev/livebook"
             rel="noopener"
           >
-            <img src={huggingFaceLogo} class="w-[26px]" />
+            <Image src={huggingFaceLogo} alt="" class="w-[26px]" />
             <span>Run on Hugging Face</span>
           </a>
         </div>
