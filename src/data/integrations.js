@@ -65,11 +65,11 @@ import mermaidLogo from "../images/integrations/mermaid/logo.jpg";
 import mermaidPreview from "../images/integrations/mermaid/preview.png";
 
 import cloudflareLogo from "../images/integrations/cloudflare/logo.png";
-// import cloudflarePreview from "../images/integrations/mermaid/preview.png";
+import cloudflarePreview from "../images/integrations/cloudflare/placeholder.png";
 import googleIapLogo from "../images/integrations/google-iap/logo.webp";
-// import googleIapPreview from "../images/integrations/google-iap/preview.png";
+import googleIapPreview from "../images/integrations/google-iap/placeholder.png";
 import tailscaleLogo from "../images/integrations/tailscale/logo.svg";
-// import tailscalePreview from "../images/integrations/tailscale/preview.png";
+import tailscalePreview from "../images/integrations/tailscale/placeholder.png";
 
 const integrations = [
   {
@@ -402,7 +402,7 @@ const integrations = [
     headline: "Authenticate with Cloudflare Zero Trust",
     description:
       "Use Cloudflare Zero Trust to ensure that only authorized users can access your Livebook instance.",
-    image: "https://placehold.co/874x562/png",
+    image: cloudflarePreview,
     cta: {
       link: "https://hexdocs.pm/livebook/cloudflare.html",
       main: "How to",
@@ -417,7 +417,7 @@ const integrations = [
     headline: "Authenticate with Google Identity-Aware Proxy",
     description:
       "Use Google Identity-Aware Proxy (IAP) to ensure that only authorized users can access your Livebook instance.",
-    image: "https://placehold.co/874x562/png",
+    image: googleIapPreview,
     cta: {
       link: "https://hexdocs.pm/livebook/google_iap.html",
       main: "How to",
@@ -432,7 +432,7 @@ const integrations = [
     headline: "Authenticate with Tailscale",
     description:
       "Use Tailscale to ensure that only authorized users can access your Livebook instance.",
-    image: "https://placehold.co/874x562/png",
+    image: tailscalePreview,
     cta: {
       link: "https://hexdocs.pm/livebook/tailscale.html",
       main: "How to",
