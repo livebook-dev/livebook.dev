@@ -431,7 +431,7 @@ const integrations = [
     category: "Authentication",
     headline: "Authenticate with Tailscale",
     description:
-      "Use Tailscale to ensure that only authorized users can access your Livebook instance.",
+      "Use Tailscale to ensure that only authorized users can access your Livebook instance and deployed apps.",
     image: tailscalePreview,
     cta: {
       link: "https://hexdocs.pm/livebook/tailscale.html",
