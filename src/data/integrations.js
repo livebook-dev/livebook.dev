@@ -401,7 +401,7 @@ const integrations = [
     category: "Authentication",
     headline: "Authenticate with Cloudflare Zero Trust",
     description:
-      "Use Cloudflare Zero Trust to ensure that only authorized users can access your Livebook instance.",
+      "Use Cloudflare Zero Trust to ensure that only authorized users can access your Livebook instance and deployed apps.",
     image: cloudflarePreview,
     cta: {
       link: "https://hexdocs.pm/livebook/cloudflare.html",
