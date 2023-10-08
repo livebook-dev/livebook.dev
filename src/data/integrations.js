@@ -416,7 +416,7 @@ const integrations = [
     category: "Authentication",
     headline: "Authenticate with Google Identity-Aware Proxy",
     description:
-      "Use Google Identity-Aware Proxy (IAP) to ensure that only authorized users can access your Livebook instance.",
+      "Use Google Identity-Aware Proxy (IAP) to ensure that only authorized users can access your Livebook instance and deployed apps.",
     image: googleIapPreview,
     cta: {
       link: "https://hexdocs.pm/livebook/google_iap.html",
