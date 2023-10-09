@@ -65,11 +65,11 @@ import mermaidLogo from "../images/integrations/mermaid/logo.jpg";
 import mermaidPreview from "../images/integrations/mermaid/preview.png";
 
 import cloudflareLogo from "../images/integrations/cloudflare/logo.png";
-import cloudflarePreview from "../images/integrations/cloudflare/placeholder.png";
+import cloudflarePreview from "../images/integrations/cloudflare/preview.png";
 import googleIapLogo from "../images/integrations/google-iap/logo.webp";
-import googleIapPreview from "../images/integrations/google-iap/placeholder.png";
+import googleIapPreview from "../images/integrations/google-iap/preview.png";
 import tailscaleLogo from "../images/integrations/tailscale/logo.svg";
-import tailscalePreview from "../images/integrations/tailscale/placeholder.png";
+import tailscalePreview from "../images/integrations/tailscale/preview.png";
 
 const integrations = [
   {
