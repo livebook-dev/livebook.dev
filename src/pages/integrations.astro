@@ -28,6 +28,9 @@ import integrations from "../data/integrations";
         >
           All
         </button>
+        <button data-type="authentication" class="button-integration">
+          Authentication
+        </button>
         <button data-type="database" class="button-integration">
           Database & <br />
           Data Warehouse
@@ -75,6 +78,9 @@ import integrations from "../data/integrations";
           class="button-integration button-integration-active"
         >
           All
+        </option>
+        <option value="authentication" class="button-integration">
+          Authentication
         </option>
         <option value="database" class="button-integration">
           Database & <br />
@@ -153,6 +159,7 @@ import integrations from "../data/integrations";
 
 <script>
   const typeToCategories = {
+    authentication: ["Authentication"],
     database: ["Database", "Data Warehouse"],
     language: ["Language"],
     "machine-learning": ["Machine Learning"],
