@@ -66,10 +66,15 @@ import mermaidPreview from "../images/integrations/mermaid/preview.png";
 
 import cloudflareLogo from "../images/integrations/cloudflare/logo.png";
 import cloudflarePreview from "../images/integrations/cloudflare/preview.png";
+import cloudflareTeams from "../images/integrations/cloudflare/features/teams.png";
+
 import googleIapLogo from "../images/integrations/google-iap/logo.webp";
 import googleIapPreview from "../images/integrations/google-iap/preview.png";
+import googleIapTeams from "../images/integrations/google-iap/features/teams.png";
+
 import tailscaleLogo from "../images/integrations/tailscale/logo.svg";
 import tailscalePreview from "../images/integrations/tailscale/preview.png";
+import tailscaleTeams from "../images/integrations/tailscale/features/teams.png";
 
 const integrations = [
   {
@@ -408,6 +413,14 @@ const integrations = [
       main: "How to",
       description: "Cloudflare & Livebook",
     },
+    features: [
+      {
+        headline: "Livebook Teams + Cloudflare Zero Trust",
+        description:
+          "With <a href='/teams' class='underline'>Livebook Teams</a>, you can deploy notebooks as applications with pre-configured Cloudflare Zero Trust Authentication.",
+        image: cloudflareTeams,
+      },
+    ],
   },
   {
     id: "google-iap",
@@ -423,6 +436,14 @@ const integrations = [
       main: "How to",
       description: "Google IAP & Livebook",
     },
+    features: [
+      {
+        headline: "Livebook Teams + Google IAP",
+        description:
+          "With <a href='/teams' class='underline'>Livebook Teams</a>, you can deploy notebooks as applications with pre-configured Google IAP Authentication.",
+        image: googleIapTeams,
+      },
+    ],
   },
   {
     id: "tailscale",
@@ -438,6 +459,14 @@ const integrations = [
       main: "How to",
       description: "Tailscale & Livebook",
     },
+    features: [
+      {
+        headline: "Livebook Teams + Tailscale",
+        description:
+          "With <a href='/teams' class='underline'>Livebook Teams</a>, you can deploy notebooks as applications with pre-configured Tailscale Authentication.",
+        image: tailscaleTeams,
+      },
+    ],
   },
 ];
 
