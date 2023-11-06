@@ -12,7 +12,7 @@ import Icon from "./Icon.astro";
   <div class="mt-4 w-full p-4 rounded-2xl bg-white">
     <img src={windowButtons.src} alt="" width="36" height="8" />
     <div
-      class="py-10 px-5 md:px-0 lg:px-5 flex flex-col md:flex-row justify-center"
+      class="py-10 px-5 md:px-12 lg:px-16 flex flex-col md:flex-row justify-center"
     >
       <!-- Desktop app -->
       <div class="flex flex-col">
@@ -28,7 +28,7 @@ import Icon from "./Icon.astro";
           </div>
         </div>
         <div
-          class="mt-10 flex flex-col sm:flex-row gap-8 sm:gap-5 md:gap-2 lg:gap-5"
+          class="mt-10 flex flex-col md:flex-row gap-8 md:gap-5 lg:gap-5"
         >
           <a
             class="button button-outlined-gray whitespace-nowrap"
@@ -72,16 +72,8 @@ import Icon from "./Icon.astro";
           </div>
         </div>
         <div
-          class="mt-10 flex flex-col sm:flex-row gap-8 sm:gap-5 md:gap-2 lg:gap-5"
+          class="mt-10 flex flex-col md:flex-row gap-8 md:gap-5 lg:gap-5"
         >
-          <a
-            class="button button-outlined-gray"
-            href="https://fly.io/launch/livebook"
-            rel="noopener"
-          >
-            <Image src={flyioLogo} alt="" class="w-[26px]" />
-            <span>Run on Fly.io</span>
-          </a>
           <a
             class="button button-outlined-gray"
             href="https://huggingface.co/new-space?template=livebook-dev/livebook"
