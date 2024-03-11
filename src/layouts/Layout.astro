@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import logo from "../images/logo.svg";
 import flyioLogoWithText from "../images/flyio-logo-with-text.svg";
 import hfLogoWithText from "../images/hf-logo-with-text.svg";
+import tigrisLogo from "../images/tigris-logo.svg";
 import badgeLogo from "../images/badge-logo.svg";
 
 import Icon from "../components/Icon.astro";
@@ -246,29 +247,31 @@ function isPathActive(path) {
     {
       displaySponsors && (
         <section id="sponsors" class="bg-gray-800">
-          <div class="m-auto max-w-5xl px-4 py-16 flex flex-col sm:flex-row gap-20 sm:gap-0 items-center justify-around">
-            <div class="flex flex-col items-center sm:items-start">
+          <div class="m-auto max-w-5xl px-4 py-16 flex flex-col md:flex-row gap-20 md:gap-0 items-center justify-around">
+            <div class="flex flex-col items-center md:items-start">
               <span class="text-lg font-semibold tracking-widest text-white">
-                SPONSORS
+                PLATINUM SPONSORS
               </span>
-              <a class="flex justify-center mt-4" href="https://fly.io/">
-                <Image src={flyioLogoWithText} alt="Flyio Logo" width="250" />
-              </a>
+              <div class="flex flex-row pt-4">
+                <a class="flex justify-center" href="https://fly.io/">
+                  <Image src={flyioLogoWithText} alt="Flyio Logo" width="270" />
+                </a>
+              </div>
             </div>
-            <div class="flex flex-col items-center sm:items-start">
-              <span class="text-base tracking-widest text-white">
-                SUPPORTERS
-              </span>
-              <a
-                class="flex justify-center mt-4"
-                href="https://huggingface.co/"
-              >
-                <Image
-                  src={hfLogoWithText}
-                  alt="Hugging Face Logo"
-                  width="180"
-                />
-              </a>
+            <div class="flex flex-col items-center md:items-start">
+              <span class="text-base tracking-widest text-white">SPONSORS</span>
+              <div class="flex flex-row gap-8 items-center pt-4">
+                <a href="https://huggingface.co/">
+                  <Image
+                    src={hfLogoWithText}
+                    alt="Hugging Face Logo"
+                    width="150"
+                  />
+                </a>
+                <a class="pt-2" href="https://www.tigrisdata.com/">
+                  <Image src={tigrisLogo} alt="Tigris logo" width="100" />
+                </a>
+              </div>
             </div>
           </div>
         </section>

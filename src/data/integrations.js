@@ -273,7 +273,7 @@ const integrations = [
     cta: {
       link: "https://www.youtube.com/watch?v=Cl8YhlMgVsk",
       main: "Watch the tutorial",
-      description: "SQL Server & Livebook"
+      description: "SQL Server & Livebook",
     },
   },
   {
