@@ -2,16 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Privacy Policy">
-  <section id="intro">
+<Layout title="Terms of Service" isDarkMode={true} displaySponsors={false}>
+  <section class="bg-gray-900 text-gray-300">
     <div class="m-auto max-w-7xl px-4 pt-10">
       <div
-        class="m-auto max-w-4xl mb-20 bg-slate-50 rounded-xl px-5 sm:px-10 md:px-20 py-10"
+        class="m-auto max-w-4xl bg-gray-800 rounded-xl px-5 sm:px-10 md:px-20 py-10"
       >
-        <h1 class="text-gray-900 text-2xl md:text-3xl font-semibold">
+        <h1 class="text-2xl md:text-3xl font-semibold text-gray-200">
           Terms of Service
         </h1>
-        <div class="text-gray-700 text-left space-y-7">
+        <div class="text-left space-y-7">
           <div class="space-y-3">
             <p class="mt-2 font-bold text-sm">Last Updated: April 09, 2024</p>
             <p class="italic">
@@ -50,12 +50,12 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <hr class="my-8" />
         <!-- Cover Page -->
-        <div class="text-gray-700 space-y-3">
-          <h2 class="font-bold text-2xl">Cover Page</h2>
+        <div class="space-y-3">
+          <h2 class="font-bold text-2xl text-gray-200">Cover Page</h2>
           <div class="space-y-6">
             <!-- Order Form -->
             <div>
-              <h3 class="font-bold text-lg mb-4">Order Form</h3>
+              <h3 class="font-bold text-lg mb-4 text-gray-200">Order Form</h3>
               <div class="pl-6 space-y-4">
                 <p>
                   <span class="font-semibold">Cloud Service:</span> Livebook Teams
@@ -98,7 +98,7 @@ import Layout from "../../layouts/Layout.astro";
             </div>
             <!-- Key Terms -->
             <div>
-              <h3 class="font-bold text-lg mb-4">Key Terms</h3>
+              <h3 class="font-bold text-lg mb-4 text-gray-200">Key Terms</h3>
               <div class="pl-6 space-y-4">
                 <p>
                   <span class="font-semibold">Customer:</span> The company or person
@@ -140,8 +140,8 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <hr class="my-8" />
         <!-- Standard Terms -->
-        <div class="text-gray-700 space-y-3">
-          <h2 class="font-bold text-2xl">
+        <div class="space-y-3">
+          <h2 class="font-bold text-2xl text-gray-200">
             Standard Terms (Cloud Service Agreement)
           </h2>
           <ol
