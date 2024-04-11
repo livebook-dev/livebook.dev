@@ -18,52 +18,6 @@
   .placeholder-font-light::placeholder {
     @apply font-light;
   }
-
-  .standard-terms {
-    counter-reset: section;
-    @apply space-y-6 list-inside;
-
-    > li {
-      counter-increment: section;
-      @apply marker:[content:counters(section,'.')_'._'];
-
-      &::marker {
-        @apply font-semibold text-lg;
-      }
-
-      .clause-name {
-        @apply font-semibold text-lg;
-      }
-
-      p {
-        @apply pl-6 my-4;
-      }
-
-      ol {
-        @apply space-y-4 list-inside pl-6 my-4;
-        counter-reset: section;
-
-        li {
-          counter-increment: section;
-          @apply marker:[content:counters(section,'.')_'_'];
-
-          .sub-clause-name {
-            @apply underline;
-          }
-
-          ol {
-            @apply space-y-4 list-inside pl-6 my-4;
-            counter-reset: section;
-
-            li {
-              counter-increment: section;
-              @apply marker:[content:counter(section,lower-alpha)_'._'];
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 @layer components {
