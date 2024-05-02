@@ -87,7 +87,7 @@ const integrations = [
       "Livebook has an interactive environment to code in Elixir. You can use it to learn Elixir, explore Elixir packages, prototypes, scripts, and interactive data apps.",
     image: elixirPreview,
     cta: {
-      link: "https://github.com/livebook-dev/livebook/blob/main/lib/livebook/notebook/learn/intro_to_livebook.livemd#elixir-integration",
+      link: "https://github.com/livebook-dev/livebook/blob/main/docs/use_cases.md",
       main: "Learn more",
       description: "Elixir & Livebook",
     },
@@ -114,7 +114,7 @@ const integrations = [
       {
         headline: "Run a notebook within the context of a Mix project",
         description:
-          "It's super easy to <a href='https://github.com/livebook-dev/livebook/blob/main/lib/livebook/notebook/learn/intro_to_livebook.livemd#mix-projects' class='underline'>run code of a Mix project inside Livebook</a>. This can be useful for interactive development or for experimenting with your project's code.",
+          "It's super easy to <a href='https://github.com/livebook-dev/livebook/blob/main/docs/use_cases.md#documentation-with-mixinstall' class='underline'>run code of a Mix project inside Livebook</a>. This can be useful for interactive development or for experimenting with your project's code.",
         image: elixirMix,
       },
       {
