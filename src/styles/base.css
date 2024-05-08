@@ -24,7 +24,11 @@
   /* Buttons */
 
   .button {
-    @apply px-5 py-2 rounded-lg font-medium text-sm border border-transparent flex items-center justify-center text-center space-x-1.5 whitespace-nowrap;
+    @apply px-5 py-2 rounded-lg font-medium text-sm border border-transparent flex items-center justify-center text-center space-x-1.5 whitespace-nowrap transition duration-150 ease-in-out;
+  }
+
+  .button-cta {
+    @apply px-8 py-3 rounded-xl font-medium whitespace-nowrap flex items-center justify-center transition duration-150 ease-in-out;
   }
 
   .button-blue {
@@ -35,8 +39,16 @@
     @apply text-gray-600 bg-gray-100 hover:bg-gray-50 focus:bg-gray-50;
   }
 
+  .button-outlined {
+    @apply border border-gray-300 hover:border-gray-400 text-gray-300 hover:text-gray-400 bg-transparent;
+  }
+
   .button-outlined-gray {
     @apply border-gray-300 text-gray-600 bg-white hover:bg-gray-100 focus:bg-gray-100;
+  }
+
+  .button-pink {
+    @apply bg-brand-pink hover:bg-gray-50 text-gray-100 hover:text-gray-700 hover:border hover:border-gray-100;
   }
 
   /* Custom scrollbars */

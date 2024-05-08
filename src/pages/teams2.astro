@@ -1,0 +1,256 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+
+import Icon from "../components/Icon.astro";
+import StarIcon from "../components/StarIcon.astro";
+import Tooltip from "../components/Tooltip.astro";
+import Retangle from "../components/Retangle.astro";
+import teamsIntroScreenshot from "../images/teams2/intro-screenshot.png";
+import elixirLogo from "../images/teams2/elixir-logo.svg";
+import hexLibrary from "../images/teams2/feature-hex-library.png";
+import callFunction from "../images/teams2/feature-call-function.png";
+import dashedLine from "../images/teams2/dashed-line.svg";
+---
+
+<Layout title="Teams" isDarkMode={true} displaySponsors={false}>
+  <section id="intro" class="bg-gray-900 overflow-x-hidden relative">
+    <div
+      class="bg-gradient-to-b from-gray-900 to-gray-600 rounded-b-[60px] flex flex-col justify-center items-center"
+    >
+      <div class="m-auto max-w-7xl px-4 pt-24 pb-60">
+        <div class="flex flex-col space-y-10 items-center">
+          <h1
+            class="max-w-4xl text-2xl md:text-5xl font-semibold text-gray-200"
+          >
+            Build and deploy internal tools fast <br /> with Elixir and Livebook
+            Teams
+          </h1>
+          <span class="text-lg text-center font-light text-gray-200 max-w-xl">
+            Transform scripts, SQL queries, and backend operations into web apps
+            that anybody in your company can use. Make your co-workers more
+            self-sufficient and get your time back.
+          </span>
+          <div class="flex gap-10">
+            <a
+              class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)]"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+            >
+              <Icon icon="rocket-line" class="text-xl" />
+              <span class="px-2 font-semibold">I want FREE early access</span>
+            </a>
+            <a
+              class="button-cta button-outlined gap-4 px-5"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+            >
+              <Icon icon="play-circle-fill" class="text-4xl" />
+              <div class="flex flex-col items-start">
+                <span class="font-semibold">Watch Demo</span>
+                <span class="text-sm">4 minutes</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mx-auto sm:max-w-5xl relative">
+    <Image
+      class="absolute top-[-150px] left-1/2 transform -translate-x-1/2"
+      src={teamsIntroScreenshot}
+      alt="Feature: On-premise Livebook apps"
+    />
+    <div
+      class="absolute top-[-150px] left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[1024px] h-[576px] rounded-[20px] flex justify-center items-center"
+    >
+      <Icon icon="play-fill" class="text-5xl absolute z-10 text-white" />
+      <div class="absolute rounded-full w-20 h-20 bg-blue-600"></div>
+      <div class="absolute rounded-full w-24 h-24 bg-blue-600/60 animate-pulse">
+      </div>
+    </div>
+  </section>
+  <section
+    id="build-with-teams"
+    class="bg-gray-900 overflow-x-hidden pt-[400px]"
+  >
+    <div class="m-auto max-w-7xl flex flex-col px-4 md:px-0">
+      <h1
+        class="text-2xl md:text-5xl md:leading-tight font-semibold text-gray-200 justify-self-start pt-32"
+      >
+        What can you build with<br />Livebook Teams?
+      </h1>
+      <span class="text-gray-200 text-xl pt-10">Examples</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <Retangle
+          class="bg-gradient-to-br h-[292px]"
+          icon="money-dollar-circle-line"
+          iconColor="text-blue-600"
+          title="Customer Payment Refund Processor"
+          description="Enable the support team to refund customers. No need to run that script by yourself anymore."
+        />
+        <Retangle
+          class="bg-gradient-to-tl h-[292px]"
+          icon="database-2-line"
+          iconColor="text-green-600"
+          title="Self-Service SQL Query Visualization"
+          description="A web UI where non-technical co-workers can execute and visualize shared SQL queries. Empower them so you can stop being interrupted."
+        />
+        <Retangle
+          class="bg-gradient-to-br h-[292px]"
+          icon="user-add-line"
+          iconColor="text-yellow-500"
+          title="Customer Onboarding Workflow Automation"
+          description="Help customer success and operations automate the steps needed when onboarding new customers, like setting up accounts, importing data, etc. Bye bye manual work."
+        />
+        <Retangle
+          class="bg-gradient-to-br h-[252px]"
+          icon="bookmark-3-line"
+          iconColor="text-gray-400"
+          title="Runbooks"
+          description="Instead of static documents, build interactive runbooks for technical support, DevOps, and solutions engineering. No more need to answer “how can I do that?”."
+        />
+        <Retangle
+          class="bg-gradient-to-tl h-[252px]"
+          icon="dashboard-3-line"
+          iconColor="text-yellow-500"
+          title="Admin Panels"
+          description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
+        />
+        <Retangle
+          class="bg-gradient-to-br h-[252px]"
+          icon="line-chart-line"
+          iconColor="text-red-600"
+          title="Track KPIs and Metrics"
+          description="Enable the support team to refund customers. No need to run that script by yourself anymore."
+        />
+      </div>
+    </div>
+  </section>
+  <section id="teams-features" class="bg-gray-900 overflow-x-hidden pt-24">
+    <div class="bg-gray-200 rounded-t-[60px] py-24">
+      <div id="teams-features-one" class="m-auto max-w-6xl text-gray-900">
+        <div id="teams-features-title">
+          <div class="flex items-center gap-5">
+            <h3 class="text-xl md:text-4xl font-semibold">Livebook</h3>
+            <div class="flex items-center justify-center">
+              <div
+                class="relative flex items-center justify-center w-11 h-11 rounded-full overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-blue-600 to-brand-pink"
+                >
+                </div>
+                <div
+                  class="relative w-9 h-9 flex items-center justify-center bg-gray-200 rounded-full border-4"
+                >
+                  <div class="relative">
+                    <div
+                      class="absolute w-1 h-6 bg-gradient-to-bl from-blue-600 to-brand-pink top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md"
+                    >
+                    </div>
+                    <div
+                      class="absolute w-6 h-1 bg-gradient-to-bl from-blue-600 to-brand-pink top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+            Livebook Teams features
+          </h1>
+          <div class="text-gray-600 text-xl mt-3">
+            A fast (and fun 😃) way to build internal tools.
+          </div>
+        </div>
+        <div id="build-with-elixir" class="mt-16">
+          <div id="build-with-elixir-title">
+            <div class="flex items-center gap-2">
+              <h2 class="text-xl md:text-4xl font-semibold">
+                Build with <span class="text-elixir">Elixir</span>
+              </h2>
+              <Image src={elixirLogo} alt="Elixir Logo" class="w-9 h-9" />
+            </div>
+            <div class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+              No-code tools are good for non-technical teams, but as Elixir
+              developers, they constrain and even slow us down. With Livebook,
+              you get to build what you need using the Elixir tools and packages
+              you're familiar with.
+            </div>
+          </div>
+          <div
+            id="build-with-elixir-features"
+            class="mt-10 space-y-[75px] relative"
+          >
+            <div id="hex-libraries">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="flex items-center">
+                    <StarIcon />
+                    <h3 class="text-xl font-semibold ml-4">
+                      Use Hex Libraries
+                    </h3>
+                  </div>
+                  <p class="text-md font-light max-w-sm ml-[52px] mt-2">
+                    Livebook is integrated with Hex and uses Mix.install to
+                    manage dependencies.
+                  </p>
+                </div>
+                <Image src={hexLibrary} alt="Hex Library" class="mr-28" />
+              </div>
+            </div>
+            <div id="call-functions">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="flex">
+                    <StarIcon />
+                    <h3 class="text-xl font-semibold ml-4 mt-1">
+                      Call functions from your main <br />Elixir/Phoenix app
+                      directly
+                    </h3>
+                  </div>
+                  <p class="text-md font-light max-w-sm ml-[52px] mt-2">
+                    No need to write HTTP APIs for your internal tools. Use
+                    Elixir's built-in mechanisms for integrating multiple Erlang
+                    VM nodes.
+                  </p>
+                </div>
+                <Image src={callFunction} alt="Call functions" class="w-1/2" />
+              </div>
+            </div>
+            <Image
+              src={dashedLine}
+              alt="Dashed Line"
+              class="absolute top-1 left-[17px]"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        id="teams-features-two"
+        class="mx-auto max-w-6xl bg-gray-300 rounded-3xl m-20 px-4 md:px-0 py-16 flex flex-col items-center space-y-12"
+      >
+        <div id="teams-features-two-title" class="text-center">
+          <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+            An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
+            Blocks
+          </h1>
+          <div class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+            Assemble UIs with zero to minimal need for HTML and CSS. Livebook
+            provides a set of UI building blocks you can use just by writing
+            Elixir, so you can stay in the comfort of the language you love and
+            build UIs faster.
+          </div>
+        </div>
+        <div id="teams-features-forms-and-input">
+          <div class="flex items-center">
+            <StarIcon />
+            <h3 class="text-xl font-semibold ml-4">Use Hex Libraries</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
