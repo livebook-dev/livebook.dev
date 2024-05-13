@@ -6,12 +6,13 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import StarIcon from "../components/StarIcon.astro";
 import Tooltip from "../components/Tooltip.astro";
-import Retangle from "../components/Retangle.astro";
+import TeamsCard from "../components/TeamsCard.astro";
 import teamsIntroScreenshot from "../images/teams2/intro-screenshot.png";
 import elixirLogo from "../images/teams2/elixir-logo.svg";
 import hexLibrary from "../images/teams2/feature-hex-library.png";
 import callFunction from "../images/teams2/feature-call-function.png";
 import dashedLine from "../images/teams2/dashed-line.svg";
+import type TeamsCard from "../components/TeamsCard.astro";
 ---
 
 <Layout title="Teams" isDarkMode={true} displaySponsors={false}>
@@ -82,42 +83,42 @@ import dashedLine from "../images/teams2/dashed-line.svg";
       </h1>
       <span class="text-gray-200 text-xl pt-10">Examples</span>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-        <Retangle
+        <TeamsCard
           class="bg-gradient-to-br h-[292px]"
           icon="money-dollar-circle-line"
           iconColor="text-blue-600"
           title="Customer Payment Refund Processor"
           description="Enable the support team to refund customers. No need to run that script by yourself anymore."
         />
-        <Retangle
+        <TeamsCard
           class="bg-gradient-to-tl h-[292px]"
           icon="database-2-line"
           iconColor="text-green-600"
           title="Self-Service SQL Query Visualization"
           description="A web UI where non-technical co-workers can execute and visualize shared SQL queries. Empower them so you can stop being interrupted."
         />
-        <Retangle
+        <TeamsCard
           class="bg-gradient-to-br h-[292px]"
           icon="user-add-line"
           iconColor="text-yellow-500"
           title="Customer Onboarding Workflow Automation"
           description="Help customer success and operations automate the steps needed when onboarding new customers, like setting up accounts, importing data, etc. Bye bye manual work."
         />
-        <Retangle
+        <TeamsCard
           class="bg-gradient-to-br h-[252px]"
           icon="bookmark-3-line"
           iconColor="text-gray-400"
           title="Runbooks"
           description="Instead of static documents, build interactive runbooks for technical support, DevOps, and solutions engineering. No more need to answer “how can I do that?”."
         />
-        <Retangle
+        <TeamsCard
           class="bg-gradient-to-tl h-[252px]"
           icon="dashboard-3-line"
           iconColor="text-yellow-500"
           title="Admin Panels"
           description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
         />
-        <Retangle
+        <TeamsCard
           class="bg-gradient-to-br h-[252px]"
           icon="line-chart-line"
           iconColor="text-red-600"
