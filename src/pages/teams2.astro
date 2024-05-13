@@ -4,15 +4,27 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
-import StarIcon from "../components/StarIcon.astro";
 import Tooltip from "../components/Tooltip.astro";
 import TeamsCard from "../components/TeamsCard.astro";
 import teamsIntroScreenshot from "../images/teams2/intro-screenshot.png";
+import starIcon from "../images/teams2/star-icon.svg";
+import plusIcon from "../images/teams2/plus-icon.svg";
 import elixirLogo from "../images/teams2/elixir-logo.svg";
 import hexLibrary from "../images/teams2/feature-hex-library.png";
 import callFunction from "../images/teams2/feature-call-function.png";
 import dashedLine from "../images/teams2/dashed-line.svg";
-import type TeamsCard from "../components/TeamsCard.astro";
+import formsAndInputs from "../images/teams2/forms-and-inputs.png";
+import dataTables from "../images/teams2/data-tables.png";
+import chartOne from "../images/teams2/chart-one.png";
+import chartTwo from "../images/teams2/chart-two.png";
+import mapsOne from "../images/teams2/maps-one.png";
+import mapsTwo from "../images/teams2/maps-two.png";
+import amazonDatabase from "../images/teams2/amazon-database.png";
+import microsoftDatabase from "../images/teams2/microsoft-database.png";
+import mysqlDatabase from "../images/teams2/mysql-database.png";
+import postgresDatabase from "../images/teams2/postgres-database.png";
+import googleDatabase from "../images/teams2/google-database.png";
+import snowflakeDatabase from "../images/teams2/snowflake-database.png";
 ---
 
 <Layout title="Teams" isDarkMode={true} displaySponsors={false}>
@@ -133,38 +145,15 @@ import type TeamsCard from "../components/TeamsCard.astro";
       <div id="teams-features-one" class="m-auto max-w-6xl text-gray-900">
         <div id="teams-features-title">
           <div class="flex items-center gap-5">
-            <h3 class="text-xl md:text-4xl font-semibold">Livebook</h3>
-            <div class="flex items-center justify-center">
-              <div
-                class="relative flex items-center justify-center w-11 h-11 rounded-full overflow-hidden"
-              >
-                <div
-                  class="absolute inset-0 bg-gradient-to-br from-blue-600 to-brand-pink"
-                >
-                </div>
-                <div
-                  class="relative w-9 h-9 flex items-center justify-center bg-gray-200 rounded-full border-4"
-                >
-                  <div class="relative">
-                    <div
-                      class="absolute w-1 h-6 bg-gradient-to-bl from-blue-600 to-brand-pink top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md"
-                    >
-                    </div>
-                    <div
-                      class="absolute w-6 h-1 bg-gradient-to-bl from-blue-600 to-brand-pink top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h3 class="text-lg md:text-3xl font-semibold">Livebook</h3>
+            <Image src={plusIcon} alt="Plus Icon" class="w-10 h-10" />
           </div>
           <h1 class="text-2xl md:text-5xl font-semibold mt-2">
             Livebook Teams features
           </h1>
-          <div class="text-gray-600 text-xl mt-3">
+          <p class="text-gray-600 text-xl mt-3">
             A fast (and fun 😃) way to build internal tools.
-          </div>
+          </p>
         </div>
         <div id="build-with-elixir" class="mt-16">
           <div id="build-with-elixir-title">
@@ -174,27 +163,29 @@ import type TeamsCard from "../components/TeamsCard.astro";
               </h2>
               <Image src={elixirLogo} alt="Elixir Logo" class="w-9 h-9" />
             </div>
-            <div class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+            <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
               No-code tools are good for non-technical teams, but as Elixir
               developers, they constrain and even slow us down. With Livebook,
               you get to build what you need using the Elixir tools and packages
               you're familiar with.
-            </div>
+            </p>
           </div>
           <div
             id="build-with-elixir-features"
-            class="mt-10 space-y-[75px] relative"
+            class="mt-10 space-y-[80px] relative"
           >
             <div id="hex-libraries">
               <div class="flex items-center justify-between">
                 <div>
                   <div class="flex items-center">
-                    <StarIcon />
-                    <h3 class="text-xl font-semibold ml-4">
+                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
                       Use Hex Libraries
                     </h3>
                   </div>
-                  <p class="text-md font-light max-w-sm ml-[52px] mt-2">
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
                     Livebook is integrated with Hex and uses Mix.install to
                     manage dependencies.
                   </p>
@@ -203,16 +194,18 @@ import type TeamsCard from "../components/TeamsCard.astro";
               </div>
             </div>
             <div id="call-functions">
-              <div class="flex items-center justify-between">
+              <div class="flex items-center justify-between pt-[1px]">
                 <div>
                   <div class="flex">
-                    <StarIcon />
-                    <h3 class="text-xl font-semibold ml-4 mt-1">
+                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
                       Call functions from your main <br />Elixir/Phoenix app
                       directly
                     </h3>
                   </div>
-                  <p class="text-md font-light max-w-sm ml-[52px] mt-2">
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
                     No need to write HTTP APIs for your internal tools. Use
                     Elixir's built-in mechanisms for integrating multiple Erlang
                     VM nodes.
@@ -224,31 +217,167 @@ import type TeamsCard from "../components/TeamsCard.astro";
             <Image
               src={dashedLine}
               alt="Dashed Line"
-              class="absolute top-1 left-[17px]"
+              class="absolute top-0 left-[17px]"
             />
           </div>
         </div>
       </div>
-      <div
-        id="teams-features-two"
-        class="mx-auto max-w-6xl bg-gray-300 rounded-3xl m-20 px-4 md:px-0 py-16 flex flex-col items-center space-y-12"
-      >
-        <div id="teams-features-two-title" class="text-center">
-          <h1 class="text-2xl md:text-5xl font-semibold mt-2">
-            An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
-            Blocks
-          </h1>
-          <div class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
-            Assemble UIs with zero to minimal need for HTML and CSS. Livebook
-            provides a set of UI building blocks you can use just by writing
-            Elixir, so you can stay in the comfort of the language you love and
-            build UIs faster.
+    </div>
+  </section>
+  <section id="teams-features-two" class="bg-gray-200 pb-6">
+    <div
+      class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 md:px-0 py-16 flex flex-col items-center space-y-12"
+    >
+      <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+        An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
+        Blocks
+      </h1>
+      <div class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+        Assemble UIs with zero to minimal need for HTML and CSS. Livebook
+        provides a set of UI building blocks you can use just by writing Elixir,
+        so you can stay in the comfort of the language you love and build UIs
+        faster.
+      </div>
+      <div id="teams-features-forms-and-input">
+        <div class="flex flex-col items-center space-y-5">
+          <div class="flex items-center justify-center">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">
+              Forms and Inputs
+            </h3>
+          </div>
+          <p class="text-md font-light text-gray-700">
+            Combine various input types like text, dropdowns, and date pickers
+            into a form.
+          </p>
+          <Image
+            src={formsAndInputs}
+            alt="Forms and Inputs"
+            class="max-w-2xl"
+          />
+        </div>
+      </div>
+      <div id="teams-features-data-tables">
+        <div class="flex flex-col items-center space-y-5">
+          <div class="flex items-center justify-center">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">Data Tables</h3>
+          </div>
+          <p class="text-md font-light text-gray-700">
+            Easily display, sort, and paginate your data.
+          </p>
+          <Image src={dataTables} alt="Data Tables" class="max-w-2xl" />
+        </div>
+      </div>
+      <div id="teams-features-chart">
+        <div class="flex flex-col items-center">
+          <div class="flex items-center justify-center mt-5">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">Charts</h3>
+          </div>
+          <p class="text-md font-light text-gray-700">
+            Build and visualize charts using Livebook's native integration with
+            Vega-Lite.
+          </p>
+          <div class="flex justify-center mt-10">
+            <div class="flex flex-col items-center justify-center">
+              <Image src={chartOne} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use the Chart Smart Cell to <br /> generate simple charts
+              </p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <Image src={chartTwo} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use code to build more <br />complex charts
+              </p>
+            </div>
           </div>
         </div>
-        <div id="teams-features-forms-and-input">
-          <div class="flex items-center">
-            <StarIcon />
-            <h3 class="text-xl font-semibold ml-4">Use Hex Libraries</h3>
+      </div>
+      <div id="teams-features-maps">
+        <div class="flex flex-col items-center">
+          <div class="flex items-center justify-center mt-5">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">Maps</h3>
+          </div>
+          <p class="text-md font-light text-gray-700 max-w-lg text-center mt-5">
+            Plot objects on a map and visualize geo data using Livebook's native
+            integration with MapLibre.
+          </p>
+          <div class="flex justify-center mt-10">
+            <div class="flex flex-col items-center justify-center">
+              <Image src={mapsOne} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use the Map Smart cell to <br /> generate simple maps
+              </p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <Image src={mapsTwo} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use code to build more <br /> complex maps
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="teams-features-three" class="bg-gray-200 pt-6 pb-24">
+    <div class="m-auto max-w-6xl">
+      <div id="read-data-with-easy-title">
+        <div class="flex items-center gap-2">
+          <h2 class="text-xl md:text-4xl font-semibold text-gray-900">
+            Read data with ease
+          </h2>
+        </div>
+        <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+          Whenever you're building dashboards, internal reports, or lightweight
+          business intelligence, you need to consume data. With Livebook and
+          Elixir, that's easy, no matter the data source.
+        </p>
+      </div>
+      <div id="read-from-sql" class="mt-10">
+        <div class="flex items-center">
+          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+          <h3 class="text-lg md:text-3xl font-semibold ml-4">
+            Read data from an SQL database
+          </h3>
+        </div>
+        <p class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700">
+          Built-in integrations to multiple databases, so you don't need to
+          write boilerplate code to run SQL queries.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mx-[52px]">
+          <div
+            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+          >
+            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
+          </div>
+          <div
+            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+          >
+            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
+          </div>
+          <div
+            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+          >
+            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
+          </div>
+          <div
+            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+          >
+            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
+          </div>
+          <div
+            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+          >
+            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
+          </div>
+          <div
+            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+          >
+            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
           </div>
         </div>
       </div>
