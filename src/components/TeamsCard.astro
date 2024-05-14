@@ -1,5 +1,5 @@
 ---
-import Icon from "../components/Icon.astro";
+import Icon from "./Icon.astro";
 
 export interface Props {
   icon: string;
@@ -9,18 +9,10 @@ export interface Props {
   class?: string;
 }
 
-const {
-  icon,
-  title,
-  description,
-  iconColor,
-  class: sizeDirection,
-} = Astro.props;
+const { icon, title, description, iconColor, class: className } = Astro.props;
 ---
 
-<div
-  class={`from-blue-600 to-brand-pink rounded-[32px] p-[2px] ${sizeDirection}`}
->
+<div class={`from-blue-600 to-brand-pink rounded-[32px] p-[2px] ${className}`}>
   <div class="h-full w-full rounded-[32px] bg-gray-800 p-8">
     <div class="flex flex-col items-start justify-start space-y-4 text-gray-50">
       <Icon icon={icon} class={`text-4xl ${iconColor}`} />

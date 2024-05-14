@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import Tooltip from "../components/Tooltip.astro";
 import TeamsCard from "../components/TeamsCard.astro";
+import TeamsDatabaseCard from "../components/TeamsDatabaseCard.astro";
 import teamsIntroScreenshot from "../images/teams2/intro-screenshot.png";
 import starIcon from "../images/teams2/star-icon.svg";
 import plusIcon from "../images/teams2/plus-icon.svg";
@@ -25,6 +26,14 @@ import mysqlDatabase from "../images/teams2/mysql-database.png";
 import postgresDatabase from "../images/teams2/postgres-database.png";
 import googleDatabase from "../images/teams2/google-database.png";
 import snowflakeDatabase from "../images/teams2/snowflake-database.png";
+import sqliteDatabase from "../images/teams2/sqlite-database.png";
+import readDataSQL from "../images/teams2/read-data-sql.png";
+import readDataLocal from "../images/teams2/read-data-local.png";
+import readDataFile from "../images/teams2/read-data-file-formats.png";
+import teleportLogo from "../images/teams2/teleport-logo.png";
+import tailscaleLogo from "../images/teams2/tailscale-logo.png";
+import googleIapLogo from "../images/teams2/google-iap-logo.png";
+import cloudflareLogo from "../images/teams2/cloudflare-logo.png";
 ---
 
 <Layout title="Teams" isDarkMode={true} displaySponsors={false}>
@@ -349,38 +358,217 @@ import snowflakeDatabase from "../images/teams2/snowflake-database.png";
           write boilerplate code to run SQL queries.
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mx-[52px]">
+          <TeamsDatabaseCard
+            title="Microsoft SQL Server"
+            imageURL={microsoftDatabase.src}
+          />
+          <TeamsDatabaseCard title="MySQL" imageURL={mysqlDatabase.src} />
+          <TeamsDatabaseCard
+            title="Amazon Athena"
+            imageURL={amazonDatabase.src}
+          />
+          <TeamsDatabaseCard title="SQLite" imageURL={sqliteDatabase.src} />
+          <TeamsDatabaseCard
+            title="PostgreSQL"
+            imageURL={postgresDatabase.src}
+          />
+          <TeamsDatabaseCard
+            title="Snowflake"
+            imageURL={snowflakeDatabase.src}
+          />
+          <TeamsDatabaseCard
+            title="Google BigQuery"
+            imageURL={googleDatabase.src}
+          />
+        </div>
+        <p class="text-md font-light max-w-sm ml-[52px] mt-10 text-gray-700">
+          Write SQL queries directly in Livebook and easily see the result
+        </p>
+        <Image src={readDataSQL} alt="Read data from SQL" class="mx-[52px]" />
+      </div>
+      <div id="read-from-local" class="mt-10">
+        <div class="flex items-start">
+          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+          <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+            Read data from a local or cloud-hosted file
+          </h3>
+        </div>
+        <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+          It doesn't matter if your data is stored as a file in your file system
+          or in a cloud storage service like S3; Livebook handles both ways
+          transparently.
+        </p>
+        <Image
+          src={readDataLocal}
+          alt="Read data from local"
+          class="mx-auto max-w-lg mt-3"
+        />
+      </div>
+      <div id="read-from-data-files" class="mt-10">
+        <div class="flex items-start">
+          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+          <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+            Read data from structured data file formats
+          </h3>
+        </div>
+        <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+          Read data from CSV, IPC, NDJson, or Parquet files with code generated
+          via drag and drop.
+        </p>
+        <div class="relative">
+          <Image
+            src={readDataFile}
+            alt="Read data from local"
+            class="mx-auto max-w-lg mt-3"
+          />
           <div
-            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[512px] h-[309px] rounded-[14px] flex justify-center items-center"
           >
-            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
-          </div>
-          <div
-            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
-          >
-            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
-          </div>
-          <div
-            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
-          >
-            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
-          </div>
-          <div
-            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
-          >
-            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
-          </div>
-          <div
-            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
-          >
-            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
-          </div>
-          <div
-            class="rounded-3xl bg-gray-100 w-60 h-60 flex justify-center items-center"
-          >
-            <Image src={microsoftDatabase} alt="Microsoft SQL Server logo" />
+            <Icon icon="play-fill" class="text-5xl absolute z-10 text-white" />
+            <div class="absolute rounded-full w-20 h-20 bg-blue-600"></div>
+            <div
+              class="absolute rounded-full w-24 h-24 bg-blue-600/60 animate-pulse"
+            >
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <section id="teams-features-four" class="bg-gray-100">
+    <div class="bg-gray-200 rounded-b-[60px] relative pb-[600px]">
+      <div
+        class="w-full h-full absolute top-0 left-1/2 transform -translate-x-1/2"
+      >
+        <div
+          class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 md:px-14 py-16 flex flex-col space-y-12"
+        >
+          <div id="teams-features-deploy-and-share">
+            <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+              Deploy and Share Securely
+            </h1>
+            <p class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+              The security of on-premises hosting with the DX of one-click
+              deployment.
+            </p>
+          </div>
+          <div
+            id="deploy-and-share-features"
+            class="grid grid-cols-2 gap-14 justify-between"
+          >
+            <div id="deploy-and-share-self-hosting">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  Self Hosting
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Run your internal tools on your own infra in less than 10
+                minutes. One less concern about security and privacy.
+              </p>
+            </div>
+            <div id="deploy-and-share-one-click">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  One-Click Deploy
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Deploy internal tools to your own infrastructure with just one
+                click.
+              </p>
+            </div>
+            <div id="deploy-and-share-authentication">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  Authentication
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Authenticate internal users using our built-in integrations, or
+                quickly bring your own custom auth.
+              </p>
+              <div class="flex items-center max-w-xs ml-[52px] gap-4 mt-4">
+                <Tooltip text="Tailscale" direction="bottom">
+                  <Image
+                    src={tailscaleLogo}
+                    alt="Tailscale Logo"
+                    class="w-40"
+                  />
+                </Tooltip>
+                <Tooltip text="Teleport" direction="bottom">
+                  <Image src={teleportLogo} alt="Teleport Logo" class="w-28" />
+                </Tooltip>
+                <Tooltip text="Google IAP" direction="bottom">
+                  <Image
+                    src={googleIapLogo}
+                    alt="Google IAP Logo"
+                    class="w-40"
+                  />
+                </Tooltip>
+                <Tooltip text="Cloudflare" direction="bottom">
+                  <Image
+                    src={cloudflareLogo}
+                    alt="Cloudflare Logo"
+                    class="w-40"
+                  />
+                </Tooltip>
+              </div>
+              <div
+                class="flex justify-center items-start gap-2 max-w-sm ml-[52px] bg-gray-100 rounded-md border border-gray-400 py-3 px-4 mt-4"
+              >
+                <Icon icon="information-line" />
+                <p>
+                  <a
+                    href="https://github.com/livebook-dev/livebook/blob/main/docs/deployment/custom_auth.md"
+                    class="underline"
+                    target="_blank">Adding your custom</a
+                  > auth to Livebook is as simple as writing one Elixir module.
+                </p>
+              </div>
+            </div>
+            <div id="deploy-and-share-encrypted-secrets">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  Encrypted secrets
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Save API and database credentials with Livebook Secrets, which
+                are encrypted with a key to which only you have access.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="cta" class="bg-gray-100 py-32">
+    <div class="flex flex-col gap-10 items-center">
+      <h1
+        class="text-2xl md:text-5xl md:leading-tight font-semibold text-gray-900 pt-32 text-center max-w-2xl"
+      >
+        Get started building internal tools in minutes
+      </h1>
+      <a
+        class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)]"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+      >
+        <Icon icon="rocket-line" class="text-xl" />
+        <span class="px-2 font-semibold">I want FREE early access</span>
+      </a>
     </div>
   </section>
 </Layout>
