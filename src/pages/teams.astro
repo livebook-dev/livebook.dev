@@ -5,325 +5,621 @@ import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
 import Tooltip from "../components/Tooltip.astro";
+import Card from "../components/TeamsCard.astro";
+import DatabaseCard from "../components/TeamsDatabaseCard.astro";
+import PlayButton from "../components/TeamsPlayButton.astro";
+import Lightbox from "../components/Lightbox.astro";
 
 import teamsIntroScreenshot from "../images/teams/intro-screenshot.png";
-import featureOnPremiseNotebook from "../images/teams/feature-on-premise-notebook.png";
-import featureSharedSecrets from "../images/teams/feature-shared-secrets.png";
-import featureFileStorage from "../images/teams/feature-file-storage.png";
-import newsletter from "../images/teams/newsletter.png";
-
-const faqItems = [
-  {
-    question: "Is Livebook Teams Free to use? ",
-    answer:
-      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
-    open: true,
-  },
-  {
-    question: "Can I use Livebook Teams for commercial purposes? ",
-    answer:
-      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
-    open: false,
-  },
-  {
-    question: "Where can I access Livebook Teams?",
-    answer:
-      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
-    open: false,
-  },
-  {
-    question: "Are there any limitations or hidden costs with Livebook Teams?",
-    answer:
-      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
-    open: false,
-  },
-  {
-    question: "Can I invite team members to join Livebook Teams?",
-    answer:
-      "Livebook Teams is not only free but also open source, providing you with a powerful collaborative platform at no cost. We believe in the importance of accessible tools for knowledge sharing and collaboration",
-    open: false,
-  },
-];
-const future = false;
+import starIcon from "../images/teams/star-icon.svg";
+import plusIcon from "../images/teams/plus-icon.svg";
+import elixirLogo from "../images/teams/elixir-logo.svg";
+import hexLibrary from "../images/teams/feature-hex-library.png";
+import callFunction from "../images/teams/feature-call-function.png";
+import dashedLine from "../images/teams/dashed-line.svg";
+import dashedLineTwo from "../images/teams/dashed-line-two.svg";
+import formsAndInputs from "../images/teams/forms-and-inputs.png";
+import dataTables from "../images/teams/data-tables.png";
+import chartOne from "../images/teams/chart-one.png";
+import chartTwo from "../images/teams/chart-two.png";
+import mapsOne from "../images/teams/maps-one.png";
+import mapsTwo from "../images/teams/maps-two.png";
+import amazonDatabase from "../images/teams/amazon-database.png";
+import microsoftDatabase from "../images/teams/microsoft-database.png";
+import mysqlDatabase from "../images/teams/mysql-database.png";
+import postgresDatabase from "../images/teams/postgres-database.png";
+import googleDatabase from "../images/teams/google-database.png";
+import snowflakeDatabase from "../images/teams/snowflake-database.png";
+import sqliteDatabase from "../images/teams/sqlite-database.png";
+import readDataSQL from "../images/teams/read-data-sql.png";
+import readDataLocal from "../images/teams/read-data-local.png";
+import readDataFile from "../images/teams/read-data-file-formats.png";
+import teleportLogo from "../images/teams/teleport-logo.png";
+import tailscaleLogo from "../images/teams/tailscale-logo.png";
+import googleIapLogo from "../images/teams/google-iap-logo.png";
+import cloudflareLogo from "../images/teams/cloudflare-logo.png";
+import josePhoto from "../images/teams/jose-photo.jpg";
 ---
 
 <Layout title="Teams" isDarkMode={true} displaySponsors={false}>
-  <section id="intro" class="bg-gray-900 overflow-x-hidden">
-    <div class="m-auto max-w-7xl px-4 pt-16 pb-24">
-      <div class="flex flex-col space-y-10 text-center items-center">
-        <h2
-          class="max-w-xl text-2xl md:text-3xl font-light text-center text-gray-200"
-        >
-          Livebook Teams amplifies Livebook
-          <br class="hidden sm:block" />
-          with features designed
-          <br class="hidden sm:block" />
-          <span class="font-bold italic text-brand-pink"
-            >for teams and businesses</span
+  <section id="intro" class="bg-gray-900 overflow-x-hidden relative">
+    <div
+      class="bg-gradient-to-b from-gray-900 to-gray-600 rounded-b-[60px] flex flex-col justify-center items-center"
+    >
+      <div class="m-auto max-w-7xl px-4 pt-24 pb-60">
+        <div class="flex flex-col space-y-10 items-center">
+          <h1
+            class="max-w-4xl text-2xl md:text-5xl font-semibold text-gray-200"
           >
-        </h2>
-        <span class="text-lg text-center font-light text-gray-200 max-w-xl">
-          Join our upcoming free beta program to gain early access to Livebook
-          Teams and contribute to the development of the roadmap.
-        </span>
-        <a
-          class="px-6 py-4 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-brand-pink text-gray-700 hover:text-gray-100 hover: border hover:border-gray-100 transition duration-150 ease-in-out plausible-event-name=teams+early+access+main+cta+click"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
-        >
-          <Icon icon="arrow-right-line" class="text-xl" />
-          <span class="px-2 font-semibold">I want free early access</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <section id="features" class="bg-gray-800">
-    <div class="m-auto px-4 pt-16 pb-16 lg:pt-20">
-      <div class="flex flex-col space-y-28 text-center items-center">
-        <div class="m-auto max-w-2xl flex flex-col items-center">
-          <Image
-            class="sm:max-w-lg"
-            src={featureOnPremiseNotebook}
-            alt="Feature: On-premise Livebook apps"
-          />
-          <h2
-            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
-          >
-            On premise <br class="hidden sm:block" />Livebook apps
-          </h2>
-          <span class="text-gray-200 mt-6 sm:mt-8"
-            >Deploy Livebook
-            <div class="inline-block">
-              <Tooltip
-                text="This is a way to turn a Livebook notebook\ninto an interactive web application."
-                direction="top"
-              >
-                apps*
-              </Tooltip>
-            </div>
-            on one or more machines within your infrastructure. Ideal for internal
-            tools, data apps, data migration workflows, operations diagnostics, and
-            other scenarios where a full custom app is excessive and a scrappy script
-            is insufficient. Save your team's time compared to traditional app development
-            processes.</span
-          >
-        </div>
-        <div class="m-auto max-w-2xl flex flex-col items-center">
-          <Image
-            class="sm:max-w-sm"
-            src={featureSharedSecrets}
-            alt="Feature: Shared secrets management"
-          />
-          <h2
-            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
-          >
-            Shared secrets <br class="hidden sm:block" />management
-          </h2>
-          <span class="text-gray-200 mt-6 sm:mt-8"
-            >Seamlessly share sensitive
-            <div class="inline-block">
-              <Tooltip text="Like passwords and API tokens." direction="top">
-                information*
-              </Tooltip>
-            </div>
-            among team members, eliminating manual steps while maintaining security.
-            Livebook Teams never gets access to your secrets; it receives them already
-            encrypted with your shared team encryption key and keeps them as such.
-            Avoid the hassle and vulnerability of sharing secrets through other channels
-            and copy-pasting them to Livebook.</span
-          >
-        </div>
-        <div class="m-auto max-w-2xl flex flex-col items-center">
-          <Image
-            class="sm:max-w-sm"
-            src={featureFileStorage}
-            alt="Feature: Synchronized file storage access"
-          />
-          <h2
-            class="text-gray-50 text-2xl md:text-3xl leading-tight mt-8 sm:mt-10"
-          >
-            Synchronized file storage access
-          </h2>
-          <span class="text-gray-200 mt-6 sm:mt-8"
-            >Effortlessly share notebooks and access data stored in cloud
-            services like Amazon S3 across your team, eliminating the need for
-            manual credential sharing. Moreover, Livebook Teams never gets
-            access to your storage credentials; they're encrypted to ensure that
-            only your team can use them.
+            Build and deploy internal tools fast <br /> with Elixir and Livebook
+            Teams
+          </h1>
+          <span class="text-lg text-center font-light text-gray-200 max-w-xl">
+            Transform scripts, SQL queries, and backend operations into web apps
+            that anybody in your company can use. Make your co-workers more
+            self-sufficient and get your time back.
           </span>
-        </div>
-        <div>
-          <div
-            class="max-w-4xl border border-gray-500 rounded-t-3xl text-center px-4 sm:px-12 py-12"
-          >
-            <div class="m-auto max-w-2xl flex flex-col items-center">
-              <div class="flex flex-col text-gray-400">
-                <Icon icon="flag-line" class="text-xl" />
-                <span class="mt-1 text-xs font-medium tracking-[0.2em]"
-                  >ROADMAP</span
-                >
+          <div class="flex gap-10">
+            <a
+              class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)]"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+            >
+              <Icon icon="rocket-line" class="text-xl" />
+              <span class="px-2 font-semibold">I want FREE early access</span>
+            </a>
+            <a
+              class="button-cta button-outlined gap-4 px-5"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+            >
+              <Icon icon="play-circle-fill" class="text-4xl" />
+              <div class="flex flex-col items-start">
+                <span class="font-semibold">Watch Demo</span>
+                <span class="text-sm">4 minutes</span>
               </div>
-              <h2 class="text-gray-50 text-2xl leading-tight mt-2">
-                Shape the future <br class="hidden sm:block" /> of Livebook Teams
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mx-auto sm:max-w-5xl relative">
+    <Image
+      class="absolute top-[-150px] left-1/2 transform -translate-x-1/2"
+      src={teamsIntroScreenshot}
+      alt="Feature: On-premise Livebook apps"
+    />
+    <div
+      class="absolute top-[-150px] left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[1024px] h-[576px] rounded-[20px] flex justify-center items-center group cursor-pointer open-lightbox"
+      data-lightbox="1"
+    >
+      <PlayButton
+        videoTitle="Watch José deploying an Elixir app"
+        videoLenght="4 min"
+        videoAuthorImg={josePhoto.src}
+      />
+    </div>
+  </section>
+  <section
+    id="build-with-teams"
+    class="bg-gray-900 overflow-x-hidden pt-[400px]"
+  >
+    <div class="m-auto max-w-7xl flex flex-col px-4 md:px-0">
+      <h1
+        class="text-2xl md:text-5xl md:leading-tight font-semibold text-gray-200 justify-self-start pt-32"
+      >
+        What can you build with<br />Livebook Teams?
+      </h1>
+      <span class="text-gray-200 text-xl pt-10">Examples</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <Card
+          class="bg-gradient-to-br h-[292px]"
+          icon="money-dollar-circle-line"
+          iconColor="text-blue-600"
+          title="Customer Payment Refund Processor"
+          description="Enable the support team to refund customers. No need to run that script by yourself anymore."
+        />
+        <Card
+          class="bg-gradient-to-tl h-[292px]"
+          icon="database-2-line"
+          iconColor="text-green-600"
+          title="Self-Service SQL Query Visualization"
+          description="A web UI where non-technical co-workers can execute and visualize shared SQL queries. Empower them so you can stop being interrupted."
+        />
+        <Card
+          class="bg-gradient-to-br h-[292px]"
+          icon="user-add-line"
+          iconColor="text-yellow-500"
+          title="Customer Onboarding Workflow Automation"
+          description="Help customer success and operations automate the steps needed when onboarding new customers, like setting up accounts, importing data, etc. Bye bye manual work."
+        />
+        <Card
+          class="bg-gradient-to-br h-[252px]"
+          icon="bookmark-3-line"
+          iconColor="text-gray-400"
+          title="Runbooks"
+          description="Instead of static documents, build interactive runbooks for technical support, DevOps, and solutions engineering. No more need to answer “how can I do that?”."
+        />
+        <Card
+          class="bg-gradient-to-tl h-[252px]"
+          icon="dashboard-3-line"
+          iconColor="text-yellow-500"
+          title="Admin Panels"
+          description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
+        />
+        <Card
+          class="bg-gradient-to-br h-[252px]"
+          icon="line-chart-line"
+          iconColor="text-red-600"
+          title="Track KPIs and Metrics"
+          description="Enable the support team to refund customers. No need to run that script by yourself anymore."
+        />
+      </div>
+    </div>
+  </section>
+  <section id="teams-features" class="bg-gray-900 overflow-x-hidden pt-24">
+    <div class="bg-gray-200 rounded-t-[60px] py-24">
+      <div id="teams-features-one" class="m-auto max-w-6xl text-gray-900">
+        <div id="teams-features-title">
+          <div class="flex items-center gap-5">
+            <h3 class="text-lg md:text-3xl font-semibold">Livebook</h3>
+            <Image src={plusIcon} alt="Plus Icon" class="w-10 h-10" />
+          </div>
+          <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+            Livebook Teams features
+          </h1>
+          <p class="text-gray-600 text-xl mt-3">
+            A fast (and fun 😃) way to build internal tools.
+          </p>
+        </div>
+        <div id="build-with-elixir" class="mt-16">
+          <div id="build-with-elixir-title">
+            <div class="flex items-center gap-2">
+              <h2 class="text-xl md:text-4xl font-semibold">
+                Build with <span class="text-elixir">Elixir</span>
               </h2>
-              <span class="lg:w-[90%] text-gray-200 mt-6"
-                >Livebook Teams is still in development. We want to get feedback
-                from beta users and understand their use cases to expand and
-                improve the product.
-              </span>
-              <a
-                class="button button-blue mt-6 plausible-event-name=teams+join+beta+cta+click"
-                href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
-              >
-                <span>Join the beta program</span>
-              </a>
+              <Image src={elixirLogo} alt="Elixir Logo" class="w-9 h-9" />
             </div>
+            <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+              No-code tools are good for non-technical teams, but as Elixir
+              developers, they constrain and even slow us down. With Livebook,
+              you get to build what you need using the Elixir tools and packages
+              you're familiar with.
+            </p>
           </div>
           <div
-            class="border-r border-b border-l border-gray-500 rounded-b-3xl pt-10 pb-16"
+            id="build-with-elixir-features"
+            class="mt-10 space-y-[80px] relative"
           >
-            <span
-              class="mt-1 text-xs font-medium tracking-widest sm:tracking-[0.2em] text-gray-400"
-              >SOME OF THE FEATURES WE’RE CONSIDERING</span
-            >
-            <div
-              class="m-auto max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-y-5 mt-7 sm:mt-5"
-            >
-              <div class="flex flex-col text-gray-400">
-                <Icon icon="user-add-line" class="text-xl text-blue-600" />
-                <span class="mt-1 text-sm text-gray-200">Single Sign On</span>
+            <div id="hex-libraries">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="flex items-center">
+                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                      Use Hex Libraries
+                    </h3>
+                  </div>
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
+                    Livebook is integrated with Hex and uses Mix.install to
+                    manage dependencies.
+                  </p>
+                </div>
+                <Image src={hexLibrary} alt="Hex Library" class="mr-28" />
               </div>
-              <div class="flex flex-col text-gray-400">
-                <Icon
-                  icon="remote-control-2-line"
-                  class="text-xl text-brand-pink"
-                />
-                <span class="mt-1 text-sm text-gray-200">Access Controls</span>
+            </div>
+            <div id="call-functions">
+              <div class="flex items-center justify-between pt-[1px]">
+                <div>
+                  <div class="flex">
+                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                      Call functions from your main <br />Elixir/Phoenix app
+                      directly
+                    </h3>
+                  </div>
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
+                    No need to write HTTP APIs for your internal tools. Use
+                    Elixir's built-in mechanisms for integrating multiple Erlang
+                    VM nodes.
+                  </p>
+                </div>
+                <Image src={callFunction} alt="Call functions" class="w-1/2" />
               </div>
-              <div class="flex flex-col text-gray-400">
-                <Icon icon="calendar-2-line" class="text-xl text-green-500" />
-                <span class="mt-1 text-sm text-gray-200">Scheduling</span>
-              </div>
-              <div class="flex flex-col text-gray-400">
-                <Icon icon="file-list-2-line" class="text-xl text-red-600" />
-                <span class="mt-1 text-sm text-gray-200">Audit Log</span>
-              </div>
+            </div>
+            <Image
+              src={dashedLine}
+              alt="Dashed Line"
+              class="absolute top-0 left-[17px]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="teams-features-two" class="bg-gray-200 pb-6">
+    <div
+      class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 md:px-0 py-16 flex flex-col items-center space-y-12"
+    >
+      <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+        An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
+        Blocks
+      </h1>
+      <div class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+        Assemble UIs with zero to minimal need for HTML and CSS. Livebook
+        provides a set of UI building blocks you can use just by writing Elixir,
+        so you can stay in the comfort of the language you love and build UIs
+        faster.
+      </div>
+      <div id="teams-features-forms-and-input">
+        <div class="flex flex-col items-center space-y-5">
+          <div class="flex items-center justify-center">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">
+              Forms and Inputs
+            </h3>
+          </div>
+          <p class="text-md font-light text-gray-700">
+            Combine various input types like text, dropdowns, and date pickers
+            into a form.
+          </p>
+          <Image
+            src={formsAndInputs}
+            alt="Forms and Inputs"
+            class="max-w-2xl"
+          />
+        </div>
+      </div>
+      <div id="teams-features-data-tables">
+        <div class="flex flex-col items-center space-y-5">
+          <div class="flex items-center justify-center">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">Data Tables</h3>
+          </div>
+          <p class="text-md font-light text-gray-700">
+            Easily display, sort, and paginate your data.
+          </p>
+          <Image src={dataTables} alt="Data Tables" class="max-w-2xl" />
+        </div>
+      </div>
+      <div id="teams-features-chart">
+        <div class="flex flex-col items-center">
+          <div class="flex items-center justify-center mt-5">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">Charts</h3>
+          </div>
+          <p class="text-md font-light text-gray-700">
+            Build and visualize charts using Livebook's native integration with
+            Vega-Lite.
+          </p>
+          <div class="flex justify-center mt-10">
+            <div class="flex flex-col items-center justify-center">
+              <Image src={chartOne} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use the Chart Smart Cell to <br /> generate simple charts
+              </p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <Image src={chartTwo} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use code to build more <br />complex charts
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="teams-features-maps">
+        <div class="flex flex-col items-center">
+          <div class="flex items-center justify-center mt-5">
+            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">Maps</h3>
+          </div>
+          <p class="text-md font-light text-gray-700 max-w-lg text-center mt-5">
+            Plot objects on a map and visualize geo data using Livebook's native
+            integration with MapLibre.
+          </p>
+          <div class="flex justify-center mt-10">
+            <div class="flex flex-col items-center justify-center">
+              <Image src={mapsOne} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use the Map Smart cell to <br /> generate simple maps
+              </p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <Image src={mapsTwo} alt="Chart Image" class="w-[90%]" />
+              <p class="font-medium text-md text-center mt-2">
+                Use code to build more <br /> complex maps
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  {
-    future && (
-      <section id="newsletter" class="bg-gray-800 pb-4">
-        <div class="m-auto max-w-3xl px-4 py-16 lg:py-20 flex items-center justify-between gap-10">
-          <Image src={newsletter} alt="" class="hidden md:block w-[50%]" />
-          <div class="flex flex-col gap-5">
-            <h2 class="text-gray-50 text-2xl text-left">
-              Stay updated on Livebook Teams
-            </h2>
-            <span class="text-gray-200">
-              Sign up for our newsletter to receive updates on the latest
-              features, improvements, and news about Livebook Teams.
-            </span>
-
-            <form
-              action="URL"
-              method="post"
-              class="flex flex-col sm:flex-row items-center gap-4"
-            >
-              <input
-                type="email"
-                placeholder="Email Adress"
-                class="block w-full px-3 py-2 bg-gray-900 border border-gray-600 rounded-md text-sm text-gray-200 shadow-sm placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 disabled:bg-slate-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none invalid:border-brand-pink invalid:text-brand-pink focus:invalid:border-brand-pink focus:invalid:ring-brand-pink"
-              />
-              <button type="submit" class="button button-blue">
-                <span>Subscribe</span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-  {
-    future && (
-      <section id="faq" class="bg-gray-900 py-16 md:py-20">
-        <div class="m-auto px-4 flex flex-col items-center">
-          <h2 class="text-gray-50 text-2xl md:text-3xl text-center">
-            Frequently Asked Questions
+  <section id="teams-features-three" class="bg-gray-200 pt-6 pb-24">
+    <div class="m-auto max-w-6xl relative z-00">
+      <div id="read-data-with-easy-title">
+        <div class="flex items-center gap-2">
+          <h2 class="text-xl md:text-4xl font-semibold text-gray-900">
+            Read data with ease
           </h2>
-          <div class="mx-auto max-w-lg mt-10 flex flex-col justify-start space-y-6">
-            {faqItems.map((item) => (
-              <>
-                <div class="space-y-2">
-                  <a class="faq-question-btn flex justify-between cursor-pointer text-gray-200">
-                    <h3>{item.question}</h3>
-                    <div>
-                      <Icon
-                        icon="arrow-drop-down-line"
-                        class={`text-xl faqIconDown ${
-                          item.open ? "hidden" : ""
-                        }`}
-                      />
-                      <Icon
-                        icon="arrow-drop-up-line"
-                        class={`text-xl faqIconUp ${item.open ? "" : "hidden"}`}
-                      />
-                    </div>
-                  </a>
-                  <div class="faq-answer" class:list={[{ hidden: !item.open }]}>
-                    <span class="space-y-3 text-sm mt-1 text-gray-300">
-                      {item.answer}
-                    </span>
-                  </div>
-                </div>
-                <hr class="border-gray-800" />
-              </>
-            ))}
+        </div>
+        <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+          Whenever you're building dashboards, internal reports, or lightweight
+          business intelligence, you need to consume data. With Livebook and
+          Elixir, that's easy, no matter the data source.
+        </p>
+      </div>
+      <div id="read-from-sql" class="mt-10">
+        <div class="flex items-center">
+          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+          <h3 class="text-lg md:text-3xl font-semibold ml-4">
+            Read data from an SQL database
+          </h3>
+        </div>
+        <p class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700">
+          Built-in integrations to multiple databases, so you don't need to
+          write boilerplate code to run SQL queries.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mx-[52px]">
+          <DatabaseCard
+            title="Microsoft SQL Server"
+            imageURL={microsoftDatabase.src}
+          />
+          <DatabaseCard title="MySQL" imageURL={mysqlDatabase.src} />
+          <DatabaseCard title="Amazon Athena" imageURL={amazonDatabase.src} />
+          <DatabaseCard title="SQLite" imageURL={sqliteDatabase.src} />
+          <DatabaseCard title="PostgreSQL" imageURL={postgresDatabase.src} />
+          <DatabaseCard title="Snowflake" imageURL={snowflakeDatabase.src} />
+          <DatabaseCard title="Google BigQuery" imageURL={googleDatabase.src} />
+        </div>
+        <p class="text-md font-light max-w-sm ml-[52px] mt-10 text-gray-700">
+          Write SQL queries directly in Livebook and easily see the result
+        </p>
+        <Image src={readDataSQL} alt="Read data from SQL" class="mx-[52px]" />
+      </div>
+      <div id="read-from-local" class="mt-10">
+        <div class="flex items-start">
+          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+          <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+            Read data from a local or cloud-hosted file
+          </h3>
+        </div>
+        <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+          It doesn't matter if your data is stored as a file in your file system
+          or in a cloud storage service like S3; Livebook handles both ways
+          transparently.
+        </p>
+        <Image
+          src={readDataLocal}
+          alt="Read data from local"
+          class="mx-auto max-w-lg mt-3"
+        />
+      </div>
+      <div id="read-from-data-files" class="mt-10">
+        <div class="flex items-start">
+          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+          <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+            Read data from structured data file formats
+          </h3>
+        </div>
+        <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+          Read data from CSV, IPC, NDJson, or Parquet files with code generated
+          via drag and drop.
+        </p>
+        <div class="relative">
+          <Image
+            src={readDataFile}
+            alt="Read data from local"
+            class="mx-auto max-w-lg mt-3"
+          />
+          <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[512px] h-[309px] rounded-[14px] flex justify-center items-center group cursor-pointer open-lightbox"
+            data-lightbox="2"
+          >
+            <PlayButton
+              videoTitle="Watch José deploying an Elixir app"
+              videoLenght="4 min"
+              videoAuthorImg={josePhoto.src}
+            />
           </div>
         </div>
-
-        <div id="get-in-touch" class="px-4 pt-12">
-          <div class="m-auto max-w-lg bg-gradient-to-r from-brand-pink to-blue-600 rounded-[32px] text-center p-[2px]">
-            <div class="h-full w-full rounded-[32px] bg-gray-900 pt-6 pb-10">
-              <div class="m-auto max-w-2xl flex flex-col items-center space-y-4">
-                <div class="text-center text-slate-50 font-semibold text-2xl flex flex-col">
-                  <Icon
-                    icon="question-answer-fill"
-                    class="text-xl text-brand-pink"
-                  />
-                  Did we miss something?
-                </div>
-                <span class="lg:w-[70%] text-gray-200">
-                  If you have any questions about Livebook Teams, we're here to
-                  help.
-                </span>
-                <a class="button button-gray">
-                  <span>Send an email</span>
-                </a>
+      </div>
+    </div>
+    <Image
+      src={dashedLineTwo}
+      alt="Dashed Line"
+      class="absolute top-[200px] left-[17px] h-[1650px] -z-10"
+    />
+  </section>
+  <section id="teams-features-four" class="bg-gray-100">
+    <div class="bg-gray-200 rounded-b-[60px] relative pb-[600px]">
+      <div
+        class="w-full h-full absolute top-0 left-1/2 transform -translate-x-1/2"
+      >
+        <div
+          class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 md:px-14 py-16 flex flex-col space-y-12"
+        >
+          <div id="teams-features-deploy-and-share">
+            <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+              Deploy and Share Securely
+            </h1>
+            <p class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+              The security of on-premises hosting with the DX of one-click
+              deployment.
+            </p>
+          </div>
+          <div
+            id="deploy-and-share-features"
+            class="grid grid-cols-2 gap-14 justify-between"
+          >
+            <div id="deploy-and-share-self-hosting">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  Self Hosting
+                </h3>
               </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Run your internal tools on your own infra in less than 10
+                minutes. One less concern about security and privacy.
+              </p>
+            </div>
+            <div id="deploy-and-share-one-click">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  One-Click Deploy
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Deploy internal tools to your own infrastructure with just one
+                click.
+              </p>
+            </div>
+            <div id="deploy-and-share-authentication">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  Authentication
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Authenticate internal users using our built-in integrations, or
+                quickly bring your own custom auth.
+              </p>
+              <div class="flex items-center max-w-xs ml-[52px] gap-4 mt-4">
+                <Tooltip text="Tailscale" direction="bottom">
+                  <Image
+                    src={tailscaleLogo}
+                    alt="Tailscale Logo"
+                    class="w-40"
+                  />
+                </Tooltip>
+                <Tooltip text="Teleport" direction="bottom">
+                  <Image src={teleportLogo} alt="Teleport Logo" class="w-28" />
+                </Tooltip>
+                <Tooltip text="Google IAP" direction="bottom">
+                  <Image
+                    src={googleIapLogo}
+                    alt="Google IAP Logo"
+                    class="w-40"
+                  />
+                </Tooltip>
+                <Tooltip text="Cloudflare" direction="bottom">
+                  <Image
+                    src={cloudflareLogo}
+                    alt="Cloudflare Logo"
+                    class="w-40"
+                  />
+                </Tooltip>
+              </div>
+              <div
+                class="flex justify-center items-start gap-2 max-w-sm ml-[52px] bg-gray-100 rounded-md border border-gray-400 py-3 px-4 mt-4"
+              >
+                <Icon icon="information-line" />
+                <p>
+                  <a
+                    href="https://github.com/livebook-dev/livebook/blob/main/docs/deployment/custom_auth.md"
+                    class="underline"
+                    target="_blank">Adding your custom</a
+                  > auth to Livebook is as simple as writing one Elixir module.
+                </p>
+              </div>
+            </div>
+            <div id="deploy-and-share-encrypted-secrets">
+              <div class="flex items-center">
+                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                  Encrypted secrets
+                </h3>
+              </div>
+              <p
+                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              >
+                Save API and database credentials with Livebook Secrets, which
+                are encrypted with a key to which only you have access.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </div>
+  </section>
+  <section id="cta" class="bg-gray-100 py-32">
+    <div class="flex flex-col gap-10 items-center">
+      <h1
+        class="text-2xl md:text-5xl md:leading-tight font-semibold text-gray-900 pt-32 text-center max-w-2xl"
+      >
+        Get started building internal tools in minutes
+      </h1>
+      <a
+        class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)]"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+      >
+        <Icon icon="rocket-line" class="text-xl" />
+        <span class="px-2 font-semibold">I want FREE early access</span>
+      </a>
+    </div>
+  </section>
+  <section id="video-lightbox">
+    <Lightbox
+      dataLightbox="1"
+      videoURL="https://www.youtube.com/embed/E27-3MwY7KU?si=YoCaNlDGKQW10WzB"
+    />
+    <Lightbox
+      dataLightbox="2"
+      videoURL="https://www.youtube.com/embed/z5GziuQoUxk?si=jIFd6eSrkYSlJ0ah"
+    />
+  </section>
 </Layout>
 
 <script>
-  document.querySelectorAll(".faq-question-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const parent = button.parentElement;
-      const answer = parent.querySelector(".faq-answer");
-      const iconDown = parent.querySelector(".faqIconDown");
-      const iconUp = parent.querySelector(".faqIconUp");
+  document.addEventListener("DOMContentLoaded", () => {
+    const openLightboxButtons = document.querySelectorAll(".open-lightbox");
+    const lightboxes = document.querySelectorAll(".lightbox");
+    const closeLightboxButtons = document.querySelectorAll(".close-lightbox");
 
-      answer.classList.toggle("hidden");
-      iconDown.classList.toggle("hidden");
-      iconUp.classList.toggle("hidden");
+    openLightboxButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lightboxId = button.getAttribute("data-lightbox");
+        const lightbox = document.querySelector(
+          `.lightbox[data-lightbox="${lightboxId}"]`
+        );
+        if (lightbox) {
+          lightbox.classList.remove("hidden");
+        }
+      });
+    });
+
+    closeLightboxButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lightboxId = button.getAttribute("data-lightbox");
+        const lightbox = document.querySelector(
+          `.lightbox[data-lightbox="${lightboxId}"]`
+        );
+        if (lightbox) {
+          lightbox.classList.add("hidden");
+        }
+      });
+    });
+
+    // Optional: Close lightbox when clicking outside of the video
+    lightboxes.forEach((lightbox) => {
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          lightbox.classList.add("hidden");
+        }
+      });
     });
   });
 </script>

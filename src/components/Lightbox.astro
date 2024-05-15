@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+  dataLightbox: string;
+  videoURL: string;
+}
+
+const { dataLightbox, videoURL } = Astro.props;
+---
+
+<div
+  class="lightbox fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 hidden"
+  data-lightbox={dataLightbox}
+>
+  <div class="relative bg-gray-200 rounded-lg w-full max-w-5xl">
+    <button
+      class="absolute top-2 right-2 close-lightbox"
+      data-lightbox={dataLightbox}
+    >
+      <Icon icon="close-circle-fill" class="text-3xl text-gray-100" />
+    </button>
+    <div class="p-1">
+      <iframe
+        class="w-full h-[576px]"
+        src={videoURL}
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
