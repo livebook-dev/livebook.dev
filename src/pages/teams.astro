@@ -340,100 +340,109 @@ import josePhoto from "../images/teams/jose-photo.jpg";
     </div>
   </section>
   <section id="teams-features-three" class="bg-gray-200 pt-6 pb-24">
-    <div class="m-auto max-w-6xl relative z-00">
-      <div id="read-data-with-easy-title">
-        <div class="flex items-center gap-2">
-          <h2 class="text-xl md:text-4xl font-semibold text-gray-900">
-            Read data with ease
-          </h2>
+    <div class="m-auto max-w-6xl">
+      <div class="relative">
+        <div id="read-data-with-easy-title">
+          <div class="flex items-center gap-2">
+            <h2 class="text-xl md:text-4xl font-semibold text-gray-900">
+              Read data with ease
+            </h2>
+          </div>
+          <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+            Whenever you're building dashboards, internal reports, or
+            lightweight business intelligence, you need to consume data. With
+            Livebook and Elixir, that's easy, no matter the data source.
+          </p>
         </div>
-        <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
-          Whenever you're building dashboards, internal reports, or lightweight
-          business intelligence, you need to consume data. With Livebook and
-          Elixir, that's easy, no matter the data source.
-        </p>
-      </div>
-      <div id="read-from-sql" class="mt-10">
-        <div class="flex items-center">
-          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-          <h3 class="text-lg md:text-3xl font-semibold ml-4">
-            Read data from an SQL database
-          </h3>
-        </div>
-        <p class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700">
-          Built-in integrations to multiple databases, so you don't need to
-          write boilerplate code to run SQL queries.
-        </p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mx-[52px]">
-          <DatabaseCard
-            title="Microsoft SQL Server"
-            imageURL={microsoftDatabase.src}
-          />
-          <DatabaseCard title="MySQL" imageURL={mysqlDatabase.src} />
-          <DatabaseCard title="Amazon Athena" imageURL={amazonDatabase.src} />
-          <DatabaseCard title="SQLite" imageURL={sqliteDatabase.src} />
-          <DatabaseCard title="PostgreSQL" imageURL={postgresDatabase.src} />
-          <DatabaseCard title="Snowflake" imageURL={snowflakeDatabase.src} />
-          <DatabaseCard title="Google BigQuery" imageURL={googleDatabase.src} />
-        </div>
-        <p class="text-md font-light max-w-sm ml-[52px] mt-10 text-gray-700">
-          Write SQL queries directly in Livebook and easily see the result
-        </p>
-        <Image src={readDataSQL} alt="Read data from SQL" class="mx-[52px]" />
-      </div>
-      <div id="read-from-local" class="mt-10">
-        <div class="flex items-start">
-          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-          <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
-            Read data from a local or cloud-hosted file
-          </h3>
-        </div>
-        <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
-          It doesn't matter if your data is stored as a file in your file system
-          or in a cloud storage service like S3; Livebook handles both ways
-          transparently.
-        </p>
-        <Image
-          src={readDataLocal}
-          alt="Read data from local"
-          class="mx-auto max-w-lg mt-3"
-        />
-      </div>
-      <div id="read-from-data-files" class="mt-10">
-        <div class="flex items-start">
-          <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-          <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
-            Read data from structured data file formats
-          </h3>
-        </div>
-        <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
-          Read data from CSV, IPC, NDJson, or Parquet files with code generated
-          via drag and drop.
-        </p>
-        <div class="relative">
+        <div id="read-from-sql" class="mt-10">
+          <div class="flex items-center">
+            <Image src={starIcon} alt="Star Icon" class="w-9 h-9 z-20" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4">
+              Read data from an SQL database
+            </h3>
+          </div>
+          <p class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700">
+            Built-in integrations to multiple databases, so you don't need to
+            write boilerplate code to run SQL queries.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mx-[52px]">
+            <DatabaseCard
+              title="Microsoft SQL Server"
+              imageURL={microsoftDatabase.src}
+            />
+            <DatabaseCard title="MySQL" imageURL={mysqlDatabase.src} />
+            <DatabaseCard title="Amazon Athena" imageURL={amazonDatabase.src} />
+            <DatabaseCard title="SQLite" imageURL={sqliteDatabase.src} />
+            <DatabaseCard title="PostgreSQL" imageURL={postgresDatabase.src} />
+            <DatabaseCard title="Snowflake" imageURL={snowflakeDatabase.src} />
+            <DatabaseCard
+              title="Google BigQuery"
+              imageURL={googleDatabase.src}
+            />
+          </div>
+          <p class="text-md font-light max-w-sm ml-[52px] mt-10 text-gray-700">
+            Write SQL queries directly in Livebook and easily see the result
+          </p>
           <Image
-            src={readDataFile}
+            src={readDataSQL}
+            alt="Read data from SQL"
+            class="mx-[52px] z-20"
+          />
+        </div>
+        <div id="read-from-local" class="mt-10">
+          <div class="flex items-start">
+            <Image src={starIcon} alt="Star Icon" class="w-9 h-9 z-20" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+              Read data from a local or cloud-hosted file
+            </h3>
+          </div>
+          <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+            It doesn't matter if your data is stored as a file in your file
+            system or in a cloud storage service like S3; Livebook handles both
+            ways transparently.
+          </p>
+          <Image
+            src={readDataLocal}
             alt="Read data from local"
             class="mx-auto max-w-lg mt-3"
           />
-          <div
-            class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[512px] h-[309px] rounded-[14px] flex justify-center items-center group cursor-pointer open-lightbox"
-            data-lightbox="2"
-          >
-            <PlayButton
-              videoTitle="Watch José deploying an Elixir app"
-              videoLenght="4 min"
-              videoAuthorImg={josePhoto.src}
+        </div>
+        <div id="read-from-data-files" class="mt-10">
+          <div class="flex items-start">
+            <Image src={starIcon} alt="Star Icon" class="w-9 h-9 z-20" />
+            <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+              Read data from structured data file formats
+            </h3>
+          </div>
+          <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+            Read data from CSV, IPC, NDJson, or Parquet files with code
+            generated via drag and drop.
+          </p>
+          <div class="relative">
+            <Image
+              src={readDataFile}
+              alt="Read data from local"
+              class="mx-auto max-w-lg mt-3"
             />
+            <div
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[512px] h-[309px] rounded-[14px] flex justify-center items-center group cursor-pointer open-lightbox"
+              data-lightbox="2"
+            >
+              <PlayButton
+                videoTitle="Watch José deploying an Elixir app"
+                videoLenght="4 min"
+                videoAuthorImg={josePhoto.src}
+              />
+            </div>
           </div>
         </div>
+        <Image
+          src={dashedLineTwo}
+          alt="Dashed Line"
+          class="absolute top-[220px] left-[17px] h-[1640px] z-10"
+        />
       </div>
     </div>
-    <Image
-      src={dashedLineTwo}
-      alt="Dashed Line"
-      class="absolute top-[200px] left-[17px] h-[1650px] -z-10"
-    />
   </section>
   <section id="teams-features-four" class="bg-gray-100">
     <div class="bg-gray-200 rounded-b-[60px] relative pb-[600px]">
