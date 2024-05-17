@@ -46,29 +46,28 @@ import josePhoto from "../images/teams/jose-photo.jpg";
     <div
       class="bg-gradient-to-b from-gray-900 to-gray-600 rounded-b-[60px] flex flex-col justify-center items-center"
     >
-      <div class="m-auto max-w-7xl px-4 pt-24 pb-60">
-        <div class="flex flex-col space-y-10 items-center">
+      <div class="m-auto max-w-7xl px-4 pt-12 sm:pt-24 pb-52 sm:pb-60">
+        <div class="flex flex-col space-y-6 md:space-y-10 items-center">
           <h1
-            class="max-w-4xl text-2xl md:text-5xl font-semibold text-gray-200"
+            class="max-w-4xl text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-semibold text-gray-200 text-center"
           >
-            Build and deploy internal tools fast <br /> with Elixir and Livebook
-            Teams
+            Build and deploy internal tools fast with Elixir and Livebook Teams
           </h1>
           <span class="text-lg text-center font-light text-gray-200 max-w-xl">
             Transform scripts, SQL queries, and backend operations into web apps
             that anybody in your company can use. Make your co-workers more
             self-sufficient and get your time back.
           </span>
-          <div class="flex gap-10">
+          <div class="space-y-4 md:space-y-0 md:flex md:gap-10 text-center">
             <a
-              class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)]"
+              class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)] hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
               href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
             >
               <Icon icon="rocket-line" class="text-xl" />
               <span class="px-2 font-semibold">I want FREE early access</span>
             </a>
             <a
-              class="button-cta button-outlined gap-4 px-5"
+              class="button-cta button-outlined gap-4 px-5 inline-flex"
               href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
             >
               <Icon icon="play-circle-fill" class="text-4xl" />
@@ -82,72 +81,75 @@ import josePhoto from "../images/teams/jose-photo.jpg";
       </div>
     </div>
   </section>
-  <section class="mx-auto sm:max-w-5xl relative">
-    <Image
-      class="absolute top-[-150px] left-1/2 transform -translate-x-1/2"
-      src={teamsIntroScreenshot}
-      alt="Feature: On-premise Livebook apps"
-    />
-    <div
-      class="absolute top-[-150px] left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[1024px] h-[576px] rounded-[20px] flex justify-center items-center group cursor-pointer open-lightbox"
-      data-lightbox="1"
-    >
-      <PlayButton
-        videoTitle="Watch José deploying an Elixir app"
-        videoLenght="4 min"
-        videoAuthorImg={josePhoto.src}
-      />
+  <section class="px-4">
+    <div class="relative max-w-5xl mx-auto">
+      <div class="absolute top-[-150px] w-full mx-auto z-10">
+        <Image
+          class="w-full h-auto"
+          src={teamsIntroScreenshot}
+          alt="Feature: On-premise Livebook apps"
+        />
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-lg sm:rounded-2xl flex justify-center items-center group cursor-pointer open-lightbox"
+          data-lightbox="1"
+        >
+          <PlayButton
+            videoTitle="Watch José deploying an Elixir app"
+            videoLenght="4 min"
+            videoAuthorImg={josePhoto.src}
+          />
+        </div>
+      </div>
     </div>
   </section>
-  <section
-    id="build-with-teams"
-    class="bg-gray-900 overflow-x-hidden pt-[400px]"
-  >
-    <div class="m-auto max-w-7xl flex flex-col px-4 md:px-0">
+  <section id="build-with-teams" class="bg-gray-900 overflow-x-hidden">
+    <div
+      class="m-auto max-w-7xl flex flex-col px-4 xl:px-0 xs:pt-12 sm:pt-48 md:pt-56 lg:pt-96"
+    >
       <h1
-        class="text-2xl md:text-5xl md:leading-tight font-semibold text-gray-200 justify-self-start pt-32"
+        class="max-w-4xl text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-semibold text-gray-200 justify-self-start pt-32"
       >
         What can you build with<br />Livebook Teams?
       </h1>
       <span class="text-gray-200 text-xl pt-10">Examples</span>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
         <Card
-          class="bg-gradient-to-br h-[292px]"
+          class="bg-gradient-to-br md:h-[292px]"
           icon="money-dollar-circle-line"
           iconColor="text-blue-600"
           title="Customer Payment Refund Processor"
           description="Enable the support team to refund customers. No need to run that script by yourself anymore."
         />
         <Card
-          class="bg-gradient-to-tl h-[292px]"
+          class="bg-gradient-to-tl md:h-[292px]"
           icon="database-2-line"
           iconColor="text-green-600"
           title="Self-Service SQL Query Visualization"
           description="A web UI where non-technical co-workers can execute and visualize shared SQL queries. Empower them so you can stop being interrupted."
         />
         <Card
-          class="bg-gradient-to-br h-[292px]"
+          class="bg-gradient-to-br md:h-[292px]"
           icon="user-add-line"
           iconColor="text-yellow-500"
           title="Customer Onboarding Workflow Automation"
           description="Help customer success and operations automate the steps needed when onboarding new customers, like setting up accounts, importing data, etc. Bye bye manual work."
         />
         <Card
-          class="bg-gradient-to-br h-[252px]"
+          class="bg-gradient-to-br lg:h-[252px]"
           icon="bookmark-3-line"
           iconColor="text-gray-400"
           title="Runbooks"
           description="Instead of static documents, build interactive runbooks for technical support, DevOps, and solutions engineering. No more need to answer “how can I do that?”."
         />
         <Card
-          class="bg-gradient-to-tl h-[252px]"
+          class="bg-gradient-to-tl md:h-[252px]"
           icon="dashboard-3-line"
           iconColor="text-yellow-500"
           title="Admin Panels"
           description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
         />
         <Card
-          class="bg-gradient-to-br h-[252px]"
+          class="bg-gradient-to-br md:h-[252px]"
           icon="line-chart-line"
           iconColor="text-red-600"
           title="Track KPIs and Metrics"
@@ -157,21 +159,27 @@ import josePhoto from "../images/teams/jose-photo.jpg";
     </div>
   </section>
   <section id="teams-features" class="bg-gray-900 overflow-x-hidden pt-24">
-    <div class="bg-gray-200 rounded-t-[60px] py-24">
-      <div id="teams-features-one" class="m-auto max-w-6xl text-gray-900">
+    <div
+      class="bg-gray-200 rounded-t-[40px] sm:rounded-t-[60px] py-16 sm:py-24"
+    >
+      <div id="teams-features-one" class="m-auto max-w-6xl text-gray-900 px-4">
         <div id="teams-features-title">
-          <div class="flex items-center gap-5">
-            <h3 class="text-lg md:text-3xl font-semibold">Livebook</h3>
-            <Image src={plusIcon} alt="Plus Icon" class="w-10 h-10" />
+          <div class="flex items-center gap-2 sm:gap-5">
+            <h3 class="text-xl md:text-3xl font-semibold">Livebook</h3>
+            <Image
+              src={plusIcon}
+              alt="Plus Icon"
+              class="w-6 sm:w-10 h-6 sm:h-10"
+            />
           </div>
-          <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl/tight font-semibold mt-2">
             Livebook Teams features
           </h1>
-          <p class="text-gray-600 text-xl mt-3">
+          <p class="text-gray-600 text-lg sm:text-xl mt-3">
             A fast (and fun 😃) way to build internal tools.
           </p>
         </div>
-        <div id="build-with-elixir" class="mt-16">
+        <div id="build-with-elixir" class="mt-8 sm:mt-16">
           <div id="build-with-elixir-title">
             <div class="flex items-center gap-2">
               <h2 class="text-xl md:text-4xl font-semibold">
@@ -188,10 +196,12 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           </div>
           <div
             id="build-with-elixir-features"
-            class="mt-10 space-y-[80px] relative"
+            class="mt-10 space-y-10 lg:space-y-[80px] relative"
           >
             <div id="hex-libraries">
-              <div class="flex items-center justify-between">
+              <div
+                class="flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+              >
                 <div>
                   <div class="flex items-center">
                     <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
@@ -206,14 +216,24 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                     manage dependencies.
                   </p>
                 </div>
-                <Image src={hexLibrary} alt="Hex Library" class="mr-28" />
+                <Image
+                  src={hexLibrary}
+                  alt="Hex Library"
+                  class="lg:mr-12 xl:mr-24 pl-12 lg:pl-0"
+                />
               </div>
             </div>
             <div id="call-functions">
-              <div class="flex items-center justify-between pt-[1px]">
+              <div
+                class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-1"
+              >
                 <div>
                   <div class="flex">
-                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                    <Image
+                      src={starIcon}
+                      alt="Star Icon"
+                      class="w-9 h-9 z-10"
+                    />
                     <h3 class="text-lg md:text-3xl font-semibold ml-4">
                       Call functions from your main <br />Elixir/Phoenix app
                       directly
@@ -227,22 +247,26 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                     VM nodes.
                   </p>
                 </div>
-                <Image src={callFunction} alt="Call functions" class="w-1/2" />
+                <Image
+                  src={callFunction}
+                  alt="Call functions"
+                  class="lg:w-1/2 pl-12 lg:pl-0"
+                />
               </div>
             </div>
             <Image
               src={dashedLine}
               alt="Dashed Line"
-              class="absolute top-0 left-[17px]"
+              class="absolute top-0 left-[17px] w-[3px] h-[270px] lg:w-auto lg:h-auto"
             />
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="teams-features-two" class="bg-gray-200 pb-6">
+  <section id="teams-features-two" class="bg-gray-200 pb-6 px-4 lg:px-0">
     <div
-      class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 md:px-0 py-16 flex flex-col items-center space-y-12"
+      class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 lg:px-0 py-10 md:py-16 flex flex-col items-center space-y-6 md:space-y-12"
     >
       <h1 class="text-2xl md:text-5xl font-semibold mt-2">
         An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
@@ -257,8 +281,12 @@ import josePhoto from "../images/teams/jose-photo.jpg";
       <div id="teams-features-forms-and-input">
         <div class="flex flex-col items-center space-y-5">
           <div class="flex items-center justify-center">
-            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4">
+            <Image
+              src={starIcon}
+              alt="Star Icon"
+              class="w-8 sm:w-10 h-8 sm:h-10"
+            />
+            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">
               Forms and Inputs
             </h3>
           </div>
@@ -269,42 +297,56 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           <Image
             src={formsAndInputs}
             alt="Forms and Inputs"
-            class="max-w-2xl"
+            class="w-full h-auto"
           />
         </div>
       </div>
       <div id="teams-features-data-tables">
         <div class="flex flex-col items-center space-y-5">
           <div class="flex items-center justify-center">
-            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4">Data Tables</h3>
+            <Image
+              src={starIcon}
+              alt="Star Icon"
+              class="w-8 sm:w-10 h-8 sm:h-10"
+            />
+            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">
+              Data Tables
+            </h3>
           </div>
           <p class="text-md font-light text-gray-700">
             Easily display, sort, and paginate your data.
           </p>
-          <Image src={dataTables} alt="Data Tables" class="max-w-2xl" />
+          <Image src={dataTables} alt="Data Tables" class="w-full h-auto" />
         </div>
       </div>
       <div id="teams-features-chart">
-        <div class="flex flex-col items-center">
-          <div class="flex items-center justify-center mt-5">
-            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4">Charts</h3>
+        <div class="flex flex-col items-center space-y-5">
+          <div class="flex items-center justify-center">
+            <Image
+              src={starIcon}
+              alt="Star Icon"
+              class="w-8 sm:w-10 h-8 sm:h-10"
+            />
+            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">
+              Charts
+            </h3>
           </div>
           <p class="text-md font-light text-gray-700">
             Build and visualize charts using Livebook's native integration with
             Vega-Lite.
           </p>
-          <div class="flex justify-center mt-10">
+          <div
+            class="flex flex-col sm:flex-row gap-6 sm:gap-0 justify-center mt-10"
+          >
             <div class="flex flex-col items-center justify-center">
               <Image src={chartOne} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-md text-center mt-2">
                 Use the Chart Smart Cell to <br /> generate simple charts
               </p>
             </div>
             <div class="flex flex-col items-center justify-center">
               <Image src={chartTwo} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-md text-center mt-2">
                 Use code to build more <br />complex charts
               </p>
             </div>
@@ -314,23 +356,29 @@ import josePhoto from "../images/teams/jose-photo.jpg";
       <div id="teams-features-maps">
         <div class="flex flex-col items-center">
           <div class="flex items-center justify-center mt-5">
-            <Image src={starIcon} alt="Star Icon" class="w-10 h-10" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4">Maps</h3>
+            <Image
+              src={starIcon}
+              alt="Star Icon"
+              class="w-8 sm:w-10 h-8 sm:h-10"
+            />
+            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">Maps</h3>
           </div>
           <p class="text-md font-light text-gray-700 max-w-lg text-center mt-5">
             Plot objects on a map and visualize geo data using Livebook's native
             integration with MapLibre.
           </p>
-          <div class="flex justify-center mt-10">
+          <div
+            class="flex flex-col sm:flex-row gap-6 sm:gap-0 justify-center mt-10"
+          >
             <div class="flex flex-col items-center justify-center">
               <Image src={mapsOne} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-md text-center mt-2">
                 Use the Map Smart cell to <br /> generate simple maps
               </p>
             </div>
             <div class="flex flex-col items-center justify-center">
               <Image src={mapsTwo} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-md text-center mt-2">
                 Use code to build more <br /> complex maps
               </p>
             </div>
@@ -340,7 +388,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
     </div>
   </section>
   <section id="teams-features-three" class="bg-gray-200 pt-6 pb-24">
-    <div class="m-auto max-w-6xl">
+    <div class="m-auto max-w-6xl px-4 xl:px-0">
       <div class="relative">
         <div id="read-data-with-easy-title">
           <div class="flex items-center gap-2">
@@ -365,7 +413,9 @@ import josePhoto from "../images/teams/jose-photo.jpg";
             Built-in integrations to multiple databases, so you don't need to
             write boilerplate code to run SQL queries.
           </p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mx-[52px]">
+          <div
+            class="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 px-[52px]"
+          >
             <DatabaseCard
               title="Microsoft SQL Server"
               imageURL={microsoftDatabase.src}
@@ -383,11 +433,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           <p class="text-md font-light max-w-sm ml-[52px] mt-10 text-gray-700">
             Write SQL queries directly in Livebook and easily see the result
           </p>
-          <Image
-            src={readDataSQL}
-            alt="Read data from SQL"
-            class="mx-[52px] z-20"
-          />
+          <Image src={readDataSQL} alt="Read data from SQL" class="pl-[52px]" />
         </div>
         <div id="read-from-local" class="mt-10">
           <div class="flex items-start">
@@ -404,7 +450,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           <Image
             src={readDataLocal}
             alt="Read data from local"
-            class="mx-auto max-w-lg mt-3"
+            class="mx-auto mt-3 pl-[52px] w-full max-w-xl"
           />
         </div>
         <div id="read-from-data-files" class="mt-10">
@@ -418,14 +464,14 @@ import josePhoto from "../images/teams/jose-photo.jpg";
             Read data from CSV, IPC, NDJson, or Parquet files with code
             generated via drag and drop.
           </p>
-          <div class="relative">
+          <div class="relative w-full max-w-lg mx-auto mt-3">
             <Image
               src={readDataFile}
               alt="Read data from local"
-              class="mx-auto max-w-lg mt-3"
+              class="w-full h-auto"
             />
             <div
-              class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-900/30 w-[512px] h-[309px] rounded-[14px] flex justify-center items-center group cursor-pointer open-lightbox"
+              class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-[14px] flex justify-center items-center group cursor-pointer open-lightbox"
               data-lightbox="2"
             >
               <PlayButton
@@ -439,140 +485,169 @@ import josePhoto from "../images/teams/jose-photo.jpg";
         <Image
           src={dashedLineTwo}
           alt="Dashed Line"
-          class="absolute top-[210px] left-[17px] h-[1640px] z-10"
+          class="absolute top-[230px] sm:top-[210px] left-[17px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1540px] z-10"
         />
       </div>
     </div>
   </section>
   <section id="teams-features-four" class="bg-gray-100">
-    <div class="bg-gray-200 rounded-b-[60px] relative pb-[600px]">
-      <div
-        class="w-full h-full absolute top-0 left-1/2 transform -translate-x-1/2"
-      >
+    <div class="px-4 lg:px-0 bg-gray-200 rounded-b-[40px] sm:rounded-b-[60px]">
+      <div class="bg-gray-100">
         <div
-          class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 md:px-14 py-16 flex flex-col space-y-12"
+          class="relative pb-[600px] bg-gray-200 rounded-b-[40px] sm:rounded-b-[60px]"
         >
-          <div id="teams-features-deploy-and-share">
-            <h1 class="text-2xl md:text-5xl font-semibold mt-2">
-              Deploy and Share Securely
-            </h1>
-            <p class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
-              The security of on-premises hosting with the DX of one-click
-              deployment.
-            </p>
-          </div>
           <div
-            id="deploy-and-share-features"
-            class="grid grid-cols-2 gap-14 justify-between"
+            class="w-full h-full absolute top-0 left-1/2 transform -translate-x-1/2"
           >
-            <div id="deploy-and-share-self-hosting">
-              <div class="flex items-center">
-                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-                <h3 class="text-lg md:text-3xl font-semibold ml-4">
-                  Self Hosting
-                </h3>
-              </div>
-              <p
-                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-              >
-                Run your internal tools on your own infra in less than 10
-                minutes. One less concern about security and privacy.
-              </p>
-            </div>
-            <div id="deploy-and-share-one-click">
-              <div class="flex items-center">
-                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-                <h3 class="text-lg md:text-3xl font-semibold ml-4">
-                  One-Click Deploy
-                </h3>
-              </div>
-              <p
-                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-              >
-                Deploy internal tools to your own infrastructure with just one
-                click.
-              </p>
-            </div>
-            <div id="deploy-and-share-authentication">
-              <div class="flex items-center">
-                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-                <h3 class="text-lg md:text-3xl font-semibold ml-4">
-                  Authentication
-                </h3>
-              </div>
-              <p
-                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-              >
-                Authenticate internal users using our built-in integrations, or
-                quickly bring your own custom auth.
-              </p>
-              <div class="flex items-center max-w-xs ml-[52px] gap-4 mt-4">
-                <Tooltip text="Tailscale" direction="bottom">
-                  <Image
-                    src={tailscaleLogo}
-                    alt="Tailscale Logo"
-                    class="w-40"
-                  />
-                </Tooltip>
-                <Tooltip text="Teleport" direction="bottom">
-                  <Image src={teleportLogo} alt="Teleport Logo" class="w-28" />
-                </Tooltip>
-                <Tooltip text="Google IAP" direction="bottom">
-                  <Image
-                    src={googleIapLogo}
-                    alt="Google IAP Logo"
-                    class="w-40"
-                  />
-                </Tooltip>
-                <Tooltip text="Cloudflare" direction="bottom">
-                  <Image
-                    src={cloudflareLogo}
-                    alt="Cloudflare Logo"
-                    class="w-40"
-                  />
-                </Tooltip>
-              </div>
-              <div
-                class="flex justify-center items-start gap-2 max-w-sm ml-[52px] bg-gray-100 rounded-md border border-gray-400 py-3 px-4 mt-4"
-              >
-                <Icon icon="information-line" />
-                <p>
-                  <a
-                    href="https://github.com/livebook-dev/livebook/blob/main/docs/deployment/custom_auth.md"
-                    class="underline"
-                    target="_blank">Adding your custom</a
-                  > auth to Livebook is as simple as writing one Elixir module.
+            <div
+              class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 lg:px-0 py-10 md:py-16 flex flex-col items-center space-y-6 md:space-y-12"
+            >
+              <div id="teams-features-deploy-and-share" class="text-center">
+                <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+                  Deploy and Share Securely
+                </h1>
+                <p class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+                  The security of on-premises hosting with the DX of one-click
+                  deployment.
                 </p>
               </div>
-            </div>
-            <div id="deploy-and-share-encrypted-secrets">
-              <div class="flex items-center">
-                <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-                <h3 class="text-lg md:text-3xl font-semibold ml-4">
-                  Encrypted secrets
-                </h3>
-              </div>
-              <p
-                class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+              <div
+                id="deploy-and-share-features"
+                class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-14 justify-between"
               >
-                Save API and database credentials with Livebook Secrets, which
-                are encrypted with a key to which only you have access.
-              </p>
+                <div id="deploy-and-share-self-hosting">
+                  <div class="flex items-center">
+                    <Image
+                      src={starIcon}
+                      alt="Star Icon"
+                      class="w-8 sm:w-10 h-8 sm:h-10"
+                    />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                      Self Hosting
+                    </h3>
+                  </div>
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
+                    Run your internal tools on your own infra in less than 10
+                    minutes. One less concern about security and privacy.
+                  </p>
+                </div>
+                <div id="deploy-and-share-one-click">
+                  <div class="flex items-center">
+                    <Image
+                      src={starIcon}
+                      alt="Star Icon"
+                      class="w-8 sm:w-10 h-8 sm:h-10"
+                    />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                      One-Click Deploy
+                    </h3>
+                  </div>
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
+                    Deploy internal tools to your own infrastructure with just
+                    one click.
+                  </p>
+                </div>
+                <div
+                  id="deploy-and-share-authentication"
+                  class="order-last sm:order-none"
+                >
+                  <div class="flex items-center">
+                    <Image
+                      src={starIcon}
+                      alt="Star Icon"
+                      class="w-8 sm:w-10 h-8 sm:h-10"
+                    />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                      Authentication
+                    </h3>
+                  </div>
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
+                    Authenticate internal users using our built-in integrations,
+                    or quickly bring your own custom auth.
+                  </p>
+                  <div class="flex items-center max-w-xs ml-[52px] gap-4 mt-4">
+                    <Tooltip text="Tailscale" direction="bottom">
+                      <Image
+                        src={tailscaleLogo}
+                        alt="Tailscale Logo"
+                        class="w-40"
+                      />
+                    </Tooltip>
+                    <Tooltip text="Teleport" direction="bottom">
+                      <Image
+                        src={teleportLogo}
+                        alt="Teleport Logo"
+                        class="w-28"
+                      />
+                    </Tooltip>
+                    <Tooltip text="Google IAP" direction="bottom">
+                      <Image
+                        src={googleIapLogo}
+                        alt="Google IAP Logo"
+                        class="w-40"
+                      />
+                    </Tooltip>
+                    <Tooltip text="Cloudflare" direction="bottom">
+                      <Image
+                        src={cloudflareLogo}
+                        alt="Cloudflare Logo"
+                        class="w-40"
+                      />
+                    </Tooltip>
+                  </div>
+                  <div
+                    class="flex justify-center items-start gap-2 max-w-sm ml-[52px] bg-gray-100 rounded-md border border-gray-400 py-3 px-4 mt-4 text-sm sm:text-base"
+                  >
+                    <Icon icon="information-line" />
+                    <p>
+                      <a
+                        href="https://github.com/livebook-dev/livebook/blob/main/docs/deployment/custom_auth.md"
+                        class="underline"
+                        target="_blank">Adding your custom</a
+                      > auth to Livebook is as simple as writing one Elixir module.
+                    </p>
+                  </div>
+                </div>
+                <div id="deploy-and-share-encrypted-secrets">
+                  <div class="flex items-center">
+                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
+                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                      Encrypted secrets
+                    </h3>
+                  </div>
+                  <p
+                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                  >
+                    Save API and database credentials with Livebook Secrets,
+                    which are encrypted with a key to which only you have
+                    access.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="cta" class="bg-gray-100 py-32">
+  <section
+    id="cta"
+    class="bg-gray-100 pt-[410px] sm:pt-96 md:pt-72 pb-20 sm:pb-32 px-4 lg:px-0"
+  >
     <div class="flex flex-col gap-10 items-center">
       <h1
-        class="text-2xl md:text-5xl md:leading-tight font-semibold text-gray-900 pt-32 text-center max-w-2xl"
+        class="max-w-xl text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-semibold text-center"
       >
         Get started building internal tools in minutes
       </h1>
       <a
-        class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)]"
+        class="button-cta button-pink plausible-event-name=teams+early+access+main+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)] hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
         href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
       >
         <Icon icon="rocket-line" class="text-xl" />
@@ -590,45 +665,45 @@ import josePhoto from "../images/teams/jose-photo.jpg";
       videoURL="https://www.youtube.com/embed/z5GziuQoUxk?si=jIFd6eSrkYSlJ0ah"
     />
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const openLightboxButtons = document.querySelectorAll(".open-lightbox");
+      const lightboxes = document.querySelectorAll(".lightbox");
+      const closeLightboxButtons = document.querySelectorAll(".close-lightbox");
+
+      openLightboxButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const lightboxId = button.getAttribute("data-lightbox");
+          const lightbox = document.querySelector(
+            `.lightbox[data-lightbox="${lightboxId}"]`
+          );
+          if (lightbox) {
+            lightbox.classList.remove("hidden");
+          }
+        });
+      });
+
+      closeLightboxButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const lightboxId = button.getAttribute("data-lightbox");
+          const lightbox = document.querySelector(
+            `.lightbox[data-lightbox="${lightboxId}"]`
+          );
+          if (lightbox) {
+            lightbox.classList.add("hidden");
+          }
+        });
+      });
+
+      // Optional: Close lightbox when clicking outside of the video
+      lightboxes.forEach((lightbox) => {
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            lightbox.classList.add("hidden");
+          }
+        });
+      });
+    });
+  </script>
 </Layout>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const openLightboxButtons = document.querySelectorAll(".open-lightbox");
-    const lightboxes = document.querySelectorAll(".lightbox");
-    const closeLightboxButtons = document.querySelectorAll(".close-lightbox");
-
-    openLightboxButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const lightboxId = button.getAttribute("data-lightbox");
-        const lightbox = document.querySelector(
-          `.lightbox[data-lightbox="${lightboxId}"]`
-        );
-        if (lightbox) {
-          lightbox.classList.remove("hidden");
-        }
-      });
-    });
-
-    closeLightboxButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const lightboxId = button.getAttribute("data-lightbox");
-        const lightbox = document.querySelector(
-          `.lightbox[data-lightbox="${lightboxId}"]`
-        );
-        if (lightbox) {
-          lightbox.classList.add("hidden");
-        }
-      });
-    });
-
-    // Optional: Close lightbox when clicking outside of the video
-    lightboxes.forEach((lightbox) => {
-      lightbox.addEventListener("click", (event) => {
-        if (event.target === lightbox) {
-          lightbox.classList.add("hidden");
-        }
-      });
-    });
-  });
-</script>
