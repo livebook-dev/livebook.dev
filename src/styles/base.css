@@ -40,7 +40,7 @@
   }
 
   .button-outlined {
-    @apply border border-gray-300 hover:border-gray-400 text-gray-300 hover:text-gray-400 bg-transparent;
+    @apply border border-gray-300 hover:border-gray-100 text-gray-300 hover:text-gray-100 bg-transparent;
   }
 
   .button-outlined-gray {
