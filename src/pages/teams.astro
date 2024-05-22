@@ -58,7 +58,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           >
             Build and deploy internal tools fast with Elixir and Livebook Teams
           </h1>
-          <span class="text-lg text-center font-light text-gray-200 max-w-xl">
+          <span class="text-lg md:text-xl text-center font-light text-gray-200 max-w-2xl">
             Transform scripts, SQL queries, and backend operations into web apps
             that anybody in your company can use. Make your co-workers more
             self-sufficient and get your time back.
@@ -182,14 +182,14 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           <h1 class="text-3xl sm:text-4xl md:text-5xl/tight font-semibold mt-2">
             Livebook Teams features
           </h1>
-          <p class="text-gray-600 text-lg sm:text-xl mt-3">
+          <p class="text-gray-600 text-lg sm:text-xl md:text-2xl mt-3">
             A fast (and fun 😃) way to build internal tools.
           </p>
         </div>
         <div id="build-with-elixir" class="mt-8 sm:mt-16">
           <div id="build-with-elixir-title">
             <div class="flex items-center gap-2">
-              <h2 class="text-xl md:text-4xl font-semibold">
+              <h2 class="text-2xl md:text-4xl font-semibold">
                 Build with <span class="text-elixir">Elixir</span>
               </h2>
               <Image src={elixirLogo} alt="Elixir Logo" class="w-9 h-9" />
@@ -279,7 +279,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
         An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
         Blocks
       </h1>
-      <div class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+      <div class="max-w-4xl mt-4 text-gray-700 font-light text-lg md:text-xl text-center">
         Assemble UIs with zero to minimal need for HTML and CSS. Livebook
         provides a set of UI building blocks you can use just by writing Elixir,
         so you can stay in the comfort of the language you love and build UIs
@@ -297,7 +297,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               Forms and Inputs
             </h3>
           </div>
-          <p class="text-md font-light text-gray-700">
+          <p class="text-md md:text-lg font-light text-gray-700 text-center">
             Combine various input types like text, dropdowns, and date pickers
             into a form.
           </p>
@@ -320,7 +320,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               Data Tables
             </h3>
           </div>
-          <p class="text-md font-light text-gray-700">
+          <p class="text-md md:text-lg font-light text-gray-700 text-center">
             Easily display, sort, and paginate your data.
           </p>
           <Image src={dataTables} alt="Data Tables" class="w-full h-auto" />
@@ -338,7 +338,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               Charts
             </h3>
           </div>
-          <p class="text-md font-light text-gray-700">
+          <p class="text-md md:text-lg font-light text-gray-700 text-center">
             Build and visualize charts using Livebook's native integration with
             Vega-Lite.
           </p>
@@ -347,13 +347,13 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           >
             <div class="flex flex-col items-center justify-center">
               <Image src={chartOne} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-sm sm:text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-base text-center text-gray-800 mt-2">
                 Use the Chart Smart Cell to <br /> generate simple charts
               </p>
             </div>
             <div class="flex flex-col items-center justify-center">
               <Image src={chartTwo} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-sm sm:text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-base text-center text-gray-800 mt-2">
                 Use code to build more <br />complex charts
               </p>
             </div>
@@ -370,7 +370,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
             />
             <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">Maps</h3>
           </div>
-          <p class="text-md font-light text-gray-700 max-w-lg text-center mt-5">
+          <p class="text-lg font-light text-gray-700 text-center mt-5">
             Plot objects on a map and visualize geo data using Livebook's native
             integration with MapLibre.
           </p>
@@ -379,13 +379,13 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           >
             <div class="flex flex-col items-center justify-center">
               <Image src={mapsOne} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-sm sm:text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-base text-center text-gray-800 mt-2">
                 Use the Map Smart cell to <br /> generate simple maps
               </p>
             </div>
             <div class="flex flex-col items-center justify-center">
               <Image src={mapsTwo} alt="Chart Image" class="w-[90%]" />
-              <p class="font-medium text-sm sm:text-md text-center mt-2">
+              <p class="font-medium text-sm sm:text-base text-center text-gray-800 mt-2">
                 Use code to build more <br /> complex maps
               </p>
             </div>
@@ -399,11 +399,11 @@ import josePhoto from "../images/teams/jose-photo.jpg";
       <div class="relative">
         <div id="read-data-with-easy-title">
           <div class="flex items-center gap-2">
-            <h2 class="text-xl md:text-4xl font-semibold text-gray-900">
+            <h2 class="text-2xl md:text-5xl font-semibold text-gray-900">
               Read data with ease
             </h2>
           </div>
-          <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+          <p class="max-w-xl text-gray-700 text-lg md:text-xl mt-3 font-light">
             Whenever you're building dashboards, internal reports, or
             lightweight business intelligence, you need to consume data. With
             Livebook and Elixir, that's easy, no matter the data source.
@@ -416,7 +416,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               Read data from an SQL database
             </h3>
           </div>
-          <p class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700">
+          <p class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700">
             Built-in integrations to multiple databases, so you don't need to
             write boilerplate code to run SQL queries.
           </p>
@@ -437,7 +437,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               imageURL={googleDatabase.src}
             />
           </div>
-          <p class="text-md font-light max-w-sm ml-[52px] mt-10 text-gray-700">
+          <p class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-10 text-gray-700">
             Write SQL queries directly in Livebook and easily see the result
           </p>
           <Image src={readDataSQL} alt="Read data from SQL" class="pl-[52px]" />
@@ -449,7 +449,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               Read data from a local or cloud-hosted file
             </h3>
           </div>
-          <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+          <p class="text-md md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700">
             It doesn't matter if your data is stored as a file in your file
             system or in a cloud storage service like S3; Livebook handles both
             ways transparently.
@@ -467,7 +467,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               Read data from structured data file formats
             </h3>
           </div>
-          <p class="text-md font-light max-w-md ml-[52px] mt-2 text-gray-700">
+          <p class="text-md md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700">
             Read data from CSV, IPC, NDJson, or Parquet files with code
             generated via drag and drop.
           </p>
@@ -513,7 +513,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                 <h1 class="text-2xl md:text-5xl font-semibold mt-2">
                   Deploy and Share Securely
                 </h1>
-                <p class="max-w-2xl mt-4 text-gray-700 font-light text-lg">
+                <p class="mt-4 text-gray-700 font-light text-lg md:text-2xl">
                   The security of on-premises hosting with the DX of one-click
                   deployment.
                 </p>
@@ -534,7 +534,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                     </h3>
                   </div>
                   <p
-                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Run your internal tools on your own infra in less than 10
                     minutes. One less concern about security and privacy.
@@ -552,7 +552,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                     </h3>
                   </div>
                   <p
-                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Deploy internal tools to your own infrastructure with just
                     one click.
@@ -573,7 +573,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                     </h3>
                   </div>
                   <p
-                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Authenticate internal users using our built-in integrations,
                     or quickly bring your own custom auth.
@@ -622,7 +622,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
                     </h3>
                   </div>
                   <p
-                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Save API and database credentials with Livebook Secrets,
                     which are encrypted with a key to which only you have
