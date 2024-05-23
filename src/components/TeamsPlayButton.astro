@@ -3,11 +3,11 @@ import Icon from "./Icon.astro";
 
 export interface Props {
   videoTitle: string;
-  videoLenght: string;
+  videoLength: string;
   videoAuthorImg: string;
 }
 
-const { videoTitle, videoLenght, videoAuthorImg } = Astro.props;
+const { videoTitle, videoLength, videoAuthorImg } = Astro.props;
 ---
 
 <div
@@ -31,7 +31,7 @@ const { videoTitle, videoLenght, videoAuthorImg } = Astro.props;
       {videoTitle}
     </div>
     <div class="flex items-center mt-1">
-      <div class="text-gray-500 font-medium px-2">{videoLenght}</div>
+      <div class="text-gray-500 font-medium px-2">{videoLength}</div>
       <div class="flex items-center text-blue-500 font-medium">
         <div>Watch Now</div>
         <Icon icon="arrow-right-line" />
