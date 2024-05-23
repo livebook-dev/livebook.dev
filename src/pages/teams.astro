@@ -73,16 +73,16 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               <Icon icon="rocket-line" class="text-xl" />
               <span class="px-2 font-semibold">I want FREE early access</span>
             </a>
-            <a
-              class="button-cta button-outlined gap-4 px-5 inline-flex plausible-event-name=watch+demo+cta+click"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform"
+            <button
+              class="button-cta button-outlined gap-4 px-5 inline-flex plausible-event-name=+demo+cta+click open-lightbox"
+              data-lightbox="1"
             >
               <Icon icon="play-circle-fill" class="text-4xl" />
               <div class="flex flex-col items-start">
                 <span class="font-semibold">Watch Demo</span>
                 <span class="text-sm">4 minutes</span>
               </div>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -90,14 +90,14 @@ import josePhoto from "../images/teams/jose-photo.jpg";
   </section>
   <section class="px-4 bg-gray-900 -mb-24 md:-mb-16">
     <div class="relative max-w-5xl mx-auto">
-      <div class="relative top-[-150px] w-full mx-auto z-10 plausible-event-name=watch+demo+play+click">
+      <div class="relative top-[-150px] w-full mx-auto z-10">
         <Image
           class="w-full h-auto"
           src={teamsIntroScreenshot}
           alt="Feature: On-premise Livebook apps"
         />
         <div
-          class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-lg sm:rounded-2xl flex justify-center items-center group cursor-pointer open-lightbox"
+          class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-lg sm:rounded-2xl flex justify-center items-center group cursor-pointer open-lightbox plausible-event-name=watch+demo+play+click"
           data-lightbox="1"
         >
           <PlayButton
