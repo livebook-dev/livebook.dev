@@ -2,21 +2,21 @@
 import Icon from "./Icon.astro";
 
 export interface Props {
-  dataLightbox: string;
+  dataVideoModal: string;
   videoURL: string;
 }
 
-const { dataLightbox, videoURL } = Astro.props;
+const { dataVideoModal, videoURL } = Astro.props;
 ---
 
 <div
-  class="lightbox fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 hidden"
-  data-lightbox={dataLightbox}
+  class="videomodal fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 hidden"
+  data-videomodal={dataVideoModal}
 >
   <div class="relative bg-gray-200 rounded-lg w-full max-w-5xl">
     <button
-      class="absolute top-2 right-2 close-lightbox"
-      data-lightbox={dataLightbox}
+      class="absolute top-2 right-2 close-videomodal"
+      data-videomodal={dataVideoModal}
     >
       <Icon icon="close-circle-fill" class="text-3xl text-gray-100" />
     </button>
