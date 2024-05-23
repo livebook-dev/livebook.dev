@@ -436,17 +436,39 @@ import josePhoto from "../images/teams/jose-photo.jpg";
             class="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 px-[52px]"
           >
             <DatabaseCard
+              title="PostgreSQL"
+              imageURL={postgresDatabase.src}
+              integrationId="postgresql"
+            />
+            <DatabaseCard
+              title="MySQL"
+              imageURL={mysqlDatabase.src}
+              integrationId="mysql"
+            />
+            <DatabaseCard
               title="Microsoft SQL Server"
               imageURL={microsoftDatabase.src}
+              integrationId="sqlserver"
             />
-            <DatabaseCard title="MySQL" imageURL={mysqlDatabase.src} />
-            <DatabaseCard title="Amazon Athena" imageURL={amazonDatabase.src} />
-            <DatabaseCard title="SQLite" imageURL={sqliteDatabase.src} />
-            <DatabaseCard title="PostgreSQL" imageURL={postgresDatabase.src} />
-            <DatabaseCard title="Snowflake" imageURL={snowflakeDatabase.src} />
+            <DatabaseCard
+              title="SQLite"
+              imageURL={sqliteDatabase.src}
+              integrationId="sqlite"
+            />
             <DatabaseCard
               title="Google BigQuery"
               imageURL={googleDatabase.src}
+              integrationId="google-bigquery"
+            />
+            <DatabaseCard
+              title="Amazon Athena"
+              imageURL={amazonDatabase.src}
+              integrationId="amazon-athena"
+            />
+            <DatabaseCard
+              title="Snowflake"
+              imageURL={snowflakeDatabase.src}
+              integrationId="snowflake"
             />
           </div>
           <p
