@@ -737,6 +737,8 @@ import josePhoto from "../images/teams/jose-photo.jpg";
           `.videomodal[data-videomodal="${videomodalId}"]`
         );
         if (videomodal) {
+          const iframe = videomodal.querySelector("iframe");
+          iframe.src = iframe.src;
           videomodal.classList.add("hidden");
         }
       });
@@ -746,6 +748,8 @@ import josePhoto from "../images/teams/jose-photo.jpg";
     videomodales.forEach((videomodal) => {
       videomodal.addEventListener("click", (event) => {
         if (event.target === videomodal) {
+          const iframe = videomodal.querySelector("iframe");
+          iframe.src = iframe.src;
           videomodal.classList.add("hidden");
         }
       });
