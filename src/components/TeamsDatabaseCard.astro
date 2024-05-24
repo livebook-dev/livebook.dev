@@ -1,0 +1,24 @@
+---
+export interface Props {
+  title: string;
+  imageURL: string;
+  integrationId: string;
+}
+
+const { title, imageURL, integrationId } = Astro.props;
+---
+
+<a href={`/integrations/${integrationId}`}>
+  <div class="relative group">
+    <div
+      class="absolute rounded-3xl bg-gray-900/60 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end justify-center"
+    >
+      <div class="mb-4 text-white">{title}</div>
+    </div>
+    <div
+      class="rounded-3xl bg-gray-100 flex w-28 sm:w-full h-28 sm:h-60 md:h-52 lg:h-60 justify-center items-center relative"
+    >
+      <img src={imageURL} alt={`${title} logo`} class="w-12 sm:w-20 lg:w-24" />
+    </div>
+  </div>
+</a>
