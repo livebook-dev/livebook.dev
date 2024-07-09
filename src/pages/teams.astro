@@ -10,7 +10,6 @@ import DatabaseCard from "../components/TeamsDatabaseCard.astro";
 import PlayButton from "../components/TeamsPlayButton.astro";
 import VideoModal from "../components/VideoModal.astro";
 
-import teamsIntroScreenshot from "../images/teams/intro-screenshot.svg";
 import starIcon from "../images/teams/star-icon.svg";
 import plusIcon from "../images/teams/plus-icon.svg";
 import elixirLogo from "../images/teams/elixir-logo.svg";
@@ -38,6 +37,7 @@ import tailscaleLogo from "../images/teams/tailscale-logo.svg";
 import googleIapLogo from "../images/teams/google-iap-logo.svg";
 import cloudflareLogo from "../images/teams/cloudflare-logo.svg";
 import josePhoto from "../images/teams/jose-photo.jpg";
+import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-livebook-teams.png"
 ---
 
 <Layout
@@ -79,7 +79,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
               <Icon icon="play-circle-fill" class="text-4xl" />
               <div class="flex flex-col items-start">
                 <span class="font-semibold">Watch Demo</span>
-                <span class="text-sm">4 minutes</span>
+                <span class="text-sm">7 minutes</span>
               </div>
             </button>
           </div>
@@ -92,16 +92,16 @@ import josePhoto from "../images/teams/jose-photo.jpg";
       <div class="relative top-[-150px] w-full mx-auto z-10">
         <Image
           class="w-full h-auto"
-          src={teamsIntroScreenshot}
-          alt="Feature: On-premise Livebook apps"
+          src={deployWithTeams}
+          alt="Feature: Deploy with Livebook Teams"
         />
         <div
           class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-lg sm:rounded-2xl flex justify-center items-center group cursor-pointer open-videomodal plausible-event-name=watch+demo+play+click"
           data-videomodal="1"
         >
           <PlayButton
-            videoTitle="Watch José deploying an Elixir app"
-            videoLength="4 min"
+            videoTitle="Watch José Valim deploying a Livebook app"
+            videoLength="7 min"
             videoAuthorImg={josePhoto.src}
           />
         </div>
@@ -704,7 +704,7 @@ import josePhoto from "../images/teams/jose-photo.jpg";
   <section id="video-videomodal">
     <VideoModal
       dataVideoModal="1"
-      videoURL="https://www.youtube.com/embed/E27-3MwY7KU?si=YoCaNlDGKQW10WzB"
+      videoURL="https://www.youtube.com/embed/lwLx5beXxsg?si=zWHqFe38ib65DoGU&"
     />
     <VideoModal
       dataVideoModal="2"
