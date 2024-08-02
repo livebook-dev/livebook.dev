@@ -35,7 +35,17 @@ module.exports = {
           900: "#0d1829",
         },
         "brand-pink": "#e44c75",
+        elixir: "#554994",
       },
+    },
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      maxsm: { min: "100px", max: "639px" },
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
   },
   variants: {

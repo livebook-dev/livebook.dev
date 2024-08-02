@@ -15,9 +15,15 @@ export interface Props {
   title: string;
   isDarkMode: boolean;
   displaySponsors?: boolean;
+  displayFooter?: string;
 }
 
-const { title, isDarkMode, displaySponsors = true } = Astro.props;
+const {
+  title,
+  isDarkMode,
+  displaySponsors = true,
+  displayFooter = "Livebook",
+} = Astro.props;
 
 function isPathActive(path) {
   return Astro.url.pathname.startsWith(path);
@@ -279,45 +285,120 @@ function isPathActive(path) {
     }
 
     <!-- Footer -->
-    <footer class="bg-gray-900">
-      <div
-        class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between"
-      >
-        <div class="flex flex-col">
-          <Image src={logo} alt="" width="45" height="45" />
-          <span class="mt-2 text-gray-50 text-xl font-logo font-semibold"
-            >Livebook</span
-          >
-          <span class="mt-1 text-gray-300">
-            Copyright 2023. All rights reserved,
-            <a class="border-b-2 border-gray-300" href="https://dashbit.co/"
-              >Dashbit</a
-            >.
-            <a class="border-b-2 border-gray-300" href="/privacy-policy"
-              >Privacy Policy</a
-            >.
-          </span>
-        </div>
-        <div class="md:hidden w-full border-t border-gray-700"></div>
-        <div class="flex flex-col text-gray-200 items-end">
-          <div class="flex gap-2 text-3xl">
-            <a
-              href="https://github.com/livebook-dev/livebook/discussions"
-              aria-label="github community"
-            >
-              <Icon icon="github-fill" />
-            </a>
-            <a href="https://twitter.com/livebookdev" aria-label="twitter link">
-              <Icon icon="twitter-fill" />
-            </a>
+    {
+      displayFooter === "Livebook" && (
+        <footer class="bg-gray-900">
+          <div class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between">
+            <div class="flex flex-col">
+              <Image src={logo} alt="" width="45" height="45" />
+              <span class="mt-2 text-gray-50 text-xl font-logo font-semibold">
+                Livebook
+              </span>
+              <span class="mt-1 text-gray-300">
+                Copyright 2023. All rights reserved,
+                <a
+                  class="border-b-2 border-gray-300"
+                  href="https://dashbit.co/"
+                >
+                  Dashbit
+                </a>
+                .
+                <a class="border-b-2 border-gray-300" href="/privacy-policy">
+                  Privacy Policy
+                </a>
+                .
+              </span>
+            </div>
+            <div class="md:hidden w-full border-t border-gray-700" />
+            <div class="flex flex-col text-gray-200 items-end">
+              <div class="flex gap-2 text-3xl">
+                <a
+                  href="https://github.com/livebook-dev/livebook/discussions"
+                  aria-label="github community"
+                >
+                  <Icon icon="github-fill" />
+                </a>
+                <a
+                  href="https://twitter.com/livebookdev"
+                  aria-label="twitter link"
+                >
+                  <Icon icon="twitter-fill" />
+                </a>
+              </div>
+              <span>
+                Marks shown as "Integrations" belong to their respective owners.
+              </span>
+            </div>
           </div>
-          <span>
-            Marks shown as "Integrations" belong to their respective owners.
-          </span>
-        </div>
-      </div>
-    </footer>
+        </footer>
+      )
+    }
 
+    {
+      displayFooter === "Teams" && (
+        <footer class="bg-gray-900">
+          <div class="m-auto max-w-7xl w-full px-6 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-start md:justify-between">
+            <div class="flex flex-col">
+              <Image src={logo} alt="" width="45" height="45" />
+              <span class="mt-2 text-gray-50 text-xl font-logo font-semibold">
+                Livebook Teams
+              </span>
+              <span class="mt-1 text-gray-300">
+                Copyright 2024. All rights reserved,
+                <a
+                  class="border-b-2 border-gray-300"
+                  href="https://dashbit.co/"
+                >
+                  Dashbit
+                </a>
+                .
+              </span>
+            </div>
+            <div class="md:hidden w-full border-t border-gray-700" />
+            <div class="flex gap-32">
+              <div class="flex flex-col text-gray-300 items-start">
+                <h3 class="font-semibold text-md tracking-wider ">COMMUNITY</h3>
+                <div class="flex flex-col gap-2 text-sm mt-2">
+                  <a
+                    href="https://github.com/livebook-dev/livebook/discussions"
+                    aria-label="github community"
+                    class="flex items-center gap-2"
+                  >
+                    <Icon icon="github-fill" />
+                    GitHub
+                  </a>
+                  <a
+                    href="https://twitter.com/livebookdev"
+                    aria-label="twitter link"
+                    class="flex items-center gap-2"
+                  >
+                    <Icon icon="twitter-fill" />X / Twitter
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col text-gray-300 items-start">
+                <h3 class="font-semibold text-md tracking-wider ">LEGAL</h3>
+                <div class="flex flex-col gap-2 text-sm underline mt-2">
+                  <a
+                    href="/teams/terms"
+                    aria-label="Livebook Teams terms of services"
+                  >
+                    Terms
+                  </a>
+                </div>
+                <div class="max-w-xs mt-10 text-xs hidden sm:block">
+                  Marks shown as "Integrations" belong to their respective
+                  owners.
+                </div>
+              </div>
+            </div>
+            <div class="max-w-xs mt-10 text-xs text-gray-300 sm:hidden">
+              Marks shown as "Integrations" belong to their respective owners.
+            </div>
+          </div>
+        </footer>
+      )
+    }
     <!-- Scripts -->
     <script>
       window.announcekit = window.announcekit || {

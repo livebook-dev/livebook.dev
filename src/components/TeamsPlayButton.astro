@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+  videoTitle: string;
+  videoLength: string;
+  videoAuthorImg: string;
+}
+
+const { videoTitle, videoLength, videoAuthorImg } = Astro.props;
+---
+
+<div
+  class="group-hover:scale-110 flex justify-center items-center absolute z-10"
+>
+  <Icon icon="play-fill" class="text-5xl absolute z-10 text-white" />
+  <div class="absolute rounded-full w-20 h-20 bg-blue-600"></div>
+  <div class="absolute rounded-full w-24 h-24 bg-blue-600/60 animate-pulse">
+  </div>
+</div>
+<div class="relative mt-24">
+  <img
+    src={videoAuthorImg}
+    alt="Profile Pic"
+    class="w-12 h-12 rounded-full border-2 border-gray-200 absolute top-0 left-[190px] hidden group-hover:block z-20"
+  />
+  <div
+    class="group-hover:flex flex-col justify-center items-center rounded-[50px] bg-gray-100 px-8 pt-4 pb-2 text-xs mt-9 hidden"
+  >
+    <div class="font-semibold text-gray-600">
+      {videoTitle}
+    </div>
+    <div class="flex items-center mt-1">
+      <div class="text-gray-500 font-medium px-2">{videoLength}</div>
+      <div class="flex items-center text-blue-500 font-medium">
+        <div>Watch Now</div>
+        <Icon icon="arrow-right-line" />
+      </div>
+    </div>
+  </div>
+</div>
