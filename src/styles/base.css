@@ -28,7 +28,7 @@
   }
 
   .button-cta {
-    @apply px-8 py-3 rounded-xl font-medium whitespace-nowrap border border-transparent  items-center justify-center transition duration-150 ease-in-out flex;
+    @apply px-8 py-2.5 rounded-xl font-medium whitespace-nowrap border border-transparent items-center justify-center transition duration-150 ease-in-out flex;
   }
 
   .button-blue {

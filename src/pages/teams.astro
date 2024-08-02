@@ -37,7 +37,7 @@ import tailscaleLogo from "../images/teams/tailscale-logo.svg";
 import googleIapLogo from "../images/teams/google-iap-logo.svg";
 import cloudflareLogo from "../images/teams/cloudflare-logo.svg";
 import josePhoto from "../images/teams/jose-photo.jpg";
-import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-livebook-teams.png"
+import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-livebook-teams.png";
 ---
 
 <Layout
@@ -53,12 +53,12 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div class="m-auto max-w-7xl px-4 pt-12 sm:pt-24 pb-52 sm:pb-60">
         <div class="flex flex-col space-y-6 md:space-y-10 items-center">
           <h1
-            class="max-w-4xl text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-semibold text-gray-50 text-center"
+            class="max-w-3xl text-2xl/tight sm:text-4xl/tight font-semibold text-gray-50 text-center"
           >
             Build and deploy internal tools fast with Elixir and Livebook Teams
           </h1>
           <span
-            class="text-lg md:text-xl text-center font-light text-gray-200 max-w-2xl"
+            class="sm:text-lg text-center font-light text-gray-200 max-w-xl"
           >
             Transform scripts, SQL queries, and backend operations into web apps
             that anybody in your company can use. Make your co-workers more
@@ -111,11 +111,11 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
   <section id="build-with-teams" class="bg-gray-900 overflow-x-hidden">
     <div class="m-auto max-w-6xl flex flex-col px-4 xl:px-0">
       <h1
-        class="max-w-4xl text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-semibold text-gray-50 justify-self-start"
+        class="max-w-4xl text-2xl/tight sm:text-3xl/tight font-semibold text-gray-50 justify-self-start"
       >
-        What can you build with<br />Livebook Teams?
+        What can you build with<br class="hidden sm:block" /> Livebook Teams?
       </h1>
-      <span class="text-gray-300 text-xl pt-10">Examples</span>
+      <span class="text-gray-300 text-lg sm:text-xl pt-6">Examples</span>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3 gap-6 pt-4"
       >
@@ -171,29 +171,29 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div id="teams-features-one" class="m-auto max-w-6xl text-gray-900 px-4">
         <div id="teams-features-title">
           <div class="flex items-center gap-2 sm:gap-5">
-            <h3 class="text-xl md:text-3xl font-semibold">Livebook</h3>
+            <h3 class="text-xl md:text-2xl font-semibold">Livebook</h3>
             <Image
               src={plusIcon}
               alt="Plus Icon"
-              class="w-6 sm:w-10 h-6 sm:h-10"
+              class="w-6 sm:w-8 h-6 sm:h-8"
             />
           </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl/tight font-semibold mt-2">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl/tight font-semibold mt-2">
             Livebook Teams features
           </h1>
-          <p class="text-gray-600 text-lg sm:text-xl md:text-2xl mt-3">
+          <p class="text-gray-600 sm:text-lg md:text-xl mt-3">
             A fast (and fun 😃) way to build internal tools.
           </p>
         </div>
         <div id="build-with-elixir" class="mt-8 sm:mt-16">
           <div id="build-with-elixir-title">
             <div class="flex items-center gap-2">
-              <h2 class="text-2xl md:text-4xl font-semibold">
+              <h2 class="text-2xl md:text-3xl font-semibold">
                 Build with <span class="text-elixir">Elixir</span>
               </h2>
               <Image src={elixirLogo} alt="Elixir Logo" class="w-9 h-9" />
             </div>
-            <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+            <p class="max-w-xl text-gray-700 mt-3 font-light">
               No-code tools are good for non-technical teams, but as Elixir
               developers, they constrain and even slow us down. With Livebook,
               you get to build what you need using the Elixir tools and packages
@@ -210,14 +210,12 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               >
                 <div>
                   <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
                       Use Hex Libraries
                     </h3>
                   </div>
-                  <p
-                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
+                  <p class="font-light max-w-sm ml-[52px] mt-2 text-gray-700">
                     Livebook is integrated with Hex and uses Mix.install to
                     manage dependencies.
                   </p>
@@ -238,16 +236,14 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                     <Image
                       src={starIcon}
                       alt="Star Icon"
-                      class="w-9 h-9 z-10"
+                      class="w-8 h-8 z-10"
                     />
-                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
                       Call functions from your main <br />Elixir/Phoenix app
                       directly
                     </h3>
                   </div>
-                  <p
-                    class="text-md font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
+                  <p class="font-light max-w-sm ml-[52px] mt-2 text-gray-700">
                     No need to write HTTP APIs for your internal tools. Use
                     Elixir's built-in mechanisms for integrating multiple Erlang
                     VM nodes.
@@ -263,7 +259,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             <Image
               src={dashedLine}
               alt="Dashed Line"
-              class="absolute top-0 left-[17px] w-[3px] h-[270px] lg:w-auto lg:h-auto"
+              class="absolute top-0 left-[15px] w-[3px] h-[270px] lg:w-auto lg:h-auto"
             />
           </div>
         </div>
@@ -274,13 +270,11 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
     <div
       class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 lg:px-0 py-10 md:py-16 flex flex-col items-center space-y-6 md:space-y-12"
     >
-      <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+      <h1 class="text-2xl md:text-4xl font-semibold mt-2">
         An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
         Blocks
       </h1>
-      <div
-        class="max-w-4xl mt-4 text-gray-700 font-light text-lg md:text-xl text-center"
-      >
+      <div class="max-w-3xl mt-4 text-gray-700 font-light text-lg text-center">
         Assemble UIs with zero to minimal need for HTML and CSS. Livebook
         provides a set of UI building blocks you can use just by writing Elixir,
         so you can stay in the comfort of the language you love and build UIs
@@ -289,16 +283,12 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div id="teams-features-forms-and-input">
         <div class="flex flex-col items-center space-y-5">
           <div class="flex items-center justify-center">
-            <Image
-              src={starIcon}
-              alt="Star Icon"
-              class="w-8 sm:w-10 h-8 sm:h-10"
-            />
-            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-2 sm:ml-4">
               Forms and Inputs
             </h3>
           </div>
-          <p class="text-md md:text-lg font-light text-gray-700 text-center">
+          <p class="md:text-lg font-light text-gray-700 text-center">
             Combine various input types like text, dropdowns, and date pickers
             into a form.
           </p>
@@ -312,16 +302,12 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div id="teams-features-data-tables">
         <div class="flex flex-col items-center space-y-5">
           <div class="flex items-center justify-center">
-            <Image
-              src={starIcon}
-              alt="Star Icon"
-              class="w-8 sm:w-10 h-8 sm:h-10"
-            />
-            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-2 sm:ml-4">
               Data Tables
             </h3>
           </div>
-          <p class="text-md md:text-lg font-light text-gray-700 text-center">
+          <p class="md:text-lg font-light text-gray-700 text-center">
             Easily display, sort, and paginate your data.
           </p>
           <Image src={dataTables} alt="Data Tables" class="w-full h-auto" />
@@ -330,16 +316,12 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div id="teams-features-chart">
         <div class="flex flex-col items-center space-y-5">
           <div class="flex items-center justify-center">
-            <Image
-              src={starIcon}
-              alt="Star Icon"
-              class="w-8 sm:w-10 h-8 sm:h-10"
-            />
-            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-2 sm:ml-4">
               Charts
             </h3>
           </div>
-          <p class="text-md md:text-lg font-light text-gray-700 text-center">
+          <p class="md:text-lg font-light text-gray-700 text-center">
             Build and visualize charts using Livebook's native integration with
             Vega-Lite.
           </p>
@@ -368,12 +350,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div id="teams-features-maps">
         <div class="flex flex-col items-center">
           <div class="flex items-center justify-center mt-5">
-            <Image
-              src={starIcon}
-              alt="Star Icon"
-              class="w-8 sm:w-10 h-8 sm:h-10"
-            />
-            <h3 class="text-lg md:text-3xl font-semibold ml-2 sm:ml-4">Maps</h3>
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-2 sm:ml-4">Maps</h3>
           </div>
           <p class="text-lg font-light text-gray-700 text-center mt-5">
             Plot objects on a map and visualize geo data using Livebook's native
@@ -408,11 +386,11 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <div class="relative">
         <div id="read-data-with-easy-title">
           <div class="flex items-center gap-2">
-            <h2 class="text-2xl md:text-5xl font-semibold text-gray-900">
+            <h2 class="text-2xl md:text-4xl font-semibold text-gray-900">
               Read data with ease
             </h2>
           </div>
-          <p class="max-w-xl text-gray-700 text-lg md:text-xl mt-3 font-light">
+          <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
             Whenever you're building dashboards, internal reports, or
             lightweight business intelligence, you need to consume data. With
             Livebook and Elixir, that's easy, no matter the data source.
@@ -420,13 +398,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
         </div>
         <div id="read-from-sql" class="mt-10">
           <div class="flex items-center">
-            <Image src={starIcon} alt="Star Icon" class="w-9 h-9 z-20" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4">
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-4">
               Read data from a SQL database
             </h3>
           </div>
           <p
-            class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+            class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
           >
             Built-in integrations to multiple databases, so you don't need to
             write boilerplate code to run SQL queries.
@@ -471,7 +449,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             />
           </div>
           <p
-            class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-10 text-gray-700"
+            class="md:text-lg font-light max-w-sm ml-[52px] mt-10 text-gray-700"
           >
             Write SQL queries directly in Livebook and easily see the result
           </p>
@@ -479,13 +457,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
         </div>
         <div id="read-from-local" class="mt-10">
           <div class="flex items-start">
-            <Image src={starIcon} alt="Star Icon" class="w-9 h-9 z-20" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
               Read data from a local or cloud-hosted file
             </h3>
           </div>
           <p
-            class="text-md md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+            class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
           >
             It doesn't matter if your data is stored as a file in your file
             system or in a cloud storage service like S3; Livebook handles both
@@ -499,13 +477,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
         </div>
         <div id="read-from-data-files" class="mt-10">
           <div class="flex items-start">
-            <Image src={starIcon} alt="Star Icon" class="w-9 h-9 z-20" />
-            <h3 class="text-lg md:text-3xl font-semibold ml-4 max-w-lg">
+            <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+            <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
               Read data from structured data file formats
             </h3>
           </div>
           <p
-            class="text-md md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+            class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
           >
             Read data from CSV, IPC, NDJson, or Parquet files with code
             generated via drag and drop.
@@ -537,7 +515,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
         <Image
           src={dashedLineTwo}
           alt="Dashed Line"
-          class="absolute top-[230px] sm:top-[210px] left-[17px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1540px] z-10"
+          class="absolute top-[230px] sm:top-[210px] left-[15px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1590px] z-10"
         />
       </div>
     </div>
@@ -551,10 +529,10 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 lg:px-0 py-10 md:py-16 flex flex-col items-center space-y-6 md:space-y-12"
             >
               <div id="teams-features-deploy-and-share" class="text-center">
-                <h1 class="text-2xl md:text-5xl font-semibold mt-2">
+                <h1 class="text-2xl md:text-4xl font-semibold mt-2">
                   Deploy and Share Securely
                 </h1>
-                <p class="mt-4 text-gray-700 font-light text-lg md:text-2xl">
+                <p class="mt-4 text-gray-700 font-light text-lg">
                   The security of on-premises hosting with the DX of one-click
                   deployment.
                 </p>
@@ -565,17 +543,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               >
                 <div id="deploy-and-share-self-hosting">
                   <div class="flex items-center">
-                    <Image
-                      src={starIcon}
-                      alt="Star Icon"
-                      class="w-8 sm:w-10 h-8 sm:h-10"
-                    />
-                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
                       Self Hosting
                     </h3>
                   </div>
                   <p
-                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Run your internal tools on your own infra in less than 10
                     minutes. One less concern about security and privacy.
@@ -583,17 +557,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 </div>
                 <div id="deploy-and-share-one-click">
                   <div class="flex items-center">
-                    <Image
-                      src={starIcon}
-                      alt="Star Icon"
-                      class="w-8 sm:w-10 h-8 sm:h-10"
-                    />
-                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
                       One-Click Deploy
                     </h3>
                   </div>
                   <p
-                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Deploy internal tools to your own infrastructure with just
                     one click.
@@ -604,17 +574,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                   class="order-last sm:order-none"
                 >
                   <div class="flex items-center">
-                    <Image
-                      src={starIcon}
-                      alt="Star Icon"
-                      class="w-8 sm:w-10 h-8 sm:h-10"
-                    />
-                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
                       Authentication
                     </h3>
                   </div>
                   <p
-                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Authenticate internal users using our built-in integrations,
                     or quickly bring your own custom auth.
@@ -663,13 +629,13 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 </div>
                 <div id="deploy-and-share-encrypted-secrets">
                   <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-9 h-9" />
-                    <h3 class="text-lg md:text-3xl font-semibold ml-4">
+                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
+                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
                       Encrypted secrets
                     </h3>
                   </div>
                   <p
-                    class="text-md md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
                   >
                     Save API and database credentials with Livebook Secrets,
                     which are encrypted with a key to which only you have
@@ -687,7 +653,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
     <div class="bg-gray-100 mt-32">
       <div class="flex flex-col gap-10 items-center">
         <h1
-          class="max-w-xl text-3xl/tight sm:text-4xl/tight md:text-5xl/tight font-semibold text-center"
+          class="max-w-xl text-3xl/tight sm:text-4xl/tight font-semibold text-center"
         >
           Get started building internal tools in minutes
         </h1>
