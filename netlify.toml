@@ -21,11 +21,6 @@
     Cache-Control = "public, max-age=31536000"
 
 [[redirects]]
-  from = "/releases/*"
-  to = "https://livebook-releases.nyc3.cdn.digitaloceanspaces.com/:splat"
-  status = 302
-
-[[redirects]]
   from = "/pa/js/script.tagged-events.js"
   to = "https://plausible.io/js/script.tagged-events.js"
   status = 200
