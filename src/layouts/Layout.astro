@@ -7,20 +7,19 @@ import logo from "../images/logo.svg";
 import flyioLogoWithText from "../images/flyio-logo-with-text.svg";
 import hfLogoWithText from "../images/hf-logo-with-text.svg";
 import tigrisLogo from "../images/tigris-logo.svg";
-import badgeLogo from "../images/badge-logo.svg";
 
 import Icon from "../components/Icon.astro";
 
 export interface Props {
   title: string;
-  isDarkMode: boolean;
+  isDarkMode?: boolean;
   displaySponsors?: boolean;
   displayFooter?: string;
 }
 
 const {
   title,
-  isDarkMode,
+  isDarkMode = false,
   displaySponsors = true,
   displayFooter = "Livebook",
 } = Astro.props;
@@ -138,29 +137,20 @@ function isPathActive(path) {
             >
               Integrations
             </a>
+            <a
+              href="/badge"
+              class:list={[
+                { "border-b-2 border-gray-600": isPathActive("/badge") },
+              ]}
+            >
+              Badges
+            </a>
             <a class="announcekit-widget" href="https://news.livebook.dev/">
               What’s new?&nbsp
             </a>
           </nav>
         </div>
-        <div class="w-56 flex justify-end">
-          <nav class="flex space-x-3 items-center">
-            <a
-              class="px-3 py-2 rounded-lg font-semibold text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
-              href="/badge"
-            >
-              <Image src={badgeLogo} alt="" width="17" height="19" />
-              <span class="mb-[-1.5px] font-semibold">Create badge</span>
-            </a>
-            <a
-              class="p-2 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-100 dark:border dark:border-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
-              href="/settings"
-              aria-label="settings"
-            >
-              <Icon icon="settings-3-line" />
-            </a>
-          </nav>
-        </div>
+        <div class="w-56 flex justify-end"></div>
       </div>
     </header>
 
@@ -200,14 +190,6 @@ function isPathActive(path) {
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
           <a
-            href="/integrations"
-            class:list={[
-              { "border-b-2 border-gray-600": isPathActive("/integrations") },
-            ]}
-          >
-            Integrations
-          </a>
-          <a
             href="/teams"
             class:list={[
               {
@@ -219,30 +201,28 @@ function isPathActive(path) {
             Teams
           </a>
           <a
+            href="/integrations"
+            class:list={[
+              { "border-b-2 border-gray-600": isPathActive("/integrations") },
+            ]}
+          >
+            Integrations
+          </a>
+          <a
+            href="/badge"
+            class:list={[
+              { "border-b-2 border-gray-600": isPathActive("/badge") },
+            ]}
+          >
+            Badges
+          </a>
+          <a
             class="announcekit-widget-mobile"
             href="https://news.livebook.dev/"
           >
             What’s new?&nbsp
           </a>
         </nav>
-        <div class="w-full border-t border-gray-200"></div>
-        <nav class="flex flex-col space-y-5">
-          <a
-            class="px-3 py-2 rounded-lg text-sm bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:bg-blue-700 flex items-end space-x-1.5"
-            href="/badge"
-          >
-            <Image src={badgeLogo} alt="" width="17" height="19" />
-            <span class="mb-[-1.5px] font-semibold">Create badge</span>
-          </a>
-          <a
-            class="p-2 rounded-lg bg-gray-100 border border-transparent text-gray-600 hover:bg-gray-50 focus:bg-gray-50 flex items-center justify-center space-x-1.5"
-            href="/settings"
-          >
-            <Icon icon="csettings-3-line" />
-            <span class="font-semibold text-sm">Settings</span>
-          </a>
-        </nav>
-        <div class="flex-grow"></div>
       </div>
     </header>
 
