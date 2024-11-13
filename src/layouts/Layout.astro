@@ -12,14 +12,14 @@ import Icon from "../components/Icon.astro";
 
 export interface Props {
   title: string;
-  isDarkMode: boolean;
+  isDarkMode?: boolean;
   displaySponsors?: boolean;
   displayFooter?: string;
 }
 
 const {
   title,
-  isDarkMode,
+  isDarkMode = false,
   displaySponsors = true,
   displayFooter = "Livebook",
 } = Astro.props;
@@ -150,8 +150,7 @@ function isPathActive(path) {
             </a>
           </nav>
         </div>
-        <div class="w-56 flex justify-end">
-        </div>
+        <div class="w-56 flex justify-end"></div>
       </div>
     </header>
 
