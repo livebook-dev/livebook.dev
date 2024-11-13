@@ -13,14 +13,14 @@ import Icon from "../components/Icon.astro";
 
 export interface Props {
   title: string;
-  isDarkMode: boolean;
+  isDarkMode?: boolean;
   displaySponsors?: boolean;
   displayFooter?: string;
 }
 
 const {
   title,
-  isDarkMode,
+  isDarkMode = false,
   displaySponsors = true,
   displayFooter = "Livebook",
 } = Astro.props;
@@ -152,13 +152,6 @@ function isPathActive(path) {
               <Image src={badgeLogo} alt="" width="17" height="19" />
               <span class="mb-[-1.5px] font-semibold">Create badge</span>
             </a>
-            <a
-              class="p-2 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-100 dark:border dark:border-gray-500 hover:bg-gray-100 focus:bg-gray-100 text-xl leading-none"
-              href="/settings"
-              aria-label="settings"
-            >
-              <Icon icon="settings-3-line" />
-            </a>
           </nav>
         </div>
       </div>
@@ -233,13 +226,6 @@ function isPathActive(path) {
           >
             <Image src={badgeLogo} alt="" width="17" height="19" />
             <span class="mb-[-1.5px] font-semibold">Create badge</span>
-          </a>
-          <a
-            class="p-2 rounded-lg bg-gray-100 border border-transparent text-gray-600 hover:bg-gray-50 focus:bg-gray-50 flex items-center justify-center space-x-1.5"
-            href="/settings"
-          >
-            <Icon icon="csettings-3-line" />
-            <span class="font-semibold text-sm">Settings</span>
           </a>
         </nav>
         <div class="flex-grow"></div>
