@@ -23,18 +23,20 @@ const {
 ---
 
 <div
-  class="bg-gradient-to-br from-blue-600 to-brand-pink w-[360px] h-[572px] rounded-[32px] p-[4px]"
+  class="bg-gradient-to-br from-blue-600 to-brand-pink w-full sm:w-[360px] sm:h-[572px] rounded-[32px] p-[4px]"
 >
   <div class="h-full w-full rounded-[28px] bg-gray-800 px-8 py-12">
     <div class="flex flex-col justify-between h-full">
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-yellow-600">
-          {title}
-        </h3>
-        <p class="text-lg font-[100] font-['Inter'] text-gray-200 h-16">
-          {description}
-        </p>
-        <div class="h-20">
+      <div class="space-y-6 sm:space-y-8">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-yellow-600">
+            {title}
+          </h3>
+          <p class="text-lg font-[100] font-['Inter'] text-gray-200 sm:h-16">
+            {description}
+          </p>
+        </div>
+        <div class="sm:h-20">
           <h3 class="text-xl sm:text-2xl font-semibold text-white mt-4">
             {price}
             <span class="text-lg text-gray-400">{price_details}</span>
@@ -44,7 +46,7 @@ const {
             >{payment_details}</span
           >
         </div>
-        <ul class="mt-12">
+        <ul>
           {
             features.map((feature, index) => (
               <Tooltip
@@ -61,7 +63,7 @@ const {
         </ul>
       </div>
       <div
-        class="w-[280px] h-[60px] px-[47px] py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex"
+        class="w-full sm:w-[280px] h-15 px-[47px] py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex mt-6 sm:mt-0"
       >
         <span
           class="text-slate-50 text-lg font-semibold font-['Inter'] leading-loose"
