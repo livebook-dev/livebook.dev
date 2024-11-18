@@ -1,2 +1,85 @@
-At this moment, we only have the free pricing, for users who joined the free
-early access program.
+---
+import Layout from "../../layouts/Layout.astro";
+import PricingCard from "../../components/TeamsPricingCard.astro";
+import TeamsPricingFaq from "../../components/TeamsPricingFaq.astro";
+---
+
+<Layout
+  title="Teams Pricing"
+  isDarkMode={true}
+  displaySponsors={false}
+  displayFooter="Teams"
+>
+  <section id="billing-plans" class="bg-gray-900 overflow-x-hidden relative">
+    <div
+      class="bg-gradient-to-b from-gray-900 to-gray-700 flex flex-col justify-center items-center"
+    >
+      <div class="m-auto max-w-7xl px-4 pt-12 sm:pt-24 pb-52 sm:pb-60">
+        <div class="flex flex-col items-center">
+          <h1
+            class="max-w-3xl text-2xl/tight sm:text-4xl/tight font-semibold text-gray-50 text-center"
+          >
+            Simple plans, 30-day <br />FREE trial
+          </h1>
+          <span
+            class="sm:text-lg text-center font-light text-gray-200 max-w-xl mt-4"
+          >
+            No credit card required.
+          </span>
+          <div class="flex gap-8 mt-12">
+            <PricingCard
+              title="Starter"
+              description="For Small Teams"
+              price="$30"
+              price_details="/editor per month"
+              features={["Unlimited Viewers *", "Email Support"]}
+              feature_tooltip={["A viewer can use deployed apps"]}
+            />
+            <PricingCard
+              title="Unlimited"
+              description="Your whole organization for one fixed price"
+              price="$349"
+              price_details="/month billed annually"
+              payment_details="if you prefer to pay month-to-month, it's $399/month"
+              features={[
+                "Unlimited Editors *",
+                "Unlimited Viewers *",
+                "Email Support",
+              ]}
+              feature_tooltip={[
+                "An editor can deploy and manage apps",
+                "A viewer can use deployed apps",
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="billing-faq" class="relative z-20">
+    <div
+      class="bg-gray-200 rounded-t-[40px] sm:rounded-t-[60px] py-16 sm:py-24 -mt-20"
+    >
+      <div class="m-auto max-w-3xl px-4">
+        <div class="flex flex-col justify-center">
+          <h1
+            class="text-center text-gray-900 font-semibold text-5xl leading-tight"
+          >
+            Frequently Asked <br /> Questions
+          </h1>
+          <div class="flex flex-col divide-y divide-gray-300 space-y-8 mt-4">
+            <TeamsPricingFaq
+              faq_question="What is an editor?"
+              faq_answer="An editor has permission to develop, deploy, and manage apps with Livebook Teams. It's usually a developer."
+            />
+            <TeamsPricingFaq
+              faq_question="What is a viewer?"
+              faq_answer="A viewer has permission to use apps deployed with Livebook Teams. It's usually a non-technical user."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Add additional sections as needed -->
+</Layout>
