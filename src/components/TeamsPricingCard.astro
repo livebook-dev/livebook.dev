@@ -5,21 +5,13 @@ export interface Props {
   title: string;
   description: string;
   price: string;
-  price_details: string;
-  payment_details: string;
-  features: string[];
-  feature_tooltip: string[];
+  priceDetails: string;
+  paymentDetails: string;
+  features: { description: string; tooltip?: string }[];
 }
 
-const {
-  title,
-  description,
-  price,
-  price_details,
-  payment_details,
-  features,
-  feature_tooltip,
-} = Astro.props;
+const { title, description, price, priceDetails, paymentDetails, features } =
+  Astro.props;
 ---
 
 <div
@@ -39,23 +31,23 @@ const {
         <div class="sm:h-20">
           <h3 class="text-xl sm:text-2xl font-semibold text-white mt-4">
             {price}
-            <span class="text-lg text-gray-400">{price_details}</span>
+            <span class="text-lg text-gray-400">{priceDetails}</span>
           </h3>
           <span
             class="text-gray-200 text-sm italic leading-normal whitespace-normal font-light"
-            >{payment_details}</span
+            >{paymentDetails}</span
           >
         </div>
         <ul>
           {
-            features.map((feature, index) => (
+            features.map((feature) => (
               <Tooltip
-                text={feature_tooltip[index]}
+                text={feature.tooltip || ""}
                 direction="top"
                 distant={false}
               >
                 <li class="text-gray-300 text-lg font-light leading-loose">
-                  -> {feature}
+                  -> {feature.description}
                 </li>
               </Tooltip>
             ))
@@ -65,9 +57,7 @@ const {
       <div
         class="w-full sm:w-[280px] h-15 px-12 py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex mt-6 sm:mt-0"
       >
-        <span
-          class="text-slate-50 text-lg font-semibold leading-loose"
-        >
+        <span class="text-slate-50 text-lg font-semibold leading-loose">
           Try it for FREE
         </span>
       </div>
