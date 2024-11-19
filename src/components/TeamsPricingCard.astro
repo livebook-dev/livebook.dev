@@ -7,10 +7,11 @@ export interface Props {
   price: string;
   priceDetails: string;
   paymentDetails: string;
+  plausibleEvent: string;
   features: { description: string; tooltip?: string }[];
 }
 
-const { title, description, price, priceDetails, paymentDetails, features } =
+const { title, description, price, priceDetails, paymentDetails, plausibleEvent, features } =
   Astro.props;
 ---
 
@@ -57,9 +58,11 @@ const { title, description, price, priceDetails, paymentDetails, features } =
       <div
         class="w-full sm:w-[280px] h-15 px-12 py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex mt-6 sm:mt-0"
       >
-        <span class="text-slate-50 text-lg font-semibold leading-loose">
-          Try it for FREE
-        </span>
+        <a href="https://teams.livebook.dev/" class={`plausible-event-name=${plausibleEvent}`}>
+          <span class="text-slate-50 text-lg font-semibold leading-loose">
+            Try it for FREE
+          </span>
+        </a>
       </div>
     </div>
   </div>
