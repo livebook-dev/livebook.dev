@@ -11,8 +11,15 @@ export interface Props {
   features: { description: string; tooltip?: string }[];
 }
 
-const { title, description, price, priceDetails, paymentDetails, plausibleEvent, features } =
-  Astro.props;
+const {
+  title,
+  description,
+  price,
+  priceDetails,
+  paymentDetails,
+  plausibleEvent,
+  features,
+} = Astro.props;
 ---
 
 <div
@@ -55,15 +62,18 @@ const { title, description, price, priceDetails, paymentDetails, plausibleEvent,
           }
         </ul>
       </div>
-      <div
-        class="w-full sm:w-[280px] h-15 px-12 py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex mt-6 sm:mt-0"
+      <a
+        href="https://teams.livebook.dev/"
+        class={`plausible-event-name=${plausibleEvent}`}
       >
-        <a href="https://teams.livebook.dev/" class={`plausible-event-name=${plausibleEvent}`}>
+        <div
+          class="w-full sm:w-[280px] h-15 px-12 py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex mt-6 sm:mt-0"
+        >
           <span class="text-slate-50 text-lg font-semibold leading-loose">
             Try it for FREE
           </span>
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
