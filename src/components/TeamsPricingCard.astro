@@ -1,0 +1,83 @@
+---
+import Tooltip from "./Tooltip.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  price: string;
+  priceDetails: string;
+  paymentDetails: string;
+  plausibleEvent: string;
+  features: { description: string; tooltip?: string }[];
+}
+
+const {
+  title,
+  description,
+  price,
+  priceDetails,
+  paymentDetails,
+  plausibleEvent,
+  features,
+} = Astro.props;
+---
+
+<div
+  class="bg-gradient-to-br from-blue-600 to-brand-pink w-full sm:w-[360px] sm:h-[572px] rounded-[32px] p-1"
+>
+  <div class="h-full w-full rounded-[28px] bg-gray-800 px-8 py-12">
+    <div class="flex flex-col justify-between h-full">
+      <div class="space-y-6 sm:space-y-8">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-yellow-600">
+            {title}
+          </h3>
+          <p class="text-lg font-thin text-gray-200 sm:h-16">
+            {description}
+          </p>
+        </div>
+        <div class="sm:h-20">
+          <h3 class="text-xl sm:text-2xl font-semibold text-white mt-4">
+            {price}
+            <span class="text-lg text-gray-400">{priceDetails}</span>
+          </h3>
+          <span
+            class="text-gray-200 text-sm italic leading-normal whitespace-normal font-light"
+            >{paymentDetails}</span
+          >
+        </div>
+        <ul>
+          {
+            features.map((feature) => {
+              const item = (
+                <li class="text-gray-300 text-lg font-light leading-loose">
+                  {"->"} {feature.description}
+                </li>
+              );
+
+              return feature.tooltip ? (
+                <Tooltip text={feature.tooltip} direction="top">
+                  {item}
+                </Tooltip>
+              ) : (
+                item
+              );
+            })
+          }
+        </ul>
+      </div>
+      <a
+        href="https://teams.livebook.dev/"
+        class={`plausible-event-name=${plausibleEvent}`}
+      >
+        <div
+          class="w-full sm:w-[280px] h-15 px-12 py-3.5 bg-gradient-to-br from-blue-600 to-brand-pink rounded-xl justify-center items-center gap-2.5 inline-flex mt-6 sm:mt-0"
+        >
+          <span class="text-slate-50 text-lg font-semibold leading-loose">
+            Try it for FREE
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
