@@ -48,17 +48,21 @@ const {
         </div>
         <ul>
           {
-            features.map((feature) => (
-              <Tooltip
-                text={feature.tooltip || ""}
-                direction="top"
-                distant={false}
-              >
+            features.map((feature) => {
+              const item = (
                 <li class="text-gray-300 text-lg font-light leading-loose">
-                  -> {feature.description}
+                  {"->"} {feature.description}
                 </li>
-              </Tooltip>
-            ))
+              );
+
+              return feature.tooltip ? (
+                <Tooltip text={feature.tooltip} direction="top">
+                  {item}
+                </Tooltip>
+              ) : (
+                item
+              );
+            })
           }
         </ul>
       </div>
