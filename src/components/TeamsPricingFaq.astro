@@ -1,0 +1,15 @@
+---
+export interface Props {
+  faqQuestion: string;
+  faqAnswer: string;
+}
+
+const { faqQuestion, faqAnswer } = Astro.props;
+---
+
+<div class="text-gray-900 text-lg sm:text-xl font-medium leading-10 pt-8">
+  {faqQuestion}
+  <div class="text-gray-700 font-light leading-loose text-base sm:text-lg">
+    {faqAnswer}
+  </div>
+</div>
