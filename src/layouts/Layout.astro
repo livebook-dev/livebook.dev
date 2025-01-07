@@ -91,7 +91,7 @@ function isPathActive(path) {
         <div class="flex-grow flex items-center justify-center">
           <nav
             data-el-menu
-            class="flex space-x-12 text-gray-600 dark:text-gray-200"
+            class="flex gap-6 xl:gap-12 text-gray-600 dark:text-gray-200"
           >
             <aside class="relative group">
               <a href="/" class="z-10 py-2"> Home</a>
@@ -135,8 +135,11 @@ function isPathActive(path) {
               Badges
             </a>
             <a href="https://hexdocs.pm/livebook">Docs</a>
-            <a class="announcekit-widget" href="https://news.livebook.dev/">
-              What’s new?&nbsp
+            <a
+              class="announcekit-widget whitespace-nowrap"
+              href="https://news.livebook.dev/"
+            >
+              What’s new?
             </a>
             {
               variant === "default" && (
@@ -144,17 +147,17 @@ function isPathActive(path) {
                   <span class="px-2 py-1 rounded-lg text-xs font-medium bg-blue-600 text-gray-50">
                     New
                   </span>{" "}
-                  Try Livebook Teams
+                  Try Teams
                 </a>
               )
             }
           </nav>
         </div>
-        <div class="w-52 flex justify-end">
+        <div class="xl:w-52 flex justify-end">
           <nav class="flex space-x-3 items-center">
             <a
               class:list={[
-                "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+                "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
                 "plausible-event-name=nav+login+click",
               ]}
               href="https://teams.livebook.dev/"
@@ -219,10 +222,10 @@ function isPathActive(path) {
           </a>
           <a href="https://hexdocs.pm/livebook">Docs</a>
           <a
-            class="announcekit-widget-mobile"
+            class="announcekit-widget-mobile whitespace-nowrap"
             href="https://news.livebook.dev/"
           >
-            What’s new?&nbsp
+            What’s new?
           </a>
           {
             variant === "default" && (
@@ -230,7 +233,7 @@ function isPathActive(path) {
                 <span class="px-2 py-1 rounded-lg text-xs font-medium bg-blue-600 text-gray-50">
                   New
                 </span>{" "}
-                Try Livebook Teams
+                Try Teams
               </a>
             )
           }
@@ -239,7 +242,7 @@ function isPathActive(path) {
         <nav class="flex flex-col space-y-5">
           <a
             class:list={[
-              "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+              "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
               "plausible-event-name=nav+login+click",
             ]}
             href="https://teams.livebook.dev/"
