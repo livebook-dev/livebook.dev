@@ -90,3 +90,12 @@
     background-repeat: no-repeat;
   }
 }
+
+/*
+By default, once AnnounceKit badge is hidden, it uses uses visibility: hidden.
+This is undesired in our case as it takes extra menu space, so we override
+the behaviour to hide it altogether.
+*/
+.announcekit-widget-badge.announcekit-widget-badge-hidden {
+  display: none !important;
+}

@@ -14,14 +14,14 @@ export interface Props {
   title: string;
   isDarkMode?: boolean;
   displaySponsors?: boolean;
-  displayFooter?: string;
+  variant?: "default" | "teams";
 }
 
 const {
   title,
   isDarkMode = false,
   displaySponsors = true,
-  displayFooter = "Livebook",
+  variant = "default",
 } = Astro.props;
 
 function isPathActive(path) {
@@ -91,7 +91,7 @@ function isPathActive(path) {
         <div class="flex-grow flex items-center justify-center">
           <nav
             data-el-menu
-            class="flex space-x-12 text-gray-600 dark:text-gray-200"
+            class="flex gap-6 xl:gap-12 text-gray-600 dark:text-gray-200"
           >
             <aside class="relative group">
               <a href="/" class="z-10 py-2"> Home</a>
@@ -119,17 +119,6 @@ function isPathActive(path) {
             </aside>
 
             <a
-              href="/teams"
-              class:list={[
-                {
-                  "border-b-2 border-gray-600 dark:border-gray-400":
-                    isPathActive("/teams"),
-                },
-              ]}
-            >
-              Teams
-            </a>
-            <a
               href="/integrations"
               class:list={[
                 { "border-b-2 border-gray-600": isPathActive("/integrations") },
@@ -146,12 +135,37 @@ function isPathActive(path) {
               Badges
             </a>
             <a href="https://hexdocs.pm/livebook">Docs</a>
-            <a class="announcekit-widget" href="https://news.livebook.dev/">
-              What’s new?&nbsp
+            <a
+              class="announcekit-widget whitespace-nowrap"
+              href="https://news.livebook.dev/"
+            >
+              What’s new?
+            </a>
+            {
+              variant === "default" && (
+                <a href="/teams" class="flex items-center gap-2">
+                  <span class="px-2 py-1 rounded-lg text-xs font-medium bg-blue-600 text-gray-50">
+                    New
+                  </span>{" "}
+                  Try Teams
+                </a>
+              )
+            }
+          </nav>
+        </div>
+        <div class="xl:w-52 flex justify-end">
+          <nav class="flex space-x-3 items-center">
+            <a
+              class:list={[
+                "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+                "plausible-event-name=nav+login+click",
+              ]}
+              href="https://teams.livebook.dev/"
+            >
+              Log into Teams
             </a>
           </nav>
         </div>
-        <div class="w-56 flex justify-end"></div>
       </div>
     </header>
 
@@ -191,17 +205,6 @@ function isPathActive(path) {
           <a href="/#install">Install</a>
           <a href="/#features">Features</a>
           <a
-            href="/teams"
-            class:list={[
-              {
-                "border-b-2 border-gray-600 dark:border-gray-400":
-                  isPathActive("/teams"),
-              },
-            ]}
-          >
-            Teams
-          </a>
-          <a
             href="/integrations"
             class:list={[
               { "border-b-2 border-gray-600": isPathActive("/integrations") },
@@ -219,12 +222,35 @@ function isPathActive(path) {
           </a>
           <a href="https://hexdocs.pm/livebook">Docs</a>
           <a
-            class="announcekit-widget-mobile"
+            class="announcekit-widget-mobile whitespace-nowrap"
             href="https://news.livebook.dev/"
           >
-            What’s new?&nbsp
+            What’s new?
+          </a>
+          {
+            variant === "default" && (
+              <a href="/teams" class="flex items-center gap-2">
+                <span class="px-2 py-1 rounded-lg text-xs font-medium bg-blue-600 text-gray-50">
+                  New
+                </span>{" "}
+                Try Teams
+              </a>
+            )
+          }
+        </nav>
+        <div class="w-full border-t border-gray-200"></div>
+        <nav class="flex flex-col space-y-5">
+          <a
+            class:list={[
+              "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+              "plausible-event-name=nav+login+click",
+            ]}
+            href="https://teams.livebook.dev/"
+          >
+            Log into Teams
           </a>
         </nav>
+        <div class="flex-grow"></div>
       </div>
     </header>
 
@@ -268,7 +294,7 @@ function isPathActive(path) {
 
     <!-- Footer -->
     {
-      displayFooter === "Livebook" && (
+      variant === "default" && (
         <footer class="bg-gray-900">
           <div class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between">
             <div class="flex flex-col">
@@ -309,7 +335,7 @@ function isPathActive(path) {
     }
 
     {
-      displayFooter === "Teams" && (
+      variant === "teams" && (
         <footer class="bg-gray-900">
           <div class="m-auto max-w-7xl w-full px-6 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-start md:justify-between">
             <div class="flex flex-col">
