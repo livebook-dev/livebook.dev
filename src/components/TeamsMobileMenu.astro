@@ -1,0 +1,50 @@
+---
+import { isPathActive } from "../utils/navigation.js";
+---
+
+<nav
+  data-el-menu
+  class="flex flex-col items-center space-y-10 text-xl text-gray-700 dark:text-gray-200"
+>
+  <a href="/">Home</a>
+  <a href="/#install">Install</a>
+  <a href="/#features">Features</a>
+  <a
+    href="/integrations"
+    class:list={[
+      {
+        "border-b-2 border-gray-600": isPathActive("/integrations", Astro.url),
+      },
+    ]}
+  >
+    Integrations
+  </a>
+  <a
+    href="/badge"
+    class:list={[
+      { "border-b-2 border-gray-600": isPathActive("/badge", Astro.url) },
+    ]}
+  >
+    Badges
+  </a>
+  <a href="https://hexdocs.pm/livebook">Docs</a>
+  <a
+    class="announcekit-widget-mobile whitespace-nowrap"
+    href="https://news.livebook.dev/"
+  >
+    What’s new?
+  </a>
+</nav>
+<div class="w-full border-t border-gray-200"></div>
+<nav class="flex flex-col space-y-5">
+  <a
+    class:list={[
+      "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+      "plausible-event-name=nav+login+click",
+    ]}
+    href="https://teams.livebook.dev/"
+  >
+    Log into Teams
+  </a>
+</nav>
+<div class="flex-grow"></div>
