@@ -7,66 +7,22 @@ import { isPathActive } from "../utils/navigation.js";
     data-el-menu
     class="flex gap-6 xl:gap-12 text-gray-600 dark:text-gray-200"
   >
-    <aside class="relative group">
-      <a href="/" class="z-10 py-2">
-        {" "}
-        Home
-      </a>
-      <div
-        class="origin-top-center absolute left-1/2 -translate-x-1/2 mt-1 w-32 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block transform"
-      >
-        <div
-          class="py-1"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="options-menu"
-        >
-          <a
-            href="/#install"
-            class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 text-center"
-            role="menuitem"
-          >
-            Install
-          </a>
-          <a
-            href="/#features"
-            class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 text-center"
-            role="menuitem"
-          >
-            Features
-          </a>
-        </div>
-      </div>
-    </aside>
+    <a href="/teams">Teams</a>
 
+    <a href="/teams#build-with-teams">Use cases</a>
+    <a href="/teams#teams-features">Features</a>
     <a
-      href="/integrations"
+      href="/teams/pricing"
       class:list={[
         {
-          "border-b-2 border-gray-600": isPathActive(
-            "/integrations",
+          "border-b-2 border-gray-400": isPathActive(
+            "/teams/pricing",
             Astro.url
           ),
         },
-      ]}
+      ]}>Pricing</a
     >
-      Integrations
-    </a>
-    <a
-      href="/badge"
-      class:list={[
-        { "border-b-2 border-gray-600": isPathActive("/badge", Astro.url) },
-      ]}
-    >
-      Badges
-    </a>
-    <a href="https://hexdocs.pm/livebook">Docs</a>
-    <a
-      class="announcekit-widget whitespace-nowrap"
-      href="https://news.livebook.dev/"
-    >
-      What’s new?
-    </a>
+    <a href="https://hexdocs.pm/livebook/intro_to_teams.html">Docs</a>
   </nav>
 </div>
 <div class="xl:w-52 flex justify-end">

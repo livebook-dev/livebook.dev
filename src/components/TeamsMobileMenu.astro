@@ -6,34 +6,19 @@ import { isPathActive } from "../utils/navigation.js";
   data-el-menu
   class="flex flex-col items-center space-y-10 text-xl text-gray-700 dark:text-gray-200"
 >
-  <a href="/">Home</a>
-  <a href="/#install">Install</a>
-  <a href="/#features">Features</a>
+  <a href="/teams">Teams</a>
+
+  <a href="/teams#build-with-teams">Use cases</a>
+  <a href="/teams#teams-features">Features</a>
   <a
-    href="/integrations"
+    href="/teams/pricing"
     class:list={[
       {
-        "border-b-2 border-gray-600": isPathActive("/integrations", Astro.url),
+        "border-b-2 border-gray-400": isPathActive("/teams/pricing", Astro.url),
       },
-    ]}
+    ]}>Pricing</a
   >
-    Integrations
-  </a>
-  <a
-    href="/badge"
-    class:list={[
-      { "border-b-2 border-gray-600": isPathActive("/badge", Astro.url) },
-    ]}
-  >
-    Badges
-  </a>
-  <a href="https://hexdocs.pm/livebook">Docs</a>
-  <a
-    class="announcekit-widget-mobile whitespace-nowrap"
-    href="https://news.livebook.dev/"
-  >
-    What’s new?
-  </a>
+  <a href="https://hexdocs.pm/livebook/intro_to_teams.html">Docs</a>
 </nav>
 <div class="w-full border-t border-gray-200"></div>
 <nav class="flex flex-col space-y-5">
