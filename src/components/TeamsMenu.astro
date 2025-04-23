@@ -26,15 +26,24 @@ import { isPathActive } from "../utils/navigation.js";
   </nav>
 </div>
 <div class="xl:w-52 flex justify-end">
-  <nav class="flex space-x-3 items-center">
+  <nav class="flex items-center">
     <a
       class:list={[
-        "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+        "px-5 py-2 font-medium text-sm text-gray-600 whitespace-nowrap dark:text-gray-200",
         "plausible-event-name=nav+login+click",
       ]}
       href="https://teams.livebook.dev/"
     >
-      Log into Teams
+      Sign in
+    </a>
+    <a
+      class:list={[
+        "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+        "plausible-event-name=nav+signup+click",
+      ]}
+      href="https://teams.livebook.dev/"
+    >
+      Sign up free
     </a>
   </nav>
 </div>
