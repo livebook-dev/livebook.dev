@@ -306,71 +306,69 @@ const {
       });
     </script>
     <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
-
-    <style>
-      [data-el-menu-container][data-menu-open] {
-        @apply fixed z-50 top-0 bottom-0 left-0 right-0;
-      }
-
-      [data-el-menu-container][data-menu-open] [data-on-menu="hide"] {
-        @apply hidden;
-      }
-
-      [data-el-menu-container]:not([data-menu-open]) [data-on-menu="show"] {
-        @apply hidden;
-      }
-
-      .header {
-        @apply sticky top-0 z-50 px-4 py-6 hidden lg:flex bg-white dark:bg-gray-900;
-      }
-
-      .header.scrolled {
-        @apply py-3 border-b border-gray-200 dark:border-gray-700;
-      }
-
-      .header-mobile {
-        @apply sticky top-0 z-50 lg:hidden px-4 py-6 bg-white dark:bg-gray-900 flex flex-col;
-      }
-
-      .header-mobile.scrolled {
-        @apply py-3 border-b border-gray-200 dark:border-gray-700;
-      }
-    </style>
-
-    <script>
-      import "../lib/global";
-
-      // Mobile menu
-
-      const menuContainerEl = document.querySelector(
-        `[data-el-menu-container]`
-      );
-
-      menuContainerEl.addEventListener("click", (event) => {
-        const toggleEl = event.target.closest(`[data-el-menu-toggle]`);
-
-        if (toggleEl) {
-          menuContainerEl.toggleAttribute("data-menu-open");
-          return;
-        }
-
-        const anchorEl = event.target.closest("a");
-
-        if (anchorEl && anchorEl.pathname === window.location.pathname) {
-          menuContainerEl.removeAttribute("data-menu-open");
-        }
-      });
-
-      // Updated header on scroll
-
-      const header = document.querySelector("#header");
-      const headerMobile = document.querySelector("#header-mobile");
-
-      window.addEventListener("scroll", () => {
-        const scrolled = window.scrollY > 1;
-        header.classList.toggle("scrolled", scrolled);
-        headerMobile.classList.toggle("scrolled", scrolled);
-      });
-    </script>
   </body>
 </html>
+
+<style>
+  [data-el-menu-container][data-menu-open] {
+    @apply fixed z-50 top-0 bottom-0 left-0 right-0;
+  }
+
+  [data-el-menu-container][data-menu-open] [data-on-menu="hide"] {
+    @apply hidden;
+  }
+
+  [data-el-menu-container]:not([data-menu-open]) [data-on-menu="show"] {
+    @apply hidden;
+  }
+
+  .header {
+    @apply sticky top-0 z-50 px-4 py-6 hidden lg:flex bg-white dark:bg-gray-900;
+  }
+
+  .header.scrolled {
+    @apply py-3 border-b border-gray-200 dark:border-gray-700;
+  }
+
+  .header-mobile {
+    @apply sticky top-0 z-50 lg:hidden px-4 py-6 bg-white dark:bg-gray-900 flex flex-col;
+  }
+
+  .header-mobile.scrolled {
+    @apply py-3 border-b border-gray-200 dark:border-gray-700;
+  }
+</style>
+
+<script>
+  import "../lib/global";
+
+  // Mobile menu
+
+  const menuContainerEl = document.querySelector(`[data-el-menu-container]`);
+
+  menuContainerEl.addEventListener("click", (event) => {
+    const toggleEl = event.target.closest(`[data-el-menu-toggle]`);
+
+    if (toggleEl) {
+      menuContainerEl.toggleAttribute("data-menu-open");
+      return;
+    }
+
+    const anchorEl = event.target.closest("a");
+
+    if (anchorEl && anchorEl.pathname === window.location.pathname) {
+      menuContainerEl.removeAttribute("data-menu-open");
+    }
+  });
+
+  // Updated header on scroll
+
+  const header = document.querySelector("#header");
+  const headerMobile = document.querySelector("#header-mobile");
+
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY > 1;
+    header.classList.toggle("scrolled", scrolled);
+    headerMobile.classList.toggle("scrolled", scrolled);
+  });
+</script>
