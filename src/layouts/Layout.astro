@@ -77,6 +77,15 @@ const {
     ></script>
   </head>
   <body>
+    {
+      variant === "teams" && (
+        <div class="bg-brand-pink-darken flex justify-center lg:justify-end px-4 text-gray-300 text-sm font-light">
+          <p>
+            <a href="/">← switch to Livebook OSS</a>
+          </p>
+        </div>
+      )
+    }
     <!-- Navbar desktop -->
     <header id="header" class="header">
       <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">

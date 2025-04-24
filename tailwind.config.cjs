@@ -35,6 +35,7 @@ module.exports = {
           900: "#0d1829",
         },
         "brand-pink": "#e44c75",
+        "brand-pink-darken": "#842c44",
         elixir: "#554994",
       },
     },
