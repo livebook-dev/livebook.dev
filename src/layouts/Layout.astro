@@ -79,11 +79,16 @@ const {
   <body>
     {
       variant === "teams" && (
-        <div class="bg-brand-pink-darken flex justify-center lg:justify-end px-4 text-gray-300 text-sm font-light">
+      <div class="bg-brand-pink-darken px-4 py-1">
+        <div class="flex justify-center lg:justify-between text-gray-300 text-sm font-light max-w-7xl mx-auto">
+          <p class="hidden lg:block">
+            Livebook Teams
+          </p>
           <p>
-            <a href="/">← switch to Livebook OSS</a>
+          <a href="/">&lt; switch to Livebook OSS</a>
           </p>
         </div>
+      </div>
       )
     }
     <!-- Navbar desktop -->
