@@ -285,6 +285,8 @@ const {
       )
     }
     <!-- Scripts -->
+    {variant === "default" && (
+    <>
     <script>
       window.announcekit = window.announcekit || {
         queue: [],
@@ -307,6 +309,10 @@ const {
       });
     </script>
     <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
+    </>
+    )
+    }
+
   </body>
 </html>
 
