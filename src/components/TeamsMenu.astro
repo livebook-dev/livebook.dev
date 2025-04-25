@@ -1,0 +1,49 @@
+---
+import { isPathActive } from "../lib/utils.js";
+---
+
+<div class="flex-grow flex items-center justify-center">
+  <nav
+    data-el-menu
+    class="flex gap-6 xl:gap-12 text-gray-600 dark:text-gray-200"
+  >
+    <a href="/teams">Teams</a>
+
+    <a href="/teams#build-with-teams">Use cases</a>
+    <a href="/teams#teams-features">Features</a>
+    <a
+      href="/teams/pricing"
+      class:list={[
+        {
+          "border-b-2 border-gray-400": isPathActive(
+            "/teams/pricing",
+            Astro.url
+          ),
+        },
+      ]}>Pricing</a
+    >
+    <a href="https://hexdocs.pm/livebook/intro_to_teams.html">Docs</a>
+  </nav>
+</div>
+<div class="xl:w-52 flex justify-end">
+  <nav class="flex items-center">
+    <a
+      class:list={[
+        "px-5 py-2 font-medium text-sm text-gray-600 whitespace-nowrap dark:text-gray-200",
+        "plausible-event-name=nav+login+click",
+      ]}
+      href="https://teams.livebook.dev/"
+    >
+      Sign in
+    </a>
+    <a
+      class:list={[
+        "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
+        "plausible-event-name=nav+signup+click",
+      ]}
+      href="https://teams.livebook.dev/"
+    >
+      Sign up free
+    </a>
+  </nav>
+</div>
