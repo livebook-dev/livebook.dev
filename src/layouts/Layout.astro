@@ -79,13 +79,15 @@ const {
   <body>
     {
       variant === "teams" && (
-      <div class="bg-brand-pink-darken px-4 py-1">
+      <div class="bg-gray-800 px-4 py-1">
         <div class="flex justify-center lg:justify-between text-gray-200 text-sm font-light max-w-7xl mx-auto">
           <p class="hidden cursor-default lg:block">
             Livebook Teams
           </p>
           <p>
-          <a class="hover:text-white" href="/">&lt; switch to Livebook OSS</a>
+          <a class="hover:text-white flex items-center gap-1" href="/">
+            <Icon icon="arrow-left-line" />
+            Switch to Livebook OSS</a>
           </p>
         </div>
       </div>
