@@ -37,3 +37,15 @@ export function firstSuccess(list, toPromise) {
     )
     .catch(() => Promise.reject(new Error("No success")));
 }
+
+/**
+ * Checks if the given URL's pathname starts with the specified path.
+ * Used to determine if a navigation path is active in the current URL.
+ *
+ * @param {String} path - The path to check against
+ * @param {URL} url - The URL object to check
+ * @returns {Boolean} - True if the URL pathname starts with the given path
+ */
+export function isPathActive(path, url) {
+  return url.pathname.startsWith(path);
+}

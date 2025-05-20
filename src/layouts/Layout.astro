@@ -9,6 +9,10 @@ import hfLogoWithText from "../images/hf-logo-with-text.svg";
 import tigrisLogo from "../images/tigris-logo.svg";
 
 import Icon from "../components/Icon.astro";
+import DefaultMenu from "../components/DefaultMenu.astro";
+import TeamsMenu from "../components/TeamsMenu.astro";
+import DefaultMobileMenu from "../components/DefaultMobileMenu.astro";
+import TeamsMobileMenu from "../components/TeamsMobileMenu.astro";
 
 export interface Props {
   title: string;
@@ -23,10 +27,6 @@ const {
   displaySponsors = true,
   variant = "default",
 } = Astro.props;
-
-function isPathActive(path) {
-  return Astro.url.pathname.startsWith(path);
-}
 ---
 
 <!DOCTYPE html>
@@ -77,6 +77,22 @@ function isPathActive(path) {
     ></script>
   </head>
   <body>
+    {
+      variant === "teams" && (
+      <div class="bg-gray-800 px-4 py-1">
+        <div class="flex justify-center lg:justify-between text-gray-200 text-sm font-light max-w-7xl mx-auto">
+          <p class="hidden cursor-default lg:block">
+            Livebook Teams
+          </p>
+          <p>
+          <a class="hover:text-white flex items-center gap-1" href="/">
+            <Icon icon="arrow-left-line" />
+            Switch to Livebook OSS</a>
+          </p>
+        </div>
+      </div>
+      )
+    }
     <!-- Navbar desktop -->
     <header id="header" class="header">
       <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">
@@ -88,84 +104,8 @@ function isPathActive(path) {
           >
         </a>
 
-        <div class="flex-grow flex items-center justify-center">
-          <nav
-            data-el-menu
-            class="flex gap-6 xl:gap-12 text-gray-600 dark:text-gray-200"
-          >
-            <aside class="relative group">
-              <a href="/" class="z-10 py-2"> Home</a>
-              <div
-                class="origin-top-center absolute left-1/2 -translate-x-1/2 mt-1 w-32 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block transform"
-              >
-                <div
-                  class="py-1"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="options-menu"
-                >
-                  <a
-                    href="/#install"
-                    class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 text-center"
-                    role="menuitem">Install</a
-                  >
-                  <a
-                    href="/#features"
-                    class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 text-center"
-                    role="menuitem">Features</a
-                  >
-                </div>
-              </div>
-            </aside>
-
-            <a
-              href="/integrations"
-              class:list={[
-                { "border-b-2 border-gray-600": isPathActive("/integrations") },
-              ]}
-            >
-              Integrations
-            </a>
-            <a
-              href="/badge"
-              class:list={[
-                { "border-b-2 border-gray-600": isPathActive("/badge") },
-              ]}
-            >
-              Badges
-            </a>
-            <a href="https://hexdocs.pm/livebook">Docs</a>
-            <a
-              class="announcekit-widget whitespace-nowrap"
-              href="https://news.livebook.dev/"
-            >
-              What’s new?
-            </a>
-            {
-              variant === "default" && (
-                <a href="/teams" class="flex items-center gap-2">
-                  <span class="px-2 py-1 rounded-lg text-xs font-medium bg-blue-600 text-gray-50">
-                    New
-                  </span>{" "}
-                  Try Teams
-                </a>
-              )
-            }
-          </nav>
-        </div>
-        <div class="xl:w-52 flex justify-end">
-          <nav class="flex space-x-3 items-center">
-            <a
-              class:list={[
-                "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
-                "plausible-event-name=nav+login+click",
-              ]}
-              href="https://teams.livebook.dev/"
-            >
-              Log into Teams
-            </a>
-          </nav>
-        </div>
+        {variant === "default" && <DefaultMenu />}
+        {variant === "teams" && <TeamsMenu />}
       </div>
     </header>
 
@@ -197,59 +137,8 @@ function isPathActive(path) {
         data-on-menu="show"
         class="h-full mt-12 flex flex-col items-center space-y-12"
       >
-        <nav
-          data-el-menu
-          class="flex flex-col items-center space-y-10 text-xl text-gray-700 dark:text-gray-200"
-        >
-          <a href="/">Home</a>
-          <a href="/#install">Install</a>
-          <a href="/#features">Features</a>
-          <a
-            href="/integrations"
-            class:list={[
-              { "border-b-2 border-gray-600": isPathActive("/integrations") },
-            ]}
-          >
-            Integrations
-          </a>
-          <a
-            href="/badge"
-            class:list={[
-              { "border-b-2 border-gray-600": isPathActive("/badge") },
-            ]}
-          >
-            Badges
-          </a>
-          <a href="https://hexdocs.pm/livebook">Docs</a>
-          <a
-            class="announcekit-widget-mobile whitespace-nowrap"
-            href="https://news.livebook.dev/"
-          >
-            What’s new?
-          </a>
-          {
-            variant === "default" && (
-              <a href="/teams" class="flex items-center gap-2">
-                <span class="px-2 py-1 rounded-lg text-xs font-medium bg-blue-600 text-gray-50">
-                  New
-                </span>{" "}
-                Try Teams
-              </a>
-            )
-          }
-        </nav>
-        <div class="w-full border-t border-gray-200"></div>
-        <nav class="flex flex-col space-y-5">
-          <a
-            class:list={[
-              "px-5 py-2 rounded-lg font-medium text-sm border border-gray-200 text-gray-600 whitespace-nowrap hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 dark:focus:bg-gray-800",
-              "plausible-event-name=nav+login+click",
-            ]}
-            href="https://teams.livebook.dev/"
-          >
-            Log into Teams
-          </a>
-        </nav>
+        {variant === "default" && <DefaultMobileMenu />}
+        {variant === "teams" && <TeamsMobileMenu />}
         <div class="flex-grow"></div>
       </div>
     </header>
@@ -403,6 +292,8 @@ function isPathActive(path) {
       )
     }
     <!-- Scripts -->
+    {variant === "default" && (
+    <>
     <script>
       window.announcekit = window.announcekit || {
         queue: [],
@@ -425,6 +316,10 @@ function isPathActive(path) {
       });
     </script>
     <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
+    </>
+    )
+    }
+
   </body>
 </html>
 
