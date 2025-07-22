@@ -103,59 +103,85 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       </div>
     </div>
   </section>
-  <section id="build-with-teams" class="bg-gray-900 overflow-x-hidden">
-    <div class="m-auto max-w-6xl flex flex-col px-4 xl:px-0">
+  <section id="use-cases" class="bg-gray-900 overflow-x-hidden">
+    <div class="mx-4 xl:mx-auto max-w-6xl p-8 sm:p-12">
       <h1
-        class="max-w-4xl text-2xl/tight sm:text-3xl/tight font-semibold text-gray-50 justify-self-start"
+        class="text-2xl/tight sm:text-3xl/tight md:text-4xl/tight font-semibold text-gray-50 text-center"
       >
-        What can you build with<br class="hidden sm:block" /> Livebook Teams?
+        Use cases
       </h1>
-      <span class="text-gray-300 text-lg sm:text-xl pt-6">Examples</span>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3 gap-6 pt-4"
-      >
-        <Card
-          class="bg-gradient-to-br"
-          icon="money-dollar-circle-line"
-          iconColor="text-blue-600"
-          title="Customer Payment Refund Processor"
-          description="Enable the support team to refund customers. No need to run that script by yourself anymore."
-        />
-        <Card
-          class="bg-gradient-to-tl"
-          icon="database-2-line"
-          iconColor="text-green-600"
-          title="Self-Service SQL Query Visualization"
-          description="A web UI where non-technical co-workers can execute and visualize shared SQL queries. Empower them so you can stop being interrupted."
-        />
-        <Card
-          class="bg-gradient-to-br"
-          icon="user-add-line"
-          iconColor="text-yellow-500"
-          title="Customer Onboarding Workflow Automation"
-          description="Help customer success and operations automate the steps needed when onboarding new customers, like setting up accounts, importing data, etc. Bye bye manual work."
-        />
-        <Card
-          class="bg-gradient-to-br"
-          icon="bookmark-3-line"
-          iconColor="text-gray-400"
-          title="Runbooks"
-          description="Instead of static documents, build interactive runbooks for technical support, DevOps, and solutions engineering. No more need to answer “how can I do that?”."
-        />
-        <Card
-          class="bg-gradient-to-tl"
-          icon="dashboard-3-line"
-          iconColor="text-yellow-500"
-          title="Admin Panels"
-          description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
-        />
-        <Card
-          class="bg-gradient-to-br"
-          icon="line-chart-line"
-          iconColor="text-red-600"
-          title="Track KPIs and Metrics"
-          description="Build a dashboard where the marketing and product teams can visualize funnel and product usage metrics."
-        />
+
+      <!-- Internal Tools Section -->
+      <div class="bg-gray-800/30 rounded-2xl p-4 sm:p-6 mt-8 w-full">
+        <h2 class="text-2xl md:text-3xl text-gray-50 text-center">
+          Internal tools
+        </h2>
+        <p class="text-gray-300 text-lg text-center max-w-2xl mx-auto mt-4">
+          Deploy Livebook notebooks as internal apps — better than ad-hoc
+          scripts, quicker to ship than full-blown apps.
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 auto-rows-fr lg:grid-cols-2 gap-6 mt-8 max-w-4xl mx-auto"
+        >
+          <Card
+            class="bg-gradient-to-br"
+            icon="money-dollar-circle-line"
+            iconColor="text-blue-600"
+            title="Customer Refunding"
+            description="Enable the support team to refund customers. No need to run that script by yourself anymore."
+          />
+          <Card
+            class="bg-gradient-to-tl"
+            icon="database-2-line"
+            iconColor="text-green-600"
+            title="SQL Query Viewer"
+            description="A web UI where non-technical co-workers can execute and visualize shared SQL queries."
+          />
+          <Card
+            class="bg-gradient-to-br"
+            icon="user-add-line"
+            iconColor="text-yellow-500"
+            title="Onboarding Workflow"
+            description="Help customer success and operations automate the steps needed when onboarding new customers."
+          />
+          <Card
+            class="bg-gradient-to-tl"
+            icon="dashboard-3-line"
+            iconColor="text-red-500"
+            title="Admin Panels"
+            description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
+          />
+        </div>
+      </div>
+
+      <!-- Operations Section -->
+      <div class="bg-gray-800/30 rounded-2xl p-4 sm:p-6 w-full mt-8">
+        <h2 class="text-2xl md:text-3xl text-gray-50 text-center mb-4">
+          Operations against production
+        </h2>
+        <p class="text-gray-300 text-lg text-center max-w-2xl mx-auto mt-4">
+          Use a self-hosted Livebook to give engineers a centralized and
+          auditable window into your production system — no IEx sessions or
+          ad‑hoc scripts.
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 auto-rows-fr lg:grid-cols-2 gap-6 mt-8 max-w-4xl mx-auto"
+        >
+          <Card
+            class="bg-gradient-to-br"
+            icon="tools-line"
+            iconColor="text-yellow-500"
+            title="Engineering support"
+            description="Investigate customer issues using an authenticated self-hosted Livebook."
+          />
+          <Card
+            class="bg-gradient-to-tl"
+            icon="file-list-3-line"
+            iconColor="text-green-600"
+            title="Runbooks"
+            description="Interactive runbooks for technical support, DevOps, and solutions engineering."
+          />
+        </div>
       </div>
     </div>
   </section>
