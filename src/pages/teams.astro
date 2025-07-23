@@ -83,7 +83,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       </div>
     </div>
   </section>
-  <section class="px-4 bg-gray-900 -mb-24 md:-mb-16">
+  <section class="px-4 bg-gray-900">
     <div class="relative max-w-5xl mx-auto">
       <div class="relative top-[-150px] w-full mx-auto z-10">
         <Image
@@ -104,7 +104,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       </div>
     </div>
   </section>
-  <section id="use-cases" class="bg-gray-900 overflow-x-hidden">
+  <section id="use-cases" class="bg-gray-900 overflow-x-hidden pt-8">
     <div class="mx-4 xl:mx-auto max-w-6xl p-8 sm:p-12">
       <h1
         class="text-2xl/tight sm:text-3xl/tight md:text-4xl/tight font-semibold text-gray-50 text-center"
@@ -203,9 +203,6 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           <h1 class="text-2xl sm:text-3xl md:text-4xl/tight font-semibold mt-2">
             Livebook Teams features
           </h1>
-          <p class="text-gray-600 sm:text-lg mt-3">
-            A fast (and fun 😃) way to build internal tools.
-          </p>
         </div>
         <div id="build-with-elixir" class="mt-8 sm:mt-16">
           <div id="build-with-elixir-title">
@@ -249,40 +246,6 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 />
               </div>
             </div>
-            <div id="call-functions">
-              <div
-                class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-1"
-              >
-                <div>
-                  <div class="flex">
-                    <Image
-                      src={starIcon}
-                      alt="Star Icon"
-                      class="w-8 h-8 z-10"
-                    />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Call functions from your main <br />Elixir/Phoenix app
-                      directly
-                    </h3>
-                  </div>
-                  <p class="font-light max-w-sm ml-[52px] mt-2 text-gray-700">
-                    No need to write HTTP APIs for your internal tools. Use
-                    Elixir's built-in mechanisms for integrating multiple Erlang
-                    VM nodes.
-                  </p>
-                </div>
-                <Image
-                  src={callFunction}
-                  alt="Call functions"
-                  class="lg:w-1/2 pl-12 lg:pl-0"
-                />
-              </div>
-            </div>
-            <Image
-              src={dashedLine}
-              alt="Dashed Line"
-              class="absolute top-0 left-[15px] w-[3px] h-[270px] lg:w-auto lg:h-auto"
-            />
           </div>
         </div>
       </div>
@@ -544,7 +507,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
   </section>
   <section id="teams-features-four">
     <div class="px-4 lg:px-0 bg-gray-200 rounded-b-[40px] sm:rounded-b-[60px]">
-      <div class="bg-gray-100">
+      <div class="bg-gray-200">
         <div class="bg-gray-200 relative rounded-b-[40px] sm:rounded-b-[60px]">
           <div class="w-full h-full relative top-[125px]">
             <div
@@ -552,7 +515,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             >
               <div id="teams-features-deploy-and-share" class="text-center">
                 <h1 class="text-2xl md:text-4xl font-semibold mt-2">
-                  Deploy and Share Securely
+                  Deploy notebooks as apps
                 </h1>
                 <p class="mt-4 text-gray-700 font-light text-lg">
                   The security of on-premises hosting with the DX of one-click
@@ -591,82 +554,171 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                     one click.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="teams-features-five" class="bg-gray-100">
+    <div class="bg-gray-200 rounded-b-[40px] sm:rounded-b-[60px] pt-60 pb-20">
+      <div class="m-auto max-w-6xl px-4 xl:px-0">
+        <div class="relative">
+          <div id="read-data-with-easy-title">
+            <div class="flex items-center gap-2">
+              <h2 class="text-2xl md:text-4xl font-semibold text-gray-900">
+                Run code against production securely
+              </h2>
+            </div>
+            <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+              Connect your self-hosted Livebook node to production and run
+              Elixir code with built-in auth, SSO, and full audit trails—no
+              unsafe terminals or ad-hoc scripts.
+            </p>
+          </div>
+
+          <div id="read-from-local" class="mt-10">
+            <div class="flex items-start">
+              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                Integrate with your main Elixir/Phoenix app
+              </h3>
+            </div>
+            <p
+              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+            >
+              Call functions from your main Elixir/Phoenix app directly. Use
+              Elixir's built-in mechanisms for integrating multiple Erlang VM
+              nodes.
+            </p>
+            <Image
+              src={callFunction}
+              alt="Call functions"
+              class="mx-auto mt-3 pl-[52px] w-full max-w-xl"
+            />
+          </div>
+          <div id="read-from-data-files" class="mt-10">
+            <div class="flex items-start">
+              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                Authentication
+              </h3>
+            </div>
+            <p
+              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+            >
+              Lock every notebook and app behind Livebook Teams authentication.
+              Grant or revoke access instantly, per user or role.
+            </p>
+            <div class="relative w-full max-w-lg mx-auto mt-3">
+              <Image
+                src={readDataFile}
+                alt="Read data from local"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-[14px] flex justify-center items-center group cursor-pointer open-videomodal"
+                data-videomodal="2"
+              >
                 <div
-                  id="deploy-and-share-authentication"
-                  class="order-last sm:order-none"
+                  class="group-hover:scale-110 flex justify-center items-center absolute z-10"
                 >
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Authentication
-                    </h3>
+                  <Icon
+                    icon="play-fill"
+                    class="text-5xl absolute z-10 text-white"
+                  />
+                  <div class="absolute rounded-full w-20 h-20 bg-blue-600">
                   </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Authenticate internal users using our built-in integrations,
-                    or quickly bring your own custom auth.
-                  </p>
-                  <div class="flex items-center max-w-xs ml-[52px] gap-4 mt-4">
-                    <Tooltip text="Cloudflare" direction="bottom">
-                      <a href="https://hexdocs.pm/livebook/cloudflare.html">
-                        <Image
-                          src={cloudflareLogo}
-                          alt="Cloudflare Logo"
-                          class="w-24"
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip text="Google IAP" direction="bottom">
-                      <a href="https://hexdocs.pm/livebook/google_iap.html">
-                        <Image
-                          src={googleIapLogo}
-                          alt="Google IAP Logo"
-                          class="w-12"
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip text="Tailscale" direction="bottom">
-                      <a href="https://hexdocs.pm/livebook/tailscale.html">
-                        <Image
-                          src={tailscaleLogo}
-                          alt="Tailscale Logo"
-                          class="w-18"
-                        />
-                      </a>
-                    </Tooltip>
+                  <div class="absolute rounded-full w-24 h-24 bg-blue-600/60">
                   </div>
-                  <div
-                    class="flex justify-center items-start gap-2 max-w-sm ml-[52px] bg-gray-200 rounded-md py-3 px-4 mt-4 text-sm sm:text-base text-gray-500"
-                  >
-                    <Icon icon="information-line" />
-                    <p>
-                      <a
-                        href="https://hexdocs.pm/livebook/custom_auth.html"
-                        class="underline"
-                        target="_blank">Adding your custom</a
-                      > auth to Livebook is as simple as writing one Elixir module.
-                    </p>
-                  </div>
-                </div>
-                <div id="deploy-and-share-encrypted-secrets">
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Encrypted secrets
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Save API and database credentials with Livebook Secrets,
-                    which are encrypted with a key to which only you have
-                    access.
-                  </p>
                 </div>
               </div>
             </div>
           </div>
+          <div id="read-from-data-files" class="mt-10">
+            <div class="flex items-start">
+              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                SSO
+              </h3>
+            </div>
+            <p
+              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+            >
+              Connect Okta, Microsoft Entra, Keycloak, or any OIDC-compatible
+              provider so engineers sign in with the accounts they already
+              use—no extra passwords.
+            </p>
+            <div class="relative w-full max-w-lg mx-auto mt-3">
+              <Image
+                src={readDataFile}
+                alt="Read data from local"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-[14px] flex justify-center items-center group cursor-pointer open-videomodal"
+                data-videomodal="2"
+              >
+                <div
+                  class="group-hover:scale-110 flex justify-center items-center absolute z-10"
+                >
+                  <Icon
+                    icon="play-fill"
+                    class="text-5xl absolute z-10 text-white"
+                  />
+                  <div class="absolute rounded-full w-20 h-20 bg-blue-600">
+                  </div>
+                  <div class="absolute rounded-full w-24 h-24 bg-blue-600/60">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="read-from-data-files" class="mt-10">
+            <div class="flex items-start">
+              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                Audit logs
+              </h3>
+            </div>
+            <p
+              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+            >
+              Every query, function call, and notebook change is timestamped and
+              linked to the user, giving you a complete trail for incident
+              reviews and compliance.
+            </p>
+            <div class="relative w-full max-w-lg mx-auto mt-3">
+              <Image
+                src={readDataFile}
+                alt="Read data from local"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-[14px] flex justify-center items-center group cursor-pointer open-videomodal"
+                data-videomodal="2"
+              >
+                <div
+                  class="group-hover:scale-110 flex justify-center items-center absolute z-10"
+                >
+                  <Icon
+                    icon="play-fill"
+                    class="text-5xl absolute z-10 text-white"
+                  />
+                  <div class="absolute rounded-full w-20 h-20 bg-blue-600">
+                  </div>
+                  <div class="absolute rounded-full w-24 h-24 bg-blue-600/60">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Image
+            src={dashedLineTwo}
+            alt="Dashed Line"
+            class="absolute top-[230px] sm:top-[210px] left-[15px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1346px] z-10"
+          />
         </div>
       </div>
     </div>
