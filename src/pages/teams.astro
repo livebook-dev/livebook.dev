@@ -50,8 +50,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           <h1
             class="max-w-3xl text-2xl/tight sm:text-4xl/tight font-semibold text-gray-50 text-center"
           >
-            Ship internal tools fast <br />
-            Operate production safely
+            Ship internal tools fast. <br />
+            Operate production safely.
           </h1>
           <span
             class="sm:text-lg text-center font-light text-gray-200 max-w-xl"
@@ -158,7 +158,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       <!-- Operations Section -->
       <div class="bg-gray-800/30 rounded-2xl p-4 sm:p-6 w-full mt-8">
         <h2 class="text-2xl md:text-3xl text-gray-50 text-center mb-4">
-          Operations against production
+          Production operations
         </h2>
         <p class="text-gray-300 text-lg text-center max-w-2xl mx-auto mt-4">
           Use a self-hosted Livebook to give engineers a centralized and
@@ -572,9 +572,10 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               </h2>
             </div>
             <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
-              Connect your self-hosted Livebook node to production and run
-              Elixir code with built-in auth, SSO, and full audit trails—no
-              unsafe terminals or ad-hoc scripts.
+              Give your team safe, auditable access to production. Livebook
+              Teams adds authentication, SSO, and audit trails to your
+              self-hosted Livebook—replacing risky terminals and scattered
+              scripts.
             </p>
           </div>
 
@@ -588,9 +589,9 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             <p
               class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
             >
-              Call functions from your main Elixir/Phoenix app directly. Use
-              Elixir's built-in mechanisms for integrating multiple Erlang VM
-              nodes.
+              Call production functions directly. Livebook connects to your
+              app's Erlang VM node, giving you full access to investigate issues
+              and run fixes.
             </p>
             <Image
               src={callFunction}
@@ -608,8 +609,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             <p
               class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
             >
-              Lock every notebook and app behind Livebook Teams authentication.
-              Grant or revoke access instantly, per user or role.
+              Control access to your production-connected Livebook. Users
+              authenticate via Livebook Teams accounts or company email domain.
             </p>
             <div class="relative w-full max-w-lg mx-auto mt-3">
               <Image
@@ -646,9 +647,9 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             <p
               class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
             >
-              Connect Okta, Microsoft Entra, Keycloak, or any OIDC-compatible
-              provider so engineers sign in with the accounts they already
-              use—no extra passwords.
+              Use your existing identity provider for authentication and
+              authorization. Integrates with Okta, Microsoft Entra, Keycloak, or
+              any OpenID Connect (OIDC) provider.
             </p>
             <div class="relative w-full max-w-lg mx-auto mt-3">
               <Image
@@ -685,9 +686,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             <p
               class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
             >
-              Every query, function call, and notebook change is timestamped and
-              linked to the user, giving you a complete trail for incident
-              reviews and compliance.
+              Track who ran what code and when. Every notebook execution is
+              logged with user, timestamp, and the exact code executed.
             </p>
             <div class="relative w-full max-w-lg mx-auto mt-3">
               <Image
