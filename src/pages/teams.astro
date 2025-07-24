@@ -15,6 +15,7 @@ import plusIcon from "../images/teams/plus-icon.svg";
 import elixirLogo from "../images/teams/elixir-logo.svg";
 import hexLibrary from "../images/teams/feature-hex-library.svg";
 import callFunction from "../images/teams/feature-call-function.svg";
+import authentication from "../images/teams/authentication.svg";
 import dashedLine from "../images/teams/dashed-line.svg";
 import dashedLineTwo from "../images/teams/dashed-line-two.svg";
 import formsAndInputs from "../images/teams/forms-and-inputs.svg";
@@ -612,29 +613,15 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               Control access to your production-connected Livebook. Users
               authenticate via Livebook Teams accounts or company email domain.
             </p>
-            <div class="relative w-full max-w-lg mx-auto mt-3">
+
+            <div
+              class="rounded-[20px] mx-auto mt-3 w-full max-w-xl relative bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+            >
               <Image
-                src={readDataFile}
-                alt="Read data from local"
-                class="w-full h-auto"
+                src={authentication}
+                alt="Call functions"
+                class="rounded-xl"
               />
-              <div
-                class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-[14px] flex justify-center items-center group cursor-pointer open-videomodal"
-                data-videomodal="2"
-              >
-                <div
-                  class="group-hover:scale-110 flex justify-center items-center absolute z-10"
-                >
-                  <Icon
-                    icon="play-fill"
-                    class="text-5xl absolute z-10 text-white"
-                  />
-                  <div class="absolute rounded-full w-20 h-20 bg-blue-600">
-                  </div>
-                  <div class="absolute rounded-full w-24 h-24 bg-blue-600/60">
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div id="read-from-data-files" class="mt-10">
