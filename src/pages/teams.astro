@@ -9,8 +9,8 @@ import Card from "../components/TeamsCard.astro";
 import DatabaseCard from "../components/TeamsDatabaseCard.astro";
 import PlayButton from "../components/TeamsPlayButton.astro";
 import VideoModal from "../components/VideoModal.astro";
-import FeatureList from "../components/FeatureList.astro";
-import FeatureItem from "../components/FeatureItem.astro";
+import TeamsFeatureList from "../components/TeamsFeatureList.astro";
+import TeamsFeatureItem from "../components/TeamsFeatureItem.astro";
 
 import starIcon from "../images/teams/star-icon.svg";
 import plusIcon from "../images/teams/plus-icon.svg";
@@ -384,8 +384,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           </p>
         </div>
 
-        <FeatureList>
-          <FeatureItem
+        <TeamsFeatureList>
+          <TeamsFeatureItem
             title="Read data from a SQL database"
             description="Built-in integrations to multiple databases, so you don't need to write boilerplate code to run SQL queries."
             contentPosition="below"
@@ -430,9 +430,9 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 integrationId="snowflake"
               />
             </div>
-          </FeatureItem>
+          </TeamsFeatureItem>
 
-          <FeatureItem
+          <TeamsFeatureItem
             title="Read data from a local or cloud-hosted file"
             description="It doesn't matter if your data is stored as a file in your file system or in a cloud storage service like S3; Livebook handles both ways transparently."
             contentPosition="below"
@@ -444,8 +444,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               alt="Read data from local"
               class="mx-auto w-full max-w-xl"
             />
-          </FeatureItem>
-        </FeatureList>
+          </TeamsFeatureItem>
+        </TeamsFeatureList>
       </div>
     </div>
   </section>
@@ -523,8 +523,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             </p>
           </div>
 
-          <FeatureList>
-            <FeatureItem
+          <TeamsFeatureList>
+            <TeamsFeatureItem
               title="Integrate with your main Elixir/Phoenix app"
               description="Call production functions directly. Livebook connects to your app's Erlang VM node, giving you full access to investigate issues and run fixes."
               contentPosition="right"
@@ -532,9 +532,9 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               <div slot="content" class="rounded-[20px] w-full max-w-lg">
                 <Image src={callFunction} alt="Call functions" />
               </div>
-            </FeatureItem>
+            </TeamsFeatureItem>
 
-            <FeatureItem
+            <TeamsFeatureItem
               title="Authentication"
               description="Control access to your production-connected Livebook. Users authenticate via Livebook Teams accounts or company email domain"
               contentPosition="right"
@@ -549,9 +549,9 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                   class="rounded-[20px]"
                 />
               </div>
-            </FeatureItem>
+            </TeamsFeatureItem>
 
-            <FeatureItem
+            <TeamsFeatureItem
               title="Single Sign-On (SSO)"
               description="Use your existing identity provider for authentication and authorization. Integrates with Okta, Microsoft Entra, Keycloak, or any OpenID Connect (OIDC) provider."
               contentPosition="right"
@@ -566,9 +566,9 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                   class="rounded-[20px]" 
                 />
               </div>
-            </FeatureItem>
+            </TeamsFeatureItem>
 
-            <FeatureItem
+            <TeamsFeatureItem
               title="Audit logs"
               description="Track who ran what code and when. Every notebook execution is logged with user, timestamp, and the exact code executed."
               contentPosition="right"
@@ -584,8 +584,8 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                   class="rounded-[20px]"
                 />
               </div>
-            </FeatureItem>
-          </FeatureList>
+            </TeamsFeatureItem>
+          </TeamsFeatureList>
         </div>
       </div>
     </div>
