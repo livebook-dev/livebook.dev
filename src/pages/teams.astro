@@ -546,92 +546,112 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           </div>
 
           <div id="read-from-local" class="mt-10">
-            <div class="flex items-start">
-              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
-                Integrate with your main Elixir/Phoenix app
-              </h3>
-            </div>
-            <p
-              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
-            >
-              Call production functions directly. Livebook connects to your
-              app's Erlang VM node, giving you full access to investigate issues
-              and run fixes.
-            </p>
-            <Image
-              src={callFunction}
-              alt="Call functions"
-              class="mx-auto mt-3 w-full max-w-xl"
-            />
-          </div>
-          <div id="read-from-data-files" class="mt-10">
-            <div class="flex items-start">
-              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
-                Authentication
-              </h3>
-            </div>
-            <p
-              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
-            >
-              Control access to your production-connected Livebook. Users
-              authenticate via Livebook Teams accounts or company email domain.
-            </p>
-
-            <div
-              class="rounded-[20px] mx-auto mt-3 max-w-lg relative bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-            >
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="w-1/2">
+                <div class="flex items-center">
+                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+                  <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                    Integrate with your main Elixir/Phoenix app
+                  </h3>
+                </div>
+                <p
+                  class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+                >
+                  Call production functions directly. Livebook connects to your
+                  app's Erlang VM node, giving you full access to investigate
+                  issues and run fixes.
+                </p>
+              </div>
               <Image
-                src={authentication}
-                alt="authentication"
-                class="rounded-[20px]"
+                src={callFunction}
+                alt="Call functions"
+                class="mt-3 w-full max-w-lg"
               />
             </div>
           </div>
-          <div id="read-from-data-files" class="mt-10">
-            <div class="flex items-start">
-              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
-                Single Sign-On (SSO)
-              </h3>
-            </div>
-            <p
-              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
-            >
-              Use your existing identity provider for authentication and
-              authorization. Integrates with Okta, Microsoft Entra, Keycloak, or
-              any OpenID Connect (OIDC) provider.
-            </p>
-            <div
-              class="rounded-[20px] mx-auto mt-3 max-w-lg w-fit relative bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-            >
-              <Image src={sso} alt="SSO" class="rounded-[20px]" />
+          <div id="read-from-local" class="mt-20">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="w-1/2">
+                <div class="flex items-center">
+                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+                  <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                    Authentication
+                  </h3>
+                </div>
+                <p
+                  class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+                >
+                  Control access to your production-connected Livebook. Users
+                  authenticate via Livebook Teams accounts or company email
+                  domain
+                </p>
+              </div>
+              <div
+                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+              >
+                <Image
+                  src={authentication}
+                  alt="authentication"
+                  class="rounded-[20px]"
+                />
+              </div>
             </div>
           </div>
-          <div id="read-from-data-files" class="mt-10">
-            <div class="flex items-start">
-              <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-              <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
-                Audit logs
-              </h3>
+          <div id="read-from-local" class="mt-20">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="w-1/2">
+                <div class="flex items-center">
+                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+                  <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                    Single Sign-On (SSO)
+                  </h3>
+                </div>
+                <p
+                  class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+                >
+                  Use your existing identity provider for authentication and
+                  authorization. Integrates with Okta, Microsoft Entra,
+                  Keycloak, or any OpenID Connect (OIDC) provider.
+                </p>
+              </div>
+              <div
+                class="rounded-[20px] max-w-lg w-fit bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+              >
+                <Image src={sso} alt="sso" class="rounded-[20px]" />
+              </div>
             </div>
-            <p
-              class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
-            >
-              Track who ran what code and when. Every notebook execution is
-              logged with user, timestamp, and the exact code executed.
-            </p>
-            <div
-              class="rounded-[20px] mx-auto mt-3 max-w-lg w-fit relative bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-            >
-              <Image src={auditLogs} alt="audit logs" class="rounded-[20px]" />
+          </div>
+          <div id="read-from-local" class="mt-20">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="w-1/2">
+                <div class="flex items-center">
+                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
+                  <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
+                    Audit logs
+                  </h3>
+                </div>
+                <p
+                  class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
+                >
+                  Track who ran what code and when. Every notebook execution is
+                  logged with user, timestamp, and the exact code executed.
+                </p>
+              </div>
+              <div
+                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+              >
+                <Image
+                  src={auditLogs}
+                  alt="audit logs"
+                  class="rounded-[20px]"
+                />
+              </div>
             </div>
           </div>
           <Image
             src={dashedLineTwo}
             alt="Dashed Line"
-            class="absolute top-[230px] sm:top-[210px] left-[15px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1389px] z-10"
+            class="absolute top-[268px] sm:top-[268px] left-[15px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1080px] z-10"
           />
         </div>
       </div>
