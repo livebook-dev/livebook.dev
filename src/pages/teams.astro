@@ -9,6 +9,8 @@ import Card from "../components/TeamsCard.astro";
 import DatabaseCard from "../components/TeamsDatabaseCard.astro";
 import PlayButton from "../components/TeamsPlayButton.astro";
 import VideoModal from "../components/VideoModal.astro";
+import FeatureList from "../components/FeatureList.astro";
+import FeatureItem from "../components/FeatureItem.astro";
 
 import starIcon from "../images/teams/star-icon.svg";
 import plusIcon from "../images/teams/plus-icon.svg";
@@ -382,106 +384,68 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           </p>
         </div>
 
-        <div class="mt-10 flex flex-col items-start">
-          <div class="flex gap-x-6 w-full">
-            <div class="relative">
-              <div
-                class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2"
-                style="background: repeating-linear-gradient(to bottom, #CAD5E0 0, #CAD5E0 8px, transparent 8px, transparent 16px); width: 2px;"
-              >
-              </div>
-              <span
-                class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
-              >
-                <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-              </span>
+        <FeatureList>
+          <FeatureItem
+            title="Read data from a SQL database"
+            description="Built-in integrations to multiple databases, so you don't need to write boilerplate code to run SQL queries."
+            contentPosition="below"
+          >
+            <div
+              slot="content"
+              class="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-4"
+            >
+              <DatabaseCard
+                title="PostgreSQL"
+                imageURL={postgresDatabase.src}
+                integrationId="postgresql"
+              />
+              <DatabaseCard
+                title="MySQL"
+                imageURL={mysqlDatabase.src}
+                integrationId="mysql"
+              />
+              <DatabaseCard
+                title="Microsoft SQL Server"
+                imageURL={microsoftDatabase.src}
+                integrationId="sqlserver"
+              />
+              <DatabaseCard
+                title="SQLite"
+                imageURL={sqliteDatabase.src}
+                integrationId="sqlite"
+              />
+              <DatabaseCard
+                title="Google BigQuery"
+                imageURL={googleDatabase.src}
+                integrationId="google-bigquery"
+              />
+              <DatabaseCard
+                title="Amazon Athena"
+                imageURL={amazonDatabase.src}
+                integrationId="amazon-athena"
+              />
+              <DatabaseCard
+                title="Snowflake"
+                imageURL={snowflakeDatabase.src}
+                integrationId="snowflake"
+              />
             </div>
-            <div class="pb-20 flex-1">
-              <div
-                class="flex flex-col lg:flex-row lg:items-start gap-4 lg:max-w-none"
-              >
-                <div class="w-full">
-                  <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
-                    Read data from a SQL database
-                  </h3>
-                  <p class="md:text-lg font-light max-w-md mt-2 text-gray-700">
-                    Built-in integrations to multiple databases, so you don't
-                    need to write boilerplate code to run SQL queries.
-                  </p>
-                  <div
-                    class="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-4 mt-10"
-                  >
-                    <DatabaseCard
-                      title="PostgreSQL"
-                      imageURL={postgresDatabase.src}
-                      integrationId="postgresql"
-                    />
-                    <DatabaseCard
-                      title="MySQL"
-                      imageURL={mysqlDatabase.src}
-                      integrationId="mysql"
-                    />
-                    <DatabaseCard
-                      title="Microsoft SQL Server"
-                      imageURL={microsoftDatabase.src}
-                      integrationId="sqlserver"
-                    />
-                    <DatabaseCard
-                      title="SQLite"
-                      imageURL={sqliteDatabase.src}
-                      integrationId="sqlite"
-                    />
-                    <DatabaseCard
-                      title="Google BigQuery"
-                      imageURL={googleDatabase.src}
-                      integrationId="google-bigquery"
-                    />
-                    <DatabaseCard
-                      title="Amazon Athena"
-                      imageURL={amazonDatabase.src}
-                      integrationId="amazon-athena"
-                    />
-                    <DatabaseCard
-                      title="Snowflake"
-                      imageURL={snowflakeDatabase.src}
-                      integrationId="snowflake"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex gap-x-6 w-full">
-            <div class="relative">
-              <span
-                class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
-              >
-                <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-              </span>
-            </div>
-            <div class="pb-20 flex-1">
-              <div
-                class="flex flex-col lg:flex-row lg:items-start gap-4 lg:max-w-none"
-              >
-                <div class="w-full">
-                  <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
-                    Read data from a local or cloud-hosted file
-                  </h3>
-                  <p class="md:text-lg font-light max-w-md mt-2 text-gray-700">
-                    It doesn't matter if your data is stored as a file in your
-                    file system or in a cloud storage service like S3; Livebook
-                    handles both ways transparently.
-                  </p>
-                  <Image
-                    src={readDataLocal}
-                    alt="Read data from local"
-                    class="mx-auto mt-10 w-full max-w-xl"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </FeatureItem>
+
+          <FeatureItem
+            title="Read data from a local or cloud-hosted file"
+            description="It doesn't matter if your data is stored as a file in your file system or in a cloud storage service like S3; Livebook handles both ways transparently."
+            contentPosition="below"
+            isLast={true}
+          >
+            <Image
+              slot="content"
+              src={readDataLocal}
+              alt="Read data from local"
+              class="mx-auto w-full max-w-xl"
+            />
+          </FeatureItem>
+        </FeatureList>
       </div>
     </div>
   </section>
@@ -559,159 +523,69 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             </p>
           </div>
 
-          <div class="mt-10 flex flex-col items-start">
-            <div class="flex gap-x-6 w-full">
-              <div class="relative">
-                <div
-                  class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2"
-                  style="background: repeating-linear-gradient(to bottom, #CAD5E0 0, #CAD5E0 8px, transparent 8px, transparent 16px); width: 2px;"
-                >
-                </div>
-                <span
-                  class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
-                >
-                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                </span>
+          <FeatureList>
+            <FeatureItem
+              title="Integrate with your main Elixir/Phoenix app"
+              description="Call production functions directly. Livebook connects to your app's Erlang VM node, giving you full access to investigate issues and run fixes."
+              contentPosition="right"
+            >
+              <div slot="content" class="rounded-[20px] w-full max-w-lg">
+                <Image src={callFunction} alt="Call functions" />
               </div>
-              <div class="pb-20 flex-1">
-                <div
-                  class="flex flex-col lg:flex-row lg:items-start gap-4 lg:max-w-none"
-                >
-                  <div class="w-full lg:w-1/2">
-                    <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
-                      Integrate with your main Elixir/Phoenix app
-                    </h3>
-                    <p
-                      class="md:text-lg font-light max-w-md mt-2 text-gray-700"
-                    >
-                      Call production functions directly. Livebook connects to
-                      your app's Erlang VM node, giving you full access to
-                      investigate issues and run fixes.
-                    </p>
-                  </div>
-                  <div class="w-full lg:w-1/2">
-                    <div class="rounded-[20px] w-full max-w-lg">
-                      <Image src={callFunction} alt="Call functions" />
-                    </div>
-                  </div>
-                </div>
+            </FeatureItem>
+
+            <FeatureItem
+              title="Authentication"
+              description="Control access to your production-connected Livebook. Users authenticate via Livebook Teams accounts or company email domain"
+              contentPosition="right"
+            >
+              <div
+                slot="content"
+                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+              >
+                <Image
+                  src={authentication}
+                  alt="Identity providers configuration interface showing Livebook Teams and Google email domain authentication options"
+                  class="rounded-[20px]"
+                />
               </div>
-            </div>
-            <div class="flex gap-x-6 w-full">
-              <div class="relative">
-                <div
-                  class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2"
-                  style="background: repeating-linear-gradient(to bottom, #CAD5E0 0, #CAD5E0 8px, transparent 8px, transparent 16px); width: 2px;"
-                >
-                </div>
-                <span
-                  class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
-                >
-                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                </span>
+            </FeatureItem>
+
+            <FeatureItem
+              title="Single Sign-On (SSO)"
+              description="Use your existing identity provider for authentication and authorization. Integrates with Okta, Microsoft Entra, Keycloak, or any OpenID Connect (OIDC) provider."
+              contentPosition="right"
+            >
+              <div
+                slot="content"
+                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+              >
+                <Image 
+                  src={sso} 
+                  alt="Single Sign-On login interface showing Okta, Microsoft Entra, and Keycloak provider options" 
+                  class="rounded-[20px]" 
+                />
               </div>
-              <div class="pb-20 flex-1">
-                <div class="flex flex-col lg:flex-row lg:items-start gap-4">
-                  <div class="w-full lg:w-1/2">
-                    <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
-                      Authentication
-                    </h3>
-                    <p
-                      class="md:text-lg font-light max-w-md mt-2 text-gray-700"
-                    >
-                      Control access to your production-connected Livebook.
-                      Users authenticate via Livebook Teams accounts or company
-                      email domain
-                    </p>
-                  </div>
-                  <div class="w-full lg:w-1/2">
-                    <div
-                      class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-                    >
-                      <Image
-                        src={authentication}
-                        alt="Identity providers configuration interface showing Livebook Teams and Google email domain authentication options"
-                        class="rounded-[20px]"
-                      />
-                    </div>
-                  </div>
-                </div>
+            </FeatureItem>
+
+            <FeatureItem
+              title="Audit logs"
+              description="Track who ran what code and when. Every notebook execution is logged with user, timestamp, and the exact code executed."
+              contentPosition="right"
+              isLast={true}
+            >
+              <div
+                slot="content"
+                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+              >
+                <Image
+                  src={auditLogs}
+                  alt="Terminal-style audit log display showing timestamped user actions including user lookup and order refund operations"
+                  class="rounded-[20px]"
+                />
               </div>
-            </div>
-            <div class="flex gap-x-6 w-full">
-              <div class="relative">
-                <div
-                  class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2"
-                  style="background: repeating-linear-gradient(to bottom, #CAD5E0 0, #CAD5E0 8px, transparent 8px, transparent 16px); width: 2px;"
-                >
-                </div>
-                <span
-                  class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
-                >
-                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                </span>
-              </div>
-              <div class="pb-20 flex-1">
-                <div class="flex flex-col lg:flex-row lg:items-start gap-4">
-                  <div class="w-full lg:w-1/2">
-                    <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
-                      Single Sign-On (SSO)
-                    </h3>
-                    <p
-                      class="md:text-lg font-light max-w-md mt-2 text-gray-700"
-                    >
-                      Use your existing identity provider for authentication and
-                      authorization. Integrates with Okta, Microsoft Entra,
-                      Keycloak, or any OpenID Connect (OIDC) provider.
-                    </p>
-                  </div>
-                  <div class="w-full lg:w-1/2">
-                    <div
-                      class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-                    >
-                      <Image src={sso} alt="Single Sign-On login interface showing Okta, Microsoft Entra, and Keycloak provider options" class="rounded-[20px]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex gap-x-6 w-full">
-              <div class="relative">
-                <span
-                  class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
-                >
-                  <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                </span>
-              </div>
-              <div class="pb-8 flex-1">
-                <div class="flex flex-col lg:flex-row lg:items-start gap-4">
-                  <div class="w-full lg:w-1/2">
-                    <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
-                      Audit logs
-                    </h3>
-                    <p
-                      class="md:text-lg font-light max-w-md mt-2 text-gray-700"
-                    >
-                      Track who ran what code and when. Every notebook execution
-                      is logged with user, timestamp, and the exact code
-                      executed.
-                    </p>
-                  </div>
-                  <div class="w-full lg:w-1/2">
-                    <div
-                      class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-                    >
-                      <Image
-                        src={auditLogs}
-                        alt="Terminal-style audit log display showing timestamped user actions including user lookup and order refund operations"
-                        class="rounded-[20px]"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            </FeatureItem>
+          </FeatureList>
         </div>
       </div>
     </div>
