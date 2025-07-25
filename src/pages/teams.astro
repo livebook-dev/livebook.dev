@@ -13,6 +13,7 @@ import TeamsFeatureList from "../components/TeamsFeatureList.astro";
 import TeamsFeatureItem from "../components/TeamsFeatureItem.astro";
 import TeamsImageFrame from "../components/TeamsImageFrame.astro";
 import TeamsUseCaseSection from "../components/TeamsUseCaseSection.astro";
+import TeamsFeatureHighlight from "../components/TeamsFeatureHighlight.astro";
 
 import starIcon from "../images/teams/star-icon.svg";
 import plusIcon from "../images/teams/plus-icon.svg";
@@ -456,32 +457,16 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-14 justify-between"
               >
                 <div id="deploy-and-share-self-hosting">
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Self hosting
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Run your internal tools on your own infra in less than 10
-                    minutes. One less concern about security and privacy.
-                  </p>
+                  <TeamsFeatureHighlight
+                    title="Self hosting"
+                    description="Run your internal tools on your own infra in less than 10 minutes. One less concern about security and privacy."
+                  />
                 </div>
                 <div id="deploy-and-share-one-click">
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      One-click deploy
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Deploy internal tools to your own infrastructure with just
-                    one click.
-                  </p>
+                  <TeamsFeatureHighlight
+                    title="One-click deploy"
+                    description="Deploy internal tools to your own infrastructure with just one click."
+                  />
                 </div>
               </div>
             </div>
