@@ -11,6 +11,7 @@ import PlayButton from "../components/TeamsPlayButton.astro";
 import VideoModal from "../components/VideoModal.astro";
 import TeamsFeatureList from "../components/TeamsFeatureList.astro";
 import TeamsFeatureItem from "../components/TeamsFeatureItem.astro";
+import TeamsImageFrame from "../components/TeamsImageFrame.astro";
 
 import starIcon from "../images/teams/star-icon.svg";
 import plusIcon from "../images/teams/plus-icon.svg";
@@ -539,16 +540,11 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               description="Control access to your production-connected Livebook. Users authenticate via Livebook Teams accounts or company email domain"
               contentPosition="right"
             >
-              <div
+              <TeamsImageFrame
                 slot="content"
-                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-              >
-                <Image
-                  src={authentication}
-                  alt="Identity providers configuration interface showing Livebook Teams and Google email domain authentication options"
-                  class="rounded-[20px]"
-                />
-              </div>
+                src={authentication}
+                alt="Identity providers configuration interface showing Livebook Teams and Google email domain authentication options"
+              />
             </TeamsFeatureItem>
 
             <TeamsFeatureItem
@@ -556,16 +552,11 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               description="Use your existing identity provider for authentication and authorization. Integrates with Okta, Microsoft Entra, Keycloak, or any OpenID Connect (OIDC) provider."
               contentPosition="right"
             >
-              <div
+              <TeamsImageFrame
                 slot="content"
-                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-              >
-                <Image 
-                  src={sso} 
-                  alt="Single Sign-On login interface showing Okta, Microsoft Entra, and Keycloak provider options" 
-                  class="rounded-[20px]" 
-                />
-              </div>
+                src={sso}
+                alt="Single Sign-On login interface showing Okta, Microsoft Entra, and Keycloak provider options"
+              />
             </TeamsFeatureItem>
 
             <TeamsFeatureItem
@@ -574,16 +565,11 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               contentPosition="right"
               isLast={true}
             >
-              <div
+              <TeamsImageFrame
                 slot="content"
-                class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
-              >
-                <Image
-                  src={auditLogs}
-                  alt="Terminal-style audit log display showing timestamped user actions including user lookup and order refund operations"
-                  class="rounded-[20px]"
-                />
-              </div>
+                src={auditLogs}
+                alt="Terminal-style audit log display showing timestamped user actions including user lookup and order refund operations"
+              />
             </TeamsFeatureItem>
           </TeamsFeatureList>
         </div>
