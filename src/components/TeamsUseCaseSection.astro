@@ -1,0 +1,23 @@
+---
+// TeamsUseCaseSection.astro - Container for use case sections with title, description, and card grid
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="bg-gray-800/30 rounded-2xl p-4 sm:p-6 mt-8 w-full">
+  <h2 class="text-2xl md:text-3xl text-gray-50 text-center">
+    {title}
+  </h2>
+  <p class="text-gray-300 text-lg text-center max-w-2xl mx-auto mt-4">
+    {description}
+  </p>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 auto-rows-fr lg:grid-cols-2 gap-6 mt-8 max-w-4xl mx-auto"
+  >
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,24 @@
+---
+// TeamsFeatureHighlight.astro - Feature with star icon, title, and description
+import { Image } from "astro:assets";
+import starIcon from "../images/teams/star-icon.svg";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div>
+  <div class="flex items-center">
+    <Image src={starIcon} alt="Feature highlight icon" class="w-8 h-8" />
+    <h3 class="text-lg md:text-2xl font-semibold ml-4">
+      {title}
+    </h3>
+  </div>
+  <p class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700">
+    {description}
+  </p>
+</div>

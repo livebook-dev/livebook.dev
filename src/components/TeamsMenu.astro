@@ -9,8 +9,84 @@ import { isPathActive } from "../lib/utils.js";
   >
     <a href="/teams">Teams</a>
 
-    <a href="/teams#build-with-teams">Use cases</a>
-    <a href="/teams#teams-features">Features</a>
+    <aside class="relative group">
+      <a href="/teams#use-cases" class="z-10 py-2">Use cases</a>
+      <div
+        class="origin-top-center absolute left-1/2 -translate-x-1/2 mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block transform"
+      >
+        <div
+          class="py-1"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="use-cases-menu"
+        >
+          <a
+            href="/teams#use-cases"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            Internal tools
+          </a>
+          <a
+            href="/teams#use-cases"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            Production operations
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="relative group">
+      <a href="/teams#teams-features" class="z-10 py-2">Features</a>
+      <div
+        class="origin-top-center absolute left-1/2 -translate-x-1/2 mt-1 w-52 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block transform"
+      >
+        <div
+          class="py-1"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="features-menu"
+        >
+          <a
+            href="/teams#build-with-elixir"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            Build with Elixir
+          </a>
+          <a
+            href="/teams#teams-features-two"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            UI widgets
+          </a>
+          <a
+            href="/teams#teams-features-three"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            Read data
+          </a>
+          <a
+            href="/teams#teams-features-four"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            Deploy Apps
+          </a>
+          <a
+            href="/teams#teams-features-five"
+            class="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-gray-100 text-center"
+            role="menuitem"
+          >
+            Production Access
+          </a>
+        </div>
+      </div>
+    </aside>
     <a
       href="/teams/pricing"
       class:list={[

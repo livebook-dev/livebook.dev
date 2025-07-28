@@ -1,0 +1,61 @@
+---
+// FeatureItem.astro - Individual feature item with flexible content layout
+import { Image } from "astro:assets";
+import starIcon from "../images/teams/star-icon.svg";
+
+export interface Props {
+  title: string;
+  description: string;
+  contentPosition?: "right" | "below";
+  isLast?: boolean;
+}
+
+const { 
+  title, 
+  description, 
+  contentPosition = "below",
+  isLast = false 
+} = Astro.props;
+
+// Determine if this is a two-column layout (content on right)
+const isTwoColumn = contentPosition === "right";
+---
+
+<div class="flex gap-x-6 w-full">
+  <div class="relative">
+    {!isLast && (
+      <div
+        class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2"
+        style="background: repeating-linear-gradient(to bottom, #CAD5E0 0, #CAD5E0 8px, transparent 8px, transparent 16px); width: 2px;"
+      >
+      </div>
+    )}
+    <span
+      class="relative z-10 grid h-8 w-8 place-items-center rounded-full bg-gray-200"
+    >
+      <Image src={starIcon} alt="Feature highlight icon" class="w-8 h-8" />
+    </span>
+  </div>
+  <div class={`pb-20 flex-1 ${isLast ? 'pb-8' : ''}`}>
+    <div class={`flex flex-col gap-4 ${isTwoColumn ? 'lg:flex-row lg:items-start lg:max-w-none' : ''}`}>
+      <div class={`w-full ${isTwoColumn ? 'lg:w-1/2' : ''}`}>
+        <h3 class="text-lg md:text-2xl font-semibold max-w-lg">
+          {title}
+        </h3>
+        <p class="md:text-lg font-light max-w-md mt-2 text-gray-700">
+          {description}
+        </p>
+      </div>
+      {isTwoColumn && (
+        <div class="w-full lg:w-1/2">
+          <slot name="content" />
+        </div>
+      )}
+    </div>
+    {!isTwoColumn && (
+      <div class="mt-10">
+        <slot name="content" />
+      </div>
+    )}
+  </div>
+</div>

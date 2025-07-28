@@ -4,19 +4,24 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
-import Tooltip from "../components/Tooltip.astro";
 import Card from "../components/TeamsCard.astro";
 import DatabaseCard from "../components/TeamsDatabaseCard.astro";
 import PlayButton from "../components/TeamsPlayButton.astro";
 import VideoModal from "../components/VideoModal.astro";
+import TeamsFeatureList from "../components/TeamsFeatureList.astro";
+import TeamsFeatureItem from "../components/TeamsFeatureItem.astro";
+import TeamsImageFrame from "../components/TeamsImageFrame.astro";
+import TeamsUseCaseSection from "../components/TeamsUseCaseSection.astro";
+import TeamsFeatureHighlight from "../components/TeamsFeatureHighlight.astro";
 
 import starIcon from "../images/teams/star-icon.svg";
 import plusIcon from "../images/teams/plus-icon.svg";
 import elixirLogo from "../images/teams/elixir-logo.svg";
 import hexLibrary from "../images/teams/feature-hex-library.svg";
 import callFunction from "../images/teams/feature-call-function.svg";
-import dashedLine from "../images/teams/dashed-line.svg";
-import dashedLineTwo from "../images/teams/dashed-line-two.svg";
+import authentication from "../images/teams/authentication.png";
+import sso from "../images/teams/sso.png";
+import auditLogs from "../images/teams/audit-logs.png";
 import formsAndInputs from "../images/teams/forms-and-inputs.svg";
 import dataTables from "../images/teams/data-tables.svg";
 import chartOne from "../images/teams/chart-one.svg";
@@ -32,10 +37,6 @@ import snowflakeDatabase from "../images/teams/snowflake-database.svg";
 import sqliteDatabase from "../images/teams/sqlite-database.svg";
 import readDataSQL from "../images/teams/read-data-sql.svg";
 import readDataLocal from "../images/teams/read-data-local.svg";
-import readDataFile from "../images/teams/read-data-file-formats.svg";
-import tailscaleLogo from "../images/teams/tailscale-logo.svg";
-import googleIapLogo from "../images/teams/google-iap-logo.svg";
-import cloudflareLogo from "../images/teams/cloudflare-logo.svg";
 import josePhoto from "../images/teams/jose-photo.jpg";
 import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-livebook-teams.png";
 ---
@@ -50,14 +51,15 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           <h1
             class="max-w-3xl text-2xl/tight sm:text-4xl/tight font-semibold text-gray-50 text-center"
           >
-            Build and deploy internal tools fast with Elixir and Livebook Teams
+            Ship internal tools fast. <br />
+            Operate production with control.
           </h1>
           <span
             class="sm:text-lg text-center font-light text-gray-200 max-w-xl"
           >
-            Transform scripts, SQL queries, and backend operations into web apps
-            that anybody in your company can use. Make your co-workers more
-            self-sufficient and get your time back.
+            With Livebook Teams, deploy notebooks as internal apps, and turn
+            Livebook into a controlled environment for runbooks and production
+            operations.
           </span>
           <div class="space-y-4 md:space-y-0 md:flex md:gap-10 text-center">
             <a
@@ -82,7 +84,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       </div>
     </div>
   </section>
-  <section class="px-4 bg-gray-900 -mb-24 md:-mb-16">
+  <section class="px-4 bg-gray-900">
     <div class="relative max-w-5xl mx-auto">
       <div class="relative top-[-150px] w-full mx-auto z-10">
         <Image
@@ -103,60 +105,69 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       </div>
     </div>
   </section>
-  <section id="build-with-teams" class="bg-gray-900 overflow-x-hidden">
-    <div class="m-auto max-w-6xl flex flex-col px-4 xl:px-0">
+  <section id="use-cases" class="bg-gray-900 overflow-x-hidden pt-8">
+    <div class="mx-auto max-w-6xl p-8 sm:p-12">
       <h1
-        class="max-w-4xl text-2xl/tight sm:text-3xl/tight font-semibold text-gray-50 justify-self-start"
+        class="text-2xl/tight sm:text-3xl/tight md:text-4xl/tight font-semibold text-gray-50 text-center"
       >
-        What can you build with<br class="hidden sm:block" /> Livebook Teams?
+        Use cases
       </h1>
-      <span class="text-gray-300 text-lg sm:text-xl pt-6">Examples</span>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3 gap-6 pt-4"
+
+      <!-- Internal Tools Section -->
+      <TeamsUseCaseSection
+        title="Internal tools"
+        description="Deploy Livebook notebooks as internal apps — quicker to ship than traditional web apps."
       >
         <Card
           class="bg-gradient-to-br"
           icon="money-dollar-circle-line"
           iconColor="text-blue-600"
-          title="Customer Payment Refund Processor"
+          title="Customer refunding"
           description="Enable the support team to refund customers. No need to run that script by yourself anymore."
         />
         <Card
           class="bg-gradient-to-tl"
           icon="database-2-line"
           iconColor="text-green-600"
-          title="Self-Service SQL Query Visualization"
-          description="A web UI where non-technical co-workers can execute and visualize shared SQL queries. Empower them so you can stop being interrupted."
+          title="SQL query viewer"
+          description="A web UI where non-technical co-workers can execute and visualize shared SQL queries."
         />
         <Card
           class="bg-gradient-to-br"
           icon="user-add-line"
           iconColor="text-yellow-500"
-          title="Customer Onboarding Workflow Automation"
-          description="Help customer success and operations automate the steps needed when onboarding new customers, like setting up accounts, importing data, etc. Bye bye manual work."
-        />
-        <Card
-          class="bg-gradient-to-br"
-          icon="bookmark-3-line"
-          iconColor="text-gray-400"
-          title="Runbooks"
-          description="Instead of static documents, build interactive runbooks for technical support, DevOps, and solutions engineering. No more need to answer “how can I do that?”."
+          title="Onboarding workflow"
+          description="Help customer success and operations automate the steps needed when onboarding new customers."
         />
         <Card
           class="bg-gradient-to-tl"
           icon="dashboard-3-line"
-          iconColor="text-yellow-500"
-          title="Admin Panels"
+          iconColor="text-red-500"
+          title="Admin panels"
           description="Enable customer-facing teams to look up user data, extend free trials, and view usage history."
         />
+      </TeamsUseCaseSection>
+
+      <!-- Operations Section -->
+      <TeamsUseCaseSection
+        title="Production operations"
+        description="Use a self-hosted Livebook to give engineers a centralized and auditable window into your production system — better than IEx sessions or ad hoc scripts."
+      >
         <Card
           class="bg-gradient-to-br"
-          icon="line-chart-line"
-          iconColor="text-red-600"
-          title="Track KPIs and Metrics"
-          description="Build a dashboard where the marketing and product teams can visualize funnel and product usage metrics."
+          icon="tools-line"
+          iconColor="text-yellow-500"
+          title="Engineering support"
+          description="Investigate customer issues using an authenticated self-hosted Livebook."
         />
-      </div>
+        <Card
+          class="bg-gradient-to-tl"
+          icon="file-list-3-line"
+          iconColor="text-green-600"
+          title="Runbooks"
+          description="Interactive runbooks for technical support, DevOps, and solutions engineering."
+        />
+      </TeamsUseCaseSection>
     </div>
   </section>
   <section id="teams-features" class="bg-gray-900 overflow-x-hidden pt-24">
@@ -176,9 +187,6 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           <h1 class="text-2xl sm:text-3xl md:text-4xl/tight font-semibold mt-2">
             Livebook Teams features
           </h1>
-          <p class="text-gray-600 sm:text-lg mt-3">
-            A fast (and fun 😃) way to build internal tools.
-          </p>
         </div>
         <div id="build-with-elixir" class="mt-8 sm:mt-16">
           <div id="build-with-elixir-title">
@@ -207,7 +215,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                   <div class="flex items-center">
                     <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
                     <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Use Hex Libraries
+                      Use Hex libraries
                     </h3>
                   </div>
                   <p class="font-light max-w-sm ml-[52px] mt-2 text-gray-700">
@@ -222,65 +230,30 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 />
               </div>
             </div>
-            <div id="call-functions">
-              <div
-                class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-1"
-              >
-                <div>
-                  <div class="flex">
-                    <Image
-                      src={starIcon}
-                      alt="Star Icon"
-                      class="w-8 h-8 z-10"
-                    />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Call functions from your main <br />Elixir/Phoenix app
-                      directly
-                    </h3>
-                  </div>
-                  <p class="font-light max-w-sm ml-[52px] mt-2 text-gray-700">
-                    No need to write HTTP APIs for your internal tools. Use
-                    Elixir's built-in mechanisms for integrating multiple Erlang
-                    VM nodes.
-                  </p>
-                </div>
-                <Image
-                  src={callFunction}
-                  alt="Call functions"
-                  class="lg:w-1/2 pl-12 lg:pl-0"
-                />
-              </div>
-            </div>
-            <Image
-              src={dashedLine}
-              alt="Dashed Line"
-              class="absolute top-0 left-[15px] w-[3px] h-[270px] lg:w-auto lg:h-auto"
-            />
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="teams-features-two" class="bg-gray-200 pb-6 px-4 lg:px-0">
+  <section id="teams-features-two" class="bg-gray-200 pb-6 px-4">
     <div
       class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 lg:px-0 py-10 md:py-16 flex flex-col items-center space-y-6 md:space-y-12"
     >
       <h1 class="text-2xl md:text-4xl font-semibold mt-2">
-        An <span class="text-elixir">Elixir</span> Library of <br /> UI Building
-        Blocks
+        An <span class="text-elixir">Elixir</span> library of <br /> UI building
+        blocks
       </h1>
       <div class="max-w-3xl mt-4 text-gray-700 font-light text-lg text-center">
         Assemble UIs with zero to minimal need for HTML and CSS. Livebook
-        provides a set of UI building blocks you can use just by writing Elixir,
-        so you can stay in the comfort of the language you love and build UIs
-        faster.
+        provides UI building blocks you can use by writing Elixir, so you can
+        stay in the comfort of the language you love and build UIs faster.
       </div>
       <div id="teams-features-forms-and-input">
         <div class="flex flex-col items-center space-y-5">
           <div class="flex items-center justify-center">
             <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
             <h3 class="text-lg md:text-2xl font-semibold ml-2 sm:ml-4">
-              Forms and Inputs
+              Forms and inputs
             </h3>
           </div>
           <p class="md:text-lg font-light text-gray-700 text-center">
@@ -299,7 +272,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
           <div class="flex items-center justify-center">
             <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
             <h3 class="text-lg md:text-2xl font-semibold ml-2 sm:ml-4">
-              Data Tables
+              Data tables
             </h3>
           </div>
           <p class="md:text-lg font-light text-gray-700 text-center">
@@ -360,7 +333,7 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
               <p
                 class="font-medium text-sm sm:text-base text-center text-gray-800 mt-2"
               >
-                Use the Map Smart cell to <br /> generate simple maps
+                Use the Map Smart Cell to <br /> generate simple maps
               </p>
             </div>
             <div class="flex flex-col items-center justify-center">
@@ -386,146 +359,99 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
             </h2>
           </div>
           <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
-            Whenever you're building dashboards, internal reports, or
-            lightweight business intelligence, you need to consume data. With
-            Livebook and Elixir, that's easy, no matter the data source.
+            Building dashboards, internal reports, or lightweight business
+            intelligence requires consuming data. With Livebook and Elixir,
+            that's easy, no matter the data source.
           </p>
         </div>
-        <div id="read-from-sql" class="mt-10">
-          <div class="flex items-center">
-            <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-            <h3 class="text-lg md:text-2xl font-semibold ml-4">
-              Read data from a SQL database
-            </h3>
-          </div>
-          <p
-            class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
+
+        <TeamsFeatureList>
+          <TeamsFeatureItem
+            title="Read data from a SQL database"
+            description="Built-in integrations to multiple databases, so you don't need to write boilerplate code to run SQL queries."
+            contentPosition="below"
           >
-            Built-in integrations to multiple databases, so you don't need to
-            write boilerplate code to run SQL queries.
-          </p>
-          <div
-            class="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 px-[52px]"
-          >
-            <DatabaseCard
-              title="PostgreSQL"
-              imageURL={postgresDatabase.src}
-              integrationId="postgresql"
-            />
-            <DatabaseCard
-              title="MySQL"
-              imageURL={mysqlDatabase.src}
-              integrationId="mysql"
-            />
-            <DatabaseCard
-              title="Microsoft SQL Server"
-              imageURL={microsoftDatabase.src}
-              integrationId="sqlserver"
-            />
-            <DatabaseCard
-              title="SQLite"
-              imageURL={sqliteDatabase.src}
-              integrationId="sqlite"
-            />
-            <DatabaseCard
-              title="Google BigQuery"
-              imageURL={googleDatabase.src}
-              integrationId="google-bigquery"
-            />
-            <DatabaseCard
-              title="Amazon Athena"
-              imageURL={amazonDatabase.src}
-              integrationId="amazon-athena"
-            />
-            <DatabaseCard
-              title="Snowflake"
-              imageURL={snowflakeDatabase.src}
-              integrationId="snowflake"
-            />
-          </div>
-          <p
-            class="md:text-lg font-light max-w-sm ml-[52px] mt-10 text-gray-700"
-          >
-            Write SQL queries directly in Livebook and easily see the result
-          </p>
-          <Image src={readDataSQL} alt="Read data from SQL" class="pl-[52px]" />
-        </div>
-        <div id="read-from-local" class="mt-10">
-          <div class="flex items-start">
-            <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-            <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
-              Read data from a local or cloud-hosted file
-            </h3>
-          </div>
-          <p
-            class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
-          >
-            It doesn't matter if your data is stored as a file in your file
-            system or in a cloud storage service like S3; Livebook handles both
-            ways transparently.
-          </p>
-          <Image
-            src={readDataLocal}
-            alt="Read data from local"
-            class="mx-auto mt-3 pl-[52px] w-full max-w-xl"
-          />
-        </div>
-        <div id="read-from-data-files" class="mt-10">
-          <div class="flex items-start">
-            <Image src={starIcon} alt="Star Icon" class="w-8 h-8 z-20" />
-            <h3 class="text-lg md:text-2xl font-semibold ml-4 max-w-lg">
-              Read data from structured data file formats
-            </h3>
-          </div>
-          <p
-            class="md:text-lg font-light max-w-md ml-[52px] mt-2 text-gray-700"
-          >
-            Read data from CSV, IPC, NDJson, or Parquet files with code
-            generated via drag and drop.
-          </p>
-          <div class="relative w-full max-w-lg mx-auto mt-3">
-            <Image
-              src={readDataFile}
-              alt="Read data from local"
-              class="w-full h-auto"
-            />
-            <div
-              class="absolute top-0 left-0 w-full h-full bg-gray-900/30 rounded-[14px] flex justify-center items-center group cursor-pointer open-videomodal"
-              data-videomodal="2"
-            >
-              <div
-                class="group-hover:scale-110 flex justify-center items-center absolute z-10"
-              >
-                <Icon
-                  icon="play-fill"
-                  class="text-5xl absolute z-10 text-white"
+            <div slot="content">
+              <div class="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-4">
+                <DatabaseCard
+                  title="PostgreSQL"
+                  imageURL={postgresDatabase.src}
+                  integrationId="postgresql"
                 />
-                <div class="absolute rounded-full w-20 h-20 bg-blue-600"></div>
-                <div class="absolute rounded-full w-24 h-24 bg-blue-600/60">
-                </div>
+                <DatabaseCard
+                  title="MySQL"
+                  imageURL={mysqlDatabase.src}
+                  integrationId="mysql"
+                />
+                <DatabaseCard
+                  title="Microsoft SQL Server"
+                  imageURL={microsoftDatabase.src}
+                  integrationId="sqlserver"
+                />
+                <DatabaseCard
+                  title="SQLite"
+                  imageURL={sqliteDatabase.src}
+                  integrationId="sqlite"
+                />
+                <DatabaseCard
+                  title="Google BigQuery"
+                  imageURL={googleDatabase.src}
+                  integrationId="google-bigquery"
+                />
+                <DatabaseCard
+                  title="Amazon Athena"
+                  imageURL={amazonDatabase.src}
+                  integrationId="amazon-athena"
+                />
+                <DatabaseCard
+                  title="Snowflake"
+                  imageURL={snowflakeDatabase.src}
+                  integrationId="snowflake"
+                />
+              </div>
+
+              <div class="mt-10">
+                <p class="md:text-lg font-light max-w-md text-gray-700">
+                  Write SQL queries directly in Livebook and easily see the
+                  result
+                </p>
+
+                <Image
+                  src={readDataSQL}
+                  alt="Livebook notebook showing SQL query execution with database connection and results table displaying queried data"
+                />
               </div>
             </div>
-          </div>
-        </div>
-        <Image
-          src={dashedLineTwo}
-          alt="Dashed Line"
-          class="absolute top-[230px] sm:top-[210px] left-[15px] h-[1250px] sm:h-[1620px] md:h-[1620px] lg:h-[1590px] z-10"
-        />
+          </TeamsFeatureItem>
+
+          <TeamsFeatureItem
+            title="Read data from a local or cloud-hosted file"
+            description="It doesn't matter if your data is stored as a file in your file system or in a cloud storage service like S3; Livebook handles both ways transparently."
+            contentPosition="below"
+            isLast={true}
+          >
+            <Image
+              slot="content"
+              src={readDataLocal}
+              alt="Read data from local"
+              class="mx-auto w-full max-w-xl"
+            />
+          </TeamsFeatureItem>
+        </TeamsFeatureList>
       </div>
     </div>
   </section>
   <section id="teams-features-four">
-    <div class="px-4 lg:px-0 bg-gray-200 rounded-b-[40px] sm:rounded-b-[60px]">
-      <div class="bg-gray-100">
-        <div class="bg-gray-200 relative rounded-b-[40px] sm:rounded-b-[60px]">
+    <div class="px-4 bg-gray-200">
+      <div class="bg-gray-200">
+        <div class="bg-gray-200 relative">
           <div class="w-full h-full relative top-[125px]">
             <div
               class="mx-auto max-w-6xl bg-gray-300 rounded-3xl px-4 lg:px-0 py-10 md:py-16 flex flex-col items-center space-y-6 md:space-y-12"
             >
               <div id="teams-features-deploy-and-share" class="text-center">
                 <h1 class="text-2xl md:text-4xl font-semibold mt-2">
-                  Deploy and Share Securely
+                  Deploy notebooks as apps
                 </h1>
                 <p class="mt-4 text-gray-700 font-light text-lg">
                   The security of on-premises hosting with the DX of one-click
@@ -537,105 +463,16 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                 class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-14 justify-between"
               >
                 <div id="deploy-and-share-self-hosting">
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Self Hosting
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Run your internal tools on your own infra in less than 10
-                    minutes. One less concern about security and privacy.
-                  </p>
+                  <TeamsFeatureHighlight
+                    title="Self hosting"
+                    description="Run your internal tools on your own infra in less than 10 minutes. One less concern about security and privacy."
+                  />
                 </div>
                 <div id="deploy-and-share-one-click">
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      One-Click Deploy
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Deploy internal tools to your own infrastructure with just
-                    one click.
-                  </p>
-                </div>
-                <div
-                  id="deploy-and-share-authentication"
-                  class="order-last sm:order-none"
-                >
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Authentication
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Authenticate internal users using our built-in integrations,
-                    or quickly bring your own custom auth.
-                  </p>
-                  <div class="flex items-center max-w-xs ml-[52px] gap-4 mt-4">
-                    <Tooltip text="Cloudflare" direction="bottom">
-                      <a href="https://hexdocs.pm/livebook/cloudflare.html">
-                        <Image
-                          src={cloudflareLogo}
-                          alt="Cloudflare Logo"
-                          class="w-24"
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip text="Google IAP" direction="bottom">
-                      <a href="https://hexdocs.pm/livebook/google_iap.html">
-                        <Image
-                          src={googleIapLogo}
-                          alt="Google IAP Logo"
-                          class="w-12"
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip text="Tailscale" direction="bottom">
-                      <a href="https://hexdocs.pm/livebook/tailscale.html">
-                        <Image
-                          src={tailscaleLogo}
-                          alt="Tailscale Logo"
-                          class="w-18"
-                        />
-                      </a>
-                    </Tooltip>
-                  </div>
-                  <div
-                    class="flex justify-center items-start gap-2 max-w-sm ml-[52px] bg-gray-200 rounded-md py-3 px-4 mt-4 text-sm sm:text-base text-gray-500"
-                  >
-                    <Icon icon="information-line" />
-                    <p>
-                      <a
-                        href="https://hexdocs.pm/livebook/custom_auth.html"
-                        class="underline"
-                        target="_blank">Adding your custom</a
-                      > auth to Livebook is as simple as writing one Elixir module.
-                    </p>
-                  </div>
-                </div>
-                <div id="deploy-and-share-encrypted-secrets">
-                  <div class="flex items-center">
-                    <Image src={starIcon} alt="Star Icon" class="w-8 h-8" />
-                    <h3 class="text-lg md:text-2xl font-semibold ml-4">
-                      Encrypted secrets
-                    </h3>
-                  </div>
-                  <p
-                    class="md:text-lg font-light max-w-sm ml-[52px] mt-2 text-gray-700"
-                  >
-                    Save API and database credentials with Livebook Secrets,
-                    which are encrypted with a key to which only you have
-                    access.
-                  </p>
+                  <TeamsFeatureHighlight
+                    title="One-click deploy"
+                    description="Deploy internal tools to your own infrastructure with just one click."
+                  />
                 </div>
               </div>
             </div>
@@ -644,22 +481,90 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
       </div>
     </div>
   </section>
-  <section id="cta" class="bg-gray-100 py-32 px-4 lg:px-0">
-    <div class="bg-gray-100 mt-32">
-      <div class="flex flex-col gap-10 items-center">
-        <h1
-          class="max-w-xl text-3xl/tight sm:text-4xl/tight font-semibold text-center"
-        >
-          Get started building internal tools in minutes
-        </h1>
-        <a
-          class="button-cta button-pink plausible-event-name=teams+signup+bottom+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)] hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
-          href="https://teams.livebook.dev"
-        >
-          <Icon icon="rocket-line" class="text-xl" />
-          <span class="px-2 font-semibold">Try it free for 30 days</span>
-        </a>
+  <section id="teams-features-five" class="bg-gray-100">
+    <div class="bg-gray-200 rounded-b-[40px] sm:rounded-b-[60px] pt-60 pb-20">
+      <div class="m-auto max-w-6xl px-4 xl:px-0">
+        <div class="relative">
+          <div id="production-access-title">
+            <div class="flex items-center gap-2">
+              <h2 class="text-2xl md:text-4xl font-semibold text-gray-900">
+                Run code against production with confidence
+              </h2>
+            </div>
+            <p class="max-w-xl text-gray-700 text-lg mt-3 font-light">
+              Give your team managed, auditable access to production. Livebook
+              Teams adds authentication, SSO, and audit trails to your
+              self-hosted Livebook—replacing ad hoc terminals and scattered
+              scripts.
+            </p>
+          </div>
+
+          <TeamsFeatureList>
+            <TeamsFeatureItem
+              title="Integrate with your main Elixir/Phoenix app"
+              description="Execute code in your production environment via Erlang distribution. You control what runs in the context of your prod env, and what runs only in your notebook context."
+              contentPosition="right"
+            >
+              <div slot="content" class="rounded-[20px] w-full max-w-lg">
+                <Image src={callFunction} alt="Call functions" />
+              </div>
+            </TeamsFeatureItem>
+
+            <TeamsFeatureItem
+              title="Authentication"
+              description="Control access to your production-connected Livebook. Users authenticate via Livebook Teams accounts or company email domain"
+              contentPosition="right"
+            >
+              <TeamsImageFrame
+                slot="content"
+                src={authentication}
+                alt="Identity providers configuration interface showing Livebook Teams and Google email domain authentication options"
+              />
+            </TeamsFeatureItem>
+
+            <TeamsFeatureItem
+              title="Single Sign-On (SSO)"
+              description="Use your existing identity provider for authentication and authorization. Integrates with Okta, Microsoft Entra, Keycloak, or any OpenID Connect (OIDC) provider."
+              contentPosition="right"
+            >
+              <TeamsImageFrame
+                slot="content"
+                src={sso}
+                alt="Single Sign-On login interface showing Okta, Microsoft Entra, and Keycloak provider options"
+              />
+            </TeamsFeatureItem>
+
+            <TeamsFeatureItem
+              title="Audit logs"
+              description="Track who ran what code and when. Every notebook execution is logged with user, timestamp, and the exact code executed."
+              contentPosition="right"
+              isLast={true}
+            >
+              <TeamsImageFrame
+                slot="content"
+                src={auditLogs}
+                alt="Terminal-style audit log display showing timestamped user actions including user lookup and order refund operations"
+              />
+            </TeamsFeatureItem>
+          </TeamsFeatureList>
+        </div>
       </div>
+    </div>
+  </section>
+  <section id="cta" class="bg-gray-100 py-32 px-4 lg:px-0">
+    <div class="flex flex-col gap-10 items-center">
+      <h1
+        class="max-w-xl text-3xl/tight sm:text-4xl/tight font-semibold text-center"
+      >
+        Get started in a few minutes
+      </h1>
+      <a
+        class="button-cta button-pink plausible-event-name=teams+signup+bottom+cta+click drop-shadow-[0_15px_25px_rgba(228,76,117,0.5)] hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
+        href="https://teams.livebook.dev"
+      >
+        <Icon icon="rocket-line" class="text-xl" />
+        <span class="px-2 font-semibold">Try it free for 30 days</span>
+      </a>
     </div>
   </section>
   <section id="video-videomodal">

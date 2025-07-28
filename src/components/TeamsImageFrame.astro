@@ -1,0 +1,18 @@
+---
+// TeamsImageFrame.astro - Wrapper for images with gradient background frame
+import { Image } from "astro:assets";
+
+export interface Props {
+  src: ImageMetadata;
+  alt: string;
+  class?: string;
+}
+
+const { src, alt, class: className = "" } = Astro.props;
+---
+
+<div
+  class="rounded-[20px] w-full max-w-lg bg-gradient-to-br from-[#3E64FF] to-[#E44C75] pb-[6px]"
+>
+  <Image src={src} alt={alt} class={`rounded-[20px] ${className}`} />
+</div>
