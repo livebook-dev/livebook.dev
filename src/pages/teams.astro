@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
-import Tooltip from "../components/Tooltip.astro";
 import Card from "../components/TeamsCard.astro";
 import DatabaseCard from "../components/TeamsDatabaseCard.astro";
 import PlayButton from "../components/TeamsPlayButton.astro";
@@ -38,10 +37,6 @@ import snowflakeDatabase from "../images/teams/snowflake-database.svg";
 import sqliteDatabase from "../images/teams/sqlite-database.svg";
 import readDataSQL from "../images/teams/read-data-sql.svg";
 import readDataLocal from "../images/teams/read-data-local.svg";
-import readDataFile from "../images/teams/read-data-file-formats.svg";
-import tailscaleLogo from "../images/teams/tailscale-logo.svg";
-import googleIapLogo from "../images/teams/google-iap-logo.svg";
-import cloudflareLogo from "../images/teams/cloudflare-logo.svg";
 import josePhoto from "../images/teams/jose-photo.jpg";
 import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-livebook-teams.png";
 ---
@@ -421,7 +416,10 @@ import deployWithTeams from "../images/teams/how-to-deploy-livebook-app-with-liv
                   result
                 </p>
 
-                <Image src={readDataSQL} alt="Livebook notebook showing SQL query execution with database connection and results table displaying queried data" />
+                <Image
+                  src={readDataSQL}
+                  alt="Livebook notebook showing SQL query execution with database connection and results table displaying queried data"
+                />
               </div>
             </div>
           </TeamsFeatureItem>
