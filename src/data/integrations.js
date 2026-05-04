@@ -45,9 +45,6 @@ import sqlitePreview from "../images/integrations/sqlite/preview.png";
 import bigqueryLogo from "../images/integrations/bigquery/logo.png";
 import bigqueryPreview from "../images/integrations/bigquery/preview.png";
 
-import athenaLogo from "../images/integrations/athena/logo.png";
-import athenaPreview from "../images/integrations/athena/preview.png";
-
 import snowflakeLogo from "../images/integrations/snowflake/logo.svg";
 import snowflakePreview from "../images/integrations/snowflake/preview.png";
 
@@ -299,21 +296,6 @@ const integrations = [
       link: "https://news.livebook.dev/how-to-query-and-visualize-data-from-google-bigquery-using-livebook-3o2leU",
       main: "Read the tutorial",
       description: "Big Query & Livebook",
-    },
-  },
-  {
-    id: "amazon-athena",
-    name: "Amazon Athena",
-    logo: athenaLogo,
-    category: "Data Warehouse",
-    headline: "Connect to Amazon Athena directly from Livebook",
-    description:
-      "Connect to your AWS Athena using Livebook's Database Connection Smart cell. Use Livebook Secrets to store your AWS access key securely. Write and run queries directly from Livebook.",
-    image: athenaPreview,
-    cta: {
-      link: "https://news.livebook.dev/how-to-query-and-visualize-data-from-amazon-athena-using-livebook-4dfQ5y",
-      main: "Read the tutorial",
-      description: "Athena & Livebook",
     },
   },
   {
