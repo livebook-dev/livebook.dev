@@ -22,6 +22,7 @@ const selectedIntegrations = integrations.filter((integration) =>
     "postgresql",
     "mysql",
     "google-bigquery",
+    "cloudflare",
     "vega-lite",
     "maplibre",
   ].includes(integration.id)
@@ -268,8 +269,9 @@ const selectedIntegrations = integrations.filter((integration) =>
         Integrations
       </h2>
       <span class="mt-3 max-w-lg text-gray-700 font-medium text-center">
-        Livebook comes with built-in integrations with Elixir, Hugging Face,
-        multiple data sources, data visualization libraries, and more!
+        Livebook comes with built-in integrations with Elixir, Python,
+        data sources, data visualization libraries, authentication providers,
+        and more!
       </span>
       <a
         class="mt-8 button button-outlined-gray whitespace-nowrap"
