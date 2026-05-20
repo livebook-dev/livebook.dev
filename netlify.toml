@@ -29,3 +29,13 @@
   from = "/pa/api/event"
   to = "https://plausible.io/api/event"
   status = 200
+
+[[redirects]]
+  from = "/teams"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/teams/*"
+  to = "/"
+  status = 301
