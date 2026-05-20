@@ -10,27 +10,17 @@ import tigrisLogo from "../images/tigris-logo.svg";
 
 import Icon from "../components/Icon.astro";
 import DefaultMenu from "../components/DefaultMenu.astro";
-import TeamsMenu from "../components/TeamsMenu.astro";
 import DefaultMobileMenu from "../components/DefaultMobileMenu.astro";
-import TeamsMobileMenu from "../components/TeamsMobileMenu.astro";
 
 export interface Props {
   title: string;
-  isDarkMode?: boolean;
-  displaySponsors?: boolean;
-  variant?: "default" | "teams";
 }
 
-const {
-  title,
-  isDarkMode = false,
-  displaySponsors = true,
-  variant = "default",
-} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class={isDarkMode ? "dark" : ""}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -77,26 +67,10 @@ const {
     ></script>
   </head>
   <body>
-    {
-      variant === "teams" && (
-      <div class="bg-gray-800 px-4 py-1">
-        <div class="flex justify-center lg:justify-between text-gray-200 text-sm font-light max-w-7xl mx-auto">
-          <p class="hidden cursor-default lg:block">
-            Livebook Teams
-          </p>
-          <p>
-          <a class="hover:text-white flex items-center gap-1" href="/">
-            <Icon icon="arrow-left-line" />
-            Switch to Livebook OSS</a>
-          </p>
-        </div>
-      </div>
-      )
-    }
     <!-- Navbar desktop -->
     <header id="header" class="header">
       <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">
-        <a href="/" class="flex items-center">
+        <a href="/" class="flex w-52 flex-shrink-0 items-center">
           <Image class="w-10" alt="Livebook Logo" src={logo} />
           <span
             class="text-gray-900 dark:text-white font-logo text-[34px] leading-9 px-3 pt-1 font-light"
@@ -104,8 +78,7 @@ const {
           >
         </a>
 
-        {variant === "default" && <DefaultMenu />}
-        {variant === "teams" && <TeamsMenu />}
+        <DefaultMenu />
       </div>
     </header>
 
@@ -137,8 +110,7 @@ const {
         data-on-menu="show"
         class="h-full mt-12 flex flex-col items-center space-y-12"
       >
-        {variant === "default" && <DefaultMobileMenu />}
-        {variant === "teams" && <TeamsMobileMenu />}
+        <DefaultMobileMenu />
         <div class="flex-grow"></div>
       </div>
     </header>
@@ -147,146 +119,72 @@ const {
 
     <!-- Sponsors & Supporters -->
 
-    {
-      displaySponsors && (
-        <section id="sponsors" class="bg-gray-800">
-          <div class="m-auto max-w-5xl px-4 py-16 flex flex-col md:flex-row gap-20 md:gap-0 items-center justify-around">
-            <div class="flex flex-col items-center md:items-start">
-              <span class="text-lg font-semibold tracking-widest text-white">
-                PLATINUM SPONSORS
-              </span>
-              <div class="flex flex-row pt-4">
-                <a class="flex justify-center" href="https://fly.io/">
-                  <Image src={flyioLogoWithText} alt="Flyio Logo" width="270" />
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-              <span class="text-base tracking-widest text-white">SPONSORS</span>
-              <div class="flex flex-row gap-8 items-center pt-4">
-                <a class="pt-2" href="https://www.tigrisdata.com/">
-                  <Image src={tigrisLogo} alt="Tigris logo" width="100" />
-                </a>
-              </div>
-            </div>
+    <section id="sponsors" class="bg-gray-800">
+      <div
+        class="m-auto max-w-5xl px-4 py-16 flex flex-col md:flex-row gap-20 md:gap-0 items-center justify-around"
+      >
+        <div class="flex flex-col items-center md:items-start">
+          <span class="text-lg font-semibold tracking-widest text-white">
+            PLATINUM SPONSORS
+          </span>
+          <div class="flex flex-row pt-4">
+            <a class="flex justify-center" href="https://fly.io/">
+              <Image src={flyioLogoWithText} alt="Flyio Logo" width="270" />
+            </a>
           </div>
-        </section>
-      )
-    }
+        </div>
+        <div class="flex flex-col items-center md:items-start">
+          <span class="text-base tracking-widest text-white">SPONSORS</span>
+          <div class="flex flex-row gap-8 items-center pt-4">
+            <a class="pt-2" href="https://www.tigrisdata.com/">
+              <Image src={tigrisLogo} alt="Tigris logo" width="100" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    {
-      variant === "default" && (
-        <footer class="bg-gray-900">
-          <div class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between">
-            <div class="flex flex-col">
-              <Image src={logo} alt="" width="45" height="45" />
-              <span class="mt-2 text-gray-50 text-xl font-logo font-semibold">
-                Livebook
-              </span>
-              {/* prettier-ignore */}
-              <span class="mt-1 text-gray-300">
-                Copyright 2021-{new Date().getFullYear()}. All rights reserved,
-                <a class="border-b-2 border-gray-300" href="https://dashbit.co/">Dashbit</a>.
-                <a class="border-b-2 border-gray-300" href="/privacy-policy">Privacy Policy</a>.
-              </span>
-            </div>
-            <div class="md:hidden w-full border-t border-gray-700" />
-            <div class="flex flex-col text-gray-200 items-end">
-              <div class="flex gap-2 text-3xl">
-                <a
-                  href="https://github.com/livebook-dev/livebook/discussions"
-                  aria-label="github community"
-                >
-                  <Icon icon="github-fill" />
-                </a>
-                <a
-                  href="https://twitter.com/livebookdev"
-                  aria-label="twitter link"
-                >
-                  <Icon icon="twitter-fill" />
-                </a>
-              </div>
-              <span>
-                Marks shown as "Integrations" belong to their respective owners.
-              </span>
-            </div>
+    <footer class="bg-gray-900">
+      <div
+        class="m-auto max-w-7xl w-full px-4 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-end md:justify-between"
+      >
+        <div class="flex flex-col">
+          <Image src={logo} alt="" width="45" height="45" />
+          <span class="mt-2 text-gray-50 text-xl font-logo font-semibold">
+            Livebook
+          </span>
+          <span class="mt-1 text-gray-300">
+            Copyright 2021-{new Date().getFullYear()}. All rights reserved,
+            <a class="border-b-2 border-gray-300" href="https://dashbit.co/"
+              >Dashbit</a
+            >.
+            <a class="border-b-2 border-gray-300" href="/privacy-policy"
+              >Privacy Policy</a
+            >.
+          </span>
+        </div>
+        <div class="md:hidden w-full border-t border-gray-700"></div>
+        <div class="flex flex-col text-gray-200 items-end">
+          <div class="flex gap-2 text-3xl">
+            <a
+              href="https://github.com/livebook-dev/livebook/discussions"
+              aria-label="github community"
+            >
+              <Icon icon="github-fill" />
+            </a>
+            <a href="https://twitter.com/livebookdev" aria-label="twitter link">
+              <Icon icon="twitter-fill" />
+            </a>
           </div>
-        </footer>
-      )
-    }
+          <span>
+            Marks shown as "Integrations" belong to their respective owners.
+          </span>
+        </div>
+      </div>
+    </footer>
 
-    {
-      variant === "teams" && (
-        <footer class="bg-gray-900">
-          <div class="m-auto max-w-7xl w-full px-6 py-10 md:py-12 flex flex-col text-sm space-y-5 md:flex-row md:space-y-0 md:items-start md:justify-between">
-            <div class="flex flex-col">
-              <Image src={logo} alt="" width="45" height="45" />
-              <span class="mt-2 text-gray-50 text-xl font-logo font-semibold">
-                Livebook Teams
-              </span>
-              {/* prettier-ignore */}
-              <span class="mt-1 text-gray-300">
-                Copyright {new Date().getFullYear()}. All rights reserved,
-                <a class="border-b-2 border-gray-300" href="https://dashbit.co/">Dashbit</a>.
-              </span>
-            </div>
-            <div class="md:hidden w-full border-t border-gray-700" />
-            <div class="flex gap-32">
-              <div class="flex flex-col text-gray-300 items-start">
-                <h3 class="font-semibold text-md tracking-wider ">COMMUNITY</h3>
-                <div class="flex flex-col gap-2 text-sm mt-2">
-                  <a
-                    href="https://github.com/livebook-dev/livebook/discussions"
-                    aria-label="github community"
-                    class="flex items-center gap-2"
-                  >
-                    <Icon icon="github-fill" />
-                    GitHub
-                  </a>
-                  <a
-                    href="https://twitter.com/livebookdev"
-                    aria-label="twitter link"
-                    class="flex items-center gap-2"
-                  >
-                    <Icon icon="twitter-fill" />X / Twitter
-                  </a>
-                </div>
-              </div>
-              <div class="flex flex-col text-gray-300 items-start">
-                <h3 class="font-semibold text-md tracking-wider ">LEGAL</h3>
-                <div class="flex flex-col gap-2 text-sm mt-2">
-                  <a
-                    href="https://teams.livebook.dev/terms"
-                    aria-label="Livebook Teams terms of services"
-                  >
-                    Terms
-                  </a>
-                </div>
-                <div class="flex flex-col gap-2 text-sm mt-2">
-                  <a
-                    href="https://teams.livebook.dev/privacy"
-                    aria-label="Livebook Teams privacy policy"
-                  >
-                    Privacy
-                  </a>
-                </div>
-                <div class="max-w-xs mt-10 text-xs hidden sm:block">
-                  Marks shown as "Integrations" belong to their respective
-                  owners.
-                </div>
-              </div>
-            </div>
-            <div class="max-w-xs mt-10 text-xs text-gray-300 sm:hidden">
-              Marks shown as "Integrations" belong to their respective owners.
-            </div>
-          </div>
-        </footer>
-      )
-    }
     <!-- Scripts -->
-    {variant === "default" && (
-    <>
     <script>
       window.announcekit = window.announcekit || {
         queue: [],
@@ -309,10 +207,6 @@ const {
       });
     </script>
     <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
-    </>
-    )
-    }
-
   </body>
 </html>
 
