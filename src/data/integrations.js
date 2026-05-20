@@ -63,15 +63,15 @@ import mermaidPreview from "../images/integrations/mermaid/preview.png";
 
 import cloudflareLogo from "../images/integrations/cloudflare/logo.png";
 import cloudflarePreview from "../images/integrations/cloudflare/preview.png";
-import cloudflareTeams from "../images/integrations/cloudflare/features/teams.png";
+import cloudflareAuthentication from "../images/integrations/cloudflare/features/authentication.png";
 
 import googleIapLogo from "../images/integrations/google-iap/logo.webp";
 import googleIapPreview from "../images/integrations/google-iap/preview.png";
-import googleIapTeams from "../images/integrations/google-iap/features/teams.png";
+import googleIapAuthentication from "../images/integrations/google-iap/features/authentication.png";
 
 import tailscaleLogo from "../images/integrations/tailscale/logo.svg";
 import tailscalePreview from "../images/integrations/tailscale/preview.png";
-import tailscaleTeams from "../images/integrations/tailscale/features/teams.png";
+import tailscaleAuthentication from "../images/integrations/tailscale/features/authentication.png";
 
 const integrations = [
   {
@@ -397,10 +397,10 @@ const integrations = [
     },
     features: [
       {
-        headline: "Livebook Teams + Cloudflare Zero Trust",
+        headline: "Livebook + Cloudflare Zero Trust",
         description:
-          "With <a href='/teams' class='underline'>Livebook Teams</a>, you can deploy notebooks as applications with pre-configured Cloudflare Zero Trust Authentication.",
-        image: cloudflareTeams,
+          "Run Livebook behind Cloudflare Zero Trust to protect notebooks and deployed apps with your organization's access policies.",
+        image: cloudflareAuthentication,
       },
     ],
   },
@@ -420,10 +420,10 @@ const integrations = [
     },
     features: [
       {
-        headline: "Livebook Teams + Google IAP",
+        headline: "Livebook + Google IAP",
         description:
-          "With <a href='/teams' class='underline'>Livebook Teams</a>, you can deploy notebooks as applications with pre-configured Google IAP Authentication.",
-        image: googleIapTeams,
+          "Run Livebook behind Google IAP to protect notebooks and deployed apps with identity-aware access controls.",
+        image: googleIapAuthentication,
       },
     ],
   },
@@ -443,10 +443,10 @@ const integrations = [
     },
     features: [
       {
-        headline: "Livebook Teams + Tailscale",
+        headline: "Livebook + Tailscale",
         description:
-          "With <a href='/teams' class='underline'>Livebook Teams</a>, you can deploy notebooks as applications with pre-configured Tailscale Authentication.",
-        image: tailscaleTeams,
+          "Run Livebook on your Tailnet to keep notebooks and deployed apps private to trusted users and devices.",
+        image: tailscaleAuthentication,
       },
     ],
   },
