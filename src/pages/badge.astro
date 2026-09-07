@@ -38,7 +38,7 @@ import curlyArrow from "../images/curly-arrow.svg";
     </div>
   </div>
 
-  <div class="flex-grow bg-white">
+  <div class="grow bg-white">
     <div
       class="mx-auto min-h-[500px] max-w-3xl px-4 py-12 md:py-16 flex flex-col items-center"
     >
@@ -106,11 +106,11 @@ import curlyArrow from "../images/curly-arrow.svg";
           badge is ready to use! You can copy the code to your desired location.
         </div>
         <div class="mt-12 w-full flex flex-col space-y-6">
-          <div class="flex-grow">
+          <div class="grow">
             <div class="mb-1 text-gray-900 text-sm font-semibold">Markdown</div>
             <Code id="badge-source-markdown" code="" />
           </div>
-          <div class="flex-grow">
+          <div class="grow">
             <div class="mb-1 text-gray-900 text-sm font-semibold">HTML</div>
             <Code id="badge-source-html" code="" />
           </div>
@@ -121,6 +121,8 @@ import curlyArrow from "../images/curly-arrow.svg";
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
+
   [data-el-badge-button]:not([data-badge-button-active]) {
     @apply border-transparent;
   }

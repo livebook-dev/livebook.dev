@@ -1,21 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
 
-@layer utilities {
-  .custom-shadow-1 {
-    box-shadow: 0 15px 80px -10px rgba(13, 24, 41, 0.25);
+@source "../**/*.{astro,html,js,jsx,md,mdx,ts,tsx}";
+
+/* Matches the specificity of `.dark &`, so that `dark:` beats plain variants */
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: Inter, sans-serif;
+  --font-mono: "JetBrains Mono";
+  --font-source: "Source Sans Pro";
+  --font-logo: "Red Hat Text";
+
+  --breakpoint-xs: 30rem;
+
+  --color-blue-50: #f5f7ff;
+  --color-blue-100: #ecf0ff;
+  --color-blue-200: #d8e0ff;
+  --color-blue-300: #b2c1ff;
+  --color-blue-400: #8ba2ff;
+  --color-blue-500: #6583ff;
+  --color-blue-600: #3e64ff;
+  --color-blue-700: #2d4cdb;
+  --color-blue-800: #1f37b7;
+  --color-blue-900: #132593;
+
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f0f5f9;
+  --color-gray-200: #e1e8f0;
+  --color-gray-300: #cad5e0;
+  --color-gray-400: #91a4b7;
+  --color-gray-500: #61758a;
+  --color-gray-600: #445668;
+  --color-gray-700: #304254;
+  --color-gray-800: #1c2a3a;
+  --color-gray-900: #0d1829;
+
+  --color-brand-pink: #e44c75;
+  --color-elixir: #554994;
+}
+
+@layer base {
+  /* Tailwind v4 no longer sets this in preflight */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
+}
 
-  .custom-shadow-2 {
-    box-shadow: 0 15px 80px -10px rgba(13, 24, 41, 0.6);
-  }
+@utility custom-shadow-1 {
+  box-shadow: 0 15px 80px -10px rgba(13, 24, 41, 0.25);
+}
 
-  .custom-drop-shadow-1 {
-    filter: drop-shadow(10px 10px 60px rgba(0, 0, 0, 0.5));
-  }
+@utility custom-shadow-2 {
+  box-shadow: 0 15px 80px -10px rgba(13, 24, 41, 0.6);
+}
 
-  .placeholder-font-light::placeholder {
+@utility custom-drop-shadow-1 {
+  filter: drop-shadow(10px 10px 60px rgba(0, 0, 0, 0.5));
+}
+
+@utility placeholder-font-light {
+  &::placeholder {
     @apply font-light;
   }
 }
@@ -74,14 +119,14 @@
   /* Inputs */
 
   .input {
-    @apply w-full bg-white border border-gray-300 rounded-xl py-3 px-4 text-sm md:text-base text-gray-900 placeholder-gray-600 font-medium placeholder-font-light focus:outline-none;
+    @apply w-full bg-white border border-gray-300 rounded-xl py-3 px-4 text-sm md:text-base text-gray-900 placeholder-gray-600 font-medium placeholder-font-light focus:outline-hidden;
   }
+}
 
-  .checkbox-base {
-    @apply h-5 w-5 appearance-none border border-gray-300 rounded text-blue-600 cursor-pointer align-bottom;
-  }
+@utility checkbox-base {
+  @apply h-5 w-5 appearance-none border border-gray-300 rounded-sm text-blue-600 cursor-pointer align-bottom;
 
-  .checkbox-base:checked {
+  &:checked {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
     border-color: transparent;
     background-color: currentColor;

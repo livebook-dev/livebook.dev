@@ -9,15 +9,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --trailing-comma es5 --write 'src/**/*.{js,css,html,astro}' '!src/dist/**/*'"
+    "format": "prettier --write 'src/**/*.{js,css,html,astro}' '!src/dist/**/*'"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.0.0",
-    "astro": "^4.16.13",
-    "tailwindcss": "^3.3.2"
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.1",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.9.0"
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

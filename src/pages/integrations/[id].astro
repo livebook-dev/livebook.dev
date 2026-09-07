@@ -75,9 +75,9 @@ const integration = integrations.find((integration) => integration.id === id);
   {
     integration.features && (
       <section id="details">
-        <div class="integrations m-auto max-w-4xl px-4 pt-12 pb-20 flex flex-col gap-12 md:gap-15">
+        <div class="integrations m-auto max-w-4xl px-4 pt-12 pb-20 flex flex-col gap-12">
           {integration.features.map((feature) => (
-            <div class="flex flex-col md:flex-row md:even:flex-row-reverse gap-12 md:gap-15 items-center justify-between">
+            <div class="flex flex-col md:flex-row md:even:flex-row-reverse gap-12 items-center justify-between">
               <div class="flex flex-col px-1 md:px-0 max-w-[400px]">
                 <h3 class="text-2xl text-gray-800 font-semibold">
                   {feature.headline}

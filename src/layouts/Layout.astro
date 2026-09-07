@@ -19,7 +19,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -63,8 +63,7 @@ const { title } = Astro.props;
       defer
       data-domain="livebook.dev"
       data-api="/pa/api/event"
-      src="/pa/js/script.tagged-events.js"
-    ></script>
+      src="/pa/js/script.tagged-events.js"></script>
   </head>
   <body>
     <!-- Navbar desktop -->
@@ -111,7 +110,7 @@ const { title } = Astro.props;
         class="h-full mt-12 flex flex-col items-center space-y-12"
       >
         <DefaultMobileMenu />
-        <div class="flex-grow"></div>
+        <div class="grow"></div>
       </div>
     </header>
 
@@ -155,10 +154,10 @@ const { title } = Astro.props;
             Livebook
           </span>
           <span class="mt-1 text-gray-300">
-            Copyright 2021-{new Date().getFullYear()}. All rights reserved,
+            Copyright 2021-{new Date().getFullYear()}. All rights reserved,{" "}
             <a class="border-b-2 border-gray-300" href="https://dashbit.co/"
               >Dashbit</a
-            >.
+            >.{" "}
             <a class="border-b-2 border-gray-300" href="/privacy-policy"
               >Privacy Policy</a
             >.
@@ -211,6 +210,8 @@ const { title } = Astro.props;
 </html>
 
 <style>
+  @reference "../styles/base.css";
+
   [data-el-menu-container][data-menu-open] {
     @apply fixed z-50 top-0 bottom-0 left-0 right-0;
   }

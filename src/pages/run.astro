@@ -86,7 +86,7 @@ import Icon from "../components/Icon.astro";
           <a
             data-el-notebook-source-link
             href="#"
-            class="mt-4 text-gray-600 class flex justify-center items-center space-x-1"
+            class="mt-4 text-gray-600 class flex justify-center items-center gap-1"
           >
             <i class="mr-1 ri-eye-2-line text-gray-800"></i>
             <span class="text-sm font-medium">See source</span>
@@ -110,6 +110,8 @@ import Icon from "../components/Icon.astro";
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
+
   body:not([data-run-ready]) [data-on-run-ready="show"] {
     @apply hidden;
   }

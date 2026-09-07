@@ -61,7 +61,7 @@ const { heading } = Astro.props;
             data-el-livebook-desktop-toggle
             class="checkbox-base bg-white mr-1"
             type="checkbox"
-          />
+          />{" "}
           I use Livebook Desktop for Windows/Mac
         </label>
 
@@ -88,6 +88,8 @@ const { heading } = Astro.props;
 </section>
 
 <style>
+  @reference "../styles/base.css";
+
   [data-el-livebook-status]:not([data-status="up"]) [data-show-on-status="up"] {
     @apply hidden;
   }

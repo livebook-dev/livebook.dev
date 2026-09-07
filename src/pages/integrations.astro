@@ -10,9 +10,9 @@ import integrations from "../data/integrations";
       <h2 class="text-gray-900 text-3xl font-normal text-left">Integrations</h2>
       <div class="mt-3 lg:w-[520px]">
         <span class="text-gray-700 font-normal text-left">
-          Livebook comes with built-in integrations with Elixir, Python,
-          data sources, data visualization libraries, authentication providers,
-          and more!
+          Livebook comes with built-in integrations with Elixir, Python, data
+          sources, data visualization libraries, authentication providers, and
+          more!
         </span>
       </div>
     </div>
@@ -54,17 +54,17 @@ import integrations from "../data/integrations";
           <span class="font-semibold">Can't find an integration?</span>
           <div class="mt-2 text-sm">
             <span>
-              Integrations are hosted as open-source packages
+              Integrations are hosted as open-source packages{" "}
               <a
                 class="underline"
                 href="https://hex.pm/packages?search=kino&sort=recent_downloads"
                 target="_blank">on Hex.pm</a
-              >. Anyone can build and publish new integrations. Use our
+              >. Anyone can build and publish new integrations. Use our{" "}
               <a
                 class="underline"
                 href="https://github.com/livebook-dev/livebook/discussions/categories/integrations"
                 target="_blank">GitHub Discussions</a
-              >
+              >{" "}
               to suggest new integrations and discuss with the community.
             </span>
           </div>
@@ -101,7 +101,7 @@ import integrations from "../data/integrations";
           integrations.map((integration) => (
             <div
               data-category={integration.category}
-              class="flex flex-col items-center justify-center outline outline-gray-100 h-36 md:h-64"
+              class="flex flex-col items-center justify-center outline-3 outline-gray-100 h-36 md:h-64"
             >
               <a
                 class="flex flex-col items-center"
@@ -129,17 +129,17 @@ import integrations from "../data/integrations";
         <span class="font-semibold">Can't find an integration?</span>
         <div class="mt-2 text-sm">
           <span>
-            Integrations are hosted as open-source packages
+            Integrations are hosted as open-source packages{" "}
             <a
               class="underline"
               href="https://hex.pm/packages?search=kino&sort=recent_downloads"
               target="_blank">on Hex.pm</a
-            >. Anyone can build and publish new integrations. Use our
+            >. Anyone can build and publish new integrations. Use our{" "}
             <a
               class="underline"
               href="https://github.com/livebook-dev/livebook/discussions/categories/integrations"
               target="_blank">GitHub Discussions</a
-            >
+            >{" "}
             to suggest new integrations and discuss with the community.
           </span>
         </div>
@@ -149,6 +149,8 @@ import integrations from "../data/integrations";
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
+
   .button-integration {
     @apply hover:bg-gray-200 focus:bg-gray-200 active:bg-gray-300 text-left px-5 py-2 rounded-lg;
   }

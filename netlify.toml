@@ -3,7 +3,7 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18.18.0"
+  NODE_VERSION = "24"
 
 [[headers]]
   for = "/badge/*"
