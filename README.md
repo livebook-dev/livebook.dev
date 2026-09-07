@@ -5,16 +5,16 @@ The landing page for [Livebook](https://github.com/livebook-dev/livebook).
 ## Development
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Deployment
 
 ```sh
 # Build static content to dist/
-npm run build
+pnpm build
 
 # Preview the result
-npm run preview
+pnpm preview
 ```
