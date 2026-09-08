@@ -23,15 +23,7 @@ const { Content } = await render(post);
 <Layout title={post.data.title} description={post.data.description}>
   <article>
     <div class="m-auto max-w-3xl px-4 pt-10 pb-20">
-      <a
-        class="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
-        href="/blog"
-      >
-        <Icon icon="arrow-left-line" />
-        Blog
-      </a>
-
-      <h1 class="mt-4 text-gray-900 text-3xl md:text-4xl font-semibold">
+      <h1 class="text-gray-900 text-3xl md:text-4xl font-semibold">
         {post.data.title}
       </h1>
 
@@ -55,6 +47,14 @@ const { Content } = await render(post);
       <div class="mt-8 prose">
         <Content />
       </div>
+
+      <a
+        class="mt-12 pt-8 border-t border-gray-200 flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+        href="/blog"
+      >
+        <Icon icon="arrow-left-line" />
+        Back to posts
+      </a>
     </div>
   </article>
 </Layout>
