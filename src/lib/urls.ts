@@ -14,7 +14,7 @@ export function getRunUrl(notebookUrl: string): string {
  */
 export function getLivebookImportUrl(
   livebookUrl: string,
-  notebookUrl: string
+  notebookUrl: string,
 ): string {
   return `${livebookUrl}/import?url=${encodeURIComponent(notebookUrl)}`;
 }

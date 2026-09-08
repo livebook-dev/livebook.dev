@@ -118,13 +118,13 @@ const { heading } = Astro.props;
   type LivebookStatus = "up" | "checking" | "down" | "desktop";
 
   const livebookUrlInputEl = document.querySelector<HTMLInputElement>(
-    `[data-el-livebook-url-input]`
+    `[data-el-livebook-url-input]`,
   )!;
   const livebookStatusEl = document.querySelector<HTMLElement>(
-    `[data-el-livebook-status]`
+    `[data-el-livebook-status]`,
   )!;
   const livebookDesktopToggleEl = document.querySelector<HTMLInputElement>(
-    `[data-el-livebook-desktop-toggle]`
+    `[data-el-livebook-desktop-toggle]`,
   )!;
 
   function setLivebookStatus(status: LivebookStatus | null) {
@@ -149,7 +149,7 @@ const { heading } = Astro.props;
       .then((json) => {
         if (json.application === null) {
           return Promise.reject(
-            new Error("application running, but it's not Livebook")
+            new Error("application running, but it's not Livebook"),
           );
         }
       });

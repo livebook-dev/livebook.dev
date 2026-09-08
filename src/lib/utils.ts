@@ -5,7 +5,7 @@
  */
 export function debounce<Args extends unknown[]>(
   fn: (...args: Args) => void,
-  milliseconds: number
+  milliseconds: number,
 ): (...args: Args) => void {
   let timeout: ReturnType<typeof setTimeout> | null = null;
 
@@ -30,12 +30,12 @@ export function debounce<Args extends unknown[]>(
  */
 export function firstSuccess<Item, Result>(
   list: Item[],
-  toPromise: (item: Item) => Promise<Result>
+  toPromise: (item: Item) => Promise<Result>,
 ): Promise<Result> {
   return list
     .reduce<Promise<Result>>(
       (promise, item) => promise.catch(() => toPromise(item)),
-      Promise.reject(null)
+      Promise.reject(null),
     )
     .catch(() => Promise.reject(new Error("No success")));
 }

@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "format": "prettier --write 'src/**/*.{ts,css,html,astro}' 'astro.config.ts' '!src/dist/**/*'"
+    "format": "prettier --write 'src/**/*.{ts,css,html,astro}' 'astro.config.ts'"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

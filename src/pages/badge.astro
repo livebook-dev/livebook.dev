@@ -137,21 +137,21 @@ import curlyArrow from "../images/curly-arrow.svg";
   import type { BadgeType } from "../lib/urls";
 
   const badgeUrlInputEl = document.querySelector<HTMLInputElement>(
-    `[data-el-badge-notebook-url-input]`
+    `[data-el-badge-notebook-url-input]`,
   )!;
   const badgeButtonsContainerEl = document.querySelector<HTMLElement>(
-    `[data-el-badge-buttons-container]`
+    `[data-el-badge-buttons-container]`,
   )!;
 
   const markdownSourceEl = document.querySelector<HTMLElement>(
-    "#badge-source-markdown"
+    "#badge-source-markdown",
   )!;
   const htmlSourceEl =
     document.querySelector<HTMLElement>("#badge-source-html")!;
 
   function updateBadgeSnippets() {
     const activeButtonEl = document.querySelector<HTMLElement>(
-      `[data-el-badge-button][data-badge-button-active]`
+      `[data-el-badge-button][data-badge-button-active]`,
     );
 
     const wasBadgeReady = document.body.hasAttribute("data-badge-ready");
@@ -183,7 +183,7 @@ import curlyArrow from "../images/curly-arrow.svg";
 
     if (buttonEl) {
       const activeButtonEl = document.querySelector(
-        `[data-el-badge-button][data-badge-button-active]`
+        `[data-el-badge-button][data-badge-button-active]`,
       );
 
       if (activeButtonEl) {

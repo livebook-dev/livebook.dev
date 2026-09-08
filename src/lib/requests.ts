@@ -15,13 +15,13 @@ export function getNotebookContent(url: string): Promise<string> {
       if (
         contentType &&
         !["text/plain", "text/markdown", "application/octet-stream"].includes(
-          contentType
+          contentType,
         )
       ) {
         return Promise.reject(
           new Error(
-            `Expected Content-Type to be either text/plain, text/markdown or application/octet-stream, got: ${contentType}`
-          )
+            `Expected Content-Type to be either text/plain, text/markdown or application/octet-stream, got: ${contentType}`,
+          ),
         );
       }
 

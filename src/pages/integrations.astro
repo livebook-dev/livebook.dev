@@ -189,7 +189,7 @@ import integrations from "../data/integrations";
     for (const button of buttons) {
       button.classList.toggle(
         "button-integration-active",
-        button.dataset.type === type
+        button.dataset.type === type,
       );
     }
 
@@ -218,7 +218,7 @@ import integrations from "../data/integrations";
     });
 
   const selectEl = document.querySelector<HTMLSelectElement>(
-    "#integration-select"
+    "#integration-select",
   )!;
 
   selectEl.addEventListener("change", () => {

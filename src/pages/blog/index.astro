@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../lib/utils";
 
 const posts = (await getCollection("blog")).sort(
-  (postA, postB) => postB.data.date.getTime() - postA.data.date.getTime()
+  (postA, postB) => postB.data.date.getTime() - postA.data.date.getTime(),
 );
 
 const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();

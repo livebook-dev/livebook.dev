@@ -32,7 +32,7 @@ class SettingsStore {
     const prevSettings = this._settings;
     this._settings = { ...this._settings, ...newSettings };
     this._subscribers.forEach((callback) =>
-      callback(this._settings, prevSettings)
+      callback(this._settings, prevSettings),
     );
     this._storeSettings();
   }

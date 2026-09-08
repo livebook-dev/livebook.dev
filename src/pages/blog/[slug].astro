@@ -70,7 +70,7 @@ const { Content } = await render(post);
   // we replace those with a play button over the poster, and hand back to the
   // native controls once the video starts, so only one control is ever visible.
   const containers = document.querySelectorAll<HTMLElement>(
-    ".post-content .video"
+    ".post-content .video",
   );
 
   for (const container of containers) {

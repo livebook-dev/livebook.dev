@@ -127,19 +127,19 @@ import Icon from "../components/Icon.astro";
   import { getLivebookImportUrl } from "../lib/urls";
 
   const runNotebookLinkEls = document.querySelectorAll<HTMLAnchorElement>(
-    `[data-el-run-notebook-link]`
+    `[data-el-run-notebook-link]`,
   );
   const notebookPreviewEl = document.querySelector<HTMLElement>(
-    `[data-el-notebook-preview]`
+    `[data-el-notebook-preview]`,
   )!;
   const notebookSourceLinkEl = document.querySelector<HTMLAnchorElement>(
-    `[data-el-notebook-source-link]`
+    `[data-el-notebook-source-link]`,
   )!;
   const livebookUrlEl = document.querySelector<HTMLElement>(
-    `[data-el-livebook-url]`
+    `[data-el-livebook-url]`,
   )!;
   const livebookUrlIntroEl = document.querySelector<HTMLElement>(
-    `[data-el-livebook-url-intro]`
+    `[data-el-livebook-url-intro]`,
   )!;
 
   const params = new URLSearchParams(window.location.search);
@@ -166,22 +166,22 @@ import Icon from "../components/Icon.astro";
         updateRunNotebookLinks(
           notebookUrl.replace(/^https?:/i, "livebook:"),
           "",
-          "in your Livebook Desktop"
+          "in your Livebook Desktop",
         );
       } else {
         const livebookImportUrl = getLivebookImportUrl(
           livebookUrl,
-          notebookUrl
+          notebookUrl,
         );
         updateRunNotebookLinks(
           livebookImportUrl,
           "in your Livebook at",
-          livebookUrl
+          livebookUrl,
         );
       }
       document.body.toggleAttribute(
         "data-run-ready",
-        livebookUrl !== "" || useLivebookDesktop
+        livebookUrl !== "" || useLivebookDesktop,
       );
     });
 
