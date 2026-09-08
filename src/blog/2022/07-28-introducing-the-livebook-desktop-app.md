@@ -1,7 +1,6 @@
 ---
 title: "Introducing the Livebook Desktop app 🎉"
 description: "We want Livebook to be accessible to as many people as possible. Before this release, installing Livebook on your machine could be considered easy, especially if you already had Elixir installed."
-author: "Livebook Team"
 date: 2022-07-28
 tags: ["announcements"]
 ---

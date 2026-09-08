@@ -1,7 +1,6 @@
 ---
 title: "What's new in Livebook 0.10 - Introducing Multi-Session Livebook Apps"
 description: "This major update brings many exciting features, with the spotlight being the introduction of multi-session Livebook apps. We’ve also added a presentation view, initial Erlang support, Live Doctests, and dataframe file export."
-author: "Livebook Team"
 date: 2023-07-14
 tags: ["releases"]
 ---

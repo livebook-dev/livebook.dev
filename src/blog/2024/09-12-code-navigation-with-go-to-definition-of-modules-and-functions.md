@@ -1,7 +1,6 @@
 ---
 title: "Code navigation with go to definition of modules and functions"
 description: "Learn how Livebook v0.14 improves code navigation with new features like module definitions in the Outline panel and go-to-definition for faster coding."
-author: "Livebook Team"
 date: 2024-09-12
 tags: ["releases"]
 ---

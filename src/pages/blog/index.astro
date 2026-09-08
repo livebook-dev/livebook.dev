@@ -49,8 +49,6 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
                 <time datetime={post.data.date.toISOString()}>
                   {formatDate(post.data.date)}
                 </time>
-                <span>·</span>
-                <span>{post.data.author}</span>
                 {post.data.tags.map((tag) => (
                   <span class="tag">{tag}</span>
                 ))}

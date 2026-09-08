@@ -1,7 +1,6 @@
 ---
 title: "Data wrangling in Elixir with Explorer, the power of Rust, the elegance of R - Launch Week 1 - Day 5"
 description: "This post introduces the new data features in Livebook 0.9: fast data exploration through integration with Explorer, interactive data tables, and data transformation using the new Data Transform Smart cell."
-author: "Livebook Team"
 date: 2023-04-14
 tags: ["releases", "launch week"]
 ---

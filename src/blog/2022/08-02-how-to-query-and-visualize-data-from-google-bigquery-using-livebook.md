@@ -1,7 +1,6 @@
 ---
 title: "How to query and visualize data from Google BigQuery using Livebook"
 description: "Querying and visualizing data from a database is a common and recurring task. That's the kind of thing you don't want to repeat yourself, writing the same code repeatedly. That's where Livebook Smart cells come in. It helps you to automate any workflow you want."
-author: "Livebook Team"
 date: 2022-08-02
 tags: ["tutorials"]
 ---

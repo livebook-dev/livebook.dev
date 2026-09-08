@@ -1,7 +1,6 @@
 ---
 title: "Livebook inside Hugging Face Spaces"
 description: "This blog post announces the integration of Livebook and Hugging Face Spaces."
-author: "Livebook Team"
 date: 2023-02-15
 tags: ["announcements"]
 ---

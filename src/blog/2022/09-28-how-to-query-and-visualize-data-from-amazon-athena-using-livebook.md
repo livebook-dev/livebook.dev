@@ -1,7 +1,6 @@
 ---
 title: "How to query and visualize data from Amazon Athena using Livebook"
 description: "In this blog post, you'll learn how to use Livebook to connect to Amazon Athena, execute a SQL query against it, and visualize the data."
-author: "Livebook Team"
 date: 2022-09-28
 tags: ["tutorials"]
 ---

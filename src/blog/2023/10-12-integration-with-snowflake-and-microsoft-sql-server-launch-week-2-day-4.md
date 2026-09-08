@@ -1,7 +1,6 @@
 ---
 title: "Integration with Snowflake and Microsoft SQL Server - Launch Week 2 - Day 4"
 description: "Explore Livebook's new database integrations with Snowflake and Microsoft SQL Server. Learn how to connect and execute queries using the Database Connection and SQL Query Smart cells."
-author: "Livebook Team"
 date: 2023-10-12
 tags: ["releases", "launch week"]
 ---

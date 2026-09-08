@@ -1,7 +1,6 @@
 ---
 title: "v0.5: Flowcharts, custom widgets, intellisense, and UI improvements"
 description: "Livebook v0.5 is out with a number of goodies! We have recorded a video showing how to use those features to build chat apps, multiplayer games, and more:"
-author: "Livebook Team"
 date: 2022-01-24
 tags: ["releases"]
 ---

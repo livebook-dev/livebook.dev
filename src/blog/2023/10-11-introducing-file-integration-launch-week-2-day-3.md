@@ -1,7 +1,6 @@
 ---
 title: "Introducing File Integration - Launch Week 2 - Day 3"
 description: "Introducing Livebook v0.11 with file integration—drag and drop files for instant code generation, lazy read large datasets, and more. Explore now!"
-author: "Livebook Team"
 date: 2023-10-11
 tags: ["releases", "launch week"]
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Welcoming Tigris as a new sponsor of Livebook!"
 description: "See how Tigris's S3-compatible storage and automatic caching enhance UX/DX, demonstrated via a Livebook demo."
-author: "Livebook Team"
 date: 2024-03-26
 tags: ["announcements"]
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Remote execution Smart cell - Launch Week 2 - Day 1"
 description: "Introducing Remote Execution Smart cell in Livebook v0.11. Run functions on remote nodes effortlessly."
-author: "Livebook Team"
 date: 2023-10-09
 tags: ["releases", "launch week"]
 ---

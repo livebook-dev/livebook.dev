@@ -1,7 +1,6 @@
 ---
 title: "Announcing Livebook"
 description: "We are glad to announce Livebook, an open source web application for writing interactive and collaborative code notebooks in Elixir and implemented with Phoenix LiveView. Livebook is an important step in our journey to enable the Erlang VM and its ecosystem to be suitable for numerical and scientific computing."
-author: "Livebook Team"
 date: 2021-04-13
 tags: ["releases"]
 ---

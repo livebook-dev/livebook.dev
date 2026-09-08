@@ -1,7 +1,6 @@
 ---
 title: "Livebook + SpawnFest = ❤️ & 💻"
 description: "SpawnFest will have a specific category for Livebook-based projects this year, which Livebook is sponsoring."
-author: "Livebook Team"
 date: 2022-08-24
 tags: ["announcements"]
 ---

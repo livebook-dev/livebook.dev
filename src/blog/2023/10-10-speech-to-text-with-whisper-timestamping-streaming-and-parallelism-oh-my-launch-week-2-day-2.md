@@ -1,7 +1,6 @@
 ---
 title: "Speech-to-text with Whisper: timestamping, streaming, and parallelism, oh-my! - Launch Week 2 - Day 2"
 description: "Explore the improved Whisper integration with Livebook v0.11. Features include real-time streaming, audio timestamping, and faster processing."
-author: "Livebook Team"
 date: 2023-10-10
 tags: ["releases", "launch week"]
 ---

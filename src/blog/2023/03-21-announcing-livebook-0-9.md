@@ -1,7 +1,6 @@
 ---
 title: "Announcing Livebook 0.9"
 description: "We are thrilled to announce the latest release of Livebook, version 0.9! 🎉"
-author: "Livebook Team"
 date: 2023-03-21
 tags: ["releases"]
 ---

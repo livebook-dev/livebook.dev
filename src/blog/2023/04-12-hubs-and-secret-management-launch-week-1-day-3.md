@@ -1,7 +1,6 @@
 ---
 title: "Hubs and secret management - Launch Week 1 - Day 3"
 description: "Discover Livebook 0.9's new security features, including Hubs for centralized secret management and notebook stamping."
-author: "Livebook Team"
 date: 2023-04-12
 tags: ["releases", "launch week"]
 ---

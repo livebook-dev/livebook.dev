@@ -1,7 +1,6 @@
 ---
 title: "Livebook is sponsoring SpawnFest again"
 description: "Join Spawnfest, the 48-hour BEAM-based app contest, build a Livebook App and have fun."
-author: "Livebook Team"
 date: 2023-08-16
 tags: ["announcements"]
 ---

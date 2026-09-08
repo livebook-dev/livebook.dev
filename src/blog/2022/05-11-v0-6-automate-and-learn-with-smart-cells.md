@@ -1,7 +1,6 @@
 ---
 title: "v0.6: Automate and learn with smart cells"
 description: "Livebook v0.6 is out with a number of exciting features! Join us, as we go from a database connection to charting the data in a few simple steps:"
-author: "Livebook Team"
 date: 2022-05-11
 tags: ["releases"]
 ---

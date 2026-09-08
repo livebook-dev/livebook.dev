@@ -33,8 +33,6 @@ const { Content } = await render(post);
         <time datetime={post.data.date.toISOString()}>
           {formatDate(post.data.date)}
         </time>
-        <span>·</span>
-        <span>{post.data.author}</span>
         {
           post.data.tags.map((tag) => (
             <a class="tag" href={`/blog?tag=${encodeURIComponent(tag)}`}>

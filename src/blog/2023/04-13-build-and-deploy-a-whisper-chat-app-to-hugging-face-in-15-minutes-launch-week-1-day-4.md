@@ -1,7 +1,6 @@
 ---
 title: "Build and deploy a Whisper chat app to Hugging Face in 15 minutes - Launch Week 1 - Day 4"
 description: "Learn how to use Livebook to build a Machine Learning app and deploy it to Hugging Face in less than 15 minutes."
-author: "Livebook Team"
 date: 2023-04-13
 tags: ["releases", "launch week"]
 ---

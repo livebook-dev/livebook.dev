@@ -1,7 +1,6 @@
 ---
 title: "Vim and Emacs key bindings - Launch Week 2 - Day 5"
 description: "Vim and Emacs users can now use their favorite keybindings in Livebook. See our latest update for activation instructions."
-author: "Livebook Team"
 date: 2023-10-13
 tags: ["releases", "launch week"]
 ---

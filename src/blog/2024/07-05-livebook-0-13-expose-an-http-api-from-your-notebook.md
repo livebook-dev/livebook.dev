@@ -1,7 +1,6 @@
 ---
 title: "Livebook 0.13: expose an HTTP API from your notebook"
 description: "Expose API endpoints directly from your Livebook notebooks with the new Kino.Proxy feature in Livebook 0.13. Learn how to handle external HTTP requests and integrate with other applications seamlessly."
-author: "Livebook Team"
 date: 2024-07-05
 tags: ["releases"]
 ---

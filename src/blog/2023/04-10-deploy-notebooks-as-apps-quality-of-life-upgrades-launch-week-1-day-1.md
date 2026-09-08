@@ -1,7 +1,6 @@
 ---
 title: "Deploy notebooks as apps & quality-of-life upgrades - Launch Week 1 - Day 1"
 description: "Explore Livebook 0.9's new features: deploy notebooks as user-friendly apps, star & access recent notebooks, and collapse sections. Learn how to build and deploy your notebook as an app with Livebook."
-author: "Livebook Team"
 date: 2023-04-10
 tags: ["releases", "launch week"]
 ---

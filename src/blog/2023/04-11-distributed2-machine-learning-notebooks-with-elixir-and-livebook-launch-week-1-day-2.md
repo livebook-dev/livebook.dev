@@ -1,7 +1,6 @@
 ---
 title: "Distributed² Machine Learning notebooks with Elixir and Livebook - Launch Week 1 - Day 2"
 description: "Explore Livebook v0.9's enhanced Machine Learning features: new Neural Network tasks with the built-in Smart Cell, Distributed² Machine Learning in Elixir, and more."
-author: "Livebook Team"
 date: 2023-04-11
 tags: ["releases", "launch week"]
 ---

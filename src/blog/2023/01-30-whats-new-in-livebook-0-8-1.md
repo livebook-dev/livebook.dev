@@ -1,7 +1,6 @@
 ---
 title: "What’s new in Livebook 0.8.1"
 description: "In this blog post, we'll take a look at some of the new features released with Livebook 0.8.1. Let's dive in!"
-author: "Livebook Team"
 date: 2023-01-30
 tags: ["releases"]
 ---

@@ -1,7 +1,6 @@
 ---
 title: "What's new in Livebook 0.7"
 description: "Livebook v0.7 is out! This is a major release coming with significant features in the following areas:"
-author: "Livebook Team"
 date: 2022-10-11
 tags: ["releases"]
 ---

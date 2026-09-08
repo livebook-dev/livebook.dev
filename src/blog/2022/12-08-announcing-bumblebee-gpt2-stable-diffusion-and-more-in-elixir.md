@@ -1,7 +1,6 @@
 ---
 title: "Announcing Bumblebee: GPT2, Stable Diffusion, and more in Elixir"
 description: "We have implemented several models, from GPT2 to Stable Diffusion, in pure Elixir, and you can download training parameters for said models directly from Hugging Face. Run Machine Learning models in three clicks with Livebook."
-author: "Livebook Team"
 date: 2022-12-08
 tags: ["announcements"]
 ---

@@ -1,7 +1,6 @@
 ---
 title: "What's new in Livebook 0.8"
 description: "This post showcases ten of the most noteworthy features released with Livebook 0.8."
-author: "Livebook Team"
 date: 2023-01-12
 tags: ["releases"]
 ---
