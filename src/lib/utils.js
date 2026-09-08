@@ -49,3 +49,18 @@ export function firstSuccess(list, toPromise) {
 export function isPathActive(path, url) {
   return url.pathname.startsWith(path);
 }
+
+/**
+ * Formats a date as in "January 30, 2023".
+ *
+ * @param {Date} date
+ * @returns {String}
+ */
+export function formatDate(date) {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}

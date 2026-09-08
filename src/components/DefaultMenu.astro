@@ -62,8 +62,11 @@ import { isPathActive } from "../lib/utils.js";
     </a>
     <a href="https://hexdocs.pm/livebook">Docs</a>
     <a
-      class="announcekit-widget whitespace-nowrap"
-      href="https://news.livebook.dev/"
+      href="/blog"
+      class:list={[
+        "whitespace-nowrap",
+        { "border-b-2 border-gray-600": isPathActive("/blog", Astro.url) },
+      ]}
     >
       What’s new?
     </a>

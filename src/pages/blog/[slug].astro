@@ -1,0 +1,104 @@
+---
+import { getCollection, render } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+
+import { formatDate } from "../../lib/utils.js";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <article>
+    <div class="m-auto max-w-3xl px-4 pt-10 pb-20">
+      <h1 class="text-gray-900 text-3xl md:text-4xl font-semibold">
+        {post.data.title}
+      </h1>
+
+      <div
+        class="mt-3 flex flex-wrap items-center gap-x-2 text-sm text-gray-500"
+      >
+        <time datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        {
+          post.data.tags.map((tag) => (
+            <a class="tag" href={`/blog?tag=${encodeURIComponent(tag)}`}>
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mt-8 post-content">
+        <Content />
+      </div>
+
+      <a
+        class="mt-12 pt-8 border-t border-gray-200 flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+        href="/blog"
+      >
+        <Icon icon="arrow-left-line" />
+        Back to posts
+      </a>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  @reference "../../styles/base.css";
+
+  .tag {
+    @apply px-2 py-0.5 rounded-md bg-gray-100 text-xs text-gray-600 hover:bg-gray-200;
+  }
+</style>
+
+<script>
+  // Videos ship with the native controls, so they play without JavaScript. Here
+  // we replace those with a play button over the poster, and hand back to the
+  // native controls once the video starts, so only one control is ever visible.
+  for (const container of document.querySelectorAll(".post-content .video")) {
+    const video = container.querySelector("video");
+
+    video.controls = false;
+    container.setAttribute("data-enhanced", "");
+    container.setAttribute("role", "button");
+    container.setAttribute("aria-label", "Play video");
+    container.tabIndex = 0;
+
+    const start = () => {
+      for (const attribute of [
+        "data-enhanced",
+        "role",
+        "aria-label",
+        "tabindex",
+      ]) {
+        container.removeAttribute(attribute);
+      }
+
+      video.controls = true;
+      video.play();
+    };
+
+    container.addEventListener("click", start);
+
+    container.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        start();
+      }
+    });
+  }
+</script>
