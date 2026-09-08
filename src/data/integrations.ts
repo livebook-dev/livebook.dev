@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 import elixirLogo from "../images/integrations/elixir/logo.svg";
 import elixirPreview from "../images/integrations/elixir/preview.png";
 import elixirCodeEditor from "../images/integrations/elixir/features/code-editor.png";
@@ -73,7 +75,42 @@ import tailscaleLogo from "../images/integrations/tailscale/logo.svg";
 import tailscalePreview from "../images/integrations/tailscale/preview.png";
 import tailscaleAuthentication from "../images/integrations/tailscale/features/authentication.png";
 
-const integrations = [
+export type IntegrationCategory =
+  | "Authentication"
+  | "Data Warehouse"
+  | "Database"
+  | "Language"
+  | "Machine Learning"
+  | "Messaging"
+  | "Visualization";
+
+export interface IntegrationFeature {
+  headline: string;
+  /** May include HTML markup, rendered with set:html */
+  description: string;
+  image: ImageMetadata;
+}
+
+export interface IntegrationCta {
+  link: string;
+  main: string;
+  description: string;
+}
+
+export interface Integration {
+  id: string;
+  name: string;
+  logo: ImageMetadata;
+  category: IntegrationCategory;
+  headline: string;
+  /** May include HTML markup, rendered with set:html */
+  description: string;
+  image: ImageMetadata;
+  cta?: IntegrationCta;
+  features?: IntegrationFeature[];
+}
+
+const integrations: Integration[] = [
   {
     id: "elixir",
     name: "Elixir",

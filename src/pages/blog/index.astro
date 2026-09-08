@@ -3,10 +3,10 @@ import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/Layout.astro";
 
-import { formatDate } from "../../lib/utils.js";
+import { formatDate } from "../../lib/utils";
 
 const posts = (await getCollection("blog")).sort(
-  (postA, postB) => postB.data.date - postA.data.date
+  (postA, postB) => postB.data.date.getTime() - postA.data.date.getTime()
 );
 
 const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
@@ -84,15 +84,21 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
 </style>
 
 <script>
-  const tagsEl = document.querySelector("[data-el-tags]");
+  const tagsEl = document.querySelector<HTMLElement>("[data-el-tags]")!;
 
-  function setActiveTag(tag) {
-    for (const article of document.querySelectorAll("article[data-tags]")) {
-      const tags = article.dataset.tags.split(",");
+  function setActiveTag(tag: string) {
+    const articles =
+      document.querySelectorAll<HTMLElement>("article[data-tags]");
+
+    for (const article of articles) {
+      const tags = article.dataset.tags!.split(",");
       article.classList.toggle("hidden", tag !== "all" && !tags.includes(tag));
     }
 
-    for (const button of tagsEl.querySelectorAll("button[data-tag]")) {
+    const buttons =
+      tagsEl.querySelectorAll<HTMLButtonElement>("button[data-tag]");
+
+    for (const button of buttons) {
       button.classList.toggle("button-tag-active", button.dataset.tag === tag);
     }
 
@@ -108,10 +114,11 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
   }
 
   tagsEl.addEventListener("click", (event) => {
-    const button = event.target.closest("button[data-tag]");
+    const target = event.target as Element;
+    const button = target.closest<HTMLButtonElement>("button[data-tag]");
 
     if (button) {
-      setActiveTag(button.dataset.tag);
+      setActiveTag(button.dataset.tag!);
     }
   });
 

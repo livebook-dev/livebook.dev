@@ -2,15 +2,17 @@
  * Returns a debounced function, so that the actual execution
  * is triggered only when there are no more calls within the
  * specified number of milliseconds.
- *
- * @param {Function} fn
- * @param {Number} milliseconds
  */
-export function debounce(fn, milliseconds) {
-  let timeout;
+export function debounce<Args extends unknown[]>(
+  fn: (...args: Args) => void,
+  milliseconds: number
+): (...args: Args) => void {
+  let timeout: ReturnType<typeof setTimeout> | null = null;
 
-  return function debouncedFunction(...args) {
-    clearTimeout(timeout);
+  return function debouncedFunction(...args: Args) {
+    if (timeout !== null) {
+      clearTimeout(timeout);
+    }
 
     timeout = setTimeout(() => {
       timeout = null;
@@ -25,13 +27,13 @@ export function debounce(fn, milliseconds) {
  *
  * Returns a Promise resolving to the first successful result,
  * or rejected when all items fail.
- *
- * @param {Array} list
- * @param {Function} toPromise
  */
-export function firstSuccess(list, toPromise) {
+export function firstSuccess<Item, Result>(
+  list: Item[],
+  toPromise: (item: Item) => Promise<Result>
+): Promise<Result> {
   return list
-    .reduce(
+    .reduce<Promise<Result>>(
       (promise, item) => promise.catch(() => toPromise(item)),
       Promise.reject(null)
     )
@@ -41,22 +43,15 @@ export function firstSuccess(list, toPromise) {
 /**
  * Checks if the given URL's pathname starts with the specified path.
  * Used to determine if a navigation path is active in the current URL.
- *
- * @param {String} path - The path to check against
- * @param {URL} url - The URL object to check
- * @returns {Boolean} - True if the URL pathname starts with the given path
  */
-export function isPathActive(path, url) {
+export function isPathActive(path: string, url: URL): boolean {
   return url.pathname.startsWith(path);
 }
 
 /**
  * Formats a date as in "January 30, 2023".
- *
- * @param {Date} date
- * @returns {String}
  */
-export function formatDate(date) {
+export function formatDate(date: Date): string {
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

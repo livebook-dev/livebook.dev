@@ -5,16 +5,20 @@ import Layout from "../../layouts/Layout.astro";
 import Icon from "../../components/Icon.astro";
 
 import integrations from "../../data/integrations";
+import type { Integration } from "../../data/integrations";
+
+interface Props {
+  integration: Integration;
+}
 
 export function getStaticPaths() {
   return integrations.map((integration) => ({
     params: { id: integration.id },
+    props: { integration },
   }));
 }
 
-const { id } = Astro.params;
-
-const integration = integrations.find((integration) => integration.id === id);
+const { integration } = Astro.props;
 ---
 
 <Layout title={`${integration.name} integration`}>

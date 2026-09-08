@@ -2,7 +2,7 @@
 import Icon from "./Icon.astro";
 import InstallInstructions from "./InstallInstructions.astro";
 
-export interface Props {
+interface Props {
   heading: string;
 }
 
@@ -115,19 +115,27 @@ const { heading } = Astro.props;
   import { getLivebookHealthUrls } from "../lib/urls";
   import { debounce, firstSuccess } from "../lib/utils";
 
-  const livebookUrlInputEl = document.querySelector(
-    `[data-el-livebook-url-input]`
-  );
-  const livebookStatusEl = document.querySelector(`[data-el-livebook-status]`);
-  const livebookDesktopToggleEl = document.querySelector(
-    `[data-el-livebook-desktop-toggle]`
-  );
+  type LivebookStatus = "up" | "checking" | "down" | "desktop";
 
-  function setLivebookStatus(status) {
-    livebookStatusEl.setAttribute("data-status", status);
+  const livebookUrlInputEl = document.querySelector<HTMLInputElement>(
+    `[data-el-livebook-url-input]`
+  )!;
+  const livebookStatusEl = document.querySelector<HTMLElement>(
+    `[data-el-livebook-status]`
+  )!;
+  const livebookDesktopToggleEl = document.querySelector<HTMLInputElement>(
+    `[data-el-livebook-desktop-toggle]`
+  )!;
+
+  function setLivebookStatus(status: LivebookStatus | null) {
+    if (status === null) {
+      livebookStatusEl.removeAttribute("data-status");
+    } else {
+      livebookStatusEl.setAttribute("data-status", status);
+    }
   }
 
-  function checkLivebookStatus(livebookUrl) {
+  function checkLivebookStatus(livebookUrl: string) {
     setLivebookStatus("checking");
 
     firstSuccess(getLivebookHealthUrls(livebookUrl), checkLivebookHealth)
@@ -135,7 +143,7 @@ const { heading } = Astro.props;
       .catch(() => setLivebookStatus("down"));
   }
 
-  function checkLivebookHealth(url) {
+  function checkLivebookHealth(url: string): Promise<void> {
     return fetch(url)
       .then((response) => response.json())
       .then((json) => {
@@ -149,7 +157,7 @@ const { heading } = Astro.props;
 
   const debouncedCheckLivebookStatus = debounce(checkLivebookStatus, 500);
 
-  function toggleLivebookDesktop(enabled) {
+  function toggleLivebookDesktop(enabled: boolean) {
     if (enabled) {
       setLivebookStatus("desktop");
       livebookUrlInputEl.disabled = true;
@@ -172,10 +180,10 @@ const { heading } = Astro.props;
     checkLivebookStatus(livebookUrl);
   }
 
-  livebookUrlInputEl.addEventListener("input", (event) => {
-    const value = event.target.value;
+  livebookUrlInputEl.addEventListener("input", () => {
     // Normalize the URL
-    const livebookUrl = value && ensureHttpScheme(value);
+    const livebookUrl =
+      livebookUrlInputEl.value && ensureHttpScheme(livebookUrlInputEl.value);
     settingsStore.update({ livebookUrl });
 
     if (livebookUrl) {
@@ -186,12 +194,12 @@ const { heading } = Astro.props;
     }
   });
 
-  livebookUrlInputEl.addEventListener("blur", (event) => {
+  livebookUrlInputEl.addEventListener("blur", () => {
     // Reflect the normalized URL in the input
-    event.target.value = settingsStore.get().livebookUrl;
+    livebookUrlInputEl.value = settingsStore.get().livebookUrl;
   });
 
-  livebookDesktopToggleEl.addEventListener("change", (event) => {
-    toggleLivebookDesktop(event.target.checked);
+  livebookDesktopToggleEl.addEventListener("change", () => {
+    toggleLivebookDesktop(livebookDesktopToggleEl.checked);
   });
 </script>

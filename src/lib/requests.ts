@@ -1,7 +1,7 @@
 /**
  * Fetches notebook content from the given location.
  */
-export function getNotebookContent(url) {
+export function getNotebookContent(url: string): Promise<string> {
   const contentUrl = rewriteNotebookUrl(url);
 
   return fetch(contentUrl)
@@ -37,7 +37,7 @@ export function getNotebookContent(url) {
  * This matches Livebook import behaviour,
  * see https://github.com/livebook-dev/livebook/blob/main/lib/livebook/content_loader.ex
  */
-function rewriteNotebookUrl(urlString) {
+function rewriteNotebookUrl(urlString: string): string {
   try {
     const url = new URL(urlString);
 
@@ -60,7 +60,7 @@ function rewriteNotebookUrl(urlString) {
   }
 }
 
-function contentTypeFromHeaders(headers) {
+function contentTypeFromHeaders(headers: Headers): string | null {
   const contentTypeHeader = headers.get("content-type");
 
   if (!contentTypeHeader) {
@@ -73,7 +73,7 @@ function contentTypeFromHeaders(headers) {
 /**
  * Adds http(s) scheme to the given url if missing.
  */
-export function ensureHttpScheme(url) {
+export function ensureHttpScheme(url: string): string {
   if (!url.includes("://")) {
     try {
       const parsed = new URL(`http://${url}`);

@@ -1,23 +1,34 @@
 const SETTINGS_KEY = "livebook:settings";
-const DEFAULT_SETTINGS = { livebookUrl: "", useLivebookDesktop: false };
+
+export interface Settings {
+  livebookUrl: string;
+  useLivebookDesktop: boolean;
+}
+
+const DEFAULT_SETTINGS: Settings = {
+  livebookUrl: "",
+  useLivebookDesktop: false,
+};
+
+type SettingsSubscriber = (settings: Settings, prevSettings?: Settings) => void;
 
 /**
  * Stores configuration state and persists it across
  * browser sessions.
  */
 class SettingsStore {
-  constructor() {
-    this._subscribers = [];
-    this._settings = DEFAULT_SETTINGS;
+  private _subscribers: SettingsSubscriber[] = [];
+  private _settings: Settings = DEFAULT_SETTINGS;
 
+  constructor() {
     this._loadSettings();
   }
 
-  get() {
+  get(): Settings {
     return this._settings;
   }
 
-  update(newSettings) {
+  update(newSettings: Partial<Settings>): void {
     const prevSettings = this._settings;
     this._settings = { ...this._settings, ...newSettings };
     this._subscribers.forEach((callback) =>
@@ -26,17 +37,17 @@ class SettingsStore {
     this._storeSettings();
   }
 
-  getAndSubscribe(callback) {
+  getAndSubscribe(callback: SettingsSubscriber): void {
     this._subscribers.push(callback);
     callback(this._settings);
   }
 
-  _loadSettings() {
+  private _loadSettings(): void {
     try {
       const json = localStorage.getItem(SETTINGS_KEY);
 
       if (json) {
-        const settings = JSON.parse(json);
+        const settings = JSON.parse(json) as Partial<Settings>;
         this._settings = { ...this._settings, ...settings };
       }
     } catch (error) {
@@ -44,7 +55,7 @@ class SettingsStore {
     }
   }
 
-  _storeSettings() {
+  private _storeSettings(): void {
     try {
       const json = JSON.stringify(this._settings);
       localStorage.setItem(SETTINGS_KEY, json);

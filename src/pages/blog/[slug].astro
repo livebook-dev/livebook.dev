@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Icon from "../../components/Icon.astro";
 
-import { formatDate } from "../../lib/utils.js";
+import { formatDate } from "../../lib/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -69,8 +69,12 @@ const { Content } = await render(post);
   // Videos ship with the native controls, so they play without JavaScript. Here
   // we replace those with a play button over the poster, and hand back to the
   // native controls once the video starts, so only one control is ever visible.
-  for (const container of document.querySelectorAll(".post-content .video")) {
-    const video = container.querySelector("video");
+  const containers = document.querySelectorAll<HTMLElement>(
+    ".post-content .video"
+  );
+
+  for (const container of containers) {
+    const video = container.querySelector("video")!;
 
     video.controls = false;
     container.setAttribute("data-enhanced", "");

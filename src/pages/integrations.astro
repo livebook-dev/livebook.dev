@@ -161,7 +161,9 @@ import integrations from "../data/integrations";
 </style>
 
 <script>
-  const typeToCategories = {
+  import type { IntegrationCategory } from "../data/integrations";
+
+  const typeToCategories: Record<string, IntegrationCategory[] | undefined> = {
     authentication: ["Authentication"],
     database: ["Database", "Data Warehouse"],
     language: ["Language"],
@@ -170,17 +172,19 @@ import integrations from "../data/integrations";
     visualization: ["Visualization"],
   };
 
-  function setActiveType(type) {
-    const cards = document.querySelectorAll("div[data-category]");
+  function setActiveType(type: string) {
+    const categories = typeToCategories[type];
+
+    const cards = document.querySelectorAll<HTMLElement>("div[data-category]");
 
     for (const card of cards) {
-      const isIncluded =
-        type === "all" ||
-        typeToCategories[type].includes(card.dataset.category);
+      const category = card.dataset.category as IntegrationCategory;
+      const isIncluded = type === "all" || !!categories?.includes(category);
       card.classList.toggle("hidden", !isIncluded);
     }
 
-    const buttons = document.querySelectorAll("button[data-type]");
+    const buttons =
+      document.querySelectorAll<HTMLButtonElement>("button[data-type]");
 
     for (const button of buttons) {
       button.classList.toggle(
@@ -202,24 +206,30 @@ import integrations from "../data/integrations";
     history.pushState(null, "", url.toString());
   }
 
-  document.querySelector("#integrations").addEventListener("click", (event) => {
-    const button = event.target.closest("button[data-type]");
-
-    if (button) {
-      setActiveType(button.dataset.type);
-    }
-  });
-
   document
-    .querySelector("#integration-select")
-    .addEventListener("change", (event) => {
-      setActiveType(event.target.value);
+    .querySelector("#integrations")!
+    .addEventListener("click", (event) => {
+      const target = event.target as Element;
+      const button = target.closest<HTMLButtonElement>("button[data-type]");
+
+      if (button) {
+        setActiveType(button.dataset.type!);
+      }
     });
+
+  const selectEl = document.querySelector<HTMLSelectElement>(
+    "#integration-select"
+  )!;
+
+  selectEl.addEventListener("change", () => {
+    setActiveType(selectEl.value);
+  });
 
   const params = new URLSearchParams(window.location.search);
   const type = params.get("type");
 
-  if (type) {
+  // Ignore an unknown type, so that the deep link falls back to showing all
+  if (type !== null && (type === "all" || type in typeToCategories)) {
     setActiveType(type);
   }
 </script>

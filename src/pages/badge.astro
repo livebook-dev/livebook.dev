@@ -134,46 +134,52 @@ import curlyArrow from "../images/curly-arrow.svg";
 
 <script>
   import { getRunUrl, getBadgeUrl } from "../lib/urls";
+  import type { BadgeType } from "../lib/urls";
 
-  const badgeUrlInputEl = document.querySelector(
+  const badgeUrlInputEl = document.querySelector<HTMLInputElement>(
     `[data-el-badge-notebook-url-input]`
-  );
-  const badgeButtonsContainerEl = document.querySelector(
+  )!;
+  const badgeButtonsContainerEl = document.querySelector<HTMLElement>(
     `[data-el-badge-buttons-container]`
-  );
+  )!;
 
-  const markdownSourceEl = document.querySelector("#badge-source-markdown");
-  const htmlSourceEl = document.querySelector("#badge-source-html");
+  const markdownSourceEl = document.querySelector<HTMLElement>(
+    "#badge-source-markdown"
+  )!;
+  const htmlSourceEl =
+    document.querySelector<HTMLElement>("#badge-source-html")!;
 
   function updateBadgeSnippets() {
-    const activeButtonEl = document.querySelector(
+    const activeButtonEl = document.querySelector<HTMLElement>(
       `[data-el-badge-button][data-badge-button-active]`
     );
 
     const wasBadgeReady = document.body.hasAttribute("data-badge-ready");
-    const isBadgeReady = !!badgeUrlInputEl.value && !!activeButtonEl;
+    const isBadgeReady =
+      badgeUrlInputEl.value !== "" && activeButtonEl !== null;
 
     document.body.toggleAttribute("data-badge-ready", isBadgeReady);
 
     if (isBadgeReady) {
       const notebookUrl = badgeUrlInputEl.value;
-      const badgeType = activeButtonEl.getAttribute("data-badge-type");
+      const badgeType = activeButtonEl.dataset.badgeType as BadgeType;
       const badgeUrl = getBadgeUrl(badgeType);
       const runUrl = getRunUrl(notebookUrl);
       markdownSourceEl.textContent = `[![Run in Livebook](${badgeUrl})](${runUrl})`;
       htmlSourceEl.textContent = `<a href="${runUrl}">\n  <img src="${badgeUrl}" alt="Run in Livebook" />\n</a>`;
 
       if (!wasBadgeReady) {
-        const badgeResult = document.querySelector(`[data-el-badge-result]`);
+        const badgeResult = document.querySelector(`[data-el-badge-result]`)!;
         badgeResult.scrollIntoView({ behavior: "smooth", block: "end" });
       }
     }
   }
 
-  badgeUrlInputEl.addEventListener("input", (event) => updateBadgeSnippets());
+  badgeUrlInputEl.addEventListener("input", () => updateBadgeSnippets());
 
   badgeButtonsContainerEl.addEventListener("click", (event) => {
-    const buttonEl = event.target.closest(`[data-el-badge-button]`);
+    const target = event.target as Element;
+    const buttonEl = target.closest(`[data-el-badge-button]`);
 
     if (buttonEl) {
       const activeButtonEl = document.querySelector(

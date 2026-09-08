@@ -5,14 +5,13 @@ import { Image } from "astro:assets";
 
 import logo from "../images/logo.svg";
 import flyioLogoWithText from "../images/flyio-logo-with-text.svg";
-import hfLogoWithText from "../images/hf-logo-with-text.svg";
 import tigrisLogo from "../images/tigris-logo.svg";
 
 import Icon from "../components/Icon.astro";
 import DefaultMenu from "../components/DefaultMenu.astro";
 import DefaultMobileMenu from "../components/DefaultMobileMenu.astro";
 
-export interface Props {
+interface Props {
   title: string;
   description?: string;
 }
@@ -61,6 +60,7 @@ const {
       />
     </noscript>
     <script
+      is:inline
       defer
       data-domain="livebook.dev"
       data-api="/pa/api/event"
@@ -223,17 +223,21 @@ const {
 
   // Mobile menu
 
-  const menuContainerEl = document.querySelector(`[data-el-menu-container]`);
+  const menuContainerEl = document.querySelector<HTMLElement>(
+    `[data-el-menu-container]`
+  )!;
 
   menuContainerEl.addEventListener("click", (event) => {
-    const toggleEl = event.target.closest(`[data-el-menu-toggle]`);
+    const target = event.target as Element;
+
+    const toggleEl = target.closest(`[data-el-menu-toggle]`);
 
     if (toggleEl) {
       menuContainerEl.toggleAttribute("data-menu-open");
       return;
     }
 
-    const anchorEl = event.target.closest("a");
+    const anchorEl = target.closest("a");
 
     if (anchorEl && anchorEl.pathname === window.location.pathname) {
       menuContainerEl.removeAttribute("data-menu-open");
@@ -242,8 +246,8 @@ const {
 
   // Updated header on scroll
 
-  const header = document.querySelector("#header");
-  const headerMobile = document.querySelector("#header-mobile");
+  const header = document.querySelector<HTMLElement>("#header")!;
+  const headerMobile = document.querySelector<HTMLElement>("#header-mobile")!;
 
   window.addEventListener("scroll", () => {
     const scrolled = window.scrollY > 1;
