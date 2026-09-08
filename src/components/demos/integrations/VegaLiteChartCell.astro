@@ -1,0 +1,112 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Icon from "../../Icon.astro";
+import Output from "../Output.astro";
+import ScatterChart from "../ScatterChart.astro";
+
+// A deterministic stand-in for the iris dataset
+function cluster(
+  count: number,
+  [xMin, xMax]: [number, number],
+  [yMin, yMax]: [number, number],
+  seed: number,
+): [number, number][] {
+  let state = seed;
+
+  const random = () => {
+    state = (state * 1103515245 + 12345) % 2147483648;
+    return state / 2147483648;
+  };
+
+  return Array.from({ length: count }, () => [
+    xMin + random() * (xMax - xMin),
+    yMin + random() * (yMax - yMin),
+  ]);
+}
+
+const series = [
+  {
+    label: "Iris-setosa",
+    color: "#6583ff",
+    points: cluster(50, [1.0, 1.9], [2.9, 4.4], 7),
+  },
+  {
+    label: "Iris-versicolor",
+    color: "#ffa83f",
+    points: cluster(50, [3.0, 5.1], [2.0, 3.4], 13),
+  },
+  {
+    label: "Iris-virginica",
+    color: "#e2474d",
+    points: cluster(50, [4.5, 6.9], [2.2, 3.8], 29),
+  },
+];
+---
+
+<FeatureFrame zoom={1.25}>
+  <SmartCell>
+    <SmartCellHeader slot="header">
+      <Field label="Charting" inline>
+        <Input value="Iris" class="w-64" />
+      </Field>
+      <Field label="Width" inline>
+        <Input value="400" class="w-24" />
+      </Field>
+      <Field label="Height" inline>
+        <Input value="400" class="w-24" />
+      </Field>
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="Data" class="w-64"><Input value="iris" select /></Field>
+      <Field label="Chart" class="w-64"><Input value="point" select /></Field>
+    </SmartCellRow>
+    <SmartCellRow>
+      <Field label="x-axis" class="w-64">
+        <div class="flex">
+          <div
+            class="flex items-center px-2 bg-gray-200 border border-gray-200 rounded-l-lg text-lg text-gray-800 leading-none"
+          >
+            <Icon icon="settings-3-line" />
+          </div>
+          <Input
+            value="petal_length"
+            select
+            class="grow rounded-l-none border-l-0"
+          />
+        </div>
+      </Field>
+      <Field label="y-axis" class="w-64">
+        <div class="flex">
+          <div
+            class="flex items-center px-2 bg-gray-200 border border-gray-200 rounded-l-lg text-lg text-gray-800 leading-none"
+          >
+            <Icon icon="settings-3-line" />
+          </div>
+          <Input
+            value="sepal_width"
+            select
+            class="grow rounded-l-none border-l-0"
+          />
+        </div>
+      </Field>
+    </SmartCellRow>
+  </SmartCell>
+  <Output border={false}>
+    <div class="flex justify-center">
+      <ScatterChart
+        series={series}
+        title="Iris"
+        xTitle="petal_length"
+        yTitle="sepal_width"
+        legendTitle="species"
+        width={800}
+        height={420}
+      />
+    </div>
+  </Output>
+</FeatureFrame>

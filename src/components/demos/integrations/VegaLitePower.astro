@@ -1,0 +1,69 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import ScatterChart from "../ScatterChart.astro";
+
+const code = `Vl.new(width: 150, height: 150)
+|> Vl.mark(:point)
+|> Vl.encode_repeat(:x, :column, type: :quantitative)
+|> Vl.encode_repeat(:y, :row, type: :quantitative)
+|> Vl.encode_field(:color, "Species", type: :nominal)`;
+
+function cluster(
+  count: number,
+  [xMin, xMax]: [number, number],
+  [yMin, yMax]: [number, number],
+  seed: number,
+): [number, number][] {
+  let state = seed;
+
+  const random = () => {
+    state = (state * 1103515245 + 12345) % 2147483648;
+    return state / 2147483648;
+  };
+
+  return Array.from({ length: count }, () => [
+    xMin + random() * (xMax - xMin),
+    yMin + random() * (yMax - yMin),
+  ]);
+}
+
+const charts = [17, 43, 71, 97].map((seed) => [
+  {
+    label: "Adelie",
+    color: "#6583ff",
+    points: cluster(40, [2.0, 4.4], [3.0, 4.6], seed),
+  },
+  {
+    label: "Chinstrap",
+    color: "#ffa83f",
+    points: cluster(40, [3.4, 5.6], [4.4, 5.9], seed + 3),
+  },
+  {
+    label: "Gentoo",
+    color: "#e2474d",
+    points: cluster(40, [4.6, 6.6], [4.0, 5.6], seed + 5),
+  },
+]);
+---
+
+<FeatureFrame zoom={1.35}>
+  <Editor code={code} startLine={20} status="evaluated" language="elixir" />
+  <Output border={false}>
+    <div class="grid grid-cols-2 gap-x-6 gap-y-2">
+      {
+        charts.map((series) => (
+          <ScatterChart
+            series={series}
+            xTitle="Body Mass (g)"
+            yTitle="Beak Length (mm)"
+            width={400}
+            height={260}
+            class="w-full"
+          />
+        ))
+      }
+    </div>
+  </Output>
+</FeatureFrame>

@@ -1,0 +1,33 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import map from "../../../images/demos/map-markers.png";
+
+const code = `p1 = %Geo.Point{coordinates: {100.4933, 13.7551}, properties: %{year: 2004}}
+p2 = %Geo.Point{coordinates: {6.6523, 46.5535}, properties: %{year: 2005}}
+p3 = %Geo.Point{coordinates: {-123.3596, 48.4268}, properties: %{year: 2007}}
+
+gc = %Geo.GeometryCollection{geometries: [p1, p2, p3]}
+
+Ml.new()
+|> Ml.add_geo_source("conferences", gc)
+|> Ml.add_layer(
+  id: "conferences",
+  type: :symbol,
+  source: "conferences",
+  layout: [
+    icon_image: "custom-marker",
+    text_field: ["get", "year"],
+    text_offset: [0, 1.25],
+    text_anchor: "top"
+  ]
+)`;
+---
+
+<FeatureFrame zoom={1.3}>
+  <Editor code={code} status="evaluated" language="elixir" />
+  <Output border={false}>
+    <img class="w-full rounded-lg" src={map.src} alt="" />
+  </Output>
+</FeatureFrame>

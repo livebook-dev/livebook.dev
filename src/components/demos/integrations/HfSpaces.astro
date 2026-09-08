@@ -1,0 +1,75 @@
+---
+import Icon from "../../Icon.astro";
+import FeatureFrame from "../FeatureFrame.astro";
+import Sidebar from "../Sidebar.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import LineChart from "../LineChart.astro";
+import hfLogo from "../../../images/integrations/hugging-face/logo.png";
+
+const code = `Nx.Serving.run(serving, "The Elixir programming language")`;
+
+const data = [
+  { x: 1, y: 4 },
+  { x: 2, y: 12 },
+  { x: 3, y: 18 },
+  { x: 4, y: 26 },
+  { x: 5, y: 24 },
+  { x: 6, y: 33 },
+  { x: 7, y: 38 },
+];
+---
+
+<FeatureFrame zoom={1.3} class="">
+  <div>
+    <div class="flex items-center gap-5 px-8 py-5 border-b border-gray-200">
+      <img class="h-7 w-7 object-contain" src={hfLogo.src} alt="Hugging Face" />
+      <span class="text-xl font-bold text-gray-900">Hugging Face</span>
+      <div
+        class="grow flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-500"
+      >
+        <Icon icon="search-line" />
+        <span>Search models, datasets, users...</span>
+      </div>
+    </div>
+    <div class="px-8 pt-5 flex items-center gap-3">
+      <span class="text-xl font-semibold text-gray-500">Spaces:</span>
+      <span class="text-xl text-gray-500">livebook-dev</span>
+      <span class="text-xl text-gray-500">/</span>
+      <span class="text-xl font-bold font-mono text-gray-900">livebook</span>
+      <Icon icon="file-copy-line" class="text-gray-400" />
+      <div
+        class="ml-auto px-3 py-1 rounded-lg border border-gray-200 flex items-center gap-2 text-sm text-gray-700"
+      >
+        <Icon icon="heart-line" /> like <span class="text-gray-400">0</span>
+      </div>
+    </div>
+    <div class="mt-4 px-8 flex items-center gap-8 border-b border-gray-200">
+      <div class="pb-3 border-b-2 border-gray-900 font-semibold text-gray-900">
+        App
+      </div>
+      <div class="pb-3 text-gray-600">Files</div>
+      <div class="pb-3 text-gray-600">Community</div>
+      <div class="pb-3 text-gray-600">Settings</div>
+    </div>
+    <div class="flex h-[420px] overflow-hidden">
+      <Sidebar initials="HF" color="#8ba2ff" />
+      <div class="grow overflow-hidden px-10 py-8">
+        <p class="mb-5 text-gray-700">
+          Livebook runs inside a Space, so you can use their GPUs to train and
+          run models.
+        </p>
+        <Editor code={code} status="evaluated" language="elixir" />
+        <Output border={false}>
+          <LineChart
+            data={data}
+            xTitle="Step"
+            yTitle="Accuracy"
+            width={620}
+            height={220}
+          />
+        </Output>
+      </div>
+    </div>
+  </div>
+</FeatureFrame>

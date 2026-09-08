@@ -1,0 +1,44 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Output from "../Output.astro";
+import map from "../../../images/demos/map-cluster-cell.png";
+---
+
+<FeatureFrame zoom={1.35}>
+  <SmartCell>
+    <SmartCellHeader slot="header">
+      <Field label="Map style" inline>
+        <Input value="default" select class="w-48" />
+      </Field>
+      <Field label="Center" inline>
+        <Input placeholder="longitude, latitude" class="w-64" />
+      </Field>
+      <Field label="Zoom" inline>
+        <Input value="1" class="w-20" />
+      </Field>
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="Source" class="w-56"><Input value="result4" select /></Field
+      >
+      <Field label="Coordinates format" class="w-56"
+        ><Input value="Single: lat, lng" select /></Field
+      >
+      <Field label="Coordinates" class="w-56"
+        ><Input value="coordinates" select /></Field
+      >
+    </SmartCellRow>
+    <SmartCellRow>
+      <Field label="Type" class="w-48"><Input value="cluster" select /></Field>
+      <Field label="Min" class="w-32"><Input value="100" /></Field>
+      <Field label="Max" class="w-32"><Input value="750" /></Field>
+    </SmartCellRow>
+  </SmartCell>
+  <Output border={false}>
+    <img class="w-full rounded-lg" src={map.src} alt="" />
+  </Output>
+</FeatureFrame>

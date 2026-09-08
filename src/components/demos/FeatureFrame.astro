@@ -1,0 +1,48 @@
+---
+import Screenshot from "./Screenshot.astro";
+
+interface Props {
+  /** Feature demos are square, matching the layout of the integration pages */
+  width?: number;
+  height?: number;
+  /**
+   * Scales the card up, so that it bleeds out of the frame. Use it to zoom in
+   * on the part of the UI that the feature is about
+   */
+  zoom?: number;
+  /** Padding of the white card with the actual UI */
+  class?: string;
+}
+
+const {
+  width = 1000,
+  height = 1000,
+  zoom = 1,
+  class: className = "p-6",
+} = Astro.props;
+
+// When zoomed the card is anchored to the top left corner, the rest bleeds out
+const zoomStyle =
+  zoom === 1
+    ? undefined
+    : `transform: scale(${zoom}); transform-origin: top left; border-radius: ${16 / zoom}px`;
+---
+
+<Screenshot width={width} height={height}>
+  <div
+    class:list={[
+      "w-full h-full p-10 bg-gray-100 rounded-[40px] flex flex-col overflow-hidden",
+      zoom === 1 ? "justify-center" : "justify-start",
+    ]}
+  >
+    <div
+      class:list={[
+        "bg-white rounded-2xl shadow-lg shadow-gray-900/5 overflow-hidden",
+        className,
+      ]}
+      style={zoomStyle}
+    >
+      <slot />
+    </div>
+  </div>
+</Screenshot>

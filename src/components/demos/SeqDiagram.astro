@@ -1,0 +1,96 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+// Mermaid's default theme
+const fill = "#ececff";
+const stroke = "#9370db";
+const text = "#333333";
+---
+
+<svg
+  class={className}
+  viewBox="0 0 600 300"
+  width="600"
+  height="300"
+  font-family="Inter, sans-serif"
+  font-size="14"
+>
+  <defs>
+    <marker
+      id="seq-arrow"
+      viewBox="0 0 10 10"
+      refX="9"
+      refY="5"
+      markerWidth="6"
+      markerHeight="6"
+      orient="auto-start-reverse"
+    >
+      <path d="M 0 0 L 10 5 L 0 10 z" fill={text}></path>
+    </marker>
+  </defs>
+
+  <line x1="150" y1="60" x2="150" y2="248" stroke={stroke} stroke-width="1.5"
+  ></line>
+  <line x1="440" y1="60" x2="440" y2="248" stroke={stroke} stroke-width="1.5"
+  ></line>
+
+  <g stroke={text} stroke-width="1.5" marker-end="url(#seq-arrow)">
+    <line x1="150" y1="110" x2="437" y2="110"></line>
+    <line x1="150" y1="170" x2="437" y2="170"></line>
+    <line x1="440" y1="230" x2="153" y2="230"></line>
+  </g>
+
+  <g text-anchor="middle" fill={text} font-weight="600">
+    <text x="295" y="100">SPAWN</text>
+    <text x="295" y="160">INFO: ping</text>
+    <text x="295" y="220">INFO: pong</text>
+  </g>
+
+  <g>
+    <rect x="70" y="18" width="160" height="42" fill={fill} stroke={stroke}
+    ></rect>
+    <text
+      x="150"
+      y="39"
+      text-anchor="middle"
+      dominant-baseline="central"
+      fill={text}>self()</text
+    >
+    <rect x="360" y="18" width="160" height="42" fill={fill} stroke={stroke}
+    ></rect>
+    <text
+      x="440"
+      y="39"
+      text-anchor="middle"
+      dominant-baseline="central"
+      fill={text}
+    >
+      #PID&lt;0.2109.0&gt;
+    </text>
+
+    <rect x="70" y="248" width="160" height="42" fill={fill} stroke={stroke}
+    ></rect>
+    <text
+      x="150"
+      y="269"
+      text-anchor="middle"
+      dominant-baseline="central"
+      fill={text}>self()</text
+    >
+    <rect x="360" y="248" width="160" height="42" fill={fill} stroke={stroke}
+    ></rect>
+    <text
+      x="440"
+      y="269"
+      text-anchor="middle"
+      dominant-baseline="central"
+      fill={text}
+    >
+      #PID&lt;0.2109.0&gt;
+    </text>
+  </g>
+</svg>

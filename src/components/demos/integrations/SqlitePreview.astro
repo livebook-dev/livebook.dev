@@ -1,0 +1,35 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Output from "../Output.astro";
+import Inspect from "../Inspect.astro";
+import CellIndicator from "../CellIndicator.astro";
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <SmartCell>
+    <SmartCellHeader slot="header">
+      <Field label="Connect to" inline>
+        <Input value="SQLite" select class="w-44" />
+      </Field>
+      <Field label="Assign to" inline>
+        <Input value="conn" class="w-64" />
+      </Field>
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="Database path" class="grow">
+        <Input value="db/development.sqlite3" />
+      </Field>
+    </SmartCellRow>
+  </SmartCell>
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <Inspect text="{:ok, #PID<0.2938.0>}" />
+  </Output>
+</NotebookPreview>

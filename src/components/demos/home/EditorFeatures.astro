@@ -1,0 +1,18 @@
+---
+import Screenshot from "../Screenshot.astro";
+import Sidebar from "../Sidebar.astro";
+import EditorShowcase from "../EditorShowcase.astro";
+import NotebookIndicators from "../NotebookIndicators.astro";
+---
+
+<Screenshot width={975} height={564}>
+  <div class="flex h-full bg-white">
+    <Sidebar initials="J" color="#6583ff" />
+    <div class="grow flex flex-col justify-center overflow-hidden pl-14 pr-4">
+      <EditorShowcase />
+    </div>
+    <div class="w-24 shrink-0 flex flex-col justify-end items-center pb-4">
+      <NotebookIndicators status="stale" />
+    </div>
+  </div>
+</Screenshot>

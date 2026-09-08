@@ -1,0 +1,47 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  value?: string;
+  placeholder?: string;
+  /** Selects render a chevron on the right */
+  select?: boolean;
+  /** Secret inputs render a lock button on the left */
+  secret?: boolean;
+  class?: string;
+}
+
+const {
+  value,
+  placeholder,
+  select = false,
+  secret = false,
+  class: className,
+} = Astro.props;
+
+const box =
+  "flex items-center gap-2 min-h-[37px] px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-600";
+---
+
+{
+  secret ? (
+    <div class:list={["flex", className]}>
+      <div class="flex items-center px-2 bg-gray-200 border border-gray-200 rounded-l-lg text-lg text-gray-800 leading-none">
+        <Icon icon="lock-password-line" />
+      </div>
+      <div class={`${box} grow rounded-l-none border-l-0`}>{value}</div>
+    </div>
+  ) : (
+    <div class:list={[box, className]}>
+      <span class:list={["truncate", !value && "text-gray-400"]}>
+        {value ?? placeholder}
+      </span>
+      {select && (
+        <Icon
+          icon="arrow-down-s-line"
+          class="ml-auto text-lg text-gray-500 leading-none"
+        />
+      )}
+    </div>
+  )
+}

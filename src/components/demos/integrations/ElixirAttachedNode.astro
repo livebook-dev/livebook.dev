@@ -1,0 +1,37 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import KinoInput from "../KinoInput.astro";
+import Button from "../Button.astro";
+---
+
+<FeatureFrame zoom={1.5}>
+  <h3 class="text-2xl font-semibold text-gray-800">Runtime settings</h3>
+  <div class="mt-5 flex gap-3">
+    <div
+      class="px-4 py-2 rounded-lg border border-gray-300 text-sm text-gray-600"
+    >
+      Elixir standalone
+    </div>
+    <div
+      class="px-4 py-2 rounded-lg border border-blue-600 bg-blue-50 text-sm text-blue-600"
+    >
+      Attached node
+    </div>
+  </div>
+  <p class="mt-5 text-gray-700">
+    Connect the session to an already running node and evaluate code in the
+    context of that node. Make sure to give the node a name and a cookie, for
+    example:
+  </p>
+  <div
+    class="mt-4 p-4 rounded-lg bg-editor font-mono text-[14px] text-editor-text"
+  >
+    iex --name test@127.0.0.1 --cookie mycookie -S mix
+  </div>
+  <p class="mt-4 text-gray-700">Then enter the connection information below:</p>
+  <div class="mt-4 flex flex-col gap-4">
+    <KinoInput label="Name" value="test@127.0.0.1" />
+    <KinoInput label="Cookie" value="mycookie" />
+  </div>
+  <div class="mt-6"><Button color="gray">Connect</Button></div>
+</FeatureFrame>

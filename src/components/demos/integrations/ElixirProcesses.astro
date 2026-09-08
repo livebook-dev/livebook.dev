@@ -1,0 +1,29 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+import SeqDiagram from "../SeqDiagram.astro";
+
+const code = `Kino.Process.render_seq_trace(fn ->
+  parent = self()
+
+  child =
+    spawn(fn ->
+      receive do
+        :ping -> send(parent, :pong)
+      end
+    end)
+
+  send(child, :ping)
+
+  receive do
+    :pong -> :ponged!
+  end
+end)`;
+---
+
+<FeatureFrame zoom={1.35}>
+  <Editor code={code} status="evaluated" language="elixir" />
+  <div class="mt-4 flex justify-center">
+    <SeqDiagram class="w-[85%]" />
+  </div>
+</FeatureFrame>

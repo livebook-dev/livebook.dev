@@ -1,0 +1,23 @@
+---
+interface Props {
+  color?: "blue" | "gray";
+  class?: string;
+}
+
+const { color = "blue", class: className } = Astro.props;
+
+const colors = {
+  blue: "border-transparent bg-blue-600 text-white",
+  gray: "border-gray-200 bg-gray-100 text-gray-600",
+};
+---
+
+<div
+  class:list={[
+    "inline-flex px-5 py-2 rounded-lg border font-medium text-sm items-center justify-center",
+    colors[color],
+    className,
+  ]}
+>
+  <slot />
+</div>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  label: string;
+  /** Inline fields put an uppercase label next to the input */
+  inline?: boolean;
+  class?: string;
+}
+
+const { label, inline = false, class: className } = Astro.props;
+---
+
+{
+  inline ? (
+    <div class:list={["flex items-baseline", className]}>
+      <span class="pr-1.5 text-sm font-medium uppercase text-gray-600 whitespace-nowrap">
+        {label}
+      </span>
+      <slot />
+    </div>
+  ) : (
+    <div class:list={["flex flex-col", className]}>
+      <span class="mb-0.5 text-sm font-medium text-gray-800">{label}</span>
+      <slot />
+    </div>
+  )
+}

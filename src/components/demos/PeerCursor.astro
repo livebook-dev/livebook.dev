@@ -1,0 +1,33 @@
+---
+interface Props {
+  /** Name shown above the cursor, omitted for the local cursor */
+  name?: string;
+  color: string;
+  /** Position in the editor, 1-based */
+  line: number;
+  column: number;
+}
+
+const { name, color, line, column } = Astro.props;
+
+// The editor renders JetBrains Mono at 14px with a line height of 19.6px,
+// the gutter takes 47px and each line has 6px of padding, plus the editor
+// itself has 12px of padding at the top
+const left = 53 + (column - 1) * 8.4;
+const top = 12 + (line - 1) * 19.6;
+---
+
+<div class="absolute" style={`left: ${left}px; top: ${top}px`}>
+  <div class="relative w-0.5 h-[19.6px]" style={`background-color: ${color}`}>
+    {
+      name && (
+        <div
+          class="absolute left-0 bottom-full px-2 py-px text-[12px] leading-normal whitespace-nowrap text-gray-50"
+          style={`background-color: ${color}`}
+        >
+          {name}
+        </div>
+      )
+    }
+  </div>
+</div>

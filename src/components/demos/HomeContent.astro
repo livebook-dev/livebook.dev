@@ -1,0 +1,78 @@
+---
+import Icon from "../Icon.astro";
+
+const starred = [
+  { name: "Sales report", starred: "Starred about 1 month ago" },
+  { name: "Deploy dashboard", starred: "Starred about 7 months ago" },
+  { name: "Python intellisense", starred: "Starred about 8 months ago" },
+];
+---
+
+<div class="flex items-center justify-between">
+  <h1 class="text-3xl font-semibold text-gray-800">Home</h1>
+  <div class="flex items-center gap-3">
+    <div
+      class="px-5 py-2 rounded-lg border border-gray-300 text-sm font-medium text-gray-600"
+    >
+      Open
+    </div>
+    <div
+      class="px-5 py-2 rounded-lg bg-blue-600 text-sm font-medium text-white flex items-center gap-1.5"
+    >
+      <Icon icon="add-line" /> New notebook
+    </div>
+  </div>
+</div>
+
+<div class="mt-8 text-sm font-semibold uppercase tracking-wide text-gray-500">
+  Starred notebooks
+</div>
+<div class="mt-4 grid grid-cols-3 gap-5">
+  {
+    starred.map((notebook) => (
+      <div class="rounded-lg border border-gray-200 bg-gray-50/50 p-5">
+        <div class="flex items-start justify-between gap-2">
+          <span class="font-medium text-gray-800 truncate">
+            {notebook.name}
+          </span>
+          <Icon icon="star-fill" class="shrink-0 text-[#ffa83f]" />
+        </div>
+        <div class="mt-1 text-sm text-gray-600">{notebook.starred}</div>
+        <div class="mt-3 flex gap-4 text-sm font-medium text-blue-600">
+          <span>Open</span>
+          <span>Fork</span>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div class="mt-12 flex items-center justify-between">
+  <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">
+    Running sessions (1)
+  </div>
+  <div class="flex items-center gap-3 text-sm text-gray-600">
+    <div
+      class="px-3 py-1.5 rounded-lg border border-gray-300 flex items-center gap-1.5"
+    >
+      <Icon icon="list-settings-line" /> Edit
+    </div>
+    <div
+      class="px-3 py-1.5 rounded-lg border border-gray-300 flex items-center gap-1.5"
+    >
+      Date <Icon icon="arrow-down-s-line" />
+    </div>
+  </div>
+</div>
+<div class="mt-5">
+  <div class="font-medium text-gray-800">Sales report</div>
+  <div class="text-sm text-gray-600">
+    /home/jane/notebooks/sales_report.livemd
+  </div>
+  <div class="mt-1 flex items-center gap-3 text-sm text-gray-600">
+    <span class="flex items-center gap-1.5">
+      <span class="w-2 h-2 rounded-full bg-[#4ade80]"></span>40.7 MB
+    </span>
+    <span>Created 29 minutes ago</span>
+  </div>
+</div>

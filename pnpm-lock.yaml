@@ -30,6 +30,9 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
+      shiki:
+        specifier: ^4.4.3
+        version: 4.4.3
       tidewave:
         specifier: ^0.9.0
         version: 0.9.0(typescript@6.0.3)

@@ -1,0 +1,49 @@
+---
+import Icon from "../../Icon.astro";
+import NotebookPreview from "../NotebookPreview.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import DataTable from "../DataTable.astro";
+
+const query = `select issue_id, title
+from articles
+where issue_id = {{issue_id}}
+limit 3`;
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <div class="rounded-lg overflow-hidden">
+    <SmartCellHeader class="rounded-none">
+      <Field label="Query" inline>
+        <Input value="conn (PostgreSQL)" select class="w-56" />
+      </Field>
+      <Field label="Assign to" inline>
+        <Input value="result" class="w-56" />
+      </Field>
+      <div
+        class="ml-auto flex items-center gap-2 text-xl text-gray-600 leading-none"
+      >
+        <Icon icon="question-line" />
+        <Icon icon="settings-3-line" />
+      </div>
+    </SmartCellHeader>
+    <Editor code={query} lang="sql" rounded="none" />
+  </div>
+  <Output border={false}>
+    <DataTable
+      entries="3 entries"
+      columns={[
+        { name: "issue_id", type: "number" },
+        { name: "title", type: "text" },
+      ]}
+      rows={[
+        ["1", "Cheatsheets and other 8 ExDoc features"],
+        ["1", "Dockerize Phoenix + Tailwind application"],
+        ["1", "Persistent Forms With Your URL on LiveView"],
+      ]}
+    />
+  </Output>
+</NotebookPreview>

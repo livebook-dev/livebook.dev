@@ -1,0 +1,36 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import CellActions from "../CellActions.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import TerminalText from "../TerminalText.astro";
+import Inspect from "../Inspect.astro";
+
+const code = `Queue = queue:from_list([1,2,3]),
+
+% Get the initial length of the queue
+io:format("Initial length: ~p~n", [queue:len(Queue)]),
+
+% Add some data to the queue
+Queue1 = queue:in(4, Queue),
+
+io:format("Length after adding one element: ~p~n", [queue:len(Queue1)]),
+
+ok.`;
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <CellActions primary="Reevaluate" />
+  <Editor code={code} lang="erlang" status="evaluated" language="erlang" />
+  <Output>
+    <TerminalText
+      >{
+        `Initial length: 3
+Length after adding one element: 4`
+      }</TerminalText
+    >
+  </Output>
+  <Output>
+    <Inspect text=":ok" />
+  </Output>
+</NotebookPreview>

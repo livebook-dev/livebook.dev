@@ -1,0 +1,38 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import NeuralNetworkCell from "../NeuralNetworkCell.astro";
+import CellIndicator from "../CellIndicator.astro";
+import Output from "../Output.astro";
+import KinoInput from "../KinoInput.astro";
+import Button from "../Button.astro";
+import numbat1 from "../../../images/demos/numbat-1.png";
+import numbat2 from "../../../images/demos/numbat-2.png";
+---
+
+<FeatureFrame>
+  <NeuralNetworkCell
+    task="Text-to-image"
+    model="Stable Diffusion (Ghibli style)"
+    params={[
+      { label: "Max input tokens", value: "50" },
+      { label: "Number of steps", value: "40" },
+      { label: "Number of images", value: "2" },
+      { label: "Seed" },
+      { label: "Compiler", value: "EXLA", select: true },
+    ]}
+    note="this is a very involved task, the generation can take a long time if you run it on a CPU. To achieve a better quality increase the number of steps."
+  />
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <div class="flex flex-col gap-3">
+      <KinoInput label="Text" value="ghibli style numbat in forest" textarea />
+      <div><Button>Run</Button></div>
+      <div class="grid grid-cols-2 gap-3">
+        <img class="w-full" src={numbat1.src} alt="" />
+        <img class="w-full" src={numbat2.src} alt="" />
+      </div>
+    </div>
+  </Output>
+</FeatureFrame>

@@ -1,0 +1,33 @@
+---
+import type { ImageMetadata } from "astro";
+
+import Icon from "../Icon.astro";
+import AppPreview from "./AppPreview.astro";
+import HomeContent from "./HomeContent.astro";
+
+interface Props {
+  logo: ImageMetadata;
+  name: string;
+}
+
+const { logo, name } = Astro.props;
+---
+
+<AppPreview dimmed>
+  <HomeContent />
+  <div slot="overlay" class="absolute inset-0 flex items-center justify-center">
+    <div
+      class="w-[320px] bg-white rounded-lg shadow-[0_15px_80px_-10px_rgba(13,24,41,0.4)] px-8 py-8 flex flex-col items-center gap-7"
+    >
+      <div class="flex items-center gap-3">
+        <img class="h-10 w-10 object-contain" src={logo.src} alt="" />
+        <span class="text-xl font-semibold text-gray-900">{name}</span>
+      </div>
+      <div
+        class="w-full py-2 rounded-lg bg-gray-200 flex items-center justify-center gap-2 text-sm font-semibold text-gray-900"
+      >
+        <Icon icon="lock-password-line" /> Login
+      </div>
+    </div>
+  </div>
+</AppPreview>

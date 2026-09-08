@@ -1,0 +1,64 @@
+---
+import CellActions from "./CellActions.astro";
+import Editor from "./Editor.astro";
+import Autocomplete from "./Autocomplete.astro";
+import PeerCursor from "./PeerCursor.astro";
+import Output from "./Output.astro";
+import Inspect from "./Inspect.astro";
+
+interface Props {
+  /** The evaluation result is only shown when there is room for it */
+  showOutput?: boolean;
+}
+
+const { showOutput = true } = Astro.props;
+
+const code = `defmodule Formulas do
+  import Nx.Defn
+
+  defn softm
+
+  defn sigmoid(x) do
+    1 / (1 + Nx.exp(-x))
+  end
+
+  defn relu(x) do
+    Nx.m
+  end
+end`;
+
+const completions = [
+  { label: "map/2" },
+  { label: "map/3" },
+  { label: "max/2", detail: "Nx.max(left, right)" },
+  { label: "mean/1" },
+  { label: "mean/2" },
+  { label: "min/2" },
+  { label: "multiply/2" },
+];
+---
+
+<div>
+  <CellActions primary="Evaluate" />
+  <div class="relative">
+    <Editor code={code} status="stale" changed language="elixir">
+      <PeerCursor name="Amy" color="#e2474d" line={4} column={13} />
+      <PeerCursor name="Jake" color="#7c3aed" line={6} column={21} />
+      <PeerCursor color="#73ade8" line={11} column={9} />
+    </Editor>
+    <Autocomplete
+      class="absolute w-[380px]"
+      style="left: 120px; top: 232px"
+      prefix="m"
+      items={completions}
+      selected={2}
+    />
+  </div>
+  {
+    showOutput && (
+      <Output>
+        <Inspect text="{:module, Formulas, <<70, 79, 82, 49, ...>>, {:relu, 1}}" />
+      </Output>
+    )
+  }
+</div>

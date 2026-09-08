@@ -1,0 +1,39 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import CellActions from "../CellActions.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import TerminalText from "../TerminalText.astro";
+import Inspect from "../Inspect.astro";
+
+const code = `# Start the GenServer process
+MyApp.Queue.start_link([])
+
+MyApp.Queue.len() |> IO.inspect(label: "Initial length")
+
+# Add some data to the queue
+for idx <- 4..6, do: MyApp.Queue.push(idx)
+
+MyApp.Queue.len() |> IO.inspect(label: "Length after adding elements")
+
+:sys.get_state(MyApp.Queue) |> IO.inspect(label: "Introspection with :sys module")
+
+GenServer.stop(MyApp.Queue)`;
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <CellActions primary="Reevaluate" />
+  <Editor code={code} status="evaluated" language="elixir" />
+  <Output>
+    <TerminalText
+      >{
+        `Initial length: 0
+Length after adding elements: 3
+Introspection with :sys module: %{len: 3, queue: {[6, 5], [4]}}`
+      }</TerminalText
+    >
+  </Output>
+  <Output>
+    <Inspect text=":ok" />
+  </Output>
+</NotebookPreview>

@@ -1,0 +1,48 @@
+---
+import Code from "./Code.astro";
+import CellIndicator from "./CellIndicator.astro";
+
+interface Props {
+  code: string;
+  lang?: string;
+  startLine?: number;
+  gutter?: boolean;
+  status?: "evaluated" | "stale" | "aborted" | "queued" | "evaluating";
+  changed?: boolean;
+  language?: "elixir" | "erlang" | "markdown" | "python";
+  /** Which corners are rounded, the editor is often glued to a smart cell UI */
+  rounded?: "all" | "top" | "bottom" | "none";
+  class?: string;
+}
+
+const {
+  code,
+  lang = "elixir",
+  startLine = 1,
+  gutter = true,
+  status,
+  changed = false,
+  language,
+  rounded = "all",
+  class: className,
+} = Astro.props;
+
+const roundedClass = {
+  all: "rounded-lg",
+  top: "rounded-t-lg",
+  bottom: "rounded-b-lg",
+  none: "",
+}[rounded];
+---
+
+<div class:list={["relative bg-editor py-3", roundedClass, className]}>
+  <Code code={code} lang={lang} startLine={startLine} gutter={gutter} />
+  {
+    (status || language) && (
+      <div class="absolute bottom-2 right-2">
+        <CellIndicator status={status} changed={changed} language={language} />
+      </div>
+    )
+  }
+  <slot />
+</div>

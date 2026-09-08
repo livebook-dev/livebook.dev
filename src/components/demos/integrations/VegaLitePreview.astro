@@ -1,0 +1,42 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import LineChart from "../LineChart.astro";
+
+const code = `Vl.new(width: 600, height: 300)
+|> Vl.data_from_values(cars)
+|> Vl.mark(:line)
+|> Vl.encode_field(:x, "year", type: :temporal)
+|> Vl.encode_field(:y, "miles_per_gallon", aggregate: :mean)`;
+
+const data = [
+  { x: 1969, y: 18.0, lo: 16.0, hi: 20.0 },
+  { x: 1970, y: 21.3, lo: 19.0, hi: 23.6 },
+  { x: 1971, y: 18.7, lo: 17.5, hi: 20.0 },
+  { x: 1972, y: 17.2, lo: 16.0, hi: 18.5 },
+  { x: 1973, y: 22.8, lo: 20.5, hi: 25.0 },
+  { x: 1974, y: 20.4, lo: 19.0, hi: 21.8 },
+  { x: 1975, y: 21.7, lo: 20.2, hi: 23.2 },
+  { x: 1976, y: 23.5, lo: 22.0, hi: 25.5 },
+  { x: 1977, y: 24.2, lo: 22.8, hi: 25.8 },
+  { x: 1978, y: 25.3, lo: 23.0, hi: 27.6 },
+  { x: 1979, y: 33.8, lo: 31.6, hi: 36.0 },
+  { x: 1980, y: 32.0, lo: 30.6, hi: 33.6 },
+  { x: 1981, y: 31.2, lo: 30.2, hi: 32.4 },
+];
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <Editor code={code} status="evaluated" language="elixir" />
+  <Output border={false}>
+    <LineChart
+      data={data}
+      xTitle="Year (year)"
+      yTitle="Mean of miles per gallon (95% CIs)"
+      width={700}
+      height={300}
+      xTicks={[1969, 1971, 1973, 1975, 1977, 1979, 1981]}
+    />
+  </Output>
+</NotebookPreview>

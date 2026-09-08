@@ -1,0 +1,42 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import NeuralNetworkCell from "../NeuralNetworkCell.astro";
+import CellIndicator from "../CellIndicator.astro";
+import Output from "../Output.astro";
+import KinoInput from "../KinoInput.astro";
+import Button from "../Button.astro";
+import ScoreBars from "../ScoreBars.astro";
+---
+
+<FeatureFrame zoom={1.2}>
+  <NeuralNetworkCell
+    task="Zero-shot text classification"
+    model="BART (large MNLI)"
+    params={[
+      {
+        label: "Labels (comma-separated)",
+        value: "cooking, traveling, dancing",
+        class: "w-72",
+      },
+      { label: "Top-k" },
+      { label: "Max input tokens", value: "100" },
+      { label: "Compiler", value: "EXLA", select: true },
+    ]}
+  />
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <div class="flex flex-col gap-3">
+      <KinoInput label="Text" value="One day I will see the world." textarea />
+      <div><Button>Run</Button></div>
+      <ScoreBars
+        scores={[
+          { label: "traveling", score: 0.983 },
+          { label: "dancing", score: 0.009 },
+          { label: "cooking", score: 0.008 },
+        ]}
+      />
+    </div>
+  </Output>
+</FeatureFrame>

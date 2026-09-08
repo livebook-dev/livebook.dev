@@ -1,0 +1,79 @@
+---
+import Screenshot from "../Screenshot.astro";
+import Button from "../Button.astro";
+import logo from "../../../images/logo.svg";
+import elixir from "../../../images/learn/elixir.png";
+import learnDeploy from "../../../images/learn/learn-deploy.svg";
+import vegaLite from "../../../images/learn/vega_lite.png";
+import maplibre from "../../../images/learn/maplibre.png";
+
+const notebooks = [
+  {
+    cover: elixir,
+    title: "Distributed portals with Elixir",
+    description:
+      "A fast-paced introduction to Elixir by building distributed data-transfer portals.",
+  },
+  {
+    cover: learnDeploy,
+    title: "Build a chat app with Kino",
+    description: "Write and deploy a chat app with Kino control and frames.",
+  },
+  {
+    cover: vegaLite,
+    title: "Plotting with VegaLite",
+    description: "Learn how to quickly create numerous plots for your data.",
+  },
+  {
+    cover: maplibre,
+    title: "Plot maps with MapLibre",
+    description: "Seamlessly plot maps using geospatial and tabular data.",
+  },
+];
+---
+
+<Screenshot width={920} height={760}>
+  <div class="relative h-full bg-white">
+    <!-- Decorative circle peeking out from behind the notebook list -->
+    <div
+      class="absolute rounded-full bg-[#d8e0ff]"
+      style="left: 180px; top: 60px; width: 700px; height: 700px"
+    >
+    </div>
+    <div class="relative w-[760px] flex flex-col gap-4 px-1 py-1">
+      <div class="p-6 bg-gray-900 rounded-2xl flex items-center gap-6">
+        <img class="w-[84px]" src={logo.src} alt="" />
+        <div>
+          <h3 class="text-xl text-gray-50 font-semibold">
+            Welcome to Livebook
+          </h3>
+          <p class="mt-2 text-sm text-gray-300">
+            Get to know Livebook, see how it works, and learn its features.
+          </p>
+          <div class="mt-4"><Button>Open notebook</Button></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        {
+          notebooks.map((notebook) => (
+            <div class="flex flex-col border-2 border-gray-100 rounded-2xl">
+              <div class="flex items-center justify-center p-6 bg-white border-b-2 border-gray-100 rounded-t-2xl h-[120px]">
+                <img
+                  class="max-h-full max-w-[75%]"
+                  src={notebook.cover.src}
+                  alt=""
+                />
+              </div>
+              <div class="px-6 py-4 bg-gray-100 rounded-b-2xl grow">
+                <span class="text-gray-800 font-semibold">
+                  {notebook.title}
+                </span>
+                <p class="mt-2 text-sm text-gray-600">{notebook.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Screenshot>

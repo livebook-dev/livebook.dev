@@ -1,0 +1,63 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Modal from "../Modal.astro";
+import KinoInput from "../KinoInput.astro";
+import Button from "../Button.astro";
+
+const packages = [
+  {
+    name: "kino",
+    version: "0.19.0",
+    description: "Interactive widgets for Livebook",
+  },
+  {
+    name: "kino_vega_lite",
+    version: "0.1.13",
+    description: "Vega-Lite integration with Livebook",
+  },
+  {
+    name: "kino_db",
+    version: "0.3.1",
+    description: "Databases integration with Livebook",
+  },
+  {
+    name: "kino_maplibre",
+    version: "0.1.13",
+    description: "MapLibre integration with Livebook",
+  },
+  {
+    name: "kino_bumblebee",
+    version: "0.5.1",
+    description: "Bumblebee integration with Livebook",
+  },
+];
+---
+
+<FeatureFrame zoom={1.9}>
+  <Modal
+    title="Search packages"
+    subtitle="Find external packages for your notebook"
+    class="px-0 py-0 shadow-none"
+  >
+    <div class="mt-5">
+      <KinoInput value="kino" />
+    </div>
+    <div class="mt-4 divide-y divide-gray-200">
+      {
+        packages.map((pkg) => (
+          <div class="flex items-center justify-between gap-4 py-3">
+            <div class="min-w-0">
+              <div class="text-gray-800">
+                <span class="font-semibold">{pkg.name}</span> {pkg.version}
+              </div>
+              <div class="text-gray-700 truncate">{pkg.description}</div>
+            </div>
+            <Button color="gray" class="shrink-0">
+              Add
+            </Button>
+          </div>
+        ))
+      }
+    </div>
+  </Modal>
+</FeatureFrame>

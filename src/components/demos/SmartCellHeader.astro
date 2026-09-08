@@ -1,0 +1,27 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  /** Whether the help icon is shown on the right */
+  help?: boolean;
+  class?: string;
+}
+
+const { help = false, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex items-center gap-4 bg-blue-100 border-b border-gray-200 rounded-t-lg px-4 py-2",
+    className,
+  ]}
+>
+  <slot />
+  {
+    help && (
+      <div class="ml-auto text-xl text-gray-600 leading-none">
+        <Icon icon="question-line" />
+      </div>
+    )
+  }
+</div>
