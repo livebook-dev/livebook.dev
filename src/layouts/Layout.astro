@@ -23,7 +23,8 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<!-- The site is light only, so opt out of the browser dark preference -->
+<html lang="en" class="scheme-light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -66,7 +67,7 @@ const {
       data-api="/pa/api/event"
       src="/pa/js/script.tagged-events.js"></script>
   </head>
-  <body>
+  <body class="bg-white">
     <!-- Navbar desktop -->
     <header id="header" class="header">
       <div class="m-auto w-full max-w-7xl hidden lg:flex items-center">
