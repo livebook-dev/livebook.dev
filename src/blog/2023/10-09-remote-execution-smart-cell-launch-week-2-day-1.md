@@ -48,7 +48,7 @@ As with any other Smart cell, one of the things it helps with is generating boil
 
 But it goes beyond that.
 
-The Smart cell can store the remote node’s cookie as a Livebook secret, so you don’t need to hardcode sensitive values inside your notebook. And with the upcoming [Livebook Teams](/teams), it will be easy to share this secret with everyone on the team in a secure manner.
+The Smart cell can store the remote node’s cookie as a Livebook secret, so you don’t need to hardcode sensitive values inside your notebook.
 
 Last, this new Smart cell gives you autocompletion and docs preview of the modules defined in the remote node! Isn’t that awesome?! 🤯
 

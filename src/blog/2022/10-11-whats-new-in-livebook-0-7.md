@@ -56,8 +56,6 @@ The new Secrets feature is also already integrated with Database Connection Smar
 
 ![](/images/blog/whats-new-in-livebook-0-7/3.gif)
 
-With [Livebook Teams](/#livebook-plans), you will be able to share secrets within your team and company. This allows notebooks to be safely versioned and distributed, even if they contain credentials or other restricted information.
-
 ## Visual representations of the running system
 
 One interesting aspect of coding is that it can feel like we’re “building castles in the air.” We can build something with our thoughts materialized by code, which is amazing!

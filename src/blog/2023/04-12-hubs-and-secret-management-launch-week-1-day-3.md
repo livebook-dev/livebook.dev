@@ -1,6 +1,6 @@
 ---
 title: "Hubs and secret management - Launch Week 1 - Day 3"
-description: "Discover Livebook 0.9's new security features, including Hubs for centralized secret management, notebook stamping, and a sneak peek into Livebook Teams for team collaboration."
+description: "Discover Livebook 0.9's new security features, including Hubs for centralized secret management and notebook stamping."
 author: "Livebook Team"
 date: 2023-04-12
 tags: ["releases", "launch week"]
@@ -9,8 +9,6 @@ tags: ["releases", "launch week"]
 Welcome to the third day of Livebook Launch Week! 🎉
 
 In today’s post, we’ll explore the new security features in Livebook 0.9, including the introduction of Hubs for centralized secret management and notebook stamping to enhance user experience while maintaining security.
-
-We’ll also give you a sneak peek into the upcoming Livebook Teams product, designed to streamline the experience of using Livebook within a team.
 
 Let’s dive in and discover how these features can improve your workflow and secure your notebooks!
 
@@ -83,26 +81,6 @@ We also use the notebook source itself to generate the stamp, so someone can’t
 Since the stamping uses the secret key saved in your personal Hub, if you’re using Livebook on multiple machines and want to share notebooks between them, you can configure them with the same secret key.
 
 With this update to Livebook’s security capabilities, we aim to ensure users can enjoy a secure working environment without compromising on ease of use.
-
-But there’s still one problem left. What if you’re working in a team and you want to share secrets among team members? You don’t want to share your personal secret key; it’s yours. Enters Livebook Teams.
-
-## Livebook Teams
-
-Livebook Teams is a paid product we’re developing that will streamline the experience of using Livebook within a team.
-
-Livebook Teams is not a different version of Livebook. Instead, it is a Hub that all of your team members and colleagues connect to in order to work together.
-
-It will manage all the Livebook Secrets shared by your team and be responsible for stamping all the notebooks that belong to your group, so you can safely share secrets and notebooks among team members.
-
-We have a lot of features planned for Livebook Teams, it’s not only about security and secret management. It will also enable your team to:
-
-*   deploy notebooks inside your company
-*   schedule and audit notebook execution
-*   authentication and authorization of team members
-
-And there’s a lot more coming!
-
-If using Livebook inside your company sounds interesting to you, please [submit our form](https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform) to help us to inform our roadmap and get updates about it.
 
 ## What now?
 

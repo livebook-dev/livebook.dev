@@ -70,10 +70,6 @@ If you have any comments or want to share what you’ve built using Livebook, yo
 
 I hope you got as excited as we did with this new Livebook 0.9 release.
 
-Besides that, we’re already working on much more exciting stuff we’re looking forward to sharing—for example, the upcoming [Livebook Teams](/#livebook-plans).
-
-If you use or want to use Livebook at work with your colleagues, you can [fill in our form to help us](https://docs.google.com/forms/d/e/1FAIpQLScDfvUqT4f_s95dqNGyoXwVMD_Vl059jT6r5MPgXB99XVMCuw/viewform) to inform Livebook Team’s roadmap and get updates about it.
-
 Thank you very much for being with us these last five days. This is all for this first Livebook Launch Week!
 
 Building Livebook and sharing what it’s capable of is a joy for us. We hope you can have fun with it too. 😄
