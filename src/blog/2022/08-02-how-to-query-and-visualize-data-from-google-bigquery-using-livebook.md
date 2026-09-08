@@ -28,11 +28,11 @@ Before connecting to a Google BigQuery dataset, you need to create a Google Clou
 
 Now, create a new notebook. Then, let's create a Google BigQuery connection using a Database connection smart cell. Click the options "Smart > Database connection > Google BigQuery":
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/1.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/add-database-connection-cell.png)
 
 Once you've done that, you'll see a Smart cell with input fields to configure your Google BigQuery connection:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/2.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/database-connection-cell.png)
 
 Configure your Google BigQuery connection by following the instructions inside the Smart cell:
 
@@ -49,7 +49,9 @@ Now, let's use your Google BigQuery connection to query a Google BigQuery public
 
 Add a new SQL Query smart cell by clicking the options "Smart > SQL Query":
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/3.png)Once done, you can write and execute a SQL query inside that cell. Let's query a public Google BigQuery dataset.
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/add-sql-query-cell.png)
+
+Once done, you can write and execute a SQL query inside that cell. Let's query a public Google BigQuery dataset.
 
 Copy the following query to the cell:
 
@@ -62,17 +64,19 @@ order by year
 
 And execute the cell. The Smart cell will execute the query and assign its result to a variable called `result`. It also will show you the result of the query in a table format, like this:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/4.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/query-result-table.png)
 
 ## Visualizing data from Google BigQuery using the Chart smart cell
 
 Now we can visualize the result from that query using a Chart smart cell.
 
-Add a new Chart smart cell by clicking the option "Smart > Chart":![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/5.png)
+Add a new Chart smart cell by clicking the option "Smart > Chart":
+
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/add-chart-cell.png)
 
 Your newly created Chart smart cell will look something like this:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/6.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/chart-cell.png)
 
 Now, let's use that cell to visualize the results from our query.
 
@@ -86,18 +90,18 @@ Use your Chart smart cell to configure:
 *   the x-axis and its type
 *   the y-axis, its type, and aggregate
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/7.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/chart-cell-configured.png)
 
 Once you've configured the cell, you can evaluate it, and it will build a chart for you. It will look something like this:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/8.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/chart-result.png)
 
 That's it! Using Livebook Smart cells, you can connect to a Google BigQuery dataset, execute a SQL query and visualize the results with a chart. And since this is quite a common task, Smart cells enable you to do that without writing a single line of code!
 
 And, if you need more customization in any part of the process, easy peasy. You can easily convert a Smart cell to a code cell and edit the code generated for you. To do that, click in a Smart cell, and then click the "Convert to Code cell" icon:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/9.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/convert-to-code-cell.png)
 
 When you click the "Convert to Code cell" icon, it will transform your Smart cell into a Code cell. You'll be able to see the code that was running behind the Smart cell and edit it as you like:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-google-bigquery-using-livebook/10.png)
+![](../../images/blog/2022-08-02-how-to-query-and-visualize-data-from-google-bigquery-using-livebook/generated-code.png)

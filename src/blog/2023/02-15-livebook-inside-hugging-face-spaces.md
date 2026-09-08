@@ -16,7 +16,7 @@ This is our second [integration with Hugging Face](/integrations/hugging-face); 
 
 We’ve been collaborating with HF to make using Livebook on Spaces a breeze. If you have a Hugging Face account, simply click the one-click deployment button below:
 
-[![](../../images/blog/livebook-inside-hugging-face-spaces/1.png)](http://huggingface.co/new-space?template=livebook-dev/livebook)
+[![](../../images/blog/2023-02-15-livebook-inside-hugging-face-spaces/deploy-to-spaces-button.png)](http://huggingface.co/new-space?template=livebook-dev/livebook)
 
 Alternatively, follow the step-by-step tutorial to [install Livebook in a Hugging Face Space](https://huggingface.co/docs/hub/spaces-sdks-docker-livebook).
 

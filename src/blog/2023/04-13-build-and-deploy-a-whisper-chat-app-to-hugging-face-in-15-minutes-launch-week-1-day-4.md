@@ -42,7 +42,7 @@ First, ensure you’ve [installed the latest version of Livebok](/#install).
 
 Then, click the button below to run the notebook yourself:
 
-[![Run the Whisper chat app in your Livebook](../../images/blog/build-and-deploy-a-whisper-chat-app-to-hugging-face-in-15-minutes-launch-week-1-day-4/1.png)](/run?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhugobarauna%2F7011f0b0d85a8ba520308e6b936cdfcf%2Fraw%2F8b5a968a90b55a461273ae9ce375f9525dee5ef6%2Fwhisper_chat.livemd)
+[![Run the Whisper chat app in your Livebook](../../images/blog/2023-04-13-build-and-deploy-a-whisper-chat-app-to-hugging-face-in-15-minutes-launch-week-1-day-4/run-in-livebook-badge.png)](/run?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhugobarauna%2F7011f0b0d85a8ba520308e6b936cdfcf%2Fraw%2F8b5a968a90b55a461273ae9ce375f9525dee5ef6%2Fwhisper_chat.livemd)
 
 If you have any comments or want to share what you’ve built using Livebook, you can [tweet using the #LivebookLaunchWeek](https://twitter.com/intent/tweet?text=I%27m%20loving%20the%20new%20Livebook%200.9!%20%23LivebookLaunchWeek) hashtag.
 

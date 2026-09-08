@@ -16,7 +16,7 @@ When you define an Elixir module in a code cell, it will now be listed in the Ou
 
 The Outline panel, previously known as the Sections panel, now gives you a structured view of your code. It lists all the modules defined within each section of your notebook.
 
-![](../../images/blog/code-navigation-with-go-to-definition-of-modules-and-functions/1.png)
+![](../../images/blog/2024-09-12-code-navigation-with-go-to-definition-of-modules-and-functions/outline-panel.png)
 
 You can also use this panel to navigate to module definitions. Just click on a module's name on the Outline, and your notebook will automatically scroll to the position where it is defined.
 
@@ -42,7 +42,7 @@ Here's a video showing how it works:
 
 You can also access this feature through the link shown in the intellisense for a module or function call:
 
-![](../../images/blog/code-navigation-with-go-to-definition-of-modules-and-functions/2.png)
+![](../../images/blog/2024-09-12-code-navigation-with-go-to-definition-of-modules-and-functions/intellisense-go-to-definition.png)
 
 Want to see how we built this? Here are the pull requests: [#2730](https://github.com/livebook-dev/livebook/pull/2730), [#2741](https://github.com/livebook-dev/livebook/pull/2741).
 

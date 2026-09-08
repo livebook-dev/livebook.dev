@@ -64,7 +64,7 @@ First, ensure you’ve [installed the latest version of Livebook](/#install).
 
 Then, click the button below to run the notebook that José Valim built in the demo video:
 
-[![Run in Livebook](../../images/blog/data-wrangling-in-elixir-with-explorer-the-power-of-rust-the-elegance-of-r-launch-week-1-day-5/1.png)](/run?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhugobarauna%2Fcd509c9ea429c3e6a664b64e34a6c31c%2Fraw%2Fde7ef09070178792a1439a8c1ddcbce3da2c10ff%2Fdata_wrangling_with_explorer.livemd)
+[![Run in Livebook](../../images/blog/2023-04-14-data-wrangling-in-elixir-with-explorer-the-power-of-rust-the-elegance-of-r-launch-week-1-day-5/run-in-livebook-badge.png)](/run?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhugobarauna%2Fcd509c9ea429c3e6a664b64e34a6c31c%2Fraw%2Fde7ef09070178792a1439a8c1ddcbce3da2c10ff%2Fdata_wrangling_with_explorer.livemd)
 
 If you have any comments or want to share what you’ve built using Livebook, you can [tweet using the #LivebookLaunchWeek](https://twitter.com/intent/tweet?text=I%27m%20loving%20the%20new%20Livebook%200.9!%20%23LivebookLaunchWeek) hashtag.
 

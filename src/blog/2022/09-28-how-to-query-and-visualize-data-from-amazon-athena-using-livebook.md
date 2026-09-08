@@ -25,11 +25,11 @@ To connect to Amazon Athena, you'll need the following info from your AWS accoun
 
 Now, let's create an Amazon Athena connection using a Database connection Smart cell. Click the options "Smart > Database connection > Amazon Athena":
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/1.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/add-database-connection-cell.png)
 
 Once you've done that, you'll see a Smart cell with input fields to configure your Amazon Athena connection:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/2.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/database-connection-cell.png)
 
 Fill in the following fields to configure your connection:
 
@@ -48,7 +48,7 @@ We'll create an Athena table based on a public dataset published on AWS Open Dat
 
 To do that, Add a new SQL Query Smart cell by clicking the options "Smart > SQL Query":
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/3.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/add-sql-query-cell.png)
 
 Copy and paste the SQL code below to the SQL Query cell:
 
@@ -83,7 +83,7 @@ select * from default.stations order by station_id
 
 Evaluate that cell. It will query your Athena table and assign the results to a `result2` variable. You'll see the result of that query in a tabular format like this:
 
-## ![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/4.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/query-result-table.png)
 
 ## Visualizing geographic coordinates data using the Map Smart cell
 
@@ -91,11 +91,11 @@ Notice that the table we created has each climate station's latitude and longitu
 
 Add a Map Smart cell by clicking the options "Smart > Map":
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/5.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/add-map-cell.png)
 
 Your Map Smart cell will look something like this:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/6.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/map-cell.png)
 
 Use your Map Smart cell to configure:
 
@@ -105,10 +105,10 @@ Use your Map Smart cell to configure:
 *   the longitude field
 *   the latitude field
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/7.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/map-cell-configured.png)
 
 Once you've configured the Smart cell, you can evaluate it, and it will build a map for you. It will look something like this:
 
-![](../../images/blog/how-to-query-and-visualize-data-from-amazon-athena-using-livebook/8.png)
+![](../../images/blog/2022-09-28-how-to-query-and-visualize-data-from-amazon-athena-using-livebook/map-result.png)
 
 That's it! Using Livebook Smart cells, you can connect to an Amazon Athena database, execute a SQL query against it and visualize the result.

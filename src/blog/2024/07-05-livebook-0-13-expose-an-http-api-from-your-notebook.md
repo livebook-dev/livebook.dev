@@ -83,11 +83,11 @@ Let’s see an example.
 
 We built a Livebook app that tracks how many days we don't have a broken build in a GitHub repository:
 
-![](../../images/blog/livebook-0-13-expose-an-http-api-from-your-notebook/1.png)
+![](../../images/blog/2024-07-05-livebook-0-13-expose-an-http-api-from-your-notebook/build-tracker-app.png)
 
 Whenever a new build finishes in the configured Github Repo, GitHub sends a webhook to the Livebook app, which processes the request to update its state.
 
-![](../../images/blog/livebook-0-13-expose-an-http-api-from-your-notebook/2.png)
+![](../../images/blog/2024-07-05-livebook-0-13-expose-an-http-api-from-your-notebook/github-webhook-flow.png)
 
 To handle webhooks inside the Livebook app, we could combine `Plug.Router` with `Kino.listen/1` like this:
 

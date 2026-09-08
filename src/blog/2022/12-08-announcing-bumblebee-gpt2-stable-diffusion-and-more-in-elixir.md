@@ -24,19 +24,19 @@ Here are some examples of what it looks like to use [Livebook to run Machine Lea
 
 ### Text to image
 
-![](../../images/blog/announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/1.png)
+![](../../images/blog/2022-12-08-announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/text-to-image.png)
 
 ### Image classification
 
-![](../../images/blog/announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/2.png)
+![](../../images/blog/2022-12-08-announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/image-classification.png)
 
 ### Text classification
 
-![](../../images/blog/announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/3.png)
+![](../../images/blog/2022-12-08-announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/text-classification.png)
 
 ### Text generation
 
-![](../../images/blog/announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/4.png)
+![](../../images/blog/2022-12-08-announcing-bumblebee-gpt2-stable-diffusion-and-more-in-elixir/text-generation.png)
 
 ## Incorporating models into any Elixir project
 

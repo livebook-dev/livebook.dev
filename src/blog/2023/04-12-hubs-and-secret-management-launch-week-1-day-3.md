@@ -52,7 +52,7 @@ Every new Livebook installation comes with a default personal Hub. This is the p
 
 But a Hub is not only a place to centralize your secrets. When you visit your personal Hub, you’ll notice another section called Stamping.
 
-![](../../images/blog/hubs-and-secret-management-launch-week-1-day-3/1.png)
+![](../../images/blog/2023-04-12-hubs-and-secret-management-launch-week-1-day-3/hub-stamping.png)
 
 ## Notebook stamping
 

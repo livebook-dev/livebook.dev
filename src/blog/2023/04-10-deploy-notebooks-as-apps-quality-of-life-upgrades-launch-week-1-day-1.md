@@ -46,7 +46,7 @@ But in truth, we can’t imagine all the different ways you will use that, and w
 
 To get started, inside the Livebook’s Learn section, there’s a new notebook that will teach you how to write and deploy your first app: a chat application in only 15 lines of code!
 
-![](../../images/blog/deploy-notebooks-as-apps-quality-of-life-upgrades-launch-week-1-day-1/1.png)
+![](../../images/blog/2023-04-10-deploy-notebooks-as-apps-quality-of-life-upgrades-launch-week-1-day-1/first-app-notebook.png)
 
 ## Quality-of-life improvements
 

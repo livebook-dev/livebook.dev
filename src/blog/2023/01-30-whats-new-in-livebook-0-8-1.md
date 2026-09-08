@@ -61,7 +61,7 @@ Mix.install(
 
 With this new release, it's now as simple as clicking a button:
 
-![](/images/blog/whats-new-in-livebook-0-8-1/1.gif)
+![](/images/blog/2023-01-30-whats-new-in-livebook-0-8-1/setup-cell-without-cache.gif)
 
 ## Loading LB\_ environment variables as Livebook secrets
 
@@ -94,6 +94,6 @@ To play with the new features, all you need to do is:
 *   [Install](/#install) the new Livebook version
 *   Import the notebook containing a demo of the new features by clicking on the badge below
 
-[![Run in Livebook](../../images/blog/whats-new-in-livebook-0-8-1/2.png)](/run?url=https%3A%2F%2Fgithub.com%2Fhugobarauna%2Flivebook-notebooks%2Fblob%2Fmain%2Fwhats_new_in_livebook_v0.8.1.livemd)
+[![Run in Livebook](../../images/blog/2023-01-30-whats-new-in-livebook-0-8-1/run-in-livebook-badge.png)](/run?url=https%3A%2F%2Fgithub.com%2Fhugobarauna%2Flivebook-notebooks%2Fblob%2Fmain%2Fwhats_new_in_livebook_v0.8.1.livemd)
 
 Happy hacking!

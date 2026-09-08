@@ -18,7 +18,7 @@ In case you can't watch it, here is a rundown of the biggest features.
 
 Many teams are using Livebook for documentation. v0.5 improves on this use case by allowing users to embed [Mermaid.js](https://mermaid-js.github.io/) diagrams and visualizations:
 
-![](../../images/blog/v0-5-flowcharts-custom-widgets-intellisense-and-ui-improvements/1.png)
+![](../../images/blog/2022-01-24-v0-5-flowcharts-custom-widgets-intellisense-and-ui-improvements/mermaid-flowchart.png)
 
 Define your Mermaid.js definitions inside ` ```mermaid ` blocks and you are good to go!
 
@@ -28,7 +28,7 @@ You can now add your own widgets to Livebook, known as _Kinos_ in Livebook termi
 
 We have revamped our Explore guides to include a complete course on Kino with several examples:
 
-![](../../images/blog/v0-5-flowcharts-custom-widgets-intellisense-and-ui-improvements/2.png)
+![](../../images/blog/2022-01-24-v0-5-flowcharts-custom-widgets-intellisense-and-ui-improvements/kino-explore-guides.png)
 
 ## Other improvements
 

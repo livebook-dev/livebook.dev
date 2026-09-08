@@ -87,7 +87,7 @@ To play with the new features, follow these steps:
 *   [Install](/#install) the latest Livebook version
 *   Import the demo notebook that showcases the new features by clicking the badge below
 
-[![Run in Livebook](../../images/blog/whats-new-in-livebook-0-10-introducing-multi-session-livebook-apps/1.png)](/run?url=https%3A%2F%2Fgithub.com%2Fhugobarauna%2Flivebook-notebooks%2Fblob%2Fmain%2Fwhats_new_in_livebook_v0.10.livemd)
+[![Run in Livebook](../../images/blog/2023-07-14-whats-new-in-livebook-0-10-introducing-multi-session-livebook-apps/run-in-livebook-badge.png)](/run?url=https%3A%2F%2Fgithub.com%2Fhugobarauna%2Flivebook-notebooks%2Fblob%2Fmain%2Fwhats_new_in_livebook_v0.10.livemd)
 
 And if you want to discover everything that changed in 0.10, here’s [the changelog](https://github.com/livebook-dev/livebook/blob/v0.10/CHANGELOG.md).
 

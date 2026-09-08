@@ -12,7 +12,7 @@ But imagine someone who's not an Elixir developer. They had to either install Do
 
 That's why we built [Livebook desktop](/#install). It's the simplest way to install Livebook on your machine.
 
-![Livebook desktop app](../../images/blog/introducing-the-livebook-desktop-app/1.png)
+![Livebook desktop app](../../images/blog/2022-07-28-introducing-the-livebook-desktop-app/livebook-desktop.png)
 
 Livebook desktop doesn't require the person to have Elixir previously installed on their machine. And it works both on the Mac and Windows.
 
