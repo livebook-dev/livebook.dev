@@ -52,7 +52,7 @@ To do that, Add a new SQL Query Smart cell by clicking the options "Smart > SQL 
 
 Copy and paste the SQL code below to the SQL Query cell:
 
-```elixir
+```sql
 CREATE EXTERNAL TABLE IF NOT EXISTS default.stations (
   station_id string,
   latitude double,
@@ -77,7 +77,7 @@ Now, click the "Evaluate" icon to run that Smart cell. Now we have an Athena tab
 
 Add a new SQL Query Smart cell and copy and paste the following SQL query to it:
 
-```elixir
+```sql
 select * from default.stations order by station_id
 ```
 

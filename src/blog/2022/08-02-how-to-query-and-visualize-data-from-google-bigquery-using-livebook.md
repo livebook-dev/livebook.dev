@@ -53,7 +53,7 @@ Add a new SQL Query smart cell by clicking the options "Smart > SQL Query":
 
 Copy the following query to the cell:
 
-```elixir
+```sql
 select t.year, t.country_name, t.midyear_population
 from bigquery-public-data.census_bureau_international.midyear_population as t
 where year < 2022

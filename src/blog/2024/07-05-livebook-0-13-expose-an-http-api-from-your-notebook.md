@@ -20,7 +20,7 @@ Here's a simple "hello world" example:
 
 ```elixir
 Kino.Proxy.listen(fn conn ->
-    Plug.Conn.send_resp(conn, 200, "hello world!")
+  Plug.Conn.send_resp(conn, 200, "hello world!")
 end)
 ```
 

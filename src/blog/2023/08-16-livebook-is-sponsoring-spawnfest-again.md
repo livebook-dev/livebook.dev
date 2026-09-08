@@ -74,7 +74,7 @@ First, make sure you have [Fly’s command-line installed](https://fly.io/docs/h
 
 Now, clone the following template repo:
 
-```elixir
+```sh
 git clone https://github.com/hugobarauna/livebook-apps-on-fly-template.git my-livebook-apps
 ```
 
