@@ -168,16 +168,16 @@ const selectedIntegrations = integrations.filter((integration) =>
           <div
             class="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 lg:items-center"
           >
-            <div class="relative p-[2px] shrink">
+            <!-- The width includes the 2px padding, so that the inner
+                 content is at most 850px wide -->
+            <div class="relative w-full max-w-[854px] p-[2px] shrink">
               <!-- Add an absolute overlapping border. If we put the
                    border on the image there's a tiny gap -->
               <div
                 class="rounded-md md:rounded-2xl absolute top-0 bottom-0 left-0 right-0 pointer-events-none border-4 border-gray-100"
               >
               </div>
-              <div
-                class="w-full max-w-[850px] rounded-md md:rounded-2xl overflow-hidden"
-              >
+              <div class="rounded-md md:rounded-2xl overflow-hidden">
                 <EditorFeatures />
               </div>
             </div>

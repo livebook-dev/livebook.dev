@@ -26,6 +26,11 @@ const { width, height, class: className, style, label } = Astro.props;
     container-type: inline-size;
     aspect-ratio: var(--w) / var(--h);
     overflow: hidden;
+    /* container-type implies contain: inline-size, which zeroes the
+       intrinsic width, so we state the sizing explicitly. The parent
+       needs a definite width, otherwise the demo collapses */
+    width: 100%;
+    max-width: calc(var(--w) * 1px);
   }
 
   .screenshot-content {
