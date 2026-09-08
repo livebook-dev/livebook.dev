@@ -1,0 +1,16 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+import breadboard from "../../../images/demos/nerves-breadboard.png";
+---
+
+<FeatureFrame>
+  <Editor code="led_pin = 20" status="evaluated" language="elixir" />
+  <p class="mt-6 text-gray-700">
+    Now that we've selected a pin, connect the LED to <code
+      class="px-1 py-0.5 rounded bg-gray-100 font-mono text-[0.9em] text-gray-800"
+      >led_pin</code
+    > through a 220Ω resistor, then to ground.
+  </p>
+  <img class="mt-6 w-full rounded-lg" src={breadboard.src} alt="" />
+</FeatureFrame>

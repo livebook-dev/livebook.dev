@@ -1,0 +1,46 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Output from "../Output.astro";
+import KinoInput from "../KinoInput.astro";
+import Button from "../Button.astro";
+import CellIndicator from "../CellIndicator.astro";
+import hfLogo from "../../../images/integrations/hugging-face/logo.png";
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <SmartCell>
+    <SmartCellHeader slot="header" help>
+      <Field label="Task" inline>
+        <Input value="Text generation" select class="w-52" />
+      </Field>
+      <Field label="Using" inline>
+        <Input value="GPT2 (base)" select class="w-52" />
+      </Field>
+      <img class="h-5 w-5 object-contain" src={hfLogo.src} alt="Hugging Face" />
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="Max input tokens" class="w-44"><Input value="100" /></Field>
+      <Field label="Min new tokens" class="w-44"><Input /></Field>
+      <Field label="Max new tokens" class="w-44"><Input value="14" /></Field>
+      <Field label="Compiler" class="w-40"><Input value="EXLA" select /></Field>
+    </SmartCellRow>
+  </SmartCell>
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <div class="flex flex-col gap-3">
+      <KinoInput label="Text" value="Elixir is a functional" textarea />
+      <div><Button>Run</Button></div>
+      <div class="text-gray-700">
+        Elixir is a functional programming language that is designed to be used
+        in a variety of applications.
+      </div>
+    </div>
+  </Output>
+</NotebookPreview>

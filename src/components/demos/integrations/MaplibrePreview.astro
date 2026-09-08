@@ -1,0 +1,21 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import map from "../../../images/demos/map-clusters.png";
+
+const code = `Ml.new(center: {0, 20}, zoom: 1)
+|> Ml.add_geo_source("earthquakes", earthquakes)
+|> Kino.MapLibre.clusters_expansion("clusters")`;
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <Editor code={code} status="evaluated" language="elixir" />
+  <Output border={false}>
+    <img
+      class="w-full h-[400px] object-cover object-top rounded-lg"
+      src={map.src}
+      alt=""
+    />
+  </Output>
+</NotebookPreview>

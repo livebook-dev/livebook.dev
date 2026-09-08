@@ -1,0 +1,32 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+
+const code = `{:ok, model_info} = Bumblebee.load_model({:hf, "gpt2"})
+{:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "gpt2"})
+
+serving =
+  Bumblebee.Text.generation(model_info, tokenizer,
+    max_new_tokens: 10,
+    compile: [batch_size: 1, sequence_length: 100],
+    defn_options: [compiler: EXLA]
+  )
+
+text_input = Kino.Input.textarea("Text", default: "Yesterday, I was reading a book and")
+form = Kino.Control.form([text: text_input], submit: "Run")
+frame = Kino.Frame.new()
+
+form
+|> Kino.Control.stream()
+|> Kino.listen(fn %{data: %{text: text}} ->
+  Kino.Frame.render(frame, Kino.Markdown.new("Running..."))
+  %{results: [%{text: generated_text}]} = Nx.Serving.run(serving, text)
+  Kino.Frame.render(frame, Kino.Markdown.new(generated_text))
+end)
+
+Kino.Layout.grid([form, frame], boxed: true, gap: 16)`;
+---
+
+<FeatureFrame zoom={1.5}>
+  <Editor code={code} status="evaluated" language="elixir" />
+</FeatureFrame>

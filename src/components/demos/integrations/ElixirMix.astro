@@ -1,0 +1,27 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import Inspect from "../Inspect.astro";
+
+const setup = `my_app_root = Path.join(__DIR__, "..")
+
+Mix.install(
+  [
+    {:my_app, path: my_app_root, env: :dev}
+  ],
+  config_path: Path.join(my_app_root, "config/config.exs"),
+  lockfile: Path.join(my_app_root, "mix.lock")
+)`;
+
+const code = `MyApp.Repo.aggregate(MyApp.Orders.Order, :count)`;
+---
+
+<FeatureFrame zoom={1.55}>
+  <Editor code={setup} status="evaluated" language="elixir" />
+  <Output><Inspect text=":ok" /></Output>
+  <div class="mt-6">
+    <Editor code={code} status="evaluated" language="elixir" />
+    <Output><Inspect text="1274" /></Output>
+  </div>
+</FeatureFrame>

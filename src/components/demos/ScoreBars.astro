@@ -1,0 +1,36 @@
+---
+interface Props {
+  /** Predictions as rendered by Kino.Bumblebee, sorted by score */
+  scores: { label: string; score: number }[];
+  /** Some outputs only show the bar and the label */
+  showScores?: boolean;
+  class?: string;
+}
+
+const { scores, showScores = true, class: className } = Astro.props;
+
+const max = Math.max(...scores.map((score) => score.score));
+---
+
+<div class:list={["flex flex-col gap-3", className]}>
+  {
+    scores.map(({ label, score }) => (
+      <div class="flex items-end gap-4">
+        <div class="grow min-w-0">
+          <div
+            class="h-1 rounded-full bg-[#8ba2ff]"
+            style={`width: ${Math.max((score / max) * 100, 1)}%`}
+          />
+          <div class="mt-1 font-mono text-sm text-gray-900 truncate">
+            {label}
+          </div>
+        </div>
+        {showScores && (
+          <div class="font-mono text-sm text-gray-900 tabular-nums">
+            {score.toFixed(3)}
+          </div>
+        )}
+      </div>
+    ))
+  }
+</div>

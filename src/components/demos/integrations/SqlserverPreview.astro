@@ -1,0 +1,45 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Toggle from "../Toggle.astro";
+import Output from "../Output.astro";
+import Inspect from "../Inspect.astro";
+import CellIndicator from "../CellIndicator.astro";
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <SmartCell>
+    <SmartCellHeader slot="header">
+      <Field label="Connect to" inline>
+        <Input value="SQL Server" select class="w-44" />
+      </Field>
+      <Field label="Assign to" inline>
+        <Input value="conn" class="w-64" />
+      </Field>
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="Hostname" class="w-56"><Input value="localhost" /></Field>
+      <Field label="Instance" class="w-48"><Input /></Field>
+      <Field label="Port" class="w-32"><Input value="1433" /></Field>
+      <Field label="SSL"><Toggle /></Field>
+      <Field label="IPv6"><Toggle /></Field>
+    </SmartCellRow>
+    <SmartCellRow>
+      <Field label="Database" class="w-56"><Input value="testdb" /></Field>
+      <Field label="User" class="w-40"><Input value="sa" /></Field>
+      <Field label="Password" class="w-80">
+        <Input value="SQL_SERVER_PASSWORD" secret />
+      </Field>
+    </SmartCellRow>
+  </SmartCell>
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <Inspect text="{:ok, #PID<0.262.0>}" />
+  </Output>
+</NotebookPreview>

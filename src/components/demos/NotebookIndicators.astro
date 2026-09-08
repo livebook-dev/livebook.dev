@@ -1,0 +1,33 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  /** Aggregated evaluation status of all cells */
+  status?: "evaluated" | "stale" | "evaluating";
+  class?: string;
+}
+
+const { status = "evaluated", class: className } = Astro.props;
+
+const statusColor = {
+  evaluated: "text-[#4ade80] border-[#86efac]",
+  stale: "text-[#fef08a] border-[#fef9c3]",
+  evaluating: "text-blue-500 border-blue-200",
+}[status];
+
+const base =
+  "text-xl leading-none p-1 flex items-center justify-center rounded-full border-2";
+---
+
+<div class:list={["flex flex-col items-center gap-2", className]}>
+  <div class:list={[base, "text-gray-400 border-gray-200"]}>
+    <Icon icon="layout-5-line" />
+  </div>
+  <div class:list={[base, "text-gray-400 border-gray-200"]}>
+    <Icon icon="save-line" />
+  </div>
+  <div class:list={[base, statusColor]}>
+    <Icon icon="loader-3-line" />
+  </div>
+  <div class="text-sm text-gray-400 font-medium">ins</div>
+</div>

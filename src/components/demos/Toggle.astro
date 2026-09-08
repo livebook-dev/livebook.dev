@@ -1,0 +1,16 @@
+---
+interface Props {
+  on?: boolean;
+}
+
+const { on = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "w-11 h-6 rounded-full flex items-center px-0.5",
+    on ? "bg-blue-600 justify-end" : "bg-gray-200 justify-start",
+  ]}
+>
+  <div class="w-5 h-5 rounded-full bg-white shadow-sm"></div>
+</div>

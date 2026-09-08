@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import Layout from "../../layouts/Layout.astro";
 import Icon from "../../components/Icon.astro";
 
@@ -19,6 +17,8 @@ export function getStaticPaths() {
 }
 
 const { integration } = Astro.props;
+
+const Demo = integration.demo;
 ---
 
 <Layout title={`${integration.name} integration`}>
@@ -69,35 +69,37 @@ const { integration } = Astro.props;
           }
         </div>
       </div>
-      <Image
-        class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
-        src={integration.image}
-        alt="Integration Example"
-      />
+      <div
+        class="w-full xl:w-[70%] xl:shrink-0 xl:ml-20 rounded-md custom-shadow-1 overflow-hidden"
+      >
+        <Demo />
+      </div>
     </div>
   </section>
   {
     integration.features && (
       <section id="details">
         <div class="integrations m-auto max-w-4xl px-4 pt-12 pb-20 flex flex-col gap-12">
-          {integration.features.map((feature) => (
-            <div class="flex flex-col md:flex-row md:even:flex-row-reverse gap-12 items-center justify-between">
-              <div class="flex flex-col px-1 md:px-0 max-w-[400px]">
-                <h3 class="text-2xl text-gray-800 font-semibold">
-                  {feature.headline}
-                </h3>
-                <span
-                  class="mt-4 text-lg text-gray-800"
-                  set:html={feature.description}
-                />
+          {integration.features.map((feature) => {
+            const FeatureDemo = feature.demo;
+
+            return (
+              <div class="flex flex-col md:flex-row md:even:flex-row-reverse gap-12 items-center justify-between">
+                <div class="flex flex-col px-1 md:px-0 max-w-[400px]">
+                  <h3 class="text-2xl text-gray-800 font-semibold">
+                    {feature.headline}
+                  </h3>
+                  <span
+                    class="mt-4 text-lg text-gray-800"
+                    set:html={feature.description}
+                  />
+                </div>
+                <div class="w-[400px] max-w-full shrink-0 order-1 md:order-none">
+                  <FeatureDemo />
+                </div>
               </div>
-              <img
-                class="max-h-[400px] order-1 md:order-none"
-                src={feature.image.src}
-                alt=""
-              />
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     )

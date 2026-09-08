@@ -1,0 +1,43 @@
+---
+interface Props {
+  label?: string;
+  value?: string;
+  /** Textareas are taller and show the resize handle */
+  textarea?: boolean;
+  monospace?: boolean;
+  class?: string;
+}
+
+const {
+  label,
+  value,
+  textarea = false,
+  monospace = false,
+  class: className,
+} = Astro.props;
+---
+
+<div class={className}>
+  {label && <div class="mb-1 text-sm text-gray-800 font-medium">{label}</div>}
+  <div
+    class:list={[
+      "relative w-full min-h-[37px] px-3 py-2 text-sm border border-gray-200 rounded-lg text-gray-900",
+      monospace && "font-mono",
+      textarea && "min-h-[38px]",
+    ]}
+  >
+    {value}
+    {
+      textarea && (
+        <svg
+          class="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 text-gray-400"
+          viewBox="0 0 10 10"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path d="M9 1 1 9M9 5l-4 4" />
+        </svg>
+      )
+    }
+  </div>
+</div>

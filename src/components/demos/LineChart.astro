@@ -1,0 +1,151 @@
+---
+interface Props {
+  /** Points with an optional confidence interval */
+  data: { x: number; y: number; lo?: number; hi?: number }[];
+  xTitle: string;
+  yTitle: string;
+  width?: number;
+  height?: number;
+  yTicks?: number[];
+  xTicks?: number[];
+  class?: string;
+}
+
+const {
+  data,
+  xTitle,
+  yTitle,
+  width = 620,
+  height = 300,
+  yTicks,
+  xTicks,
+  class: className,
+} = Astro.props;
+
+// Colors and metrics come from the Livebook Vega-Lite theme, see
+// assets/vega_lite/main.js in livebook-dev/kino_vega_lite
+const blue = "#6583ff";
+const gridColor = "#e1e8f0";
+const titleColor = "#1c2a3a";
+const labelColor = "#1c2a3a";
+
+const margin = { top: 12, right: 12, bottom: 48, left: 62 };
+const plotWidth = width - margin.left - margin.right;
+const plotHeight = height - margin.top - margin.bottom;
+
+const xs = data.map((point) => point.x);
+const ys = data.flatMap((point) => [
+  point.y,
+  point.lo ?? point.y,
+  point.hi ?? point.y,
+]);
+
+const xMin = Math.min(...xs);
+const xMax = Math.max(...xs);
+const yMax = Math.ceil(Math.max(...ys) / 5) * 5;
+
+const scaleX = (x: number) =>
+  margin.left + ((x - xMin) / (xMax - xMin)) * plotWidth;
+const scaleY = (y: number) => margin.top + plotHeight - (y / yMax) * plotHeight;
+
+const finalYTicks =
+  yTicks ?? Array.from({ length: yMax / 5 + 1 }, (_, idx) => idx * 5);
+const finalXTicks = xTicks ?? xs.filter((_, idx) => idx % 2 === 0);
+
+const line = data
+  .map(
+    (point, idx) =>
+      `${idx === 0 ? "M" : "L"} ${scaleX(point.x)} ${scaleY(point.y)}`,
+  )
+  .join(" ");
+
+const band = [
+  ...data.map(
+    (point, idx) =>
+      `${idx === 0 ? "M" : "L"} ${scaleX(point.x)} ${scaleY(point.hi ?? point.y)}`,
+  ),
+  ...[...data]
+    .reverse()
+    .map((point) => `L ${scaleX(point.x)} ${scaleY(point.lo ?? point.y)}`),
+  "Z",
+].join(" ");
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${width} ${height}`}
+  width={width}
+  height={height}
+  font-family="Inter, sans-serif"
+>
+  {
+    finalYTicks.map((tick) => (
+      <>
+        <line
+          x1={margin.left}
+          x2={margin.left + plotWidth}
+          y1={scaleY(tick)}
+          y2={scaleY(tick)}
+          stroke={gridColor}
+        />
+        <text
+          x={margin.left - 8}
+          y={scaleY(tick)}
+          text-anchor="end"
+          dominant-baseline="middle"
+          font-size="12"
+          fill={labelColor}
+        >
+          {tick}
+        </text>
+      </>
+    ))
+  }
+  {
+    finalXTicks.map((tick) => (
+      <>
+        <line
+          x1={scaleX(tick)}
+          x2={scaleX(tick)}
+          y1={margin.top}
+          y2={margin.top + plotHeight}
+          stroke={gridColor}
+        />
+        <text
+          x={scaleX(tick)}
+          y={margin.top + plotHeight + 18}
+          text-anchor="middle"
+          font-size="12"
+          fill={labelColor}
+        >
+          {tick}
+        </text>
+      </>
+    ))
+  }
+  <line
+    x1={margin.left}
+    x2={margin.left + plotWidth}
+    y1={margin.top + plotHeight}
+    y2={margin.top + plotHeight}
+    stroke={gridColor}></line>
+  <path d={band} fill={blue} fill-opacity="0.25"></path>
+  <path d={line} fill="none" stroke={blue} stroke-width="2"></path>
+  <text
+    x={margin.left + plotWidth / 2}
+    y={height - 6}
+    text-anchor="middle"
+    font-size="12"
+    fill={titleColor}
+  >
+    {xTitle}
+  </text>
+  <text
+    transform={`translate(14 ${margin.top + plotHeight / 2}) rotate(-90)`}
+    text-anchor="middle"
+    font-size="12"
+    fill={titleColor}
+  >
+    {yTitle}
+  </text>
+</svg>

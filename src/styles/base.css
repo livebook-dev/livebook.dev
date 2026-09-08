@@ -37,6 +37,15 @@
 
   --color-brand-pink: #e44c75;
   --color-elixir: #554994;
+
+  /* Livebook's code editor colors, used by the demo components */
+  --color-editor: #282c34;
+  --color-editor-lighter: #2f343e;
+  --color-editor-lightest: #454a56;
+  --color-editor-border: #363c46;
+  --color-editor-text: #c8ccd4;
+  --color-editor-gutter: #60646c;
+  --color-editor-match: #73ade8;
 }
 
 @layer base {

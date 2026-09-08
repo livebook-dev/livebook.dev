@@ -1,0 +1,46 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import NeuralNetworkCell from "../NeuralNetworkCell.astro";
+import CellIndicator from "../CellIndicator.astro";
+import Output from "../Output.astro";
+import Button from "../Button.astro";
+import ScoreBars from "../ScoreBars.astro";
+import cat from "../../../images/demos/cat.png";
+---
+
+<FeatureFrame zoom={1.3}>
+  <NeuralNetworkCell
+    task="Image classification"
+    model="ResNet"
+    params={[
+      { label: "Top-k" },
+      { label: "Compiler", value: "EXLA", select: true },
+    ]}
+  />
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <div class="flex flex-col gap-3">
+      <div>
+        <div class="mb-1 text-sm text-gray-800 font-medium">Image</div>
+        <div
+          class="inline-block p-2 rounded-lg border border-dashed border-gray-300"
+        >
+          <img class="w-64" src={cat.src} alt="" />
+        </div>
+      </div>
+      <div><Button>Run</Button></div>
+      <ScoreBars
+        showScores={false}
+        scores={[
+          { label: "Egyptian cat", score: 0.72 },
+          { label: "tabby, tabby cat", score: 0.4 },
+          { label: "lynx, catamount", score: 0.33 },
+          { label: "coffee mug", score: 0.12 },
+          { label: "tiger cat", score: 0.08 },
+        ]}
+      />
+    </div>
+  </Output>
+</FeatureFrame>

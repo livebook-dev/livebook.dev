@@ -1,0 +1,37 @@
+---
+interface Props {
+  /** Design size in pixels, the content is scaled to fill the available width */
+  width: number;
+  height: number;
+  class?: string;
+  style?: string;
+  /** Accessible name, the demo is exposed as a single image */
+  label?: string;
+}
+
+const { width, height, class: className, style, label } = Astro.props;
+---
+
+<div
+  class:list={["screenshot select-none", className]}
+  style={`--w: ${width}; --h: ${height}; ${style ?? ""}`}
+  role="img"
+  aria-label={label}
+>
+  <div class="screenshot-content"><slot /></div>
+</div>
+
+<style>
+  .screenshot {
+    container-type: inline-size;
+    aspect-ratio: var(--w) / var(--h);
+    overflow: hidden;
+  }
+
+  .screenshot-content {
+    width: calc(var(--w) * 1px);
+    height: calc(var(--h) * 1px);
+    transform: scale(calc(100cqw / (var(--w) * 1px)));
+    transform-origin: top left;
+  }
+</style>

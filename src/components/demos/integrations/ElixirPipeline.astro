@@ -1,0 +1,28 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import Editor from "../Editor.astro";
+import Output from "../Output.astro";
+import DbgPipeline from "../DbgPipeline.astro";
+
+const code = `"Elixir is cool!"
+|> String.trim_trailing("!")
+|> String.split()
+|> List.first()
+|> dbg()`;
+---
+
+<FeatureFrame zoom={1.5}>
+  <Editor code={code} status="evaluated" language="elixir" />
+  <Output>
+    <DbgPipeline
+      source={'"Elixir is cool!"'}
+      steps={[
+        { call: 'String.trim_trailing("!")', state: "on" },
+        { call: "String.split()", state: "selected" },
+        { call: "List.first()", state: "off" },
+      ]}
+      output={'["Elixir", "is", "cool"]'}
+      result={'"Elixir"'}
+    />
+  </Output>
+</FeatureFrame>

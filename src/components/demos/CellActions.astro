@@ -1,0 +1,54 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  /** Label of the evaluation button, hidden when not given */
+  primary?: string;
+  /** Icon of the evaluation button */
+  primaryIcon?: string;
+  /** Whether the evaluation button has a dropdown next to it */
+  menu?: boolean;
+  /** Remix icons shown on the right */
+  actions?: string[];
+}
+
+const {
+  primary,
+  primaryIcon = "play-circle-fill",
+  menu = true,
+  actions = [
+    "settings-3-line",
+    "link",
+    "arrow-up-s-line",
+    "arrow-down-s-line",
+    "delete-bin-6-line",
+  ],
+} = Astro.props;
+---
+
+<div class="mb-1 flex items-center justify-between h-7">
+  <div class="flex items-center space-x-1">
+    {
+      primary && (
+        <>
+          <div class="text-gray-600 flex space-x-1 items-center">
+            <Icon icon={primaryIcon} class="text-xl" />
+            <span class="text-sm font-medium">{primary}</span>
+          </div>
+          {menu && (
+            <Icon icon="arrow-down-s-line" class="text-xl text-gray-600" />
+          )}
+        </>
+      )
+    }
+  </div>
+  <div class="flex items-center space-x-2">
+    {
+      actions.map((icon) => (
+        <span class="p-1 flex items-center justify-center rounded-full leading-none text-xl text-gray-500">
+          <Icon icon={icon} />
+        </span>
+      ))
+    }
+  </div>
+</div>

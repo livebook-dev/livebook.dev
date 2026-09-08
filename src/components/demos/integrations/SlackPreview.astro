@@ -1,0 +1,36 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import CellIndicator from "../CellIndicator.astro";
+import logo from "../../../images/integrations/slack/logo.png";
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <SmartCell>
+    <SmartCellHeader slot="header" help>
+      <img class="w-5 h-5" src={logo.src} alt="" />
+      <Field label="Post to" inline>
+        <Input value="#notifications" class="w-52" />
+      </Field>
+      <Field label="Token" inline>
+        <Input value="SLACK_TOKEN" class="w-56" />
+      </Field>
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="Message" class="w-full">
+        <div
+          class="h-40 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-600"
+        >
+          Data report from Livebook executed successfully.
+        </div>
+      </Field>
+    </SmartCellRow>
+  </SmartCell>
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+</NotebookPreview>

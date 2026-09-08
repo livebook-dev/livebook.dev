@@ -1,0 +1,19 @@
+---
+interface Props {
+  /** Outputs such as terminal text and errors are rendered inside a border */
+  border?: boolean;
+  class?: string;
+}
+
+const { border = true, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "mt-2 max-w-full",
+    border && "p-4 border border-gray-200 rounded-lg divide-y divide-gray-200",
+    className,
+  ]}
+>
+  <slot />
+</div>

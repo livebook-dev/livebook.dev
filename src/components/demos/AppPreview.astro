@@ -1,0 +1,29 @@
+---
+import Screenshot from "./Screenshot.astro";
+import AppSidebar from "./AppSidebar.astro";
+
+interface Props {
+  width?: number;
+  height?: number;
+  current?: "home" | "apps" | "learn" | "settings";
+  /** Dims the page, so that an overlay on top stands out */
+  dimmed?: boolean;
+}
+
+const {
+  width = 1000,
+  height = 640,
+  current = "home",
+  dimmed = false,
+} = Astro.props;
+---
+
+<Screenshot width={width} height={height}>
+  <div class="relative h-full bg-white">
+    <div class:list={["flex h-full", dimmed && "opacity-40"]}>
+      <AppSidebar current={current} />
+      <div class="grow overflow-hidden px-10 py-8"><slot /></div>
+    </div>
+    <slot name="overlay" />
+  </div>
+</Screenshot>

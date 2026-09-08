@@ -1,0 +1,79 @@
+---
+import Screenshot from "../Screenshot.astro";
+
+type Kind = "hunk" | "context" | "added" | "removed";
+
+interface Line {
+  kind: Kind;
+  old?: string;
+  new?: string;
+  text: string;
+}
+
+// A diff of a .livemd file, as rendered by GitHub
+const lines: Line[] = [
+  { kind: "hunk", old: "..", new: "..", text: "@@ -1,6 +1,6 @@" },
+  { kind: "context", old: "1", new: "1", text: "  # Introduction to Nx" },
+  { kind: "context", old: "2", new: "2", text: "  " },
+  { kind: "removed", old: "3", text: "- ## Elixir Nx" },
+  { kind: "added", new: "3", text: "+ ## Numerical Elixir" },
+  { kind: "context", old: "4", new: "4", text: "  " },
+  {
+    kind: "context",
+    old: "5",
+    new: "5",
+    text: "  Elixir's primary numerical datatypes and",
+  },
+  {
+    kind: "context",
+    old: "6",
+    new: "6",
+    text: "  structures are not optimized for numerical",
+  },
+  {
+    kind: "context",
+    old: "7",
+    new: "7",
+    text: "  programming. Nx is a library built to bridge",
+  },
+  { kind: "context", old: "8", new: "8", text: "  that gap" },
+  {
+    kind: "hunk",
+    old: "⁘",
+    new: "",
+    text: "@@ -21,7 +21,7 @@ ## Numerical definitions",
+  },
+];
+
+const backgrounds: Record<Kind, string> = {
+  hunk: "bg-[#182a59]",
+  context: "",
+  added: "bg-[#1b3e32]",
+  removed: "bg-[#3f2231]",
+};
+---
+
+<Screenshot width={500} height={268}>
+  <div class="h-full flex items-center">
+    <div
+      class="w-full py-4 rounded-xl bg-[#101c30] font-mono text-[13px] leading-[19px]"
+    >
+      {
+        lines.map((line) => (
+          <div class:list={["flex", backgrounds[line.kind]]}>
+            <div class="w-8 shrink-0 text-center text-gray-600">{line.old}</div>
+            <div class="w-8 shrink-0 text-center text-gray-600">{line.new}</div>
+            <div
+              class:list={[
+                "grow whitespace-pre pl-2",
+                line.kind === "hunk" ? "text-gray-500" : "text-gray-300",
+              ]}
+            >
+              {line.text}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Screenshot>

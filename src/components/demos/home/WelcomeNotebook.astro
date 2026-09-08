@@ -1,0 +1,118 @@
+---
+import Icon from "../../Icon.astro";
+import Screenshot from "../Screenshot.astro";
+import Sidebar from "../Sidebar.astro";
+import CellActions from "../CellActions.astro";
+import Editor from "../Editor.astro";
+import PeerCursor from "../PeerCursor.astro";
+import Output from "../Output.astro";
+import Inspect from "../Inspect.astro";
+
+// Sections of the "Welcome to Livebook" notebook
+const sections = [
+  "Basic usage",
+  "Sections",
+  "Branching sections",
+  "Saving notebooks",
+  "Keyboard shortcuts",
+  "Autocompletion",
+  "Markdown extensions",
+  "Erlang support",
+  "Evaluation vs compilation",
+  "Running tests",
+  "Next steps",
+];
+
+const code = `# This is a Code cell - as the name suggests that's where the code goes.
+# To evaluate this cell, you can either press the "Evaluate" button above
+# or use \`Ctrl + Enter\` (or Cmd + Enter on a Mac)!
+
+message = "hey, grab yourself a cup of 🍵"`;
+---
+
+<Screenshot width={1500} height={900}>
+  <div class="flex h-full bg-white">
+    <Sidebar initials="J" color="#6583ff" />
+    <div
+      class="w-80 shrink-0 bg-gray-50 border-r border-gray-100 px-6 py-8 overflow-hidden"
+    >
+      <h3 class="uppercase text-sm font-semibold text-gray-500">Outline</h3>
+      <div class="mt-4 flex flex-col gap-4">
+        {
+          sections.map((section) => (
+            <div class="flex items-baseline gap-1 text-gray-600">
+              <Icon icon="h-2" class="text-lg leading-none opacity-50" />
+              <span>{section}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="grow overflow-hidden">
+      <div class="w-full max-w-[1000px] mx-auto px-16 py-5">
+        <div class="pb-4 mb-2 border-b border-gray-200">
+          <h1 class="text-3xl font-semibold text-gray-800">
+            Welcome to Livebook
+          </h1>
+          <div class="mt-1 flex items-center gap-1 text-sm text-gray-600">
+            <span>Using</span>
+            <span>🍯</span>
+            <span>My Hub</span>
+            <Icon icon="arrow-down-s-line" class="-ml-1" />
+            <span>workspace</span>
+          </div>
+        </div>
+        <h2 class="mt-8 mb-4 text-2xl font-semibold text-gray-800">
+          Basic usage
+        </h2>
+        <p class="my-4 text-gray-700">
+          Livebook is a tool for crafting <strong class="font-semibold"
+            >interactive</strong
+          >{" "}
+          and <strong class="font-semibold">collaborative</strong> code notebooks.
+        </p>
+        <p class="my-4 text-gray-700">
+          Each notebook consists of a number of cells, which serve as primary
+          building blocks. There are <strong class="font-semibold"
+            >Markdown</strong
+          > cells (such as this one) that allow you to describe your work and <strong
+            class="font-semibold">Code</strong
+          > cells to run your Elixir code!
+        </p>
+        <p class="my-4 text-gray-700">
+          To insert a new cell move your cursor between cells and click one of
+          the revealed buttons. 👇
+        </p>
+        <div class="mt-6">
+          <CellActions primary="Evaluate" />
+          <Editor code={code} status="evaluated" language="elixir">
+            <PeerCursor name="Amy" color="#e2474d" line={4} column={1} />
+            <PeerCursor name="Jake" color="#7c3aed" line={5} column={42} />
+          </Editor>
+          <Output>
+            <Inspect text={'"hey, grab yourself a cup of 🍵"'} />
+          </Output>
+        </div>
+        <p class="my-4 text-gray-700">
+          Subsequent cells have access to the bindings you've defined:
+        </p>
+        <div class="mt-6">
+          <CellActions primary="Evaluate" />
+          <Editor
+            code={'String.replace(message, "🍵", "☕")'}
+            status="evaluated"
+            language="elixir"
+          />
+          <Output>
+            <Inspect text={'"hey, grab yourself a cup of ☕"'} />
+          </Output>
+        </div>
+        <p class="my-4 text-gray-700">
+          Note however that bindings are not global, so each cell <em>sees</em> only
+          stuff that goes above itself. This approach helps to keep the notebook clean
+          and predictable as you keep working on it.
+        </p>
+      </div>
+    </div>
+  </div>
+</Screenshot>

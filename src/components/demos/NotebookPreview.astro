@@ -1,0 +1,36 @@
+---
+import Screenshot from "./Screenshot.astro";
+import Sidebar from "./Sidebar.astro";
+
+interface Props {
+  /** Design size, all integration previews use the same one by default */
+  width?: number;
+  height?: number;
+  /** Padding around the notebook content */
+  contentClass?: string;
+  initials?: string;
+  color?: string;
+}
+
+const {
+  width = 1000,
+  height = 640,
+  contentClass = "px-14",
+  initials,
+  color,
+} = Astro.props;
+---
+
+<Screenshot width={width} height={height}>
+  <div class="flex h-full bg-white">
+    <Sidebar initials={initials} color={color} />
+    <div
+      class:list={[
+        "grow flex flex-col justify-center overflow-hidden",
+        contentClass,
+      ]}
+    >
+      <div><slot /></div>
+    </div>
+  </div>
+</Screenshot>

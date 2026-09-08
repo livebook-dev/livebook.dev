@@ -1,0 +1,185 @@
+---
+interface Props {
+  series: { label: string; color: string; points: [number, number][] }[];
+  title?: string;
+  xTitle: string;
+  yTitle: string;
+  legendTitle?: string;
+  width?: number;
+  height?: number;
+  class?: string;
+}
+
+const {
+  series,
+  title,
+  xTitle,
+  yTitle,
+  legendTitle,
+  width = 560,
+  height = 380,
+  class: className,
+} = Astro.props;
+
+const gridColor = "#e1e8f0";
+const labelColor = "#1c2a3a";
+
+const margin = {
+  top: title ? 40 : 12,
+  right: legendTitle ? 150 : 12,
+  bottom: 44,
+  left: 56,
+};
+const plotWidth = width - margin.left - margin.right;
+const plotHeight = height - margin.top - margin.bottom;
+
+const points = series.flatMap((item) => item.points);
+const xMax = Math.ceil(Math.max(...points.map(([x]) => x)));
+const yMax = Math.ceil(Math.max(...points.map(([, y]) => y)));
+
+const scaleX = (x: number) => margin.left + (x / xMax) * plotWidth;
+const scaleY = (y: number) => margin.top + plotHeight - (y / yMax) * plotHeight;
+
+const tickStep = 1;
+const xTicks = Array.from(
+  { length: xMax / tickStep + 1 },
+  (_, idx) => idx * tickStep,
+);
+const yTicks = Array.from(
+  { length: yMax / tickStep + 1 },
+  (_, idx) => idx * tickStep,
+);
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${width} ${height}`}
+  width={width}
+  height={height}
+  font-family="Inter, sans-serif"
+>
+  {
+    title && (
+      <text
+        x={margin.left + plotWidth / 2}
+        y="24"
+        text-anchor="middle"
+        font-size="18"
+        fill="#445668"
+      >
+        {title}
+      </text>
+    )
+  }
+  {
+    yTicks.map((tick) => (
+      <>
+        <line
+          x1={margin.left}
+          x2={margin.left + plotWidth}
+          y1={scaleY(tick)}
+          y2={scaleY(tick)}
+          stroke={gridColor}
+        />
+        <text
+          x={margin.left - 8}
+          y={scaleY(tick)}
+          text-anchor="end"
+          dominant-baseline="middle"
+          font-size="12"
+          fill={labelColor}
+        >
+          {tick.toFixed(1)}
+        </text>
+      </>
+    ))
+  }
+  {
+    xTicks.map((tick) => (
+      <>
+        <line
+          x1={scaleX(tick)}
+          x2={scaleX(tick)}
+          y1={margin.top}
+          y2={margin.top + plotHeight}
+          stroke={gridColor}
+        />
+        <text
+          x={scaleX(tick)}
+          y={margin.top + plotHeight + 18}
+          text-anchor="middle"
+          font-size="12"
+          fill={labelColor}
+        >
+          {tick.toFixed(1)}
+        </text>
+      </>
+    ))
+  }
+  {
+    series.map((item) =>
+      item.points.map(([x, y]) => (
+        <circle
+          cx={scaleX(x)}
+          cy={scaleY(y)}
+          r="4"
+          fill="none"
+          stroke={item.color}
+          stroke-width="1.5"
+        />
+      )),
+    )
+  }
+  <text
+    x={margin.left + plotWidth / 2}
+    y={height - 6}
+    text-anchor="middle"
+    font-size="12"
+    fill={labelColor}
+  >
+    {xTitle}
+  </text>
+  <text
+    transform={`translate(14 ${margin.top + plotHeight / 2}) rotate(-90)`}
+    text-anchor="middle"
+    font-size="12"
+    fill={labelColor}
+  >
+    {yTitle}
+  </text>
+  {
+    legendTitle && (
+      <>
+        <text
+          x={margin.left + plotWidth + 24}
+          y={margin.top + 12}
+          font-size="13"
+          fill="#445668"
+        >
+          {legendTitle}
+        </text>
+        {series.map((item, idx) => (
+          <>
+            <circle
+              cx={margin.left + plotWidth + 32}
+              cy={margin.top + 40 + idx * 26}
+              r="6"
+              fill="none"
+              stroke={item.color}
+              stroke-width="1.5"
+            />
+            <text
+              x={margin.left + plotWidth + 46}
+              y={margin.top + 40 + idx * 26}
+              dominant-baseline="middle"
+              font-size="12"
+              fill={labelColor}
+            >
+              {item.label}
+            </text>
+          </>
+        ))}
+      </>
+    )
+  }
+</svg>

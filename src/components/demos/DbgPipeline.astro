@@ -1,0 +1,64 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  /** Steps of the inspected pipeline */
+  steps: { call: string; state: "on" | "selected" | "off" }[];
+  source: string;
+  output: string;
+  result: string;
+}
+
+const { steps, source, output, result } = Astro.props;
+---
+
+<div class="font-mono text-sm">
+  <div class="flex items-center justify-between">
+    <span class="px-2 py-0.5 rounded bg-gray-200 text-xs text-gray-700"
+      >dbg:5</span
+    >
+    <div class="flex items-center gap-2 text-gray-700">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#fef08a]"></span>
+      <span>Copy new pipeline</span>
+      <Icon icon="clipboard-line" class="text-lg text-gray-500" />
+    </div>
+  </div>
+
+  <div class="mt-4 text-[#50a14f]">{source}</div>
+
+  <div class="mt-2 divide-y divide-gray-200 border-t border-gray-200">
+    {
+      steps.map((step) => (
+        <div class="flex items-center justify-between py-2.5">
+          <div
+            class:list={[
+              "flex items-center gap-2",
+              step.state === "selected" && "text-blue-600",
+              step.state === "off" && "text-gray-400",
+              step.state === "on" && "text-gray-900",
+            ]}
+          >
+            <Icon icon="play-line" class="text-base" />
+            <span>{step.call}</span>
+          </div>
+          <div
+            class:list={[
+              "w-11 h-6 rounded-full flex items-center px-0.5",
+              step.state === "off"
+                ? "bg-gray-400 justify-start"
+                : "bg-blue-600 justify-end",
+            ]}
+          >
+            <div class="w-5 h-5 rounded-full bg-white" />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-3 text-gray-900">Output:</div>
+  <div class="mt-2 p-3 rounded-lg border border-gray-200 text-[#50a14f]">
+    {output}
+  </div>
+  <div class="mt-4 pt-4 border-t border-gray-200 text-[#50a14f]">{result}</div>
+</div>

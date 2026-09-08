@@ -1,0 +1,83 @@
+---
+import LanguageIcon from "./LanguageIcon.astro";
+
+type Status = "evaluated" | "stale" | "aborted" | "queued" | "evaluating";
+
+interface Props {
+  status?: Status;
+  /** Renders the `*` marking the cell as changed since the last evaluation */
+  changed?: boolean;
+  /** Time shown while evaluating */
+  time?: string;
+  language?: "elixir" | "erlang" | "markdown" | "python";
+  /** Smart cells show the indicators below the UI, on a light background */
+  light?: boolean;
+}
+
+const {
+  status,
+  changed = false,
+  time = "0.4s",
+  language,
+  light = false,
+} = Astro.props;
+
+const labels: Record<Status, string> = {
+  evaluated: "Evaluated",
+  stale: "Stale",
+  aborted: "Aborted",
+  queued: "Queued",
+  evaluating: time,
+};
+
+// Matches LivebookWeb.CoreComponents.status_circle_class/1
+const circles: Record<Status, string> = {
+  evaluated: "bg-[#4ade80]",
+  stale: "bg-[#fef08a]",
+  aborted: "bg-gray-500",
+  queued: "bg-gray-400",
+  evaluating: "bg-[#6583ff]",
+};
+
+const chip = [
+  "px-1.5 h-[22px] rounded-lg flex items-center border",
+  light
+    ? "bg-gray-50 border-gray-200 text-gray-500"
+    : "bg-editor-lighter border-editor-border text-editor-text",
+].join(" ");
+---
+
+<div class="flex gap-1">
+  {
+    status && (
+      <div class={chip}>
+        <div class="flex items-center space-x-1">
+          <div
+            class:list={[
+              "flex text-[11px]",
+              status === "evaluating" && "font-mono",
+            ]}
+          >
+            {labels[status]}
+            {changed && <span>*</span>}
+          </div>
+          <span class="relative flex h-2.5 w-2.5">
+            <span
+              class:list={[
+                circles[status],
+                "relative inline-flex rounded-full h-2.5 w-2.5",
+              ]}
+            />
+          </span>
+        </div>
+      </div>
+    )
+  }
+  {
+    language && (
+      <div class={chip}>
+        <LanguageIcon language={language} class="w-3 h-3" />
+      </div>
+    )
+  }
+</div>

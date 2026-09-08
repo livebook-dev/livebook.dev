@@ -1,0 +1,100 @@
+---
+import Icon from "../Icon.astro";
+import logo from "../../images/logo.svg";
+
+interface Props {
+  /** Which of the main links is highlighted */
+  current?: "home" | "apps" | "learn" | "settings";
+  name?: string;
+  initials?: string;
+  color?: string;
+}
+
+const {
+  current = "home",
+  name = "Jane Doe",
+  initials = "JD",
+  color = "#8ba2ff",
+} = Astro.props;
+
+const links = [
+  { id: "home", title: "Home", icon: "home-6-line" },
+  { id: "apps", title: "Local apps", icon: "rocket-line" },
+  { id: "learn", title: "Learn", icon: "article-line" },
+  { id: "settings", title: "Settings", icon: "settings-3-line" },
+];
+---
+
+<nav
+  class="w-68 shrink-0 h-full py-5 bg-gray-900 flex flex-col justify-between"
+>
+  <div>
+    <div class="flex items-center mb-5 ml-1">
+      <img class="mx-2 w-10 h-10" src={logo.src} alt="" />
+      <span class="text-gray-300 text-2xl font-logo -ml-px pt-1">Livebook</span>
+      <span class="text-gray-300 text-xs mx-2.5 pt-3">v0.20.0</span>
+    </div>
+    <div class="space-y-3">
+      {
+        links.map((link) => (
+          <div
+            class:list={[
+              "h-7 flex items-center border-l-4",
+              link.id === current
+                ? "text-white border-white"
+                : "text-gray-400 border-transparent",
+            ]}
+          >
+            <Icon
+              icon={link.icon}
+              class="text-lg leading-6 w-[56px] flex justify-center"
+            />
+            <span class="text-sm font-medium">{link.title}</span>
+          </div>
+        ))
+      }
+      <div
+        class="h-7 flex items-center text-gray-400 border-l-4 border-transparent"
+      >
+        <Icon
+          icon="shut-down-line"
+          class="text-lg leading-6 w-[56px] flex justify-center"
+        />
+        <span class="text-sm font-medium">Shut Down</span>
+      </div>
+    </div>
+    <div class="mt-10">
+      <div
+        class="ml-[14px] mb-2 text-sm font-medium text-gray-500 uppercase tracking-wide"
+      >
+        Workspaces
+      </div>
+      <div
+        class="h-7 flex items-center text-gray-400 border-l-4 border-transparent"
+      >
+        <span class="text-lg leading-6 w-[56px] flex justify-center">🍯</span>
+        <span class="text-sm font-medium">My Hub</span>
+      </div>
+      <div
+        class="h-7 flex items-center text-gray-400 border-l-4 border-transparent"
+      >
+        <Icon
+          icon="add-line"
+          class="text-lg leading-6 w-[56px] flex justify-center"
+        />
+        <span class="text-sm font-medium">Add Organization</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center border-l-4 border-transparent">
+    <div class="w-[56px] flex justify-center">
+      <div
+        class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold text-gray-100"
+        style={`background-color: ${color}`}
+      >
+        {initials}
+      </div>
+    </div>
+    <span class="text-sm text-gray-400 font-medium">{name}</span>
+  </div>
+</nav>

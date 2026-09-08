@@ -1,0 +1,15 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import Editor from "../Editor.astro";
+import MermaidFlowchart from "../MermaidFlowchart.astro";
+
+const code =
+  "```mermaid\nflowchart LR\n  A[Hard edge] -->|Link text| B(Round edge)\n  B --> C{Decision}\n  C -->|One| D[Result one]\n  C -->|Two| E[Result two]\n```";
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <Editor code={code} lang="markdown" language="markdown" />
+  <div class="mt-6">
+    <MermaidFlowchart class="w-full" />
+  </div>
+</NotebookPreview>

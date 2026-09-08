@@ -1,0 +1,56 @@
+---
+import Icon from "../../Icon.astro";
+import Screenshot from "../Screenshot.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Editor from "../Editor.astro";
+
+const query = "select * from orders join users on users.id = user_id";
+---
+
+<Screenshot width={924} height={440}>
+  <div class="h-full bg-white flex flex-col justify-center gap-8 px-8">
+    <SmartCell>
+      <SmartCellHeader slot="header">
+        <Field label="Connect to" inline>
+          <Input value="PostgreSQL" select class="w-44" />
+        </Field>
+        <Field label="Assign to" inline>
+          <Input value="conn" class="w-56" />
+        </Field>
+      </SmartCellHeader>
+      <SmartCellRow>
+        <Field label="Hostname" class="w-52"><Input value="localhost" /></Field>
+        <Field label="Port" class="w-28"><Input value="5432" /></Field>
+        <Field label="Database" class="w-44"><Input value="shop" /></Field>
+      </SmartCellRow>
+      <SmartCellRow>
+        <Field label="User" class="w-52"><Input value="postgres" /></Field>
+        <Field label="Password" class="w-64"
+          ><Input value="DATABASE_PASSWORD" secret /></Field
+        >
+      </SmartCellRow>
+    </SmartCell>
+
+    <div class="rounded-lg overflow-hidden">
+      <SmartCellHeader class="rounded-none">
+        <Field label="Query" inline>
+          <Input value="conn (PostgreSQL)" select class="w-52" />
+        </Field>
+        <Field label="Assign to" inline>
+          <Input value="result" class="w-44" />
+        </Field>
+        <div
+          class="ml-auto flex items-center gap-2 text-xl text-gray-600 leading-none"
+        >
+          <Icon icon="question-line" />
+          <Icon icon="settings-3-line" />
+        </div>
+      </SmartCellHeader>
+      <Editor code={query} lang="sql" rounded="none" />
+    </div>
+  </div>
+</Screenshot>

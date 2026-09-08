@@ -5,12 +5,13 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import InstallInstructions from "../components/InstallInstructions.astro";
 
-import welcomeToLivebook from "../images/welcome-to-livebook.png";
 import plot from "../images/plot.svg";
-import smartCells from "../images/smart-cells.png";
-import editorFeatures from "../images/editor-features.png";
-import diff from "../images/diff.svg";
-import learn from "../images/learn.png";
+
+import WelcomeNotebook from "../components/demos/home/WelcomeNotebook.astro";
+import SmartCells from "../components/demos/home/SmartCells.astro";
+import EditorFeatures from "../components/demos/home/EditorFeatures.astro";
+import LivemdDiff from "../components/demos/home/LivemdDiff.astro";
+import LearningCenter from "../components/demos/home/LearningCenter.astro";
 
 import integrations from "../data/integrations";
 
@@ -75,12 +76,11 @@ const selectedIntegrations = integrations.filter((integration) =>
           </a>
         </nav>
       </div>
-      <Image
-        class="xl:max-w-[70%] xl:ml-20 rounded-md custom-shadow-1"
-        src={welcomeToLivebook}
-        alt="Logo"
-        loading="eager"
-      />
+      <div
+        class="w-full xl:w-[64%] xl:shrink-0 xl:ml-20 rounded-md custom-shadow-1 overflow-hidden"
+      >
+        <WelcomeNotebook />
+      </div>
     </div>
   </section>
 
@@ -137,12 +137,9 @@ const selectedIntegrations = integrations.filter((integration) =>
       <div
         class="flex flex-col md:flex-row-reverse items-center space-y-8 md:space-y-0"
       >
-        <Image
-          class="custom-drop-shadow-1"
-          src={smartCells}
-          alt=""
-          width="550"
-        />
+        <div class="w-[550px] max-w-full rounded-lg overflow-hidden">
+          <SmartCells />
+        </div>
         <div class="flex flex-col md:mr-8 lg:mr-28">
           <h3 class="text-xl text-gray-50 font-semibold">
             Explore and automate
@@ -178,12 +175,11 @@ const selectedIntegrations = integrations.filter((integration) =>
                 class="rounded-md md:rounded-2xl absolute top-0 bottom-0 left-0 right-0 pointer-events-none border-4 border-gray-100"
               >
               </div>
-              <Image
-                class="rounded-md md:rounded-2xl"
-                src={editorFeatures}
-                alt=""
-                width="850"
-              />
+              <div
+                class="w-[850px] max-w-full rounded-md md:rounded-2xl overflow-hidden"
+              >
+                <EditorFeatures />
+              </div>
             </div>
             <!-- Feature 2 -->
             <div class="flex flex-col rounded-xl">
@@ -214,7 +210,9 @@ const selectedIntegrations = integrations.filter((integration) =>
       <div
         class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 lg:space-x-28"
       >
-        <Image class="custom-drop-shadow-1" src={diff} alt="" width="448" />
+        <div class="w-[448px] max-w-full custom-drop-shadow-1">
+          <LivemdDiff />
+        </div>
         <div class="flex flex-col">
           <h3 class="text-xl text-gray-50 font-semibold">
             Write once, read anywhere
@@ -338,11 +336,9 @@ const selectedIntegrations = integrations.filter((integration) =>
     <div
       class="m-auto max-w-7xl lg:mt-8 px-4 lg:px-16 py-10 md:py-20 flex flex-col md:flex-row items-center gap-8 lg:gap-16"
     >
-      <Image
-        class="max-w-[80%] md:max-w-[50%]"
-        src={learn}
-        alt="Livebook's Learning Center Screenshot"
-      />
+      <div class="w-full max-w-[80%] md:max-w-[50%]">
+        <LearningCenter />
+      </div>
       <div class="flex flex-col items-start">
         <h2 class="text-gray-900 text-2xl md:text-3xl font-semibold">
           Not familiar with Elixir?

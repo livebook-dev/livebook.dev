@@ -1,0 +1,47 @@
+---
+import NotebookPreview from "../NotebookPreview.astro";
+import SmartCell from "../SmartCell.astro";
+import SmartCellHeader from "../SmartCellHeader.astro";
+import SmartCellRow from "../SmartCellRow.astro";
+import Field from "../Field.astro";
+import Input from "../Input.astro";
+import Output from "../Output.astro";
+import Inspect from "../Inspect.astro";
+import CellIndicator from "../CellIndicator.astro";
+---
+
+<NotebookPreview initials="AC" color="#8ba2ff">
+  <SmartCell>
+    <SmartCellHeader slot="header">
+      <Field label="Connect to" inline>
+        <Input value="Snowflake" select class="w-44" />
+      </Field>
+      <Field label="Assign to" inline>
+        <Input value="conn" class="w-64" />
+      </Field>
+    </SmartCellHeader>
+    <SmartCellRow>
+      <Field label="User name" class="w-72"
+        ><Input value="my-company-username" /></Field
+      >
+      <Field label="Account" class="grow">
+        <Input value="rn21219.sa-east-1.aws.snowflakecomputing.com" />
+      </Field>
+    </SmartCellRow>
+    <SmartCellRow>
+      <Field label="Database" class="w-64"
+        ><Input value="snowflake_sample_data" /></Field
+      >
+      <Field label="Schema" class="w-48"><Input value="tpch_sf1" /></Field>
+      <Field label="Password" class="w-72">
+        <Input value="SNOWFLAKE_PASSWORD" secret />
+      </Field>
+    </SmartCellRow>
+  </SmartCell>
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <Inspect text="{:ok, #PID<0.275.0>}" />
+  </Output>
+</NotebookPreview>

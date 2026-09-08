@@ -1,0 +1,48 @@
+---
+interface Props {
+  /** The typed prefix, highlighted in the matching items */
+  prefix: string;
+  items: { icon?: string; label: string; detail?: string }[];
+  /** Index of the highlighted item */
+  selected?: number;
+  class?: string;
+  style?: string;
+}
+
+const { prefix, items, selected = 0, class: className, style } = Astro.props;
+---
+
+<div
+  class:list={[
+    "p-1 rounded-lg border border-editor-border bg-editor-lighter text-editor-text",
+    "font-mono text-[14px] leading-[1.2] shadow-[0_2px_6px_0_rgba(0,0,0,0.2)]",
+    className,
+  ]}
+  style={style}
+>
+  {
+    items.map((item, idx) => (
+      <div
+        class:list={[
+          "flex items-center p-1 rounded",
+          idx === selected && "bg-editor-lightest",
+        ]}
+      >
+        <span class="w-[0.8em] pr-[0.6em] text-center text-[90%] opacity-60">
+          {item.icon ?? "ƒ"}
+        </span>
+        <span>
+          {item.label.startsWith(prefix) ? (
+            <>
+              <span class="text-editor-match">{prefix}</span>
+              {item.label.slice(prefix.length)}
+            </>
+          ) : (
+            item.label
+          )}
+        </span>
+        {item.detail && <span class="ml-2 italic truncate">{item.detail}</span>}
+      </div>
+    ))
+  }
+</div>

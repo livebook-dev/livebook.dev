@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+  /** The generated code editor is glued below the UI, so corners differ */
+  rounded?: "all" | "top";
+}
+
+const { class: className, rounded = "all" } = Astro.props;
+
+const hasHeader = Astro.slots.has("header");
+---
+
+<div
+  class:list={[
+    "border border-gray-300 bg-gray-50/30 pb-2",
+    rounded === "all" ? "rounded-lg" : "rounded-t-lg",
+    className,
+  ]}
+>
+  {
+    hasHeader && (
+      <div class="mb-3">
+        <slot name="header" />
+      </div>
+    )
+  }
+  <slot />
+</div>
+
+<style>
+  /* The smart cell UI is rendered by Kino inside an iframe, these styles
+     mirror the ones from kino_db and kino_bumblebee */
+</style>

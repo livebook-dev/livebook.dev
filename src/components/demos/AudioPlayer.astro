@@ -1,0 +1,35 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  duration?: string;
+}
+
+const { duration = "0:02" } = Astro.props;
+---
+
+<div class="flex flex-col items-start gap-3">
+  <div
+    class="w-[420px] flex items-center gap-4 px-4 py-2 rounded-full bg-gray-100"
+  >
+    <Icon icon="play-fill" class="text-xl text-gray-900" />
+    <span class="text-sm text-gray-900 tabular-nums"
+      >{`${duration} / ${duration}`}</span
+    >
+    <div class="grow h-1 rounded-full bg-gray-900"></div>
+    <Icon icon="volume-up-fill" class="text-xl text-gray-900" />
+    <Icon icon="more-2-fill" class="text-xl text-gray-900" />
+  </div>
+  <div class="flex gap-3">
+    <div
+      class="px-4 py-2 rounded-lg bg-gray-100 text-sm font-medium text-gray-600 flex items-center gap-2"
+    >
+      <Icon icon="mic-line" /> Record
+    </div>
+    <div
+      class="px-4 py-2 rounded-lg bg-gray-100 text-sm font-medium text-gray-600 flex items-center gap-2"
+    >
+      <Icon icon="upload-2-line" /> Upload
+    </div>
+  </div>
+</div>

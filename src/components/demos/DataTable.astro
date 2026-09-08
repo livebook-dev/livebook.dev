@@ -1,0 +1,74 @@
+---
+interface Props {
+  title?: string;
+  entries: string;
+  columns: { name: string; type: "number" | "text" }[];
+  rows: string[][];
+  class?: string;
+}
+
+const {
+  title = "Results",
+  entries,
+  columns,
+  rows,
+  class: className,
+} = Astro.props;
+
+const badges = { number: "123", text: "A" };
+---
+
+<div class={className}>
+  <div class="flex items-center gap-4">
+    <span class="text-lg font-medium text-gray-800">{title}</span>
+    <span class="font-mono text-sm text-gray-500">{entries}</span>
+    <div class="ml-auto flex items-center gap-3 text-sm text-gray-600">
+      <span>Show</span>
+      <span class="px-2 py-1 rounded-lg border border-gray-300">10</span>
+      <span class="text-gray-400">‹ Prev</span>
+      <span>Next ›</span>
+    </div>
+  </div>
+  <div class="mt-4 rounded-lg border border-gray-200 overflow-hidden">
+    <table class="w-full border-collapse font-mono text-sm">
+      <thead>
+        <tr class="bg-gray-50 border-b border-gray-200">
+          <th class="w-10"></th>
+          {
+            columns.map((column) => (
+              <th class="px-3 py-2.5 text-left font-medium text-gray-800">
+                <span class="mr-2 px-1 py-0.5 rounded bg-gray-200 text-[10px] text-gray-600 align-middle">
+                  {badges[column.type]}
+                </span>
+                {`"${column.name}"`}
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((row, idx) => (
+            <tr class="border-b border-gray-100 last:border-b-0">
+              <td class="px-3 py-2.5 text-right text-xs text-gray-400 align-top">
+                {idx + 1}
+              </td>
+              {row.map((cell, columnIdx) => (
+                <td
+                  class:list={[
+                    "px-3 py-2.5 align-top",
+                    columns[columnIdx].type === "number"
+                      ? "text-gray-800"
+                      : "text-blue-600",
+                  ]}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

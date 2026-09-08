@@ -1,0 +1,48 @@
+---
+import { Code as ShikiCode } from "astro:components";
+
+import theme from "../../lib/code-theme";
+
+interface Props {
+  code: string;
+  lang?: string;
+  /** Number shown for the first line, the rest continue from it */
+  startLine?: number;
+  /** Line numbers are shown in the gutter, unless disabled */
+  gutter?: boolean;
+}
+
+const { code, lang = "elixir", startLine = 1, gutter = true } = Astro.props;
+---
+
+<div
+  class:list={["code", gutter && "code--gutter"]}
+  style={`counter-reset: line ${startLine - 1}`}
+>
+  <ShikiCode code={code.replace(/\n$/, "")} lang={lang as any} theme={theme} />
+</div>
+
+<style>
+  /* Matches the CodeMirror metrics in Livebook (14px / 1.4, 47px gutter,
+     6px of padding before the code) */
+  .code :global(pre) {
+    background-color: transparent !important;
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 19.6px;
+    font-variant-ligatures: none;
+    overflow: hidden;
+  }
+
+  .code--gutter :global(.line)::before {
+    content: counter(line);
+    counter-increment: line;
+    display: inline-block;
+    box-sizing: content-box;
+    width: 20px;
+    padding: 0 28px 0 5px;
+    text-align: right;
+    color: #60646c;
+  }
+</style>

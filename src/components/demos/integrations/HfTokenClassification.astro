@@ -1,0 +1,107 @@
+---
+import FeatureFrame from "../FeatureFrame.astro";
+import NeuralNetworkCell from "../NeuralNetworkCell.astro";
+import CellIndicator from "../CellIndicator.astro";
+import Output from "../Output.astro";
+import KinoInput from "../KinoInput.astro";
+import Button from "../Button.astro";
+
+const entities = [
+  {
+    text: "Rachel Green",
+    tag: "PER",
+    class: "bg-red-50 text-[#e2474d]",
+    tagClass: "bg-[#e2474d]",
+  },
+  {
+    text: "Ralph Lauren",
+    tag: "ORG",
+    class: "bg-[#f3eefe] text-[#7c3aed]",
+    tagClass: "bg-[#7c3aed]",
+  },
+  {
+    text: "New York City",
+    tag: "LOC",
+    class: "bg-blue-100 text-blue-600",
+    tagClass: "bg-blue-600",
+  },
+];
+---
+
+<FeatureFrame zoom={1.5}>
+  <NeuralNetworkCell
+    task="Token classification"
+    model="BERT (base cased) - named-entity recognition"
+    params={[
+      { label: "Aggregation", value: "Same", select: true },
+      { label: "Max input tokens", value: "100" },
+      { label: "Compiler", value: "EXLA", select: true },
+    ]}
+  />
+  <div class="mt-2 flex justify-end">
+    <CellIndicator status="evaluated" language="elixir" light />
+  </div>
+  <Output>
+    <div class="flex flex-col gap-3">
+      <KinoInput
+        label="Text"
+        value="Rachel Green works at Ralph Lauren in New York City in the sitcom Friends."
+        textarea
+      />
+      <div><Button>Run</Button></div>
+      <div class="flex flex-wrap items-center gap-x-1.5 gap-y-2 text-gray-800">
+        <span
+          class:list={[
+            "px-1.5 py-0.5 rounded inline-flex items-center gap-1.5",
+            entities[0].class,
+          ]}
+        >
+          {entities[0].text}
+          <span
+            class:list={[
+              "px-1 rounded text-[10px] font-bold text-white",
+              entities[0].tagClass,
+            ]}
+          >
+            {entities[0].tag}
+          </span>
+        </span>
+        <span>works at</span>
+        <span
+          class:list={[
+            "px-1.5 py-0.5 rounded inline-flex items-center gap-1.5",
+            entities[1].class,
+          ]}
+        >
+          {entities[1].text}
+          <span
+            class:list={[
+              "px-1 rounded text-[10px] font-bold text-white",
+              entities[1].tagClass,
+            ]}
+          >
+            {entities[1].tag}
+          </span>
+        </span>
+        <span>in</span>
+        <span
+          class:list={[
+            "px-1.5 py-0.5 rounded inline-flex items-center gap-1.5",
+            entities[2].class,
+          ]}
+        >
+          {entities[2].text}
+          <span
+            class:list={[
+              "px-1 rounded text-[10px] font-bold text-white",
+              entities[2].tagClass,
+            ]}
+          >
+            {entities[2].tag}
+          </span>
+        </span>
+        <span>in the sitcom Friends.</span>
+      </div>
+    </div>
+  </Output>
+</FeatureFrame>
