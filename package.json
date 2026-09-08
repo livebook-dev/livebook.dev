@@ -19,7 +19,6 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@astrojs/markdown-satteri": "^0.4.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1"
   }

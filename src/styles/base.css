@@ -199,7 +199,8 @@
     @apply p-0 bg-transparent text-inherit;
   }
 
-  .post-content img {
+  .post-content img,
+  .post-content video {
     @apply rounded-lg border border-gray-200;
   }
 
