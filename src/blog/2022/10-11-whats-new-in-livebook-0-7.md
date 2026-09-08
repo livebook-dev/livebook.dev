@@ -35,7 +35,9 @@ Req.get!("https://postman-echo.com/basic-auth", auth: {api_username, api_passwor
 
 This piece of code is hardcoding API username and password, but you want to avoid that. You can do that by creating two Livebook secrets, one for the API username and one for the API password:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/create-secret.mp4" width="800" height="456" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/create-secret.mp4" width="800" height="456" controls loop playsinline preload="metadata"></video>
+</div>
 
 Now, you can refactor your code to get the username and password values from those secrets by using `System.fetch_env!/1`:
 
@@ -50,11 +52,15 @@ Notice that Livebook adds an `LB_` namespace to the environment variable name.
 
 Let’s say you share with a co-worker that notebook that is using Livebook Secrets. If that person doesn’t have those secrets configured in their Livebook instance yet, when they run the notebook, Livebook will automatically ask them to create the required secrets! No more hidden secrets (pun intended 🤭). Here’s what it looks like:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/shared-notebook-secret-prompt.mp4" width="800" height="606" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/shared-notebook-secret-prompt.mp4" width="800" height="606" controls loop playsinline preload="metadata"></video>
+</div>
 
 The new Secrets feature is also already integrated with Database Connection Smart cells. When you’re creating a connection to PostgreSQL or Amazon Athena, Livebook will give you the option to use a Secret for the database password:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/database-connection-secret.mp4" width="800" height="602" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/database-connection-secret.mp4" width="800" height="602" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Visual representations of the running system
 
@@ -93,7 +99,9 @@ All you need to do is wrap your code with `Kino.Process.render_seq_trace/2`:
 
 Seeing a visual representation of code is not only applicable when you’re just getting started with Elixir. Imagine, for example, you need to code something that performs a job concurrently, and you discover Elixir’s `Task.async_stream/3`. You read its documentation and understand its API, but you also want to learn more about how it orchestrates multiple processes. You could use Livebook to visualize that:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/message-passing-visualization.mp4" width="800" height="308" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/message-passing-visualization.mp4" width="800" height="308" controls loop playsinline preload="metadata"></video>
+</div>
 
 Besides visualizing message passing, you can now use Livebook to visualize a supervision tree. You can do that by calling the `Kino.Process.render_sup_tree/2` function with the supervisor’s PID:
 
@@ -101,7 +109,9 @@ Besides visualizing message passing, you can now use Livebook to visualize a sup
 
 Livebook will also automatically show you a supervision tree if your cell returns the PID of a supervisor:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/supervision-tree-output.mp4" width="800" height="318" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/supervision-tree-output.mp4" width="800" height="318" controls loop playsinline preload="metadata"></video>
+</div>
 
 This feature has been [contributed](https://github.com/livebook-dev/kino/pulls?q=is%3Apr+author%3Aakoutmos) by [Alex Koutmos](https://twitter.com/akoutmos), and it is a great example of how modern notebooks can benefit from an open-source community.
 
@@ -129,7 +139,9 @@ When you do that, Livebook will show a widget that you can use to:
 
 Here’s what it looks like:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/dbg-pipeline.mp4" width="800" height="572" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/dbg-pipeline.mp4" width="800" height="572" controls loop playsinline preload="metadata"></video>
+</div>
 
 This can be very helpful if you’re trying to understand what each step of a pipeline is doing. [Ryo Wakabayashi](https://twitter.com/nakaji573) created a [cool example](https://qiita.com/RyoWakabayashi/items/7d9eff9df1041c705713) showing how that could be applied to a pipeline that is using Elixir to process an image using [Evision](https://github.com/cocoa-xu/evision):
 
@@ -145,7 +157,9 @@ image_path
 |> dbg()
 ```
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/dbg-image-pipeline.mp4" width="878" height="842" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/dbg-image-pipeline.mp4" width="878" height="842" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Other notable features and improvements
 
@@ -173,7 +187,9 @@ Kino.Layout.tabs(
 
 Here’s what it looks like:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/tabs-layout.mp4" width="800" height="490" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/tabs-layout.mp4" width="800" height="490" controls loop playsinline preload="metadata"></video>
+</div>
 
 You can also use `Kino.Layout.grid/2` to show the output of your cell in a grid. Here’s an example of how to do it:
 
@@ -199,7 +215,9 @@ Kino.Layout.grid(images, columns: 3)
 
 Here’s what it looks like:
 
-<video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/grid-layout.mp4" width="800" height="720" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-10-11-whats-new-in-livebook-0-7/grid-layout.mp4" width="800" height="720" controls loop playsinline preload="metadata"></video>
+</div>
 
 ### Universal desktop build for Mac and automated nightly builds
 

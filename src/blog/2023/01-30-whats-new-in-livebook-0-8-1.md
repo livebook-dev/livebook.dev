@@ -61,7 +61,9 @@ Mix.install(
 
 With this new release, it's now as simple as clicking a button:
 
-<video src="/videos/blog/2023-01-30-whats-new-in-livebook-0-8-1/setup-cell-without-cache.mp4" width="800" height="486" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-30-whats-new-in-livebook-0-8-1/setup-cell-without-cache.mp4" width="800" height="486" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Loading LB\_ environment variables as Livebook secrets
 

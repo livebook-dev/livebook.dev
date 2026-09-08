@@ -204,6 +204,43 @@
     @apply rounded-lg border border-gray-200;
   }
 
+  /* Play button and scrim over the first frame. Only shown once the script
+     takes the native controls away, so the video stays playable without
+     JavaScript. */
+  .post-content .video {
+    @apply relative;
+  }
+
+  .post-content .video[data-enhanced] {
+    @apply cursor-pointer;
+  }
+
+  .post-content .video[data-enhanced]::before {
+    content: "";
+    @apply absolute inset-0 rounded-lg;
+    @apply bg-gray-900/20 pointer-events-none transition-colors;
+  }
+
+  .post-content .video[data-enhanced]::after {
+    content: "";
+    @apply absolute inset-0 m-auto w-16 h-16 rounded-full;
+    @apply bg-gray-900/70 pointer-events-none transition-colors;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 55% center;
+    background-size: 2rem;
+  }
+
+  .post-content .video[data-enhanced]:hover::before,
+  .post-content .video[data-enhanced]:focus-visible::before {
+    @apply bg-gray-900/30;
+  }
+
+  .post-content .video[data-enhanced]:hover::after,
+  .post-content .video[data-enhanced]:focus-visible::after {
+    @apply bg-gray-900/85;
+  }
+
   .post-content table {
     @apply w-full text-sm text-left border-collapse;
   }

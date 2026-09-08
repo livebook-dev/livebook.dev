@@ -40,7 +40,9 @@ If you haven't used Livebook yet, it's easier than ever to get started because o
 
 Once you have installed it, you can use the built-in notebooks to learn how to use Livebook. You can do that by opening Livebook and going to Explore section:
 
-<video src="/videos/blog/2022-08-24-livebook-spawnfest/explore-section.mp4" width="800" height="550" aria-label="Livebook Explore section" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2022-08-24-livebook-spawnfest/explore-section.mp4" width="800" height="550" aria-label="Livebook Explore section" controls loop playsinline preload="metadata"></video>
+</div>
 
 In the Explore section, you'll find many notebooks that will help you to learn how to use Livebook. We currently have builtin notebooks about:
 

@@ -66,3 +66,41 @@ const { Content } = await render(post);
     @apply px-2 py-0.5 rounded-md bg-gray-100 text-xs text-gray-600 hover:bg-gray-200;
   }
 </style>
+
+<script>
+  // Videos ship with the native controls, so they play without JavaScript. Here
+  // we replace those with a play button over the poster, and hand back to the
+  // native controls once the video starts, so only one control is ever visible.
+  for (const container of document.querySelectorAll(".post-content .video")) {
+    const video = container.querySelector("video");
+
+    video.controls = false;
+    container.setAttribute("data-enhanced", "");
+    container.setAttribute("role", "button");
+    container.setAttribute("aria-label", "Play video");
+    container.tabIndex = 0;
+
+    const start = () => {
+      for (const attribute of [
+        "data-enhanced",
+        "role",
+        "aria-label",
+        "tabindex",
+      ]) {
+        container.removeAttribute(attribute);
+      }
+
+      video.controls = true;
+      video.play();
+    };
+
+    container.addEventListener("click", start);
+
+    container.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        start();
+      }
+    });
+  }
+</script>

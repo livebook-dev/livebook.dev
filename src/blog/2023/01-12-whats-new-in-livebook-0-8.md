@@ -28,11 +28,15 @@ Look how cell 4 depends on cell 1 and cell 2, but doesn't depend on cell 3. And 
 
 Before Livebook 0.8, if you changed cell 3, cell 4 would become stale, even though cell 4 didn't depend on cell 3. And you'd need to reevaluate it:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/stale-cell-before.mp4" width="800" height="618" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/stale-cell-before.mp4" width="800" height="618" controls loop playsinline preload="metadata"></video>
+</div>
 
 With Livebook 0.8, when you change cell 3, Livebook knows that although cell 4 is subsequent to cell 3, it doesn't depend on it, so it doesn't mark cell 4 as stale anymore:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/stale-cell-after.mp4" width="800" height="622" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/stale-cell-after.mp4" width="800" height="622" controls loop playsinline preload="metadata"></video>
+</div>
 
 No more need to waste time waiting for unnecessary cell reevaluation!
 
@@ -44,7 +48,9 @@ This new release integrates Doctests natively into Livebook.
 
 Now, whenever you evaluate a cell that contains a module definition with doctests, Livebook will automatically run those doctests for you and will show you the output:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/doctests.mp4" width="800" height="588" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/doctests.mp4" width="800" height="588" controls loop playsinline preload="metadata"></video>
+</div>
 
 We're planning to streamline that workflow even more in future releases.
 
@@ -54,11 +60,15 @@ Elixir has an [amazing developer experience](https://elixir-lang.org/blog/2022/1
 
 Before this new release, Livebook already supported seeing the documentation of a module or function when you hover over it:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/hover-docs.mp4" width="800" height="302" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/hover-docs.mp4" width="800" height="302" controls loop playsinline preload="metadata"></video>
+</div>
 
 Now, the on-hover documentation also supports those fancy math documentation of yours (based on [KaTeX](https://katex.org/))
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/hover-docs-math.mp4" width="800" height="404" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/hover-docs-math.mp4" width="800" height="404" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## View and delete secrets in the sidebar
 
@@ -66,7 +76,9 @@ Livebook 0.7 [introduced secret management](/blog/whats-new-in-livebook-0-7). A 
 
 With this new release, you can also view and delete those secrets in the notebook sidebar:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/secrets-sidebar.mp4" width="800" height="448" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/secrets-sidebar.mp4" width="800" height="448" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Support for image input
 
@@ -74,7 +86,9 @@ Livebook enables you to add [a variety of user inputs](https://hexdocs.pm/kino/K
 
 This new release comes with a [new input that allows the user of your notebook to upload images](https://hexdocs.pm/kino/Kino.Input.html#image/2):
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/image-input.mp4" width="800" height="770" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/image-input.mp4" width="800" height="770" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Visualization of nested data as a tree view
 
@@ -82,7 +96,9 @@ Inspecting a nested data structure can be hard when it gets big. For example, wh
 
 With Kino 0.8 that accompanies the Livebook release, you can now visualize and inspect nested data in a tree view, so it gets easier to understand it:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/tree-view.mp4" width="800" height="446" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/tree-view.mp4" width="800" height="446" controls loop playsinline preload="metadata"></video>
+</div>
 
 This was a [community contribution](https://github.com/livebook-dev/kino/pull/208) by [Stefan Chrobot](https://twitter.com/StefanChrobot). He started the project during [Spawnfest](https://spawnfest.org/) and won 2nd place overall. Shout out to him!
 
@@ -92,7 +108,9 @@ We discussed that new feature in detail [in a previous post](/blog/announcing-bu
 
 That new Smart cell allows you to run various machine learning models directly in Livebook with just a few clicks. Here's an example of a text classification model:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/neural-network-cell.mp4" width="800" height="616" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/neural-network-cell.mp4" width="800" height="616" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Slack Message Smart cell
 
@@ -100,7 +118,9 @@ Let's say you want to send a notification to your Slack after your notebook comp
 
 With the new Slack Smart cell, that's dead easy:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/slack-message-cell.mp4" width="800" height="698" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/slack-message-cell.mp4" width="800" height="698" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Geocoding in Map Smart cell
 
@@ -108,7 +128,9 @@ The Map Smart cell got even better. Now besides accepting data as latitude and l
 
 Let's see how that works:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/map-cell-geocoding.mp4" width="762" height="800" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/map-cell-geocoding.mp4" width="762" height="800" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## More options to configure charts with the Chart Smart Cell
 
@@ -116,15 +138,21 @@ We added new options to help you customize your charts even more.
 
 You can now toggle the **bin** config to discretize numeric values into a set of bins. This is useful for creating histograms, for example. Here's how it works:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/chart-cell-bin.mp4" width="800" height="742" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/chart-cell-bin.mp4" width="800" height="742" controls loop playsinline preload="metadata"></video>
+</div>
 
 Another new option is the **color scheme**. You can now choose your chart's color from a set of named color palettes. Here's how it works:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/chart-cell-color-scheme.mp4" width="800" height="778" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/chart-cell-color-scheme.mp4" width="800" height="778" controls loop playsinline preload="metadata"></video>
+</div>
 
 Last but not least, let's check the new **scale config**. You can use it to change the scale type of your chart, for example, from a linear to a log scale. Let's see how it works:
 
-<video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/chart-cell-scale.mp4" width="800" height="758" autoplay loop muted playsinline></video>
+<div class="video">
+  <video src="/videos/blog/2023-01-12-whats-new-in-livebook-0-8/chart-cell-scale.mp4" width="800" height="758" controls loop playsinline preload="metadata"></video>
+</div>
 
 ## Try it!
 
