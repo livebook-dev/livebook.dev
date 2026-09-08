@@ -139,94 +139,94 @@
 /* Rendered markdown (blog posts) */
 
 @layer components {
-  .prose {
+  .post-content {
     @apply text-gray-700 leading-relaxed;
   }
 
-  .prose > * + * {
+  .post-content > * + * {
     @apply mt-5;
   }
 
-  .prose h2 {
+  .post-content h2 {
     @apply mt-10 text-gray-900 text-2xl font-semibold;
   }
 
-  .prose h3 {
+  .post-content h3 {
     @apply mt-8 text-gray-900 text-xl font-semibold;
   }
 
-  .prose h4 {
+  .post-content h4 {
     @apply mt-6 text-gray-900 text-lg font-semibold;
   }
 
-  .prose a {
+  .post-content a {
     @apply text-blue-700 underline underline-offset-2 hover:text-blue-800;
   }
 
-  .prose strong {
+  .post-content strong {
     @apply font-semibold text-gray-900;
   }
 
-  .prose ul {
+  .post-content ul {
     @apply list-disc pl-6 space-y-2;
   }
 
-  .prose ol {
+  .post-content ol {
     @apply list-decimal pl-6 space-y-2;
   }
 
-  .prose li > ul,
-  .prose li > ol {
+  .post-content li > ul,
+  .post-content li > ol {
     @apply mt-2;
   }
 
-  .prose blockquote {
+  .post-content blockquote {
     @apply pl-4 border-l-4 border-gray-200 text-gray-600 italic;
   }
 
-  .prose code {
+  .post-content code {
     @apply px-1 py-0.5 rounded-sm bg-gray-100 font-mono text-[0.9em] text-gray-800;
   }
 
-  .prose pre {
+  .post-content pre {
     /* scheme-dark keeps the scrollbar dark, matching the code block */
     @apply p-4 rounded-lg overflow-x-auto font-mono text-sm scheme-dark;
     /* Shiki sets the theme background inline */
     background-color: var(--color-gray-900) !important;
   }
 
-  .prose pre code {
+  .post-content pre code {
     @apply p-0 bg-transparent text-inherit;
   }
 
-  .prose img {
+  .post-content img {
     @apply rounded-lg border border-gray-200;
   }
 
-  .prose table {
+  .post-content table {
     @apply w-full text-sm text-left border-collapse;
   }
 
-  .prose th,
-  .prose td {
+  .post-content th,
+  .post-content td {
     @apply px-3 py-2 border border-gray-200 align-top;
   }
 
-  .prose th {
+  .post-content th {
     @apply bg-gray-50 font-semibold text-gray-900;
   }
 
-  .prose hr {
+  .post-content hr {
     @apply border-gray-200;
   }
 
   /* Video embeds, see src/blog */
-  .prose .embed {
+  .post-content .embed {
     @apply relative w-full rounded-lg overflow-hidden;
     aspect-ratio: 16 / 9;
   }
 
-  .prose .embed iframe {
+  .post-content .embed iframe {
     @apply absolute inset-0 w-full h-full border-0;
   }
 }
