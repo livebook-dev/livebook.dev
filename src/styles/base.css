@@ -136,11 +136,97 @@
   }
 }
 
-/*
-By default, once AnnounceKit badge is hidden, it uses uses visibility: hidden.
-This is undesired in our case as it takes extra menu space, so we override
-the behaviour to hide it altogether.
-*/
-.announcekit-widget-badge.announcekit-widget-badge-hidden {
-  display: none !important;
+/* Rendered markdown (blog posts) */
+
+@layer components {
+  .prose {
+    @apply text-gray-700 leading-relaxed;
+  }
+
+  .prose > * + * {
+    @apply mt-5;
+  }
+
+  .prose h2 {
+    @apply mt-10 text-gray-900 text-2xl font-semibold;
+  }
+
+  .prose h3 {
+    @apply mt-8 text-gray-900 text-xl font-semibold;
+  }
+
+  .prose h4 {
+    @apply mt-6 text-gray-900 text-lg font-semibold;
+  }
+
+  .prose a {
+    @apply text-blue-700 underline underline-offset-2 hover:text-blue-800;
+  }
+
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .prose ul {
+    @apply list-disc pl-6 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6 space-y-2;
+  }
+
+  .prose li > ul,
+  .prose li > ol {
+    @apply mt-2;
+  }
+
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-gray-200 text-gray-600 italic;
+  }
+
+  .prose code {
+    @apply px-1 py-0.5 rounded-sm bg-gray-100 font-mono text-[0.9em] text-gray-800;
+  }
+
+  .prose pre {
+    /* scheme-dark keeps the scrollbar dark, matching the code block */
+    @apply p-4 rounded-lg overflow-x-auto font-mono text-sm scheme-dark;
+    /* Shiki sets the theme background inline */
+    background-color: var(--color-gray-900) !important;
+  }
+
+  .prose pre code {
+    @apply p-0 bg-transparent text-inherit;
+  }
+
+  .prose img {
+    @apply rounded-lg border border-gray-200;
+  }
+
+  .prose table {
+    @apply w-full text-sm text-left border-collapse;
+  }
+
+  .prose th,
+  .prose td {
+    @apply px-3 py-2 border border-gray-200 align-top;
+  }
+
+  .prose th {
+    @apply bg-gray-50 font-semibold text-gray-900;
+  }
+
+  .prose hr {
+    @apply border-gray-200;
+  }
+
+  /* Video embeds, see src/blog */
+  .prose .embed {
+    @apply relative w-full rounded-lg overflow-hidden;
+    aspect-ratio: 16 / 9;
+  }
+
+  .prose .embed iframe {
+    @apply absolute inset-0 w-full h-full border-0;
+  }
 }

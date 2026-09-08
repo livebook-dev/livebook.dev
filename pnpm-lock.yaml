@@ -21,6 +21,9 @@ importers:
         specifier: ^4.3.3
         version: 4.3.3
     devDependencies:
+      '@astrojs/markdown-satteri':
+        specifier: ^0.4.0
+        version: 0.4.0
       prettier:
         specifier: ^3.9.6
         version: 3.9.6

@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+
+import { formatDate } from "../../lib/utils.js";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <article>
+    <div class="m-auto max-w-3xl px-4 pt-10 pb-20">
+      <a
+        class="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+        href="/blog"
+      >
+        <Icon icon="arrow-left-line" />
+        Blog
+      </a>
+
+      <h1 class="mt-4 text-gray-900 text-3xl md:text-4xl font-semibold">
+        {post.data.title}
+      </h1>
+
+      <div
+        class="mt-3 flex flex-wrap items-center gap-x-2 text-sm text-gray-500"
+      >
+        <time datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        <span>·</span>
+        <span>{post.data.author}</span>
+        {
+          post.data.tags.map((tag) => (
+            <a class="tag" href={`/blog?tag=${encodeURIComponent(tag)}`}>
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mt-8 prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  @reference "../../styles/base.css";
+
+  .tag {
+    @apply px-2 py-0.5 rounded-md bg-gray-100 text-xs text-gray-600 hover:bg-gray-200;
+  }
+</style>
